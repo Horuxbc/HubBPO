@@ -1121,6 +1121,210 @@ body {
 .check-icon.done { background: #d1fae5; color: #065f46; }
 .check-icon.pending { background: #fef3c7; color: #92400e; }
 
+/* ============================================
+   CARGA MASIVA & OCR DEMO
+   ============================================ */
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--bg);
+  position: relative;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+  border-color: var(--brand-primary);
+  background: var(--brand-soft);
+}
+
+.dropzone-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.dropzone-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.dropzone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.bulk-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 12px 0;
+}
+
+.bulk-preview-table th {
+  background: var(--bg);
+  padding: 6px 8px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.bulk-preview-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.bulk-section {
+  margin-bottom: 20px;
+}
+
+.bulk-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.bulk-result {
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  margin-top: 16px;
+  background: #d1fae5;
+  color: #065f46;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ocr-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.ocr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.ocr-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ocr-badge {
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ocr-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.ocr-dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: var(--white);
+  position: relative;
+}
+
+.ocr-dropzone:hover,
+.ocr-dropzone.dragover {
+  border-color: var(--brand-primary);
+  background: var(--brand-soft);
+}
+
+.ocr-dropzone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ocr-progress {
+  margin-top: 16px;
+  display: none;
+}
+
+.ocr-progress.active { display: block; }
+
+.ocr-progress-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.ocr-progress-fill {
+  height: 100%;
+  background: var(--brand-primary);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.ocr-log {
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.ocr-log div {
+  opacity: 0;
+  transform: translateY(4px);
+  animation: ocrFadeIn 0.3s forwards;
+}
+
+@keyframes ocrFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ocr-success {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  display: none;
+}
+
+@keyframes fieldHighlight {
+  0% { background-color: #fef3c7; }
+  100% { background-color: transparent; }
+}
+
+.field-highlight {
+  animation: fieldHighlight 2s ease;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
@@ -1358,6 +1562,7 @@ body {
             <input type="text" id="search-input" placeholder="Buscar por nombre, puesto, departamento...">
           </div>
           <div class="toolbar-actions">
+            <button class="btn btn-secondary" onclick="openBulkModal()">⬆ Carga masiva</button>
             <button class="btn btn-secondary">⬇ Exportar</button>
             <button class="btn btn-primary" onclick="openEmployeeModal()">+ Nuevo colaborador</button>
           </div>
@@ -1628,6 +1833,29 @@ body {
     </div>
     <div class="modal-body">
 
+      <!-- Autocompletar desde documentos -->
+      <div class="ocr-section" id="ocr-section">
+        <div class="ocr-header">
+          <span class="ocr-title">Autocompletar desde documentos ✨</span>
+          <span class="ocr-badge">DEMO · Próximamente con OCR real</span>
+        </div>
+        <p class="ocr-subtitle">Sube la INE, CURP y acta de nacimiento y los datos se llenarán automáticamente.</p>
+        <div class="ocr-dropzone" id="ocr-dropzone">
+          <div style="font-size: 28px; margin-bottom: 8px;">📎</div>
+          <div class="dropzone-text">Arrastra aquí los documentos del colaborador o haz clic para seleccionar</div>
+          <div class="dropzone-sub">PDF, JPG, PNG · Múltiples archivos</div>
+          <input type="file" id="ocr-file-input" multiple accept=".pdf,.jpg,.jpeg,.png">
+        </div>
+        <p style="font-size: 11px; color: var(--text-muted); margin-top: 10px; font-style: italic;">
+          Nota: En esta versión demo, los datos se generan automáticamente para mostrar el flujo. En producción, se extraerán de los documentos reales mediante OCR inteligente.
+        </p>
+        <div class="ocr-progress" id="ocr-progress">
+          <div class="ocr-progress-bar"><div class="ocr-progress-fill" id="ocr-progress-fill"></div></div>
+          <div class="ocr-log" id="ocr-log"></div>
+        </div>
+        <div class="ocr-success" id="ocr-success">✓ Datos extraídos. Verifica y ajusta antes de guardar.</div>
+      </div>
+
       <div class="form-section">
         <div class="form-section-title">Datos personales</div>
         <div class="form-row">
@@ -1803,9 +2031,50 @@ body {
   </div>
 </div>
 
+<!-- ============================================
+     MODAL: CARGA MASIVA
+     ============================================ -->
+<div class="modal-overlay" id="modal-bulk">
+  <div class="modal" style="max-width: 600px;">
+    <div class="modal-header">
+      <h2 class="modal-title">Carga masiva de colaboradores</h2>
+      <button class="modal-close" onclick="closeModal('modal-bulk')">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 20px;">
+        Sube un archivo Excel con tus colaboradores. Este proceso está pensado para la carga inicial del expediente; el alta diaria se hace uno a uno.
+      </p>
+
+      <div class="bulk-section">
+        <div class="bulk-section-title">1. Descarga la plantilla</div>
+        <button class="btn btn-secondary" onclick="downloadTemplate()">⬇ Descargar plantilla Excel</button>
+      </div>
+
+      <div class="bulk-section">
+        <div class="bulk-section-title">2. Sube tu archivo</div>
+        <div class="dropzone" id="bulk-dropzone">
+          <div style="font-size: 28px; margin-bottom: 8px;">📄</div>
+          <div class="dropzone-text">Arrastra aquí tu archivo Excel o haz clic para seleccionar</div>
+          <div class="dropzone-sub">.xlsx</div>
+          <input type="file" id="bulk-file-input" accept=".xlsx,.xls">
+        </div>
+      </div>
+
+      <div id="bulk-preview" style="display:none;">
+        <div class="bulk-section-title" id="bulk-preview-title"></div>
+        <div id="bulk-preview-table-container"></div>
+        <button class="btn btn-primary" onclick="importBulkEmployees()" style="margin-top: 14px; width: 100%; justify-content: center;">Importar</button>
+      </div>
+
+      <div class="bulk-result" id="bulk-result"></div>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 // ============================================
 // ESTADO INICIAL — Datos ficticios HT Rent
@@ -2048,6 +2317,7 @@ function openEmployeeModal() {
   editingEmployeeId = null;
   document.getElementById('modal-employee-title').textContent = 'Nuevo colaborador';
   document.querySelectorAll('#modal-employee input, #modal-employee select').forEach(el => el.value = '');
+  resetOCR();
   document.getElementById('modal-employee').classList.add('active');
 }
 
@@ -2070,6 +2340,7 @@ function editEmployee(id) {
   document.getElementById('emp-salario').value = e.salario;
   document.getElementById('emp-jefe').value = e.jefe || '';
   document.getElementById('emp-sede').value = e.sede || '';
+  resetOCR();
   document.getElementById('modal-employee').classList.add('active');
 }
 
@@ -2257,6 +2528,183 @@ document.querySelectorAll('.modal-overlay').forEach(m => {
 
 // Búsqueda
 document.getElementById('search-input').addEventListener('input', renderEmployees);
+
+// ============================================
+// CARGA MASIVA EXCEL
+// ============================================
+let bulkData = [];
+
+function openBulkModal() {
+  document.getElementById('bulk-preview').style.display = 'none';
+  const result = document.getElementById('bulk-result');
+  result.style.display = 'none';
+  result.textContent = '';
+  bulkData = [];
+  document.getElementById('bulk-file-input').value = '';
+  document.getElementById('modal-bulk').classList.add('active');
+}
+
+function downloadTemplate() {
+  const headers = ['Nombre','Apellidos','FechaNacimiento','RFC','CURP','NSS','Telefono','Email','Puesto','Departamento','FechaIngreso','TipoContrato','SalarioMensual','JefeDirecto','Sede','EstadoCivil','Domicilio','ContactoEmergenciaNombre','ContactoEmergenciaParentesco','ContactoEmergenciaTelefono'];
+  const row1 = ['María Fernanda','López García','1992-04-24','LOGF920424DEF','LOGF920424MNLPRN05','23456789012','81 2345 6789','maria@htrent.com','Ejecutiva de Cuenta','Operaciones','2024-01-15','Indefinido','28000','Carlos Méndez','Monterrey','Soltero(a)','Av. Revolución 123, Col. Centro, Monterrey','Ana López','Madre','81 9999 8888'];
+  const row2 = ['Roberto','Salinas Treviño','1995-04-18','SATR950418GHI','SATR950418HNLLRB02','34567890123','81 3456 7890','roberto@htrent.com','Asistente Administrativo','Administración','2024-03-01','Periodo de prueba','18500','Gabriela Herrera','Monterrey','Casado(a)','Calle Hidalgo 456, Col. Obispado, Monterrey','Laura Treviño','Esposa','81 7777 6666'];
+  const ws = XLSX.utils.aoa_to_sheet([headers, row1, row2]);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Colaboradores');
+  ws['!cols'] = headers.map(() => ({wch: 22}));
+  XLSX.writeFile(wb, 'plantilla_colaboradores.xlsx');
+  toast('⬇ Plantilla descargada');
+}
+
+function processBulkFile(file) {
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const wb = XLSX.read(e.target.result, {type: 'array'});
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    const json = XLSX.utils.sheet_to_json(ws);
+    if (!json.length) { toast('⚠️ El archivo está vacío'); return; }
+    bulkData = json;
+    document.getElementById('bulk-preview-title').textContent = 'Se encontraron ' + json.length + ' colaboradores. ¿Continuar?';
+    const cols = ['Nombre','Apellidos','Puesto','Departamento'];
+    let html = '<table class="bulk-preview-table"><thead><tr>' + cols.map(c => '<th>' + c + '</th>').join('') + '</tr></thead><tbody>';
+    json.slice(0, 3).forEach(r => {
+      html += '<tr>' + cols.map(c => '<td>' + (r[c] || '—') + '</td>').join('') + '</tr>';
+    });
+    if (json.length > 3) html += '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);font-style:italic;">... y ' + (json.length - 3) + ' más</td></tr>';
+    html += '</tbody></table>';
+    document.getElementById('bulk-preview-table-container').innerHTML = html;
+    document.getElementById('bulk-preview').style.display = 'block';
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function importBulkEmployees() {
+  let count = 0;
+  bulkData.forEach(r => {
+    const newId = Math.max(...state.employees.map(x => x.id), 0) + 1;
+    state.employees.push({
+      id: newId, nombre: r.Nombre || '', apellidos: r.Apellidos || '',
+      rfc: r.RFC || '', curp: r.CURP || '', nss: r.NSS || '',
+      tel: r.Telefono || '', email: r.Email || '',
+      puesto: r.Puesto || 'Sin asignar', depto: r.Departamento || 'Operaciones',
+      ingreso: r.FechaIngreso || new Date().toISOString().split('T')[0],
+      contrato: r.TipoContrato || 'Indefinido',
+      salario: parseFloat(r.SalarioMensual) || 0,
+      jefe: r.JefeDirecto || '', sede: r.Sede || 'Monterrey', estatus: 'Activo'
+    });
+    state.expediente[newId] = {ine: false, curp: false, acta: false, domicilio: false, contrato: false};
+    count++;
+  });
+  document.getElementById('bulk-preview').style.display = 'none';
+  const result = document.getElementById('bulk-result');
+  result.textContent = '✓ ' + count + ' colaboradores agregados correctamente.';
+  result.style.display = 'block';
+  renderEmployees();
+  bulkData = [];
+  setTimeout(() => closeModal('modal-bulk'), 2000);
+}
+
+// Bulk dropzone events
+(function() {
+  const dz = document.getElementById('bulk-dropzone');
+  const fi = document.getElementById('bulk-file-input');
+  ['dragenter','dragover'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.remove('dragover'); }));
+  dz.addEventListener('drop', e => { if (e.dataTransfer.files.length) processBulkFile(e.dataTransfer.files[0]); });
+  fi.addEventListener('change', () => { if (fi.files.length) processBulkFile(fi.files[0]); });
+})();
+
+// ============================================
+// SIMULACIÓN OCR DE DOCUMENTOS
+// ============================================
+function resetOCR() {
+  document.getElementById('ocr-progress').classList.remove('active');
+  document.getElementById('ocr-log').innerHTML = '';
+  document.getElementById('ocr-success').style.display = 'none';
+  document.getElementById('ocr-progress-fill').style.width = '0%';
+  document.getElementById('ocr-file-input').value = '';
+}
+
+function generateFakeData() {
+  const nombres = ['Ana Sofía','Miguel Ángel','Valentina','Diego','Camila','Santiago','Isabella','Mateo','Regina','Emiliano'];
+  const ap1s = ['García','Hernández','López','Martínez','González','Rodríguez','Pérez','Sánchez','Ramírez','Torres'];
+  const ap2s = ['Flores','Morales','Cruz','Rivera','Gómez','Díaz','Reyes','Vargas','Ortiz','Mendoza'];
+  const nom = nombres[Math.floor(Math.random()*nombres.length)];
+  const a1 = ap1s[Math.floor(Math.random()*ap1s.length)];
+  const a2 = ap2s[Math.floor(Math.random()*ap2s.length)];
+  const y = 1985 + Math.floor(Math.random()*15);
+  const m = String(1+Math.floor(Math.random()*12)).padStart(2,'0');
+  const d = String(1+Math.floor(Math.random()*28)).padStart(2,'0');
+  const pre = (a1.substring(0,2)+a2.substring(0,1)+nom.substring(0,1)).toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const rfc = pre + String(y).slice(2) + m + d + 'AB' + Math.floor(Math.random()*10);
+  const curp = pre + String(y).slice(2) + m + d + 'HNL' + a1.substring(1,2).toUpperCase() + a2.substring(1,2).toUpperCase() + '0' + Math.floor(Math.random()*10);
+  const nss = String(Math.floor(Math.random()*90000000000)+10000000000);
+  const emailName = nom.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s/g,'.');
+  return {
+    nombre: nom, apellidos: a1 + ' ' + a2, fechanac: y+'-'+m+'-'+d, rfc: rfc, curp: curp, nss: nss,
+    tel: '81 ' + (1000+Math.floor(Math.random()*9000)) + ' ' + (1000+Math.floor(Math.random()*9000)),
+    email: emailName + '@htrent.com',
+    direccion: 'Calle ' + (100+Math.floor(Math.random()*900)) + ', Col. Centro, Monterrey, N.L.'
+  };
+}
+
+function simulateOCR() {
+  const progress = document.getElementById('ocr-progress');
+  const fill = document.getElementById('ocr-progress-fill');
+  const log = document.getElementById('ocr-log');
+  const success = document.getElementById('ocr-success');
+  progress.classList.add('active');
+  success.style.display = 'none';
+  log.innerHTML = '';
+  fill.style.width = '0%';
+
+  const steps = [
+    {msg: '📄 Detectando INE...', delay: 0, pct: 15},
+    {msg: '✓ INE identificada', delay: 500, pct: 30},
+    {msg: '📄 Leyendo CURP...', delay: 800, pct: 45},
+    {msg: '✓ CURP extraída', delay: 1300, pct: 60},
+    {msg: '📄 Analizando acta...', delay: 1600, pct: 75},
+    {msg: '✓ Datos extraídos correctamente', delay: 2100, pct: 100}
+  ];
+
+  steps.forEach(s => {
+    setTimeout(() => {
+      fill.style.width = s.pct + '%';
+      const div = document.createElement('div');
+      div.textContent = s.msg;
+      log.appendChild(div);
+    }, s.delay);
+  });
+
+  setTimeout(() => {
+    const data = generateFakeData();
+    document.getElementById('emp-nombre').value = data.nombre;
+    document.getElementById('emp-apellidos').value = data.apellidos;
+    document.getElementById('emp-fechanac').value = data.fechanac;
+    document.getElementById('emp-rfc').value = data.rfc;
+    document.getElementById('emp-curp').value = data.curp;
+    document.getElementById('emp-nss').value = data.nss;
+    document.getElementById('emp-tel').value = data.tel;
+    document.getElementById('emp-email').value = data.email;
+    document.getElementById('emp-direccion').value = data.direccion;
+    ['emp-nombre','emp-apellidos','emp-fechanac','emp-rfc','emp-curp','emp-nss','emp-tel','emp-email','emp-direccion'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.add('field-highlight');
+      setTimeout(() => el.classList.remove('field-highlight'), 2000);
+    });
+    success.style.display = 'block';
+  }, 2500);
+}
+
+// OCR dropzone events
+(function() {
+  const dz = document.getElementById('ocr-dropzone');
+  const fi = document.getElementById('ocr-file-input');
+  ['dragenter','dragover'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(ev => dz.addEventListener(ev, e => { e.preventDefault(); dz.classList.remove('dragover'); }));
+  dz.addEventListener('drop', e => { if (e.dataTransfer.files.length) simulateOCR(); });
+  fi.addEventListener('change', () => { if (fi.files.length) simulateOCR(); });
+})();
 
 // Inicialización
 renderEmployees();
