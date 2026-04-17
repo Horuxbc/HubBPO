@@ -1581,7 +1581,7 @@ body {
       <a class="nav-item" data-view="crm">
         <span class="nav-icon">👥</span>
         <span>Colaboradores</span>
-        <span class="nav-badge" id="nav-count">5</span>
+        <span class="nav-badge" id="nav-count">25</span>
       </a>
     </div>
 
@@ -1639,7 +1639,7 @@ body {
         <div class="kpi-grid">
           <div class="kpi-card" style="border-left-color: #3FD33F;">
             <div class="kpi-label">Activos</div>
-            <div class="kpi-value" id="kpi-activos">5</div>
+            <div class="kpi-value" id="kpi-activos">25</div>
             <div class="kpi-trend green">↑ +1 este mes</div>
           </div>
           <div class="kpi-card" style="border-left-color: #9e8075;">
@@ -1671,15 +1671,15 @@ body {
             <div class="dash-panel-title">⏰ Contratos por vencer</div>
             <div class="contract-list">
               <div class="contract-item">
-                <span class="contract-name">Fernanda López</span>
-                <span class="date-badge yellow">15 may</span>
-              </div>
-              <div class="contract-item">
                 <span class="contract-name">Daniel Castillo</span>
                 <span class="date-badge red">28 abr</span>
               </div>
               <div class="contract-item">
-                <span class="contract-name">Roberto Salinas</span>
+                <span class="contract-name">Andrea Ruiz</span>
+                <span class="date-badge yellow">15 may</span>
+              </div>
+              <div class="contract-item">
+                <span class="contract-name">Mariana Quintero</span>
                 <span class="date-badge green">10 jun</span>
               </div>
             </div>
@@ -1740,7 +1740,7 @@ body {
                           stroke-dasharray="44 219.9" stroke-dashoffset="-175.8" transform="rotate(-90 45 45)" stroke-linecap="round"/>
                 </svg>
                 <div class="donut-center">
-                  <div class="num" id="donut-total">5</div>
+                  <div class="num" id="donut-total">25</div>
                   <div class="lbl">Total</div>
                 </div>
               </div>
@@ -2354,6 +2354,166 @@ const state = {
       rfc: "CARD000215MNO", curp: "CARD000215HNLSTM04", nss: "56789012345",
       tel: "81 5678 9012", email: "daniel.castillo@htrent.com",
       estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 6, nombre: "Luis", apellidos: "Garza Peña",
+      puesto: "Supervisor de Operaciones", depto: "Operaciones",
+      ingreso: "2021-03-15", contrato: "Indefinido", salario: 28000,
+      rfc: "GAPL880315QRS", curp: "GAPL880315HNLRZS07", nss: "67890123456",
+      tel: "81 6789 0123", email: "luis.garza@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 7, nombre: "Paola", apellidos: "Martínez Delgado",
+      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
+      ingreso: "2022-09-01", contrato: "Indefinido", salario: 22000,
+      rfc: "MADP930901TUV", curp: "MADP930901MNLRLR08", nss: "78901234567",
+      tel: "81 7890 1234", email: "paola.martinez@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 8, nombre: "Andrea", apellidos: "Ruiz Navarro",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2024-06-10", contrato: "Tiempo determinado", salario: 20000,
+      rfc: "RUNA960610WXY", curp: "RUNA960610MNLZVN01", nss: "89012345678",
+      tel: "81 8901 2345", email: "andrea.ruiz@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 9, nombre: "Javier", apellidos: "Torres Elizondo",
+      puesto: "Auxiliar de Operaciones", depto: "Operaciones",
+      ingreso: "2023-02-20", contrato: "Indefinido", salario: 16000,
+      rfc: "TOEJ940220ZAB", curp: "TOEJ940220HNLRLV06", nss: "90123456789",
+      tel: "81 9012 3456", email: "javier.torres@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 10, nombre: "Sofía", apellidos: "Villarreal Cantú",
+      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
+      ingreso: "2023-07-14", contrato: "Indefinido", salario: 23000,
+      rfc: "VICS950714CDE", curp: "VICS950714MNLLRF04", nss: "01234567890",
+      tel: "81 0123 4567", email: "sofia.villarreal@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 11, nombre: "Miguel", apellidos: "Reyes Guzmán",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2020-11-02", contrato: "Indefinido", salario: 24000,
+      rfc: "REGM910102FGH", curp: "REGM910102HNLYSG05", nss: "11234567890",
+      tel: "81 1123 4567", email: "miguel.reyes@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 12, nombre: "Alejandra", apellidos: "Fuentes Ríos",
+      puesto: "Auxiliar de Operaciones", depto: "Operaciones",
+      ingreso: "2025-01-13", contrato: "Periodo de prueba", salario: 15000,
+      rfc: "FURA000113IJK", curp: "FURA000113MNLNSL02", nss: "12234567890",
+      tel: "81 1223 4567", email: "alejandra.fuentes@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 13, nombre: "Héctor", apellidos: "Ochoa Balderas",
+      puesto: "Supervisor de Operaciones", depto: "Operaciones",
+      ingreso: "2019-08-19", contrato: "Indefinido", salario: 30000,
+      rfc: "OOBH850819LMN", curp: "OOBH850819HNLCLC03", nss: "13234567890",
+      tel: "81 1323 4567", email: "hector.ochoa@htrent.com",
+      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+    },
+    {
+      id: 14, nombre: "Laura", apellidos: "Peña Montemayor",
+      puesto: "Contador", depto: "Administración",
+      ingreso: "2020-05-11", contrato: "Indefinido", salario: 28000,
+      rfc: "PEML900511OPQ", curp: "PEML900511MNLNNR09", nss: "14234567890",
+      tel: "81 1423 4567", email: "laura.pena@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+    },
+    {
+      id: 15, nombre: "Ernesto", apellidos: "Dávila Leal",
+      puesto: "Auxiliar Contable", depto: "Administración",
+      ingreso: "2023-04-03", contrato: "Indefinido", salario: 17000,
+      rfc: "DALE970403RST", curp: "DALE970403HNLVLR01", nss: "15234567890",
+      tel: "81 1523 4567", email: "ernesto.davila@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+    },
+    {
+      id: 16, nombre: "Valeria", apellidos: "Ibarra Chávez",
+      puesto: "Asistente de Dirección", depto: "Administración",
+      ingreso: "2022-01-17", contrato: "Indefinido", salario: 22000,
+      rfc: "IACV940117UVW", curp: "IACV940117MNLBRL06", nss: "16234567890",
+      tel: "81 1623 4567", email: "valeria.ibarra@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+    },
+    {
+      id: 17, nombre: "Francisco", apellidos: "Montes Sáenz",
+      puesto: "Analista Administrativo", depto: "Administración",
+      ingreso: "2024-03-25", contrato: "Tiempo determinado", salario: 19000,
+      rfc: "MOSF980325XYZ", curp: "MOSF980325HNLNNR07", nss: "17234567890",
+      tel: "81 1723 4567", email: "francisco.montes@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+    },
+    {
+      id: 18, nombre: "Ricardo", apellidos: "Canales Domínguez",
+      puesto: "Coordinador Comercial", depto: "Comercial",
+      ingreso: "2020-02-10", contrato: "Indefinido", salario: 35000,
+      rfc: "CADR870210ABC", curp: "CADR870210HNLNMC08", nss: "18234567890",
+      tel: "81 1823 4567", email: "ricardo.canales@htrent.com",
+      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+    },
+    {
+      id: 19, nombre: "Mariana", apellidos: "Quintero Salazar",
+      puesto: "Ejecutivo de Ventas", depto: "Comercial",
+      ingreso: "2024-08-05", contrato: "Tiempo determinado", salario: 21000,
+      rfc: "QUSM960805DEF", curp: "QUSM960805MNLNLR04", nss: "19234567890",
+      tel: "81 1923 4567", email: "mariana.quintero@htrent.com",
+      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+    },
+    {
+      id: 20, nombre: "Sergio", apellidos: "Tamez Garza",
+      puesto: "Asesor Comercial", depto: "Comercial",
+      ingreso: "2021-10-18", contrato: "Indefinido", salario: 24000,
+      rfc: "TAGS890318GHI", curp: "TAGS890318HNLMRR02", nss: "20234567890",
+      tel: "81 2023 4567", email: "sergio.tamez@htrent.com",
+      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+    },
+    {
+      id: 21, nombre: "Diana", apellidos: "Coronado Flores",
+      puesto: "Ejecutivo de Ventas", depto: "Comercial",
+      ingreso: "2023-11-27", contrato: "Indefinido", salario: 22000,
+      rfc: "COFD950227JKL", curp: "COFD950227MNLRLN05", nss: "21234567890",
+      tel: "81 2123 4567", email: "diana.coronado@htrent.com",
+      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+    },
+    {
+      id: 22, nombre: "Patricia", apellidos: "Soto Nájera",
+      puesto: "Coordinador de RH", depto: "Recursos Humanos",
+      ingreso: "2019-06-03", contrato: "Indefinido", salario: 34000,
+      rfc: "SONP860603MNO", curp: "SONP860603MNLTJR01", nss: "22234567890",
+      tel: "81 2223 4567", email: "patricia.soto@htrent.com",
+      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+    },
+    {
+      id: 23, nombre: "Omar", apellidos: "Estrada Villegas",
+      puesto: "Auxiliar de RH", depto: "Recursos Humanos",
+      ingreso: "2024-02-12", contrato: "Indefinido", salario: 26000,
+      rfc: "ESVO970212PQR", curp: "ESVO970212HNLSRM03", nss: "23234567890",
+      tel: "81 2323 4567", email: "omar.estrada@htrent.com",
+      estatus: "Activo", jefe: "Patricia Soto", sede: "Monterrey"
+    },
+    {
+      id: 24, nombre: "Adriana", apellidos: "Guerra Sepúlveda",
+      puesto: "Analista Financiero", depto: "Finanzas",
+      ingreso: "2022-07-08", contrato: "Indefinido", salario: 27000,
+      rfc: "GUSA910708STU", curp: "GUSA910708MNLRRR06", nss: "24234567890",
+      tel: "81 2423 4567", email: "adriana.guerra@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+    },
+    {
+      id: 25, nombre: "Raúl", apellidos: "Cavazos Lozano",
+      puesto: "Tesorero", depto: "Finanzas",
+      ingreso: "2020-09-22", contrato: "Indefinido", salario: 32000,
+      rfc: "CALR880922VWX", curp: "CALR880922HNLVZL04", nss: "25234567890",
+      tel: "81 2523 4567", email: "raul.cavazos@htrent.com",
+      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
     }
   ],
   expediente: {
@@ -2361,7 +2521,27 @@ const state = {
     2: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     3: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
     4: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    5: {ine: true, curp: true, acta: false, domicilio: true, contrato: false}
+    5: {ine: true, curp: true, acta: false, domicilio: true, contrato: false},
+    6: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    7: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    8: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    9: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    10: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    11: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    12: {ine: true, curp: false, acta: false, domicilio: true, contrato: false},
+    13: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    14: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    15: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    16: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    17: {ine: true, curp: true, acta: false, domicilio: true, contrato: true},
+    18: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    19: {ine: true, curp: true, acta: true, domicilio: false, contrato: false},
+    20: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    21: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    22: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    23: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    24: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    25: {ine: true, curp: true, acta: true, domicilio: true, contrato: true}
   },
   asistencia: [95, 97, 94, 98, 96, 95, 97, 96],
   empresa: "HT Rent"

@@ -1583,7 +1583,7 @@ body {
       <a class="nav-item" data-view="crm">
         <span class="nav-icon">👥</span>
         <span>Colaboradores</span>
-        <span class="nav-badge" id="nav-count">5</span>
+        <span class="nav-badge" id="nav-count">55</span>
       </a>
     </div>
 
@@ -1641,7 +1641,7 @@ body {
         <div class="kpi-grid">
           <div class="kpi-card" style="border-left-color: #0A5FAB;">
             <div class="kpi-label">Activos</div>
-            <div class="kpi-value" id="kpi-activos">5</div>
+            <div class="kpi-value" id="kpi-activos">55</div>
             <div class="kpi-trend green">↑ +1 este mes</div>
           </div>
           <div class="kpi-card" style="border-left-color: #9e8075;">
@@ -1673,16 +1673,16 @@ body {
             <div class="dash-panel-title">⏰ Contratos por vencer</div>
             <div class="contract-list">
               <div class="contract-item">
-                <span class="contract-name">Luis Fernando Reyes</span>
-                <span class="date-badge yellow">20 may</span>
+                <span class="contract-name">Héctor Luna Sepúlveda</span>
+                <span class="date-badge yellow">12 may</span>
               </div>
               <div class="contract-item">
-                <span class="contract-name">Patricia Gómez</span>
-                <span class="date-badge green">18 jun</span>
+                <span class="contract-name">Verónica Palacios Cruz</span>
+                <span class="date-badge green">07 jun</span>
               </div>
               <div class="contract-item">
-                <span class="contract-name">Mariana Esquivel</span>
-                <span class="date-badge green">05 jul</span>
+                <span class="contract-name">Liliana Orozco Martínez</span>
+                <span class="date-badge green">07 jul</span>
               </div>
             </div>
           </div>
@@ -1742,7 +1742,7 @@ body {
                           stroke-dasharray="44 219.9" stroke-dashoffset="-175.8" transform="rotate(-90 45 45)" stroke-linecap="round"/>
                 </svg>
                 <div class="donut-center">
-                  <div class="num" id="donut-total">5</div>
+                  <div class="num" id="donut-total">55</div>
                   <div class="lbl">Total</div>
                 </div>
               </div>
@@ -2317,6 +2317,7 @@ body {
 // ============================================
 const state = {
   employees: [
+    // === ORIGINALES (1-5) ===
     {
       id: 1, nombre: "Juan Pablo", apellidos: "Treviño Garza",
       puesto: "Líder de Desarrollo", depto: "Tecnología",
@@ -2356,6 +2357,411 @@ const state = {
       rfc: "REML990511MNO", curp: "REML990511HNLYRS09", nss: "55667788990",
       tel: "81 5555 6666", email: "luis.reyes@datamovil.com",
       estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    // === TECNOLOGÍA (6-25) — 20 nuevos ===
+    {
+      id: 6, nombre: "Ricardo", apellidos: "Lozano Martínez",
+      puesto: "Arquitecto de Software", depto: "Tecnología",
+      ingreso: "2019-06-10", contrato: "Indefinido", salario: 82000,
+      rfc: "LOMR850214PQ1", curp: "LOMR850214HNLZRC01", nss: "10203040506",
+      tel: "81 6100 2001", email: "ricardo.lozano@datamovil.com",
+      estatus: "Activo", jefe: "Director de Tecnología", sede: "Monterrey"
+    },
+    {
+      id: 7, nombre: "Daniela", apellidos: "Salinas Herrera",
+      puesto: "Tech Lead", depto: "Tecnología",
+      ingreso: "2020-01-15", contrato: "Indefinido", salario: 72000,
+      rfc: "SAHD900518RS2", curp: "SAHD900518MNLLNL02", nss: "10203040507",
+      tel: "81 6100 2002", email: "daniela.salinas@datamovil.com",
+      estatus: "Activo", jefe: "Director de Tecnología", sede: "Monterrey"
+    },
+    {
+      id: 8, nombre: "Fernando", apellidos: "Cavazos Peña",
+      puesto: "Desarrollador Frontend", depto: "Tecnología",
+      ingreso: "2021-03-22", contrato: "Indefinido", salario: 38000,
+      rfc: "CAPF910723TU3", curp: "CAPF910723HNLVNR03", nss: "10203040508",
+      tel: "81 6100 2003", email: "fernando.cavazos@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 9, nombre: "Sofía", apellidos: "Mendoza Ríos",
+      puesto: "Desarrolladora Frontend", depto: "Tecnología",
+      ingreso: "2022-07-11", contrato: "Indefinido", salario: 36000,
+      rfc: "MERS930412VW4", curp: "MERS930412MNLNDF04", nss: "10203040509",
+      tel: "81 6100 2004", email: "sofia.mendoza@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 10, nombre: "Carlos", apellidos: "Ibarra Navarro",
+      puesto: "Desarrollador Backend", depto: "Tecnología",
+      ingreso: "2020-11-05", contrato: "Indefinido", salario: 42000,
+      rfc: "IANC880630XY5", curp: "IANC880630HNLBVR05", nss: "10203040510",
+      tel: "81 6100 2005", email: "carlos.ibarra@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 11, nombre: "Alejandra", apellidos: "Fuentes Salazar",
+      puesto: "Desarrolladora Backend", depto: "Tecnología",
+      ingreso: "2023-02-20", contrato: "Indefinido", salario: 34000,
+      rfc: "FUSA950815AB6", curp: "FUSA950815MNLNLJ06", nss: "10203040511",
+      tel: "81 6100 2006", email: "alejandra.fuentes@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 12, nombre: "Diego", apellidos: "Ramírez Ochoa",
+      puesto: "DevOps Engineer", depto: "Tecnología",
+      ingreso: "2021-08-16", contrato: "Indefinido", salario: 48000,
+      rfc: "RAOD870922CD7", curp: "RAOD870922HNLMCG07", nss: "10203040512",
+      tel: "81 6100 2007", email: "diego.ramirez@datamovil.com",
+      estatus: "Activo", jefe: "Ricardo Lozano", sede: "Monterrey"
+    },
+    {
+      id: 13, nombre: "Valeria", apellidos: "Torres Guzmán",
+      puesto: "QA Engineer", depto: "Tecnología",
+      ingreso: "2022-04-03", contrato: "Indefinido", salario: 33000,
+      rfc: "TOGV940110EF8", curp: "TOGV940110MNLRRLL08", nss: "10203040513",
+      tel: "81 6100 2008", email: "valeria.torres@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 14, nombre: "Héctor", apellidos: "Luna Sepúlveda",
+      puesto: "Desarrollador Frontend", depto: "Tecnología",
+      ingreso: "2023-09-12", contrato: "Tiempo determinado", salario: 30000,
+      rfc: "LUSH960305GH9", curp: "LUSH960305HNLNPC09", nss: "10203040514",
+      tel: "81 6100 2009", email: "hector.luna@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 15, nombre: "Gabriela", apellidos: "Peña Elizondo",
+      puesto: "Data Engineer", depto: "Tecnología",
+      ingreso: "2020-05-28", contrato: "Indefinido", salario: 52000,
+      rfc: "PEEG890717IJ0", curp: "PEEG890717MNLNLB10", nss: "10203040515",
+      tel: "81 6100 2010", email: "gabriela.pena@datamovil.com",
+      estatus: "Activo", jefe: "Ricardo Lozano", sede: "Monterrey"
+    },
+    {
+      id: 16, nombre: "Emilio", apellidos: "Garza Treviño",
+      puesto: "UI/UX Designer", depto: "Tecnología",
+      ingreso: "2022-10-01", contrato: "Indefinido", salario: 35000,
+      rfc: "GATE911228KL1", curp: "GATE911228HNLRRM11", nss: "10203040516",
+      tel: "81 6100 2011", email: "emilio.garza@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 17, nombre: "Paola", apellidos: "Hernández Castillo",
+      puesto: "QA Engineer", depto: "Tecnología",
+      ingreso: "2024-01-08", contrato: "Periodo de prueba", salario: 28000,
+      rfc: "HECP970403MN2", curp: "HECP970403MNLRSL12", nss: "10203040517",
+      tel: "81 6100 2012", email: "paola.hernandez@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 18, nombre: "Jorge", apellidos: "Cantú Villarreal",
+      puesto: "Desarrollador Backend", depto: "Tecnología",
+      ingreso: "2019-11-20", contrato: "Indefinido", salario: 46000,
+      rfc: "CAVJ860815OP3", curp: "CAVJ860815HNLNLR13", nss: "10203040518",
+      tel: "81 6100 2013", email: "jorge.cantu@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 19, nombre: "Andrea", apellidos: "Domínguez Ramos",
+      puesto: "Desarrolladora Frontend", depto: "Tecnología",
+      ingreso: "2023-06-14", contrato: "Indefinido", salario: 32000,
+      rfc: "DORA950220QR4", curp: "DORA950220MNLMMD14", nss: "10203040519",
+      tel: "81 6100 2014", email: "andrea.dominguez@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 20, nombre: "Roberto", apellidos: "Aguirre Montes",
+      puesto: "DevOps Engineer", depto: "Tecnología",
+      ingreso: "2022-12-05", contrato: "Indefinido", salario: 44000,
+      rfc: "AGMR900610ST5", curp: "AGMR900610HNLGNB15", nss: "10203040520",
+      tel: "81 6100 2015", email: "roberto.aguirre@datamovil.com",
+      estatus: "Activo", jefe: "Ricardo Lozano", sede: "Monterrey"
+    },
+    {
+      id: 21, nombre: "Melissa", apellidos: "Vázquez León",
+      puesto: "Data Engineer", depto: "Tecnología",
+      ingreso: "2021-04-19", contrato: "Indefinido", salario: 50000,
+      rfc: "VALM920830UV6", curp: "VALM920830MNLZQL16", nss: "10203040521",
+      tel: "81 6100 2016", email: "melissa.vazquez@datamovil.com",
+      estatus: "Activo", jefe: "Ricardo Lozano", sede: "Monterrey"
+    },
+    {
+      id: 22, nombre: "Iván", apellidos: "Soto Cisneros",
+      puesto: "Desarrollador Frontend", depto: "Tecnología",
+      ingreso: "2024-05-06", contrato: "Tiempo determinado", salario: 27000,
+      rfc: "SOCI980115WX7", curp: "SOCI980115HNLTDV17", nss: "10203040522",
+      tel: "81 6100 2017", email: "ivan.soto@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 23, nombre: "Karla", apellidos: "Morales Dávila",
+      puesto: "UI/UX Designer", depto: "Tecnología",
+      ingreso: "2023-03-27", contrato: "Indefinido", salario: 34000,
+      rfc: "MODK940625YZ8", curp: "MODK940625MNLRVR18", nss: "10203040523",
+      tel: "81 6100 2018", email: "karla.morales@datamovil.com",
+      estatus: "Activo", jefe: "Daniela Salinas", sede: "Monterrey"
+    },
+    {
+      id: 24, nombre: "Óscar", apellidos: "Delgado Quiroga",
+      puesto: "Desarrollador Backend", depto: "Tecnología",
+      ingreso: "2025-01-13", contrato: "Periodo de prueba", salario: 26000,
+      rfc: "DEQO990918AB9", curp: "DEQO990918HNLLGS19", nss: "10203040524",
+      tel: "81 6100 2019", email: "oscar.delgado@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    {
+      id: 25, nombre: "Renata", apellidos: "Chávez Medina",
+      puesto: "Desarrolladora Backend", depto: "Tecnología",
+      ingreso: "2022-08-30", contrato: "Indefinido", salario: 39000,
+      rfc: "CHMR930412CD0", curp: "CHMR930412MNLHVN20", nss: "10203040525",
+      tel: "81 6100 2020", email: "renata.chavez@datamovil.com",
+      estatus: "Activo", jefe: "Juan Pablo Treviño", sede: "Monterrey"
+    },
+    // === OPERACIONES (26-39) — 14 nuevos ===
+    {
+      id: 26, nombre: "Miguel Ángel", apellidos: "Coronado Espinoza",
+      puesto: "Supervisor de Operaciones", depto: "Operaciones",
+      ingreso: "2020-03-09", contrato: "Indefinido", salario: 32000,
+      rfc: "COEM880516EF1", curp: "COEM880516HNLRSG21", nss: "20304050601",
+      tel: "81 7100 3001", email: "miguel.coronado@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 27, nombre: "Laura", apellidos: "Rangel Ortiz",
+      puesto: "Coordinadora de Operaciones", depto: "Operaciones",
+      ingreso: "2019-08-22", contrato: "Indefinido", salario: 36000,
+      rfc: "RAOL870714GH2", curp: "RAOL870714MNLNRR22", nss: "20304050602",
+      tel: "81 7100 3002", email: "laura.rangel@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 28, nombre: "Sergio", apellidos: "Estrada González",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2021-11-14", contrato: "Indefinido", salario: 25000,
+      rfc: "ESGS900320IJ3", curp: "ESGS900320HNLSTR23", nss: "20304050603",
+      tel: "81 7100 3003", email: "sergio.estrada@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 29, nombre: "Claudia", apellidos: "Navarro Sánchez",
+      puesto: "Ejecutiva de Operaciones", depto: "Operaciones",
+      ingreso: "2022-05-30", contrato: "Indefinido", salario: 22000,
+      rfc: "NASC940128KL4", curp: "NASC940128MNLVNL24", nss: "20304050604",
+      tel: "81 7100 3004", email: "claudia.navarro@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 30, nombre: "Raúl", apellidos: "Martínez Lara",
+      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
+      ingreso: "2023-01-16", contrato: "Indefinido", salario: 20000,
+      rfc: "MALR960415MN5", curp: "MALR960415HNLRRL25", nss: "20304050605",
+      tel: "81 7100 3005", email: "raul.martinez@datamovil.com",
+      estatus: "Activo", jefe: "Miguel Ángel Coronado", sede: "Monterrey"
+    },
+    {
+      id: 31, nombre: "Norma", apellidos: "Balderas Rivas",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2020-07-20", contrato: "Indefinido", salario: 26000,
+      rfc: "BARN880903OP6", curp: "BARN880903MNLLDR26", nss: "20304050606",
+      tel: "81 7100 3006", email: "norma.balderas@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 32, nombre: "Eduardo", apellidos: "Cisneros Tamez",
+      puesto: "Supervisor de Operaciones", depto: "Operaciones",
+      ingreso: "2021-02-10", contrato: "Indefinido", salario: 30000,
+      rfc: "CITE870225QR7", curp: "CITE870225HNLSMD27", nss: "20304050607",
+      tel: "81 7100 3007", email: "eduardo.cisneros@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 33, nombre: "Verónica", apellidos: "Palacios Cruz",
+      puesto: "Ejecutiva de Operaciones", depto: "Operaciones",
+      ingreso: "2023-08-07", contrato: "Tiempo determinado", salario: 19000,
+      rfc: "PACV950612ST8", curp: "PACV950612MNLLRR28", nss: "20304050608",
+      tel: "81 7100 3008", email: "veronica.palacios@datamovil.com",
+      estatus: "Activo", jefe: "Eduardo Cisneros", sede: "Monterrey"
+    },
+    {
+      id: 34, nombre: "Gerardo", apellidos: "Montes de Oca",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2022-09-25", contrato: "Indefinido", salario: 24000,
+      rfc: "MOOG910830UV9", curp: "MOOG910830HNLNDR29", nss: "20304050609",
+      tel: "81 7100 3009", email: "gerardo.montes@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 35, nombre: "Lucía", apellidos: "Quintero Adame",
+      puesto: "Ejecutiva de Operaciones", depto: "Operaciones",
+      ingreso: "2024-02-12", contrato: "Tiempo determinado", salario: 18000,
+      rfc: "QUAL970704WX0", curp: "QUAL970704MNLNDC30", nss: "20304050610",
+      tel: "81 7100 3010", email: "lucia.quintero@datamovil.com",
+      estatus: "Activo", jefe: "Miguel Ángel Coronado", sede: "Monterrey"
+    },
+    {
+      id: 36, nombre: "Adrián", apellidos: "Robles Villegas",
+      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
+      ingreso: "2021-06-03", contrato: "Indefinido", salario: 21000,
+      rfc: "ROVA890218YZ1", curp: "ROVA890218HNLBLD31", nss: "20304050611",
+      tel: "81 7100 3011", email: "adrian.robles@datamovil.com",
+      estatus: "Activo", jefe: "Eduardo Cisneros", sede: "Monterrey"
+    },
+    {
+      id: 37, nombre: "Teresa", apellidos: "Sandoval Garza",
+      puesto: "Coordinadora de Operaciones", depto: "Operaciones",
+      ingreso: "2020-10-18", contrato: "Indefinido", salario: 34000,
+      rfc: "SAGT860509AB2", curp: "SAGT860509MNLNRR32", nss: "20304050612",
+      tel: "81 7100 3012", email: "teresa.sandoval@datamovil.com",
+      estatus: "Activo", jefe: "Andrés Villarreal", sede: "Monterrey"
+    },
+    {
+      id: 38, nombre: "Francisco", apellidos: "Olivares Treviño",
+      puesto: "Analista de Operaciones", depto: "Operaciones",
+      ingreso: "2023-11-27", contrato: "Tiempo determinado", salario: 23000,
+      rfc: "OLTF940811CD3", curp: "OLTF940811HNLLVR33", nss: "20304050613",
+      tel: "81 7100 3013", email: "francisco.olivares@datamovil.com",
+      estatus: "Activo", jefe: "Laura Rangel", sede: "Monterrey"
+    },
+    {
+      id: 39, nombre: "Alicia", apellidos: "Cárdenas López",
+      puesto: "Ejecutiva de Operaciones", depto: "Operaciones",
+      ingreso: "2022-01-24", contrato: "Indefinido", salario: 20000,
+      rfc: "CALA930317EF4", curp: "CALA930317MNLRPL34", nss: "20304050614",
+      tel: "81 7100 3014", email: "alicia.cardenas@datamovil.com",
+      estatus: "Activo", jefe: "Miguel Ángel Coronado", sede: "Monterrey"
+    },
+    // === SOPORTE (40-48) — 9 nuevos ===
+    {
+      id: 40, nombre: "Arturo", apellidos: "Zamora Pedraza",
+      puesto: "Líder de Soporte", depto: "Soporte",
+      ingreso: "2019-12-02", contrato: "Indefinido", salario: 35000,
+      rfc: "ZAPA860710GH5", curp: "ZAPA860710HNLMPR35", nss: "30405060701",
+      tel: "81 8100 4001", email: "arturo.zamora@datamovil.com",
+      estatus: "Activo", jefe: "Director de Operaciones", sede: "Monterrey"
+    },
+    {
+      id: 41, nombre: "Diana", apellidos: "Calderón Mejía",
+      puesto: "Especialista L2", depto: "Soporte",
+      ingreso: "2021-05-17", contrato: "Indefinido", salario: 26000,
+      rfc: "CAMD910420IJ6", curp: "CAMD910420MNLLRN36", nss: "30405060702",
+      tel: "81 8100 4002", email: "diana.calderon@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 42, nombre: "Manuel", apellidos: "Solís Barrera",
+      puesto: "Especialista L1", depto: "Soporte",
+      ingreso: "2022-08-09", contrato: "Indefinido", salario: 19000,
+      rfc: "SOBM930815KL7", curp: "SOBM930815HNLLLRN37", nss: "30405060703",
+      tel: "81 8100 4003", email: "manuel.solis@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 43, nombre: "Cristina", apellidos: "Arellano Durán",
+      puesto: "Técnica de Soporte", depto: "Soporte",
+      ingreso: "2023-04-21", contrato: "Indefinido", salario: 17000,
+      rfc: "ARDC960530MN8", curp: "ARDC960530MNLRRL38", nss: "30405060704",
+      tel: "81 8100 4004", email: "cristina.arellano@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 44, nombre: "Julio", apellidos: "Bernal Ochoa",
+      puesto: "Especialista L1", depto: "Soporte",
+      ingreso: "2024-06-10", contrato: "Tiempo determinado", salario: 18000,
+      rfc: "BEOJ980225OP9", curp: "BEOJ980225HNLRRL39", nss: "30405060705",
+      tel: "81 8100 4005", email: "julio.bernal@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 45, nombre: "Rosa", apellidos: "Escobedo Tamez",
+      puesto: "Especialista L2", depto: "Soporte",
+      ingreso: "2021-10-30", contrato: "Indefinido", salario: 27000,
+      rfc: "ESTR900112QR0", curp: "ESTR900112MNLSCM40", nss: "30405060706",
+      tel: "81 8100 4006", email: "rosa.escobedo@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 46, nombre: "Víctor", apellidos: "Saldivar Guajardo",
+      puesto: "Técnico de Soporte", depto: "Soporte",
+      ingreso: "2023-12-18", contrato: "Indefinido", salario: 16500,
+      rfc: "SAGV970408ST1", curp: "SAGV970408HNLLLRC41", nss: "30405060707",
+      tel: "81 8100 4007", email: "victor.saldivar@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 47, nombre: "Elisa", apellidos: "Montalvo Reyes",
+      puesto: "Especialista L1", depto: "Soporte",
+      ingreso: "2024-09-02", contrato: "Periodo de prueba", salario: 16000,
+      rfc: "MORE990614UV2", curp: "MORE990614MNLNYL42", nss: "30405060708",
+      tel: "81 8100 4008", email: "elisa.montalvo@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    {
+      id: 48, nombre: "Ramón", apellidos: "Galván Herrera",
+      puesto: "Técnico de Soporte", depto: "Soporte",
+      ingreso: "2022-03-14", contrato: "Indefinido", salario: 17500,
+      rfc: "GAHR880920WX3", curp: "GAHR880920HNLLVM43", nss: "30405060709",
+      tel: "81 8100 4009", email: "ramon.galvan@datamovil.com",
+      estatus: "Activo", jefe: "Arturo Zamora", sede: "Monterrey"
+    },
+    // === RECURSOS HUMANOS (49-51) — 3 nuevos ===
+    {
+      id: 49, nombre: "Martha", apellidos: "Elizondo Cavazos",
+      puesto: "Gerente de RH", depto: "Recursos Humanos",
+      ingreso: "2019-04-15", contrato: "Indefinido", salario: 45000,
+      rfc: "ELCM850322YZ4", curp: "ELCM850322MNLLZR44", nss: "40506070801",
+      tel: "81 9100 5001", email: "martha.elizondo@datamovil.com",
+      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+    },
+    {
+      id: 50, nombre: "Javier", apellidos: "Rodríguez Berlanga",
+      puesto: "Coordinador de RH", depto: "Recursos Humanos",
+      ingreso: "2021-01-11", contrato: "Indefinido", salario: 30000,
+      rfc: "ROBJ900718AB5", curp: "ROBJ900718HNLDRL45", nss: "40506070802",
+      tel: "81 9100 5002", email: "javier.rodriguez@datamovil.com",
+      estatus: "Activo", jefe: "Martha Elizondo", sede: "Monterrey"
+    },
+    {
+      id: 51, nombre: "Ana Lucía", apellidos: "Garza Peña",
+      puesto: "Auxiliar de RH", depto: "Recursos Humanos",
+      ingreso: "2023-07-03", contrato: "Indefinido", salario: 22000,
+      rfc: "GAPA970510CD6", curp: "GAPA970510MNLRRN46", nss: "40506070803",
+      tel: "81 9100 5003", email: "analucia.garza@datamovil.com",
+      estatus: "Activo", jefe: "Martha Elizondo", sede: "Monterrey"
+    },
+    // === ADMINISTRACIÓN (52-55) — 4 nuevos ===
+    {
+      id: 52, nombre: "Gloria", apellidos: "Treviño Salazar",
+      puesto: "Gerente Administrativo", depto: "Administración",
+      ingreso: "2019-02-18", contrato: "Indefinido", salario: 42000,
+      rfc: "TRSG840625EF7", curp: "TRSG840625MNLRVL47", nss: "50607080901",
+      tel: "81 9200 6001", email: "gloria.trevino@datamovil.com",
+      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+    },
+    {
+      id: 53, nombre: "Enrique", apellidos: "Mora Villarreal",
+      puesto: "Contador", depto: "Administración",
+      ingreso: "2020-06-22", contrato: "Indefinido", salario: 34000,
+      rfc: "MOVE880914GH8", curp: "MOVE880914HNLRRN48", nss: "50607080902",
+      tel: "81 9200 6002", email: "enrique.mora@datamovil.com",
+      estatus: "Activo", jefe: "Gloria Treviño", sede: "Monterrey"
+    },
+    {
+      id: 54, nombre: "Liliana", apellidos: "Orozco Martínez",
+      puesto: "Auxiliar Contable", depto: "Administración",
+      ingreso: "2022-11-07", contrato: "Tiempo determinado", salario: 19000,
+      rfc: "ORML950318IJ9", curp: "ORML950318MNLRRL49", nss: "50607080903",
+      tel: "81 9200 6003", email: "liliana.orozco@datamovil.com",
+      estatus: "Activo", jefe: "Enrique Mora", sede: "Monterrey"
+    },
+    {
+      id: 55, nombre: "Tomás", apellidos: "Sepúlveda Ayala",
+      puesto: "Asistente de Dirección", depto: "Administración",
+      ingreso: "2023-10-16", contrato: "Tiempo determinado", salario: 18000,
+      rfc: "SEAT970805KL0", curp: "SEAT970805HNLPYM50", nss: "50607080904",
+      tel: "81 9200 6004", email: "tomas.sepulveda@datamovil.com",
+      estatus: "Activo", jefe: "Gloria Treviño", sede: "Monterrey"
     }
   ],
   expediente: {
@@ -2363,7 +2769,57 @@ const state = {
     2: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     3: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
     4: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    5: {ine: true, curp: true, acta: false, domicilio: true, contrato: false}
+    5: {ine: true, curp: true, acta: false, domicilio: true, contrato: false},
+    6: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    7: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    8: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    9: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    10: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    11: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    12: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    13: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    14: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    15: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    16: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    17: {ine: true, curp: false, acta: true, domicilio: true, contrato: true},
+    18: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    19: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    20: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    21: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    22: {ine: true, curp: true, acta: false, domicilio: false, contrato: true},
+    23: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    24: {ine: false, curp: true, acta: false, domicilio: false, contrato: true},
+    25: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    26: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    27: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    28: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    29: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    30: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    31: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    32: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    33: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    34: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    35: {ine: true, curp: true, acta: true, domicilio: true, contrato: false},
+    36: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    37: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    38: {ine: true, curp: false, acta: true, domicilio: true, contrato: true},
+    39: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    40: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    41: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    42: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    43: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    44: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    45: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    46: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    47: {ine: false, curp: true, acta: true, domicilio: true, contrato: false},
+    48: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    49: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    50: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    51: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    52: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    53: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    54: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    55: {ine: true, curp: true, acta: true, domicilio: true, contrato: true}
   },
   asistencia: [93, 95, 94, 96, 94, 95, 94, 96],
   empresa: "Datamovil"
