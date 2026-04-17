@@ -1325,14 +1325,234 @@ body {
   animation: fieldHighlight 2s ease;
 }
 
+/* ============================================
+   DASHBOARD v2 — Liz KPIs & Paneles
+   ============================================ */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--brand-primary);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.kpi-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.kpi-value {
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.kpi-trend {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.kpi-trend.green { color: var(--success); }
+.kpi-trend.gray { color: var(--text-muted); }
+.kpi-trend.yellow { color: var(--warning); }
+
+.dash-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dash-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dash-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.dash-panel-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.contract-list, .plan-list, .alert-list-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contract-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.contract-item:last-child { border-bottom: none; }
+
+.contract-name { color: var(--text-primary); font-weight: 500; }
+
+.date-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.date-badge.red { background: #fee2e2; color: #991b1b; }
+.date-badge.yellow { background: #fef3c7; color: #92400e; }
+.date-badge.green { background: #d1fae5; color: #065f46; }
+
+.plan-item {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.plan-item:last-child { border-bottom: none; }
+
+.plan-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.plan-meta {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.plan-meta.done {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.alert-compact {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 12px;
+}
+
+.alert-compact:last-child { border-bottom: none; }
+
+.alert-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.alert-compact-text {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.alert-compact-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 400;
+  display: block;
+  margin-top: 1px;
+}
+
+.donut-sm {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.donut-sm .donut-center .num { font-size: 20px; }
+.donut-sm .donut-center .lbl { font-size: 9px; }
+
+.line-chart-container { padding: 8px 0; }
+
+.line-chart-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 4px 0;
+}
+
+.line-chart-labels span {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
+  width: 24px;
+}
+
+.quick-actions {
+  background: #f0f5f4;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quick-btn {
+  padding: 8px 14px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.quick-btn:hover {
+  border-color: var(--brand-primary);
+  background: var(--brand-soft);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
   .sidebar { display: none; }
-  .kpi-grid, .docs-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .docs-grid { grid-template-columns: repeat(2, 1fr); }
   .coming-soon-grid { grid-template-columns: repeat(2, 1fr); }
+  .dash-row-3 { grid-template-columns: 1fr; }
+  .dash-row-2 { grid-template-columns: 1fr; }
   .dashboard-row { grid-template-columns: 1fr; }
   .content { padding: 20px; }
+  .quick-actions { flex-direction: column; }
 }
 </style>
 </head>
@@ -1417,74 +1637,109 @@ body {
            ============================================ -->
       <div class="view active" id="view-dashboard">
 
-        <!-- KPIs -->
+        <!-- FILA 1: 5 KPIs -->
         <div class="kpi-grid">
-          <div class="kpi-card">
-            <div class="kpi-header">
-              <span class="kpi-label">Colaboradores activos</span>
-              <div class="kpi-icon">👥</div>
-            </div>
+          <div class="kpi-card" style="border-left-color: #0A5FAB;">
+            <div class="kpi-label">Activos</div>
             <div class="kpi-value" id="kpi-activos">5</div>
-            <div class="kpi-change"><span>↑</span> +1 este mes</div>
+            <div class="kpi-trend green">↑ +1 este mes</div>
           </div>
-
-          <div class="kpi-card">
-            <div class="kpi-header">
-              <span class="kpi-label">Asistencia del mes</span>
-              <div class="kpi-icon">✓</div>
-            </div>
-            <div class="kpi-value">96%</div>
-            <div class="kpi-change"><span>↑</span> +2% vs mes ant.</div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-header">
-              <span class="kpi-label">Posiciones abiertas</span>
-              <div class="kpi-icon">🎯</div>
-            </div>
-            <div class="kpi-value">2</div>
-            <div class="kpi-change warning"><span>●</span> En proceso</div>
-          </div>
-
-          <div class="kpi-card">
-            <div class="kpi-header">
-              <span class="kpi-label">Bajas del mes</span>
-              <div class="kpi-icon">↓</div>
-            </div>
+          <div class="kpi-card" style="border-left-color: #9e8075;">
+            <div class="kpi-label">Inactivos</div>
             <div class="kpi-value">0</div>
-            <div class="kpi-change neutral"><span>—</span> Sin cambios</div>
+            <div class="kpi-trend gray">— sin cambios</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #108277;">
+            <div class="kpi-label">Asistencia</div>
+            <div class="kpi-value" id="kpi-asistencia">94%</div>
+            <div class="kpi-trend green">↑ +1% vs ant.</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #564dba;">
+            <div class="kpi-label">Capacitación</div>
+            <div class="kpi-value">82%</div>
+            <div class="kpi-trend yellow">● en progreso</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #edc283;">
+            <div class="kpi-label">Reclutamiento</div>
+            <div class="kpi-value" id="kpi-reclutamiento">3</div>
+            <div class="kpi-trend yellow">● vacantes abiertas</div>
           </div>
         </div>
 
-        <!-- Row 2: Chart + Alertas -->
-        <div class="dashboard-row">
+        <!-- FILA 2: 3 paneles accionables -->
+        <div class="dash-row-3">
 
-          <!-- Asistencia semanal -->
-          <div class="panel">
-            <div class="panel-header">
-              <h3 class="panel-title">Asistencia por semana</h3>
-              <span class="panel-action">Últimas 8 semanas</span>
-            </div>
-            <div class="chart-container" id="chart-asistencia">
-              <!-- Generado por JS -->
+          <div class="dash-panel">
+            <div class="dash-panel-title">⏰ Contratos por vencer</div>
+            <div class="contract-list">
+              <div class="contract-item">
+                <span class="contract-name">Luis Fernando Reyes</span>
+                <span class="date-badge yellow">20 may</span>
+              </div>
+              <div class="contract-item">
+                <span class="contract-name">Patricia Gómez</span>
+                <span class="date-badge green">18 jun</span>
+              </div>
+              <div class="contract-item">
+                <span class="contract-name">Mariana Esquivel</span>
+                <span class="date-badge green">05 jul</span>
+              </div>
             </div>
           </div>
 
-          <!-- Colaboradores por departamento -->
-          <div class="panel">
-            <div class="panel-header">
-              <h3 class="panel-title">Por departamento</h3>
+          <div class="dash-panel">
+            <div class="dash-panel-title">✅ Planes de acción por vencer</div>
+            <div class="plan-list">
+              <div class="plan-item">
+                <div class="plan-title">Plan onboarding devs</div>
+                <div class="plan-meta">Responsable: Juan Pablo · Vence 10 may</div>
+              </div>
+              <div class="plan-item">
+                <div class="plan-title">Revisión estructura ops</div>
+                <div class="plan-meta">Responsable: Andrés · Vence 20 jun</div>
+              </div>
+              <div class="plan-item">
+                <div class="plan-title">Capacitación NOM-035</div>
+                <div class="plan-meta done">● Implementado</div>
+              </div>
             </div>
+          </div>
+
+          <div class="dash-panel">
+            <div class="dash-panel-title">🔔 Alertas operativas</div>
+            <div class="alert-list-compact">
+              <div class="alert-compact">
+                <span class="alert-dot" style="background: var(--info);"></span>
+                <div class="alert-compact-text">🎂 Cumpleaños este mes<span class="alert-compact-sub">Mariana Esquivel (22 abr) · Luis Fernando Reyes (11 abr)</span></div>
+              </div>
+              <div class="alert-compact">
+                <span class="alert-dot" style="background: #0A5FAB;"></span>
+                <div class="alert-compact-text">🎉 Aniversarios laborales<span class="alert-compact-sub">Juan Pablo Treviño · 4 años el 14 febrero</span></div>
+              </div>
+              <div class="alert-compact">
+                <span class="alert-dot" style="background: var(--warning);"></span>
+                <div class="alert-compact-text">📋 Expedientes incompletos<span class="alert-compact-sub">1 colaborador pendiente</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FILA 3: Distribución + Tendencia -->
+        <div class="dash-row-2">
+
+          <div class="dash-panel">
+            <div class="dash-panel-title">Colaboradores por departamento</div>
             <div class="donut-container">
-              <div class="donut">
-                <svg width="140" height="140" viewBox="0 0 140 140">
-                  <circle cx="70" cy="70" r="55" fill="none" stroke="var(--border-light)" stroke-width="14"/>
-                  <circle id="donut-1" cx="70" cy="70" r="55" fill="none" stroke="#0A5FAB" stroke-width="14"
-                          stroke-dasharray="138.2 345.5" stroke-dashoffset="0" transform="rotate(-90 70 70)" stroke-linecap="round"/>
-                  <circle id="donut-2" cx="70" cy="70" r="55" fill="none" stroke="#5BA3DD" stroke-width="14"
-                          stroke-dasharray="103.6 345.5" stroke-dashoffset="-138.2" transform="rotate(-90 70 70)" stroke-linecap="round"/>
-                  <circle id="donut-3" cx="70" cy="70" r="55" fill="none" stroke="#003366" stroke-width="14"
-                          stroke-dasharray="69.1 345.5" stroke-dashoffset="-241.8" transform="rotate(-90 70 70)" stroke-linecap="round"/>
+              <div class="donut-sm">
+                <svg width="90" height="90" viewBox="0 0 90 90">
+                  <circle cx="45" cy="45" r="35" fill="none" stroke="var(--border-light)" stroke-width="10"/>
+                  <circle id="donut-1" cx="45" cy="45" r="35" fill="none" stroke="#0A5FAB" stroke-width="10"
+                          stroke-dasharray="87.9 219.9" stroke-dashoffset="0" transform="rotate(-90 45 45)" stroke-linecap="round"/>
+                  <circle id="donut-2" cx="45" cy="45" r="35" fill="none" stroke="#5BA3DD" stroke-width="10"
+                          stroke-dasharray="87.9 219.9" stroke-dashoffset="-87.9" transform="rotate(-90 45 45)" stroke-linecap="round"/>
+                  <circle id="donut-3" cx="45" cy="45" r="35" fill="none" stroke="#003366" stroke-width="10"
+                          stroke-dasharray="44 219.9" stroke-dashoffset="-175.8" transform="rotate(-90 45 45)" stroke-linecap="round"/>
                 </svg>
                 <div class="donut-center">
                   <div class="num" id="donut-total">5</div>
@@ -1511,44 +1766,23 @@ body {
             </div>
           </div>
 
+          <div class="dash-panel">
+            <div class="dash-panel-title">Tendencia de asistencia</div>
+            <div style="font-size: 10px; color: var(--text-muted); margin: -8px 0 8px;">Últimas 8 semanas</div>
+            <div class="line-chart-container">
+              <svg id="chart-asistencia" width="100%" height="60" viewBox="0 0 280 60" preserveAspectRatio="none"></svg>
+              <div class="line-chart-labels" id="chart-labels"></div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Alertas operativas -->
-        <div class="panel">
-          <div class="panel-header">
-            <h3 class="panel-title">Alertas operativas</h3>
-            <span class="panel-action">Ver todas →</span>
-          </div>
-          <div class="alerts-list">
-            <div class="alert-item info">
-              <div class="alert-text">
-                🎂 Cumpleaños este mes
-                <span class="sub">Mariana Esquivel (22 abr) · Luis Fernando Reyes (11 abr)</span>
-              </div>
-              <span class="alert-count">2</span>
-            </div>
-            <div class="alert-item">
-              <div class="alert-text">
-                🎉 Aniversarios laborales
-                <span class="sub">Juan Pablo Treviño · 4 años el 14 febrero</span>
-              </div>
-              <span class="alert-count">1</span>
-            </div>
-            <div class="alert-item warning">
-              <div class="alert-text">
-                📋 Documentos pendientes de expediente
-                <span class="sub">1 colaborador con checklist incompleto</span>
-              </div>
-              <span class="alert-count">1</span>
-            </div>
-            <div class="alert-item warning">
-              <div class="alert-text">
-                ⏰ Contratos por vencer (próximos 30 días)
-                <span class="sub">Sin contratos próximos a vencer</span>
-              </div>
-              <span class="alert-count">0</span>
-            </div>
-          </div>
+        <!-- FILA 4: Accesos rápidos -->
+        <div class="quick-actions">
+          <button class="quick-btn" onclick="openEmployeeModal()">+ Colaborador</button>
+          <button class="quick-btn" onclick="switchView('docs')">📄 Generar constancia</button>
+          <button class="quick-btn" onclick="switchView('modulos')">🎯 Ver vacantes</button>
+          <button class="quick-btn" onclick="openBulkModal()">⬆ Carga masiva</button>
         </div>
 
       </div>
@@ -2278,8 +2512,8 @@ function updateDashboard() {
   document.getElementById('dept-adm').textContent = adm;
   document.getElementById('dept-com').textContent = com;
 
-  // Actualizar donut dinámicamente
-  const circ = 2 * Math.PI * 55; // ≈ 345.5
+  // Actualizar donut dinámicamente (radio 35)
+  const circ = 2 * Math.PI * 35; // ≈ 219.9
   const safeTotal = Math.max(total, 1);
   const l1 = (ops/safeTotal) * circ;
   const l2 = (adm/safeTotal) * circ;
@@ -2294,22 +2528,32 @@ function updateDashboard() {
 }
 
 // ============================================
-// CHART ASISTENCIA
+// CHART ASISTENCIA — Línea SVG
 // ============================================
 function renderChart() {
-  const container = document.getElementById('chart-asistencia');
-  const max = 100;
-  container.innerHTML = state.asistencia.map((v, i) => {
-    const h = (v / max) * 160;
-    return `
-      <div class="chart-bar">
-        <div class="bar" style="height: ${h}px;">
-          <div class="bar-value">${v}%</div>
-        </div>
-        <div class="bar-label">S${i+1}</div>
-      </div>
-    `;
-  }).join('');
+  const svg = document.getElementById('chart-asistencia');
+  const labels = document.getElementById('chart-labels');
+  const data = state.asistencia;
+  const n = data.length;
+  const w = 280, h = 60;
+  const minV = Math.min(...data) - 5;
+  const maxV = Math.max(...data) + 2;
+  const range = maxV - minV || 1;
+
+  const pts = data.map((v, i) => {
+    const x = (i / (n - 1)) * (w - 20) + 10;
+    const y = h - ((v - minV) / range) * (h - 10) - 5;
+    return [x, y];
+  });
+
+  svg.innerHTML =
+    '<polyline points="' + pts.map(p => p[0]+','+p[1]).join(' ') + '" fill="none" stroke="var(--brand-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    pts.map((p, i) =>
+      '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3" fill="var(--brand-primary)" stroke="var(--white)" stroke-width="1.5"/>' +
+      '<title>' + data[i] + '%</title>'
+    ).join('');
+
+  labels.innerHTML = data.map((_, i) => '<span>S' + (i+1) + '</span>').join('');
 }
 
 // ============================================
