@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub BPO — Horux</title>
+<style>
+/* ============================================
+   HUB BPO — Estilo Horux tenue
+   ============================================ */
+:root {
+  --horux-green: #003834;
+  --horux-brown: #9e8075;
+  --horux-teal: #108277;
+  --horux-cream: #f0f5f4;
+  --horux-green-soft: #e8efee;
+  --horux-teal-soft: #d5e8e5;
+  --text-primary: #1a2b29;
+  --text-secondary: #5a6b68;
+  --text-muted: #8a9996;
+  --border: #e4ebea;
+  --white: #ffffff;
+
+  /* HT Rent brand */
+  --htrent-primary: #3FD33F;
+  --htrent-dark: #1E3A5F;
+  --htrent-soft: #eaf9ea;
+
+  /* Datamovil brand */
+  --datamovil-primary: #0A5FAB;
+  --datamovil-soft: #e6f0fa;
+
+  --shadow-sm: 0 1px 3px rgba(0,56,52,0.04), 0 1px 2px rgba(0,56,52,0.06);
+  --shadow-md: 0 4px 12px rgba(0,56,52,0.06), 0 2px 4px rgba(0,56,52,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,56,52,0.08), 0 4px 12px rgba(0,56,52,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TOP BAR
+   ============================================ */
+.topbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-logo {
+  width: 36px;
+  height: 36px;
+  background: var(--horux-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.topbar-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar-title .main {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: var(--horux-green);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.topbar-title .sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--horux-teal-soft);
+  color: var(--horux-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* ============================================
+   HUB LAYOUT
+   ============================================ */
+.hub-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+.hub-header {
+  margin-bottom: 48px;
+}
+
+.hub-eyebrow {
+  font-size: 11px;
+  color: var(--horux-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hub-title {
+  font-family: Arial, sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--horux-green);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hub-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+/* Estadísticas rápidas */
+.hub-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+  padding: 28px 32px;
+  background: var(--horux-cream);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.hub-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hub-stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.hub-stat-value {
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--horux-green);
+  letter-spacing: -0.02em;
+}
+
+.hub-stat-trend {
+  font-size: 12px;
+  color: var(--horux-teal);
+  font-weight: 500;
+}
+
+/* Projects grid */
+.hub-section-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.project-card:hover::before { opacity: 1; }
+
+.project-card[data-client="htrent"] { --accent: var(--htrent-primary); }
+.project-card[data-client="datamovil"] { --accent: var(--datamovil-primary); }
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.project-logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.project-logo-htrent {
+  color: var(--htrent-dark);
+}
+
+.project-logo-htrent .accent { color: var(--htrent-primary); }
+
+.project-logo-datamovil {
+  color: var(--datamovil-primary);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.project-status {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: var(--horux-teal-soft);
+  color: var(--horux-teal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-name {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.project-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.project-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-value {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.metric-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.project-cta .arrow {
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-cta .arrow {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.hub-footer {
+  text-align: center;
+  padding: 40px;
+  margin-top: 64px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.hub-footer strong {
+  color: var(--horux-green);
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .topbar { padding: 14px 20px; }
+  .hub-container { padding: 32px 20px; }
+  .hub-title { font-size: 32px; }
+  .hub-stats { grid-template-columns: repeat(2, 1fr); padding: 20px; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="topbar-logo">H</div>
+    <div class="topbar-title">
+      <span class="main">Hub BPO</span>
+      <span class="sub">Horux · Gestión Integral</span>
+    </div>
+  </div>
+  <div class="topbar-user">
+    <span>Carla Berrón</span>
+    <div class="user-avatar">CB</div>
+  </div>
+</div>
+
+<!-- HUB CONTENT -->
+<div class="hub-container">
+
+  <div class="hub-header">
+    <div class="hub-eyebrow">Panel de Administración</div>
+    <h1 class="hub-title">Proyectos BPO Activos</h1>
+    <p class="hub-subtitle">Selecciona un proyecto para acceder a su plataforma de gestión de capital humano. Cada plataforma está configurada con la identidad y necesidades específicas del cliente.</p>
+  </div>
+
+  <!-- Estadísticas consolidadas -->
+  <div class="hub-stats">
+    <div class="hub-stat">
+      <span class="hub-stat-label">Proyectos activos</span>
+      <span class="hub-stat-value">2</span>
+      <span class="hub-stat-trend">HT Rent · Datamovil</span>
+    </div>
+    <div class="hub-stat">
+      <span class="hub-stat-label">Colaboradores totales</span>
+      <span class="hub-stat-value" id="total-colaboradores">10</span>
+      <span class="hub-stat-trend">↑ Todos activos</span>
+    </div>
+    <div class="hub-stat">
+      <span class="hub-stat-label">Generalistas asignadas</span>
+      <span class="hub-stat-value">2</span>
+      <span class="hub-stat-trend">Liz · Generalista 2</span>
+    </div>
+    <div class="hub-stat">
+      <span class="hub-stat-label">Líder de línea</span>
+      <span class="hub-stat-value" style="font-size: 20px; padding-top: 6px;">Ricardo</span>
+      <span class="hub-stat-trend">Dirección BPO</span>
+    </div>
+  </div>
+
+  <!-- Grid de proyectos -->
+  <div class="hub-section-title">Plataformas por Cliente</div>
+  <div class="projects-grid">
+
+    <!-- HT RENT -->
+    <a href="htrent.html" class="project-card" data-client="htrent" style="text-decoration: none; color: inherit;">
+      <div class="project-card-header">
+        <div class="project-logo project-logo-htrent">
+          HT RENT <span class="accent">&gt;</span>
+        </div>
+        <div class="project-status">Activo</div>
+      </div>
+      <h2 class="project-name">HT Rent</h2>
+      <p class="project-description">Empresa de arrendamiento. Generalista asignada: Liz. Sede principal en Monterrey.</p>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="metric-value" id="htrent-count">5</span>
+          <span class="metric-label">Colaboradores</span>
+        </div>
+        <div class="project-metric">
+          <span class="metric-value">96%</span>
+          <span class="metric-label">Asistencia</span>
+        </div>
+        <div class="project-metric">
+          <span class="metric-value">2</span>
+          <span class="metric-label">Vacantes</span>
+        </div>
+      </div>
+      <div class="project-cta">
+        <span>Acceder a plataforma</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DATAMOVIL -->
+    <a href="datamovil.html" class="project-card" data-client="datamovil" style="text-decoration: none; color: inherit;">
+      <div class="project-card-header">
+        <div class="project-logo project-logo-datamovil">
+          🛒 DATAMOVIL
+        </div>
+        <div class="project-status">Activo</div>
+      </div>
+      <h2 class="project-name">Datamovil</h2>
+      <p class="project-description">Empresa de servicios de datos y movilidad. Generalista asignada. Operación activa.</p>
+      <div class="project-metrics">
+        <div class="project-metric">
+          <span class="metric-value" id="datamovil-count">5</span>
+          <span class="metric-label">Colaboradores</span>
+        </div>
+        <div class="project-metric">
+          <span class="metric-value">94%</span>
+          <span class="metric-label">Asistencia</span>
+        </div>
+        <div class="project-metric">
+          <span class="metric-value">1</span>
+          <span class="metric-label">Vacantes</span>
+        </div>
+      </div>
+      <div class="project-cta">
+        <span>Acceder a plataforma</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="hub-footer">
+  <strong>Horux Business Consulting</strong> · Plataforma BPO · Versión Demo 1.0
+</div>
+
+</body>
+</html>
