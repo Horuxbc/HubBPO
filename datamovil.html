@@ -1541,6 +1541,9 @@ body {
   background: var(--brand-soft);
 }
 
+.table tr.row-inactive td { opacity: 0.55; }
+.table tr.row-inactive:hover td { opacity: 0.75; }
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
@@ -1646,7 +1649,7 @@ body {
           </div>
           <div class="kpi-card" style="border-left-color: #9e8075;">
             <div class="kpi-label">Inactivos</div>
-            <div class="kpi-value">0</div>
+            <div class="kpi-value" id="kpi-inactivos">0</div>
             <div class="kpi-trend gray">— sin cambios</div>
           </div>
           <div class="kpi-card" style="border-left-color: #108277;">
@@ -2878,8 +2881,12 @@ function renderEmployees() {
   tbody.innerHTML = filtered.map(e => {
     const initials = (e.nombre[0] + e.apellidos[0]).toUpperCase();
     const badge = e.estatus === 'Activo' ? 'badge-success' : 'badge-neutral';
+    const isInactive = e.estatus !== 'Activo';
+    const toggleBtn = isInactive
+      ? '<button class="icon-btn" onclick="toggleEmployeeStatus('+e.id+')" title="Reactivar" style="background:#d1fae5;">✅</button>'
+      : '<button class="icon-btn" onclick="toggleEmployeeStatus('+e.id+')" title="Dar de baja">🚫</button>';
     return `
-      <tr>
+      <tr class="${isInactive ? 'row-inactive' : ''}">
         <td>
           <div class="employee-cell">
             <div class="employee-avatar">${initials}</div>
@@ -2897,6 +2904,7 @@ function renderEmployees() {
           <div class="row-actions">
             <button class="icon-btn" onclick="editEmployee(${e.id})" title="Editar">✏️</button>
             <button class="icon-btn" onclick="quickDoc(${e.id})" title="Generar documento">📄</button>
+            ${toggleBtn}
           </div>
         </td>
       </tr>
@@ -2951,7 +2959,10 @@ function renderExpediente() {
 // ============================================
 function updateDashboard() {
   const total = state.employees.length;
-  document.getElementById('kpi-activos').textContent = total;
+  const activos = state.employees.filter(e => e.estatus === 'Activo').length;
+  const inactivos = total - activos;
+  document.getElementById('kpi-activos').textContent = activos;
+  document.getElementById('kpi-inactivos').textContent = inactivos;
   document.getElementById('donut-total').textContent = total;
 
   // Conteo por departamento
@@ -3086,6 +3097,25 @@ function saveEmployee() {
   closeModal('modal-employee');
   renderEmployees();
   switchView('dashboard');
+}
+
+// ============================================
+// ALTA / BAJA DE COLABORADOR
+// ============================================
+function toggleEmployeeStatus(id) {
+  const emp = state.employees.find(e => e.id === id);
+  if (!emp) return;
+  const fullName = emp.nombre + ' ' + emp.apellidos;
+  if (emp.estatus === 'Activo') {
+    if (!confirm('¿Dar de baja a ' + fullName + '?\n\nEl colaborador pasará a estatus Inactivo.')) return;
+    emp.estatus = 'Inactivo';
+    toast('↓ ' + fullName + ' dado de baja');
+  } else {
+    if (!confirm('¿Reactivar a ' + fullName + '?')) return;
+    emp.estatus = 'Activo';
+    toast('✓ ' + fullName + ' reactivado');
+  }
+  renderEmployees();
 }
 
 // ============================================
