@@ -1645,40 +1645,57 @@ body {
 .ind-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 18px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.ind-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.ind-card-cat {
+  font-size: 11px;
+  color: #8a9996;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .ind-card-name {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 10px;
+  color: #1a2b29;
+}
+
+.ind-card-info {
+  width: 22px;
+  height: 22px;
+  background: #f4f5f4;
+  border: 1px solid #e4ebea;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #8a9996;
+  cursor: help;
+  flex-shrink: 0;
 }
 
 .ind-card-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
-}
-
-.ind-card-value {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.ind-card-unit {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 400;
+  margin-bottom: 8px;
 }
 
 .ind-semaforo {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -1686,25 +1703,77 @@ body {
 .ind-semaforo.green { background: #10b981; }
 .ind-semaforo.yellow { background: #f59e0b; }
 .ind-semaforo.red { background: #ef4444; }
+.ind-semaforo.gray { background: #8a9996; }
+
+.ind-card-value {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a2b29;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.ind-card-unit {
+  font-size: 14px;
+  color: #8a9996;
+  font-weight: 400;
+}
+
+.ind-card-context {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 11px;
+}
 
 .ind-card-trend {
-  font-size: 10px;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
-.ind-sparkline {
-  margin-bottom: 10px;
+.ind-card-trend.green { color: #10b981; }
+.ind-card-trend.yellow { color: #f59e0b; }
+.ind-card-trend.red { color: #ef4444; }
+.ind-card-trend.gray { color: #8a9996; }
+
+.ind-card-meta {
+  color: #8a9996;
 }
 
-.ind-formula {
-  background: var(--bg);
-  border-radius: 6px;
-  padding: 8px 10px;
+.ind-sparkline { margin-bottom: 4px; }
+
+.ind-spark-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  margin-bottom: 12px;
+}
+
+.ind-spark-labels span {
+  font-size: 9px;
+  color: #8a9996;
+}
+
+.ind-insight {
+  background: #f7f5f1;
+  border-left: 3px solid #108277;
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.ind-insight-label {
   font-size: 10px;
-  font-family: monospace;
-  color: var(--text-muted);
-  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #108277;
+  margin-bottom: 4px;
+}
+
+.ind-insight-text {
+  font-size: 12px;
+  color: #1a2b29;
+  line-height: 1.5;
 }
 
 /* Responsive */
@@ -2249,7 +2318,7 @@ body {
 
         <div class="ind-header">
           <div class="ind-header-left">
-            <h3 style="font-size:11px;color:var(--text-muted);margin-top:4px;">Fórmula visible debajo de cada indicador para validación</h3>
+            <h3 style="font-size:11px;color:var(--text-muted);margin-top:4px;">Pasa el cursor sobre ⓘ para ver la fórmula técnica de cada indicador</h3>
           </div>
           <div class="ind-period">
             <select disabled><option>Marzo 2026</option></select>
@@ -2259,25 +2328,29 @@ body {
 
         <!-- Resumen General -->
         <div class="ind-summary">
-          <div class="ind-summary-card">
+          <div class="ind-summary-card" style="border-left-color:#8a9996;">
             <div class="ind-summary-label">Headcount total</div>
             <div class="ind-summary-value">25</div>
-            <div class="ind-summary-trend green">↑ +1 vs feb</div>
+            <div class="ind-summary-trend gray">Meta: plantilla planeada</div>
+            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento estable. HC alineado con plan de negocio para Q2.</div></div>
           </div>
-          <div class="ind-summary-card">
+          <div class="ind-summary-card" style="border-left-color:#8a9996;">
             <div class="ind-summary-label">Evolución HC</div>
             <div class="ind-summary-value">+4%</div>
-            <div class="ind-summary-trend green">crecimiento sostenido</div>
+            <div class="ind-summary-trend gray">Referencia: +3% mensual</div>
+            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento sostenido +4% mes. Seguimiento al pipeline de vacantes abiertas para mantener ritmo.</div></div>
           </div>
-          <div class="ind-summary-card">
+          <div class="ind-summary-card" style="border-left-color:#8a9996;">
             <div class="ind-summary-label">Altas del mes</div>
             <div class="ind-summary-value">2</div>
-            <div class="ind-summary-trend gray">—</div>
+            <div class="ind-summary-trend gray">Según plan</div>
+            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">2 altas · 100% en tiempo y forma.</div></div>
           </div>
-          <div class="ind-summary-card" style="border-left-color:#f59e0b;">
+          <div class="ind-summary-card" style="border-left-color:#8a9996;">
             <div class="ind-summary-label">Bajas del mes</div>
             <div class="ind-summary-value">1</div>
-            <div class="ind-summary-trend yellow">atención</div>
+            <div class="ind-summary-trend gray">&lt;2 por mes</div>
+            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">1 baja voluntaria. Causa: mejor oferta externa. Oportunidad de revisar banda salarial de Administración.</div></div>
           </div>
         </div>
 
@@ -2285,28 +2358,31 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🔍 Reclutamiento y Selección</div>
           <div class="ind-grid">
+
             <div class="ind-card">
-              <div class="ind-card-name">Tiempo de cobertura</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">22</span>
-                <span class="ind-card-unit">días</span>
-                <span class="ind-semaforo yellow"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">Tiempo de cobertura</div></div>
+                <span class="ind-card-info" title="Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↓ 3 días vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,2 72,12 96,12 120,18" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="2" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="18" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">22</span><span class="ind-card-unit">días</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↓ 3 días vs feb</span><span class="ind-card-meta">Meta: &lt;25 días</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,8 24,12 48,4 72,16 96,16 120,26 120,36 0,36" fill="url(#sg1)"/><polyline points="0,8 24,12 48,4 72,16 96,16 120,26" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="26" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Tendencia a la baja 4 meses consecutivos. Efecto del pipeline activo y canales abiertos con headhunters. Mantener banco de candidatos calificados.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">% de vacantes cubiertas en tiempo</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">85</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">% de vacantes cubiertas en tiempo</div></div>
+                <span class="ind-card-info" title="Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 5% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,16 72,14 96,10 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">85</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↑ 5% vs feb</span><span class="ind-card-meta">Meta: &gt;80%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,16 120,6 120,36 0,36" fill="url(#sg2)"/><polyline points="0,28 24,24 48,20 72,16 96,16 120,6" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Por encima de meta. Proceso estabilizado. Mantener seguimiento semanal del pipeline.</div></div>
             </div>
+
           </div>
         </div>
 
@@ -2314,28 +2390,31 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">💰 Compensaciones y Nómina</div>
           <div class="ind-grid">
+
             <div class="ind-card">
-              <div class="ind-card-name">Costo de nómina</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">$780K</span>
-                <span class="ind-card-unit"></span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Costo de nómina</div></div>
+                <span class="ind-card-info" title="Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 2.1% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,26 24,22 48,20 72,16 96,12 120,6" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="26" r="2" fill="#3FD33F"/><circle cx="24" cy="22" r="2" fill="#3FD33F"/><circle cx="48" cy="20" r="2" fill="#3FD33F"/><circle cx="72" cy="16" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="6" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)</div>
+              <div class="ind-card-row"><span class="ind-semaforo gray"></span><span class="ind-card-value">$780K</span><span class="ind-card-unit"></span></div>
+              <div class="ind-card-context"><span class="ind-card-trend gray">↑ 2.1% vs feb</span><span class="ind-card-meta">Ref: crec. &lt;3% mensual</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8a9996" stop-opacity="0.3"/><stop offset="100%" stop-color="#8a9996" stop-opacity="0"/></linearGradient></defs><polygon points="0,30 24,26 48,22 72,20 96,18 120,8 120,36 0,36" fill="url(#sg3)"/><polyline points="0,30 24,26 48,22 72,20 96,18 120,8" fill="none" stroke="#8a9996" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#8a9996"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento alineado con contrataciones del periodo. Sin desviaciones respecto a presupuesto anual.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">Incidencias de nómina</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">3</span>
-                <span class="ind-card-unit"></span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Incidencias de nómina</div></div>
+                <span class="ind-card-info" title="Fórmula: Total de ajustes, retrasos o errores detectados en el periodo">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↓ 1 vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,12 72,10 96,14 120,18" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="12" r="2" fill="#3FD33F"/><circle cx="72" cy="10" r="2" fill="#3FD33F"/><circle cx="96" cy="14" r="2" fill="#3FD33F"/><circle cx="120" cy="18" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: Total de ajustes, retrasos o errores detectados en el periodo</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">3</span><span class="ind-card-unit"></span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↓ 1 vs feb</span><span class="ind-card-meta">Meta: &lt;5</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,6 24,10 48,14 72,12 96,14 120,22 120,36 0,36" fill="url(#sg4)"/><polyline points="0,6 24,10 48,14 72,12 96,14 120,22" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="22" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Reducción sostenida. Automatización de validaciones funcionando. Replicar en cierre de abril.</div></div>
             </div>
+
           </div>
         </div>
 
@@ -2344,15 +2423,15 @@ body {
           <div class="ind-section-title">📚 Capacitación y Desarrollo</div>
           <div class="ind-grid">
             <div class="ind-card">
-              <div class="ind-card-name">% de cumplimiento del plan de capacitación</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">68</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo yellow"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">CAPACITACIÓN</div><div class="ind-card-name">% de cumplimiento del plan de capacitación</div></div>
+                <span class="ind-card-info" title="Fórmula: (Cursos completados / Cursos planeados del periodo) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 8% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,26 24,22 48,18 72,16 96,12 120,6" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="26" r="2" fill="#3FD33F"/><circle cx="24" cy="22" r="2" fill="#3FD33F"/><circle cx="48" cy="18" r="2" fill="#3FD33F"/><circle cx="72" cy="16" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="6" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Cursos completados / Cursos planeados del periodo) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">68</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↑ 8% vs feb</span><span class="ind-card-meta">Meta: &gt;80%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,30 24,26 48,22 72,20 96,18 120,8 120,36 0,36" fill="url(#sg5)"/><polyline points="0,30 24,26 48,22 72,20 96,18 120,8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#f59e0b"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Avance positivo pero aún por debajo de meta trimestral. Priorizar cursos obligatorios NOM-035 y NOM-030 antes de cierre de Q2.</div></div>
             </div>
           </div>
         </div>
@@ -2362,15 +2441,15 @@ body {
           <div class="ind-section-title">🧠 Desempeño</div>
           <div class="ind-grid">
             <div class="ind-card">
-              <div class="ind-card-name">% de evaluaciones de desempeño realizadas</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">92</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">DESEMPEÑO</div><div class="ind-card-name">% de evaluaciones de desempeño realizadas</div></div>
+                <span class="ind-card-info" title="Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 4% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,24 24,20 48,16 72,12 96,8 120,2" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="24" r="2" fill="#3FD33F"/><circle cx="24" cy="20" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="2" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">92</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↑ 4% vs feb</span><span class="ind-card-meta">Meta: &gt;90%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,14 120,4 120,36 0,36" fill="url(#sg6)"/><polyline points="0,28 24,24 48,20 72,16 96,14 120,4" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="4" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Meta superada. Ciclo de evaluación Q1 cerrado exitosamente. Próximo corte en junio.</div></div>
             </div>
           </div>
         </div>
@@ -2379,72 +2458,79 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🧾 Administración de Personal</div>
           <div class="ind-grid">
+
             <div class="ind-card">
-              <div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">8</span>
-                <span class="ind-card-unit">horas</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div></div>
+                <span class="ind-card-info" title="Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↓ 2h vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,10 72,12 96,16 120,20" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="10" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="16" r="2" fill="#3FD33F"/><circle cx="120" cy="20" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">8</span><span class="ind-card-unit">horas</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↓ 2h vs feb</span><span class="ind-card-meta">Meta: &lt;12h</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg7" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,4 24,8 48,12 72,14 96,18 120,26 120,36 0,36" fill="url(#sg7)"/><polyline points="0,4 24,8 48,12 72,14 96,18 120,26" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="26" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Respuesta más ágil que meta. SLA estabilizado. Evaluar si procede ajustar meta a &lt;8h.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">% de expedientes completos</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">88</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">% de expedientes completos</div></div>
+                <span class="ind-card-info" title="Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 3% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,24 24,20 48,16 72,12 96,8 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="24" r="2" fill="#3FD33F"/><circle cx="24" cy="20" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">88</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↑ 3% vs feb</span><span class="ind-card-meta">Meta: &gt;95%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg8" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,18 72,14 96,12 120,6 120,36 0,36" fill="url(#sg8)"/><polyline points="0,28 24,24 48,18 72,14 96,12 120,6" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#f59e0b"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Avance sostenido. Los 3 expedientes incompletos corresponden a altas recientes. Cerrar en corte del 30 de abril.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">Rotación total</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">8.5</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo yellow"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación total</div></div>
+                <span class="ind-card-info" title="Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 0.3% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,16 72,14 96,10 120,8" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="8" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">8.5</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend yellow">↑ 0.3% vs feb</span><span class="ind-card-meta">Meta: &lt;10%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg9" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,14 120,8 120,36 0,36" fill="url(#sg9)"/><polyline points="0,28 24,24 48,20 72,16 96,14 120,8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#f59e0b"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Dentro de meta pero con tendencia sostenida al alza 6 meses. Revisar entrevistas de salida para identificar patrón.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">Rotación voluntaria</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">6.1</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo yellow"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación voluntaria</div></div>
+                <span class="ind-card-info" title="Fórmula: (Bajas por renuncia / Headcount promedio) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 0.2% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,20 24,18 48,16 72,14 96,10 120,8" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="20" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="8" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Bajas por renuncia / Headcount promedio) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">6.1</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend yellow">↑ 0.2% vs feb</span><span class="ind-card-meta">Meta: &lt;5%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg10" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,16 120,10 120,36 0,36" fill="url(#sg10)"/><polyline points="0,28 24,24 48,20 72,16 96,16 120,10" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="10" r="3.5" fill="#f59e0b"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Sostenida al alza 4 meses. Revisar salidas de talento clave en Comercial y Operaciones. Oportunidad de evaluar banda salarial y plan de carrera.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">Índice de ausentismo</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">2.3</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de ausentismo</div></div>
+                <span class="ind-card-info" title="Fórmula: (Días de ausencia / Días laborables totales) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↓ 0.1% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,6 24,10 48,12 72,14 96,18 120,22" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="6" r="2" fill="#3FD33F"/><circle cx="24" cy="10" r="2" fill="#3FD33F"/><circle cx="48" cy="12" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="18" r="2" fill="#3FD33F"/><circle cx="120" cy="22" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Días de ausencia / Días laborables totales) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">2.3</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↓ 0.1% vs feb</span><span class="ind-card-meta">Meta: &lt;3%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg11" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,6 24,10 48,12 72,14 96,18 120,22 120,36 0,36" fill="url(#sg11)"/><polyline points="0,6 24,10 48,12 72,14 96,18 120,22" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="22" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Dentro de meta y con tendencia positiva. Patrón estable, sin alertas.</div></div>
             </div>
+
             <div class="ind-card">
-              <div class="ind-card-name">Índice de retardos</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">4.2</span>
-                <span class="ind-card-unit">%</span>
-                <span class="ind-semaforo yellow"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de retardos</div></div>
+                <span class="ind-card-info" title="Fórmula: (Total retardos / Total asistencias del periodo) × 100">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↓ 0.5% vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,10 72,14 96,18 120,20" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="10" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="18" r="2" fill="#3FD33F"/><circle cx="120" cy="20" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: (Total retardos / Total asistencias del periodo) × 100</div>
+              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">4.2</span><span class="ind-card-unit">%</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↓ 0.5% vs feb</span><span class="ind-card-meta">Meta: &lt;3%</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg12" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,4 24,8 48,12 72,16 96,16 120,24 120,36 0,36" fill="url(#sg12)"/><polyline points="0,4 24,8 48,12 72,16 96,16 120,24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="24" r="3.5" fill="#f59e0b"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Mejora sostenida pero aún sobre meta. Considerar revisión de políticas de tolerancia y horarios flexibles.</div></div>
             </div>
+
           </div>
         </div>
 
@@ -2453,15 +2539,15 @@ body {
           <div class="ind-section-title">🏢 Servicio de RH / Experiencia del Empleado</div>
           <div class="ind-grid">
             <div class="ind-card">
-              <div class="ind-card-name">Evaluación de Servicio de RH</div>
-              <div class="ind-card-row">
-                <span class="ind-card-value">8.4</span>
-                <span class="ind-card-unit">/ 10</span>
-                <span class="ind-semaforo green"></span>
+              <div class="ind-card-header">
+                <div><div class="ind-card-cat">EXPERIENCIA DEL EMPLEADO</div><div class="ind-card-name">Evaluación de Servicio de RH</div></div>
+                <span class="ind-card-info" title="Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH">ⓘ</span>
               </div>
-              <div class="ind-card-trend">↑ 0.2 vs feb</div>
-              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,14 72,12 96,8 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="14" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
-              <div class="ind-formula">Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH</div>
+              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">8.4</span><span class="ind-card-unit">/ 10</span></div>
+              <div class="ind-card-context"><span class="ind-card-trend green">↑ 0.2 vs feb</span><span class="ind-card-meta">Meta: &gt;8.0</span></div>
+              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg13" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,26 24,22 48,18 72,14 96,14 120,6 120,36 0,36" fill="url(#sg13)"/><polyline points="0,26 24,22 48,18 72,14 96,14 120,6" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#10b981"/></svg></div>
+              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
+              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Por encima de meta. Tiempo de respuesta y trato al colaborador son las fortalezas. Oportunidad: fortalecer comunicación de beneficios.</div></div>
             </div>
           </div>
         </div>
