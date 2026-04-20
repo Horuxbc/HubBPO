@@ -1544,6 +1544,169 @@ body {
 .table tr.row-inactive td { opacity: 0.55; }
 .table tr.row-inactive:hover td { opacity: 0.75; }
 
+/* ============================================
+   INDICADORES DE RH
+   ============================================ */
+.ind-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.ind-header-left h3 {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.ind-period {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ind-period select {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 12px;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.ind-period-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.ind-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.ind-summary-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--brand-primary);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.ind-summary-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ind-summary-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.ind-summary-trend {
+  font-size: 10px;
+}
+
+.ind-summary-trend.green { color: #10b981; }
+.ind-summary-trend.gray { color: var(--text-muted); }
+.ind-summary-trend.yellow { color: #f59e0b; }
+
+.ind-section {
+  margin-bottom: 28px;
+}
+
+.ind-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.ind-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.ind-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.ind-card-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.ind-card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ind-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.ind-card-unit {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.ind-semaforo {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ind-semaforo.green { background: #10b981; }
+.ind-semaforo.yellow { background: #f59e0b; }
+.ind-semaforo.red { background: #ef4444; }
+
+.ind-card-trend {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.ind-sparkline {
+  margin-bottom: 10px;
+}
+
+.ind-formula {
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 10px;
+  font-family: monospace;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
@@ -1556,6 +1719,9 @@ body {
   .dashboard-row { grid-template-columns: 1fr; }
   .content { padding: 20px; }
   .quick-actions { flex-direction: column; }
+  .ind-summary { grid-template-columns: repeat(2, 1fr); }
+  .ind-grid { grid-template-columns: 1fr; }
+  .ind-header { flex-direction: column; gap: 12px; }
 }
 </style>
 </head>
@@ -1597,6 +1763,15 @@ body {
       <a class="nav-item" data-view="expediente">
         <span class="nav-icon">📁</span>
         <span>Expedientes</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Analítica</div>
+      <a class="nav-item" data-view="indicadores">
+        <span class="nav-icon">📈</span>
+        <span>Indicadores de RH</span>
+        <span class="nav-badge" style="background:#108277;color:#fff;">NUEVO</span>
       </a>
     </div>
 
@@ -2048,6 +2223,246 @@ body {
             <div class="module-tile-icon">📞</div>
             <div class="module-tile-title">Referencias laborales</div>
             <div class="module-tile-soon">Próximamente</div>
+          </div>
+        </div>
+
+        <h3 style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 700;">Analítica y reportes</h3>
+        <div class="coming-soon-grid" style="margin-bottom: 28px;">
+          <div class="module-tile" onclick="switchView('indicadores')">
+            <div class="module-tile-icon">📈</div>
+            <div class="module-tile-title">Indicadores de RH</div>
+            <div class="module-tile-soon" style="color: var(--brand-primary);">ACTIVO</div>
+          </div>
+          <div class="module-tile">
+            <div class="module-tile-icon">📊</div>
+            <div class="module-tile-title">Reportes Ejecutivos</div>
+            <div class="module-tile-soon">Próximamente</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ============================================
+           VIEW: INDICADORES DE RH
+           ============================================ -->
+      <div class="view" id="view-indicadores">
+
+        <div class="ind-header">
+          <div class="ind-header-left">
+            <h3 style="font-size:11px;color:var(--text-muted);margin-top:4px;">Fórmula visible debajo de cada indicador para validación</h3>
+          </div>
+          <div class="ind-period">
+            <select disabled><option>Marzo 2026</option></select>
+            <span class="ind-period-note">Navegación por mes · Próximamente</span>
+          </div>
+        </div>
+
+        <!-- Resumen General -->
+        <div class="ind-summary">
+          <div class="ind-summary-card">
+            <div class="ind-summary-label">Headcount total</div>
+            <div class="ind-summary-value">25</div>
+            <div class="ind-summary-trend green">↑ +1 vs feb</div>
+          </div>
+          <div class="ind-summary-card">
+            <div class="ind-summary-label">Evolución HC</div>
+            <div class="ind-summary-value">+4%</div>
+            <div class="ind-summary-trend green">crecimiento sostenido</div>
+          </div>
+          <div class="ind-summary-card">
+            <div class="ind-summary-label">Altas del mes</div>
+            <div class="ind-summary-value">2</div>
+            <div class="ind-summary-trend gray">—</div>
+          </div>
+          <div class="ind-summary-card" style="border-left-color:#f59e0b;">
+            <div class="ind-summary-label">Bajas del mes</div>
+            <div class="ind-summary-value">1</div>
+            <div class="ind-summary-trend yellow">atención</div>
+          </div>
+        </div>
+
+        <!-- S1: Reclutamiento -->
+        <div class="ind-section">
+          <div class="ind-section-title">🔍 Reclutamiento y Selección</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">Tiempo de cobertura</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">22</span>
+                <span class="ind-card-unit">días</span>
+                <span class="ind-semaforo yellow"></span>
+              </div>
+              <div class="ind-card-trend">↓ 3 días vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,2 72,12 96,12 120,18" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="2" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="18" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">% de vacantes cubiertas en tiempo</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">85</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↑ 5% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,16 72,14 96,10 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S2: Compensaciones -->
+        <div class="ind-section">
+          <div class="ind-section-title">💰 Compensaciones y Nómina</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">Costo de nómina</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">$780K</span>
+                <span class="ind-card-unit"></span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↑ 2.1% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,26 24,22 48,20 72,16 96,12 120,6" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="26" r="2" fill="#3FD33F"/><circle cx="24" cy="22" r="2" fill="#3FD33F"/><circle cx="48" cy="20" r="2" fill="#3FD33F"/><circle cx="72" cy="16" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="6" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">Incidencias de nómina</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">3</span>
+                <span class="ind-card-unit"></span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↓ 1 vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,12 72,10 96,14 120,18" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="12" r="2" fill="#3FD33F"/><circle cx="72" cy="10" r="2" fill="#3FD33F"/><circle cx="96" cy="14" r="2" fill="#3FD33F"/><circle cx="120" cy="18" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: Total de ajustes, retrasos o errores detectados en el periodo</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S3: Capacitación -->
+        <div class="ind-section">
+          <div class="ind-section-title">📚 Capacitación y Desarrollo</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">% de cumplimiento del plan de capacitación</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">68</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo yellow"></span>
+              </div>
+              <div class="ind-card-trend">↑ 8% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,26 24,22 48,18 72,16 96,12 120,6" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="26" r="2" fill="#3FD33F"/><circle cx="24" cy="22" r="2" fill="#3FD33F"/><circle cx="48" cy="18" r="2" fill="#3FD33F"/><circle cx="72" cy="16" r="2" fill="#3FD33F"/><circle cx="96" cy="12" r="2" fill="#3FD33F"/><circle cx="120" cy="6" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Cursos completados / Cursos planeados del periodo) × 100</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S4: Desempeño -->
+        <div class="ind-section">
+          <div class="ind-section-title">🧠 Desempeño</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">% de evaluaciones de desempeño realizadas</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">92</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↑ 4% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,24 24,20 48,16 72,12 96,8 120,2" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="24" r="2" fill="#3FD33F"/><circle cx="24" cy="20" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="2" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S5: Administración de Personal -->
+        <div class="ind-section">
+          <div class="ind-section-title">🧾 Administración de Personal</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">8</span>
+                <span class="ind-card-unit">horas</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↓ 2h vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,10 72,12 96,16 120,20" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="10" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="16" r="2" fill="#3FD33F"/><circle cx="120" cy="20" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">% de expedientes completos</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">88</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↑ 3% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,24 24,20 48,16 72,12 96,8 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="24" r="2" fill="#3FD33F"/><circle cx="24" cy="20" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">Rotación total</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">8.5</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo yellow"></span>
+              </div>
+              <div class="ind-card-trend">↑ 0.3% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,16 72,14 96,10 120,8" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="8" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">Rotación voluntaria</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">6.1</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo yellow"></span>
+              </div>
+              <div class="ind-card-trend">↑ 0.2% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,20 24,18 48,16 72,14 96,10 120,8" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="20" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="16" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="10" r="2" fill="#3FD33F"/><circle cx="120" cy="8" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Bajas por renuncia / Headcount promedio) × 100</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">Índice de ausentismo</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">2.3</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↓ 0.1% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,6 24,10 48,12 72,14 96,18 120,22" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="6" r="2" fill="#3FD33F"/><circle cx="24" cy="10" r="2" fill="#3FD33F"/><circle cx="48" cy="12" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="18" r="2" fill="#3FD33F"/><circle cx="120" cy="22" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Días de ausencia / Días laborables totales) × 100</div>
+            </div>
+            <div class="ind-card">
+              <div class="ind-card-name">Índice de retardos</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">4.2</span>
+                <span class="ind-card-unit">%</span>
+                <span class="ind-semaforo yellow"></span>
+              </div>
+              <div class="ind-card-trend">↓ 0.5% vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,4 24,8 48,10 72,14 96,18 120,20" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="4" r="2" fill="#3FD33F"/><circle cx="24" cy="8" r="2" fill="#3FD33F"/><circle cx="48" cy="10" r="2" fill="#3FD33F"/><circle cx="72" cy="14" r="2" fill="#3FD33F"/><circle cx="96" cy="18" r="2" fill="#3FD33F"/><circle cx="120" cy="20" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: (Total retardos / Total asistencias del periodo) × 100</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- S6: Servicio de RH -->
+        <div class="ind-section">
+          <div class="ind-section-title">🏢 Servicio de RH / Experiencia del Empleado</div>
+          <div class="ind-grid">
+            <div class="ind-card">
+              <div class="ind-card-name">Evaluación de Servicio de RH</div>
+              <div class="ind-card-row">
+                <span class="ind-card-value">8.4</span>
+                <span class="ind-card-unit">/ 10</span>
+                <span class="ind-semaforo green"></span>
+              </div>
+              <div class="ind-card-trend">↑ 0.2 vs feb</div>
+              <div class="ind-sparkline"><svg width="100%" height="30" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 24,18 48,14 72,12 96,8 120,4" fill="none" stroke="#3FD33F" stroke-width="2" stroke-linecap="round"/><circle cx="0" cy="22" r="2" fill="#3FD33F"/><circle cx="24" cy="18" r="2" fill="#3FD33F"/><circle cx="48" cy="14" r="2" fill="#3FD33F"/><circle cx="72" cy="12" r="2" fill="#3FD33F"/><circle cx="96" cy="8" r="2" fill="#3FD33F"/><circle cx="120" cy="4" r="2" fill="#3FD33F"/></svg></div>
+              <div class="ind-formula">Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH</div>
+            </div>
           </div>
         </div>
 
@@ -2572,6 +2987,7 @@ function switchView(viewName) {
     crm: ["Colaboradores", "Gestión del personal activo"],
     docs: ["Generadores de documentos", "Creación automatizada desde ficha del colaborador"],
     expediente: ["Expedientes", "Control documental por colaborador"],
+    indicadores: ["Indicadores de RH", "Tablero de métricas operativas y estratégicas"],
     modulos: ["Todos los módulos", "Mapa completo de la plataforma"]
   };
   const t = titles[viewName];
