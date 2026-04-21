@@ -1776,6 +1776,37 @@ body {
   line-height: 1.5;
 }
 
+.ind-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ind-filter-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.ind-filter-pill:hover {
+  border-color: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.ind-filter-pill.active {
+  background: var(--brand-primary);
+  color: var(--white);
+  border-color: var(--brand-primary);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
@@ -1791,6 +1822,7 @@ body {
   .ind-summary { grid-template-columns: repeat(2, 1fr); }
   .ind-grid { grid-template-columns: 1fr; }
   .ind-header { flex-direction: column; gap: 12px; }
+  .ind-filters { gap: 6px; }
 }
 </style>
 </head>
@@ -2323,9 +2355,24 @@ body {
             <h3 style="font-size:11px;color:var(--text-muted);margin-top:4px;">Pasa el cursor sobre ⓘ para ver la fórmula técnica de cada indicador</h3>
           </div>
           <div class="ind-period">
-            <select disabled><option>Marzo 2026</option></select>
-            <span class="ind-period-note">Navegación por mes · Próximamente</span>
+            <select id="ind-month-select" onchange="updateIndicadores()">
+              <option value="oct25">Octubre 2025</option>
+              <option value="nov25">Noviembre 2025</option>
+              <option value="dic25">Diciembre 2025</option>
+              <option value="ene26">Enero 2026</option>
+              <option value="feb26">Febrero 2026</option>
+              <option value="mar26" selected>Marzo 2026</option>
+            </select>
           </div>
+        </div>
+
+        <div class="ind-filters" id="ind-dept-filters">
+          <button class="ind-filter-pill active" data-dept="todos" onclick="filterDept(this)">Todos</button>
+          <button class="ind-filter-pill" data-dept="Tecnología" onclick="filterDept(this)">Tecnología</button>
+          <button class="ind-filter-pill" data-dept="Operaciones" onclick="filterDept(this)">Operaciones</button>
+          <button class="ind-filter-pill" data-dept="Soporte" onclick="filterDept(this)">Soporte</button>
+          <button class="ind-filter-pill" data-dept="Recursos Humanos" onclick="filterDept(this)">RH</button>
+          <button class="ind-filter-pill" data-dept="Administración" onclick="filterDept(this)">Administración</button>
         </div>
 
         <div class="ind-summary">
@@ -2358,7 +2405,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🔍 Reclutamiento y Selección</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="tiempo_cobertura">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">Tiempo de cobertura</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas">ⓘ</span>
@@ -2369,7 +2416,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Tendencia al alza 4 meses. Vacantes de Tecnología senior están tomando más tiempo. Evaluar reforzar canales especializados o ampliar rango salarial.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="vacantes_cubiertas">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">% de vacantes cubiertas en tiempo</div></div>
                 <span class="ind-card-info" title="Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100">ⓘ</span>
@@ -2386,7 +2433,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">💰 Compensaciones y Nómina</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="costo_nomina">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Costo de nómina</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)">ⓘ</span>
@@ -2397,7 +2444,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Incremento por encima de referencia. Revisar causa: 3 altas de Tecnología con salarios competitivos en marzo.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="incidencias_nomina">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Incidencias de nómina</div></div>
                 <span class="ind-card-info" title="Fórmula: Total de ajustes, retrasos o errores detectados en el periodo">ⓘ</span>
@@ -2414,7 +2461,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">📚 Capacitación y Desarrollo</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="capacitacion">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">CAPACITACIÓN</div><div class="ind-card-name">% de cumplimiento del plan de capacitación</div></div>
                 <span class="ind-card-info" title="Fórmula: (Cursos completados / Cursos planeados del periodo) × 100">ⓘ</span>
@@ -2431,7 +2478,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🧠 Desempeño</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="evaluaciones">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">DESEMPEÑO</div><div class="ind-card-name">% de evaluaciones de desempeño realizadas</div></div>
                 <span class="ind-card-info" title="Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100">ⓘ</span>
@@ -2448,7 +2495,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🧾 Administración de Personal</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="tiempo_respuesta">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes">ⓘ</span>
@@ -2459,7 +2506,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">En meta por primera vez en el trimestre. Consolidar protocolos de atención para no retroceder.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="expedientes">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">% de expedientes completos</div></div>
                 <span class="ind-card-info" title="Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100">ⓘ</span>
@@ -2470,7 +2517,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Mejora constante. 5 expedientes con documentos pendientes de firma. Campaña de seguimiento con líderes directos.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="rotacion_total">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación total</div></div>
                 <span class="ind-card-info" title="Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100">ⓘ</span>
@@ -2481,7 +2528,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Por encima de meta y subiendo. Concentración en Soporte y Operaciones. Priorizar plan de retención antes de Q3.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="rotacion_voluntaria">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación voluntaria</div></div>
                 <span class="ind-card-info" title="Fórmula: (Bajas por renuncia / Headcount promedio) × 100">ⓘ</span>
@@ -2492,7 +2539,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Muy por encima de meta. Mercado tech presiona salarios. Analizar propuesta de valor para devs senior y considerar esquema de retención.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="ausentismo">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de ausentismo</div></div>
                 <span class="ind-card-info" title="Fórmula: (Días de ausencia / Días laborables totales) × 100">ⓘ</span>
@@ -2503,7 +2550,7 @@ body {
               <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Ligero arriba de meta. Tendencia correcta. Seguimiento cercano por área.</div></div>
             </div>
-            <div class="ind-card">
+            <div class="ind-card" data-ind="retardos">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de retardos</div></div>
                 <span class="ind-card-info" title="Fórmula: (Total retardos / Total asistencias del periodo) × 100">ⓘ</span>
@@ -2520,7 +2567,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🏢 Servicio de RH / Experiencia del Empleado</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="servicio_rh">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">EXPERIENCIA DEL EMPLEADO</div><div class="ind-card-name">Evaluación de Servicio de RH</div></div>
                 <span class="ind-card-info" title="Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH">ⓘ</span>
@@ -3919,6 +3966,136 @@ function simulateOCR() {
   dz.addEventListener('drop', e => { if (e.dataTransfer.files.length) simulateOCR(); });
   fi.addEventListener('change', () => { if (fi.files.length) simulateOCR(); });
 })();
+
+// ============================================
+// INDICADORES — DATOS POR MES Y DEPARTAMENTO
+// ============================================
+const indData = {
+  global: {
+    tiempo_cobertura:    {values:[22,24,25,26,26,28], unit:'días', meta:'<25 días', dir:'down'},
+    vacantes_cubiertas:  {values:[78,77,75,76,75,72], unit:'%', meta:'>80%', dir:'up'},
+    costo_nomina:        {values:[1980,2020,2050,2080,2080,2150], unit:'K', prefix:'$', meta:'crec. <3%', dir:'neutral'},
+    incidencias_nomina:  {values:[12,11,10,9,9,7], unit:'', meta:'<5', dir:'down'},
+    capacitacion:        {values:[55,60,65,68,69,74], unit:'%', meta:'>80%', dir:'up'},
+    evaluaciones:        {values:[70,74,78,81,83,85], unit:'%', meta:'>90%', dir:'up'},
+    tiempo_respuesta:    {values:[16,15,14,13,13,12], unit:'horas', meta:'<12h', dir:'down'},
+    expedientes:         {values:[82,85,87,89,90,91], unit:'%', meta:'>95%', dir:'up'},
+    rotacion_total:      {values:[8.5,9.0,9.8,10.4,10.4,11.2], unit:'%', meta:'<10%', dir:'down'},
+    rotacion_voluntaria: {values:[6.0,6.5,7.2,7.9,7.9,8.4], unit:'%', meta:'<5%', dir:'down'},
+    ausentismo:          {values:[3.8,3.6,3.5,3.4,3.3,3.1], unit:'%', meta:'<3%', dir:'down'},
+    retardos:            {values:[4.8,5.0,5.2,5.5,5.5,5.8], unit:'%', meta:'<3%', dir:'down'},
+    servicio_rh:         {values:[7.5,7.7,7.8,8.0,8.0,8.1], unit:'/10', meta:'>8.0', dir:'up'}
+  },
+  byDept: {
+    'Tecnología':        {tiempo_cobertura:[26,28,30,32,32,34], vacantes_cubiertas:[72,70,68,70,69,66], rotacion_total:[10.0,10.5,11.2,12.0,12.0,13.0], ausentismo:[3.2,3.0,2.9,2.8,2.7,2.5], retardos:[4.0,4.2,4.4,4.6,4.6,4.8]},
+    'Operaciones':       {tiempo_cobertura:[20,22,23,24,24,26], vacantes_cubiertas:[80,79,77,78,77,74], rotacion_total:[9.0,9.5,10.2,10.8,10.8,11.5], ausentismo:[4.2,4.0,3.9,3.8,3.7,3.5], retardos:[5.5,5.7,5.9,6.2,6.2,6.5]},
+    'Soporte':           {tiempo_cobertura:[18,19,20,21,21,22], vacantes_cubiertas:[82,81,79,80,79,76], rotacion_total:[7.5,8.0,8.5,9.0,9.0,9.8], ausentismo:[4.5,4.3,4.2,4.1,4.0,3.8], retardos:[6.0,6.2,6.5,6.8,6.8,7.2]},
+    'Recursos Humanos':  {tiempo_cobertura:[15,16,17,18,18,19], vacantes_cubiertas:[88,87,85,86,85,82], rotacion_total:[3.0,3.5,4.0,4.5,4.5,5.0], ausentismo:[2.0,1.8,1.7,1.6,1.5,1.4], retardos:[2.5,2.6,2.7,2.8,2.8,3.0]},
+    'Administración':    {tiempo_cobertura:[16,17,18,19,19,20], vacantes_cubiertas:[86,85,83,84,83,80], rotacion_total:[4.0,4.5,5.0,5.5,5.5,6.0], ausentismo:[2.5,2.3,2.2,2.1,2.0,1.9], retardos:[3.0,3.1,3.2,3.4,3.4,3.5]}
+  }
+};
+
+const monthLabels = ['Oct','Nov','Dic','Ene','Feb','Mar'];
+const monthKeys = ['oct25','nov25','dic25','ene26','feb26','mar26'];
+let currentDept = 'todos';
+
+function filterDept(btn) {
+  document.querySelectorAll('.ind-filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentDept = btn.dataset.dept;
+  updateIndicadores();
+}
+
+function getStatusColor(val, meta, dir) {
+  const num = parseFloat(meta.replace(/[^0-9.]/g,''));
+  if (dir === 'neutral') return 'gray';
+  if (dir === 'up') return val >= num ? 'green' : val >= num * 0.85 ? 'yellow' : 'red';
+  if (dir === 'down') return val <= num ? 'green' : val <= num * 1.2 ? 'yellow' : 'red';
+  return 'gray';
+}
+
+function buildSparkSvg(values, color, idx) {
+  const h = 36, w = 120;
+  const min = Math.min(...values) - (Math.max(...values)-Math.min(...values))*0.15;
+  const max = Math.max(...values) + (Math.max(...values)-Math.min(...values))*0.15;
+  const range = max - min || 1;
+  const pts = values.map((v,i) => {
+    const x = (i/(values.length-1)) * w;
+    const y = h - ((v - min)/range) * (h - 8) - 4;
+    return [x.toFixed(1), y.toFixed(1)];
+  });
+  const polyPts = pts.map(p=>p.join(',')).join(' ');
+  const polygonPts = polyPts + ' ' + w + ',' + h + ' 0,' + h;
+  const gid = 'dg' + idx;
+  const colors = {green:'#10b981',yellow:'#f59e0b',red:'#ef4444',gray:'#8a9996'};
+  const c = colors[color] || colors.gray;
+  const last = pts[pts.length-1];
+  return '<svg width="100%" height="'+h+'" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none">' +
+    '<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="'+c+'" stop-opacity="0.4"/><stop offset="100%" stop-color="'+c+'" stop-opacity="0"/></linearGradient></defs>' +
+    '<polygon points="'+polygonPts+'" fill="url(#'+gid+')"/>' +
+    '<polyline points="'+polyPts+'" fill="none" stroke="'+c+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<circle cx="'+last[0]+'" cy="'+last[1]+'" r="3.5" fill="'+c+'"/></svg>';
+}
+
+function updateIndicadores() {
+  const mi = monthKeys.indexOf(document.getElementById('ind-month-select').value);
+  const deptSrc = currentDept !== 'todos' ? indData.byDept[currentDept] : null;
+
+  document.querySelectorAll('.ind-card[data-ind]').forEach((card, cardIdx) => {
+    const key = card.dataset.ind;
+    const base = indData.global[key];
+    if (!base) return;
+    const vals = (deptSrc && deptSrc[key]) ? deptSrc[key] : base.values;
+    const val = vals[mi];
+    const prevVal = mi > 0 ? vals[mi-1] : null;
+    const color = getStatusColor(val, base.meta, base.dir);
+
+    const valEl = card.querySelector('.ind-card-value');
+    if (valEl) {
+      if (base.unit === 'K') {
+        valEl.textContent = (base.prefix||'') + (val >= 1000 ? (val/1000).toFixed(2) + 'M' : val + 'K');
+      } else {
+        valEl.textContent = (base.prefix||'') + (Number.isInteger(val) ? val : val.toFixed(1));
+      }
+    }
+
+    const unitEl = card.querySelector('.ind-card-unit');
+    if (unitEl) unitEl.textContent = base.unit === 'K' ? '' : base.unit;
+
+    const sem = card.querySelector('.ind-semaforo');
+    if (sem) sem.className = 'ind-semaforo ' + color;
+
+    const trendEl = card.querySelector('.ind-card-trend');
+    if (trendEl && prevVal !== null) {
+      const diff = val - prevVal;
+      const arrow = diff > 0 ? '↑' : diff < 0 ? '↓' : '—';
+      const absDiff = Math.abs(diff);
+      const diffStr = absDiff % 1 === 0 ? absDiff : absDiff.toFixed(1);
+      const prevMonth = monthLabels[mi-1] ? monthLabels[mi-1].toLowerCase() : '';
+      trendEl.textContent = arrow + ' ' + diffStr + (base.unit === '%' || base.unit === '/10' ? '' : ' ') + (base.unit !== 'K' && base.unit !== '' ? base.unit : '') + ' vs ' + prevMonth;
+      let trendColor = 'gray';
+      if (base.dir === 'up') trendColor = diff >= 0 ? 'green' : 'red';
+      else if (base.dir === 'down') trendColor = diff <= 0 ? 'green' : 'red';
+      trendEl.className = 'ind-card-trend ' + trendColor;
+    }
+
+    const sparkEl = card.querySelector('.ind-sparkline');
+    if (sparkEl) {
+      const sliceVals = vals.slice(0, mi + 1);
+      if (sliceVals.length > 1) sparkEl.innerHTML = buildSparkSvg(sliceVals, color, cardIdx + 1);
+    }
+
+    const labelsEl = card.querySelector('.ind-spark-labels');
+    if (labelsEl) labelsEl.innerHTML = monthLabels.slice(0, mi + 1).map(m => '<span>' + m + '</span>').join('');
+  });
+
+  const summaryCards = document.querySelectorAll('.ind-summary-card');
+  if (summaryCards.length >= 4) {
+    const hcBase = [48,50,51,52,52,55];
+    const hc = currentDept === 'todos' ? hcBase[mi] : Math.round(hcBase[mi] * (currentDept === 'Tecnología' ? 0.4 : currentDept === 'Operaciones' ? 0.29 : currentDept === 'Soporte' ? 0.18 : currentDept === 'Recursos Humanos' ? 0.055 : 0.073));
+    summaryCards[0].querySelector('.ind-summary-value').textContent = hc;
+  }
+}
 
 // Inicialización
 renderEmployees();

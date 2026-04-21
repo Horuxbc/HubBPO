@@ -1776,6 +1776,37 @@ body {
   line-height: 1.5;
 }
 
+.ind-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.ind-filter-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-secondary);
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.ind-filter-pill:hover {
+  border-color: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.ind-filter-pill.active {
+  background: var(--brand-primary);
+  color: var(--brand-dark);
+  border-color: var(--brand-primary);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .app { grid-template-columns: 1fr; }
@@ -1791,6 +1822,7 @@ body {
   .ind-summary { grid-template-columns: repeat(2, 1fr); }
   .ind-grid { grid-template-columns: 1fr; }
   .ind-header { flex-direction: column; gap: 12px; }
+  .ind-filters { gap: 6px; }
 }
 </style>
 </head>
@@ -2321,9 +2353,24 @@ body {
             <h3 style="font-size:11px;color:var(--text-muted);margin-top:4px;">Pasa el cursor sobre ⓘ para ver la fórmula técnica de cada indicador</h3>
           </div>
           <div class="ind-period">
-            <select disabled><option>Marzo 2026</option></select>
-            <span class="ind-period-note">Navegación por mes · Próximamente</span>
+            <select id="ind-month-select" onchange="updateIndicadores()">
+              <option value="oct25">Octubre 2025</option>
+              <option value="nov25">Noviembre 2025</option>
+              <option value="dic25">Diciembre 2025</option>
+              <option value="ene26">Enero 2026</option>
+              <option value="feb26">Febrero 2026</option>
+              <option value="mar26" selected>Marzo 2026</option>
+            </select>
           </div>
+        </div>
+
+        <div class="ind-filters" id="ind-dept-filters">
+          <button class="ind-filter-pill active" data-dept="todos" onclick="filterDept(this)">Todos</button>
+          <button class="ind-filter-pill" data-dept="Operaciones" onclick="filterDept(this)">Operaciones</button>
+          <button class="ind-filter-pill" data-dept="Administración" onclick="filterDept(this)">Administración</button>
+          <button class="ind-filter-pill" data-dept="Comercial" onclick="filterDept(this)">Comercial</button>
+          <button class="ind-filter-pill" data-dept="Recursos Humanos" onclick="filterDept(this)">RH</button>
+          <button class="ind-filter-pill" data-dept="Finanzas" onclick="filterDept(this)">Finanzas</button>
         </div>
 
         <!-- Resumen General -->
@@ -2359,7 +2406,7 @@ body {
           <div class="ind-section-title">🔍 Reclutamiento y Selección</div>
           <div class="ind-grid">
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="tiempo_cobertura">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">Tiempo de cobertura</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas">ⓘ</span>
@@ -2371,7 +2418,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Tendencia a la baja 4 meses consecutivos. Efecto del pipeline activo y canales abiertos con headhunters. Mantener banco de candidatos calificados.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="vacantes_cubiertas">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">% de vacantes cubiertas en tiempo</div></div>
                 <span class="ind-card-info" title="Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100">ⓘ</span>
@@ -2391,7 +2438,7 @@ body {
           <div class="ind-section-title">💰 Compensaciones y Nómina</div>
           <div class="ind-grid">
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="costo_nomina">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Costo de nómina</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)">ⓘ</span>
@@ -2403,7 +2450,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento alineado con contrataciones del periodo. Sin desviaciones respecto a presupuesto anual.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="incidencias_nomina">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Incidencias de nómina</div></div>
                 <span class="ind-card-info" title="Fórmula: Total de ajustes, retrasos o errores detectados en el periodo">ⓘ</span>
@@ -2422,7 +2469,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">📚 Capacitación y Desarrollo</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="capacitacion">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">CAPACITACIÓN</div><div class="ind-card-name">% de cumplimiento del plan de capacitación</div></div>
                 <span class="ind-card-info" title="Fórmula: (Cursos completados / Cursos planeados del periodo) × 100">ⓘ</span>
@@ -2440,7 +2487,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🧠 Desempeño</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="evaluaciones">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">DESEMPEÑO</div><div class="ind-card-name">% de evaluaciones de desempeño realizadas</div></div>
                 <span class="ind-card-info" title="Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100">ⓘ</span>
@@ -2459,7 +2506,7 @@ body {
           <div class="ind-section-title">🧾 Administración de Personal</div>
           <div class="ind-grid">
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="tiempo_respuesta">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div></div>
                 <span class="ind-card-info" title="Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes">ⓘ</span>
@@ -2471,7 +2518,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Respuesta más ágil que meta. SLA estabilizado. Evaluar si procede ajustar meta a &lt;8h.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="expedientes">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">% de expedientes completos</div></div>
                 <span class="ind-card-info" title="Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100">ⓘ</span>
@@ -2483,7 +2530,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Avance sostenido. Los 3 expedientes incompletos corresponden a altas recientes. Cerrar en corte del 30 de abril.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="rotacion_total">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación total</div></div>
                 <span class="ind-card-info" title="Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100">ⓘ</span>
@@ -2495,7 +2542,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Dentro de meta pero con tendencia sostenida al alza 6 meses. Revisar entrevistas de salida para identificar patrón.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="rotacion_voluntaria">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación voluntaria</div></div>
                 <span class="ind-card-info" title="Fórmula: (Bajas por renuncia / Headcount promedio) × 100">ⓘ</span>
@@ -2507,7 +2554,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Sostenida al alza 4 meses. Revisar salidas de talento clave en Comercial y Operaciones. Oportunidad de evaluar banda salarial y plan de carrera.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="ausentismo">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de ausentismo</div></div>
                 <span class="ind-card-info" title="Fórmula: (Días de ausencia / Días laborables totales) × 100">ⓘ</span>
@@ -2519,7 +2566,7 @@ body {
               <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Dentro de meta y con tendencia positiva. Patrón estable, sin alertas.</div></div>
             </div>
 
-            <div class="ind-card">
+            <div class="ind-card" data-ind="retardos">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de retardos</div></div>
                 <span class="ind-card-info" title="Fórmula: (Total retardos / Total asistencias del periodo) × 100">ⓘ</span>
@@ -2538,7 +2585,7 @@ body {
         <div class="ind-section">
           <div class="ind-section-title">🏢 Servicio de RH / Experiencia del Empleado</div>
           <div class="ind-grid">
-            <div class="ind-card">
+            <div class="ind-card" data-ind="servicio_rh">
               <div class="ind-card-header">
                 <div><div class="ind-card-cat">EXPERIENCIA DEL EMPLEADO</div><div class="ind-card-name">Evaluación de Servicio de RH</div></div>
                 <span class="ind-card-info" title="Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH">ⓘ</span>
@@ -3661,6 +3708,145 @@ function simulateOCR() {
   dz.addEventListener('drop', e => { if (e.dataTransfer.files.length) simulateOCR(); });
   fi.addEventListener('change', () => { if (fi.files.length) simulateOCR(); });
 })();
+
+// ============================================
+// INDICADORES — DATOS POR MES Y DEPARTAMENTO
+// ============================================
+const indData = {
+  // Months: oct25, nov25, dic25, ene26, feb26, mar26
+  // For department breakdown, values shift slightly per dept
+  global: {
+    tiempo_cobertura:    {values:[28,26,30,25,25,22], unit:'días', meta:'<25 días', dir:'down'},
+    vacantes_cubiertas:  {values:[72,75,78,80,80,85], unit:'%', meta:'>80%', dir:'up'},
+    costo_nomina:        {values:[735,745,755,760,765,780], unit:'K', prefix:'$', meta:'crec. <3%', dir:'neutral'},
+    incidencias_nomina:  {values:[6,5,4,4,4,3], unit:'', meta:'<5', dir:'down'},
+    capacitacion:        {values:[45,50,55,58,60,68], unit:'%', meta:'>80%', dir:'up'},
+    evaluaciones:        {values:[75,80,84,87,88,92], unit:'%', meta:'>90%', dir:'up'},
+    tiempo_respuesta:    {values:[14,12,11,10,10,8], unit:'horas', meta:'<12h', dir:'down'},
+    expedientes:         {values:[75,79,82,84,85,88], unit:'%', meta:'>95%', dir:'up'},
+    rotacion_total:      {values:[6.5,7.0,7.5,8.0,8.2,8.5], unit:'%', meta:'<10%', dir:'down'},
+    rotacion_voluntaria: {values:[4.5,5.0,5.5,5.9,5.9,6.1], unit:'%', meta:'<5%', dir:'down'},
+    ausentismo:          {values:[2.8,2.7,2.6,2.5,2.4,2.3], unit:'%', meta:'<3%', dir:'down'},
+    retardos:            {values:[5.5,5.2,4.9,4.7,4.7,4.2], unit:'%', meta:'<3%', dir:'down'},
+    servicio_rh:         {values:[7.8,7.9,8.0,8.2,8.2,8.4], unit:'/10', meta:'>8.0', dir:'up'}
+  },
+  byDept: {
+    'Operaciones':       {tiempo_cobertura:[30,28,32,27,27,24], vacantes_cubiertas:[70,73,76,78,78,83], rotacion_total:[7.0,7.5,8.0,8.5,8.7,9.0], ausentismo:[3.0,2.9,2.8,2.7,2.6,2.5], retardos:[6.0,5.7,5.4,5.2,5.2,4.8]},
+    'Administración':    {tiempo_cobertura:[25,23,27,22,22,19], vacantes_cubiertas:[75,78,81,83,83,88], rotacion_total:[5.5,6.0,6.5,7.0,7.2,7.5], ausentismo:[2.5,2.4,2.3,2.2,2.1,2.0], retardos:[4.5,4.2,3.9,3.7,3.7,3.2]},
+    'Comercial':         {tiempo_cobertura:[32,30,34,29,29,26], vacantes_cubiertas:[68,71,74,76,76,81], rotacion_total:[8.0,8.5,9.0,9.5,9.7,10.0], ausentismo:[3.2,3.1,3.0,2.9,2.8,2.7], retardos:[5.8,5.5,5.2,5.0,5.0,4.5]},
+    'Recursos Humanos':  {tiempo_cobertura:[20,18,22,17,17,15], vacantes_cubiertas:[80,83,86,88,88,92], rotacion_total:[3.0,3.5,4.0,4.5,4.7,5.0], ausentismo:[1.5,1.4,1.3,1.2,1.1,1.0], retardos:[3.0,2.8,2.5,2.3,2.3,2.0]},
+    'Finanzas':          {tiempo_cobertura:[22,20,24,19,19,17], vacantes_cubiertas:[78,81,84,86,86,90], rotacion_total:[4.0,4.5,5.0,5.5,5.7,6.0], ausentismo:[2.0,1.9,1.8,1.7,1.6,1.5], retardos:[3.5,3.2,2.9,2.7,2.7,2.4]}
+  }
+};
+
+const monthLabels = ['Oct','Nov','Dic','Ene','Feb','Mar'];
+const monthKeys = ['oct25','nov25','dic25','ene26','feb26','mar26'];
+let currentDept = 'todos';
+
+function filterDept(btn) {
+  document.querySelectorAll('.ind-filter-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentDept = btn.dataset.dept;
+  updateIndicadores();
+}
+
+function getStatusColor(val, meta, dir) {
+  const num = parseFloat(meta.replace(/[^0-9.]/g,''));
+  if (dir === 'neutral') return 'gray';
+  if (dir === 'up') return val >= num ? 'green' : val >= num * 0.85 ? 'yellow' : 'red';
+  if (dir === 'down') return val <= num ? 'green' : val <= num * 1.2 ? 'yellow' : 'red';
+  return 'gray';
+}
+
+function buildSparkSvg(values, color, idx) {
+  const h = 36, w = 120;
+  const min = Math.min(...values) - (Math.max(...values)-Math.min(...values))*0.15;
+  const max = Math.max(...values) + (Math.max(...values)-Math.min(...values))*0.15;
+  const range = max - min || 1;
+  const pts = values.map((v,i) => {
+    const x = (i/(values.length-1)) * w;
+    const y = h - ((v - min)/range) * (h - 8) - 4;
+    return [x.toFixed(1), y.toFixed(1)];
+  });
+  const polyPts = pts.map(p=>p.join(',')).join(' ');
+  const polygonPts = polyPts + ' ' + w + ',' + h + ' 0,' + h;
+  const gid = 'sg' + idx;
+  const colors = {green:'#10b981',yellow:'#f59e0b',red:'#ef4444',gray:'#8a9996'};
+  const c = colors[color] || colors.gray;
+  const last = pts[pts.length-1];
+  return '<svg width="100%" height="'+h+'" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none">' +
+    '<defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="'+c+'" stop-opacity="0.4"/><stop offset="100%" stop-color="'+c+'" stop-opacity="0"/></linearGradient></defs>' +
+    '<polygon points="'+polygonPts+'" fill="url(#'+gid+')"/>' +
+    '<polyline points="'+polyPts+'" fill="none" stroke="'+c+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<circle cx="'+last[0]+'" cy="'+last[1]+'" r="3.5" fill="'+c+'"/></svg>';
+}
+
+function updateIndicadores() {
+  const mi = monthKeys.indexOf(document.getElementById('ind-month-select').value);
+  const src = currentDept === 'todos' ? indData.global : null;
+  const deptSrc = currentDept !== 'todos' ? indData.byDept[currentDept] : null;
+
+  document.querySelectorAll('.ind-card[data-ind]').forEach((card, cardIdx) => {
+    const key = card.dataset.ind;
+    const base = indData.global[key];
+    if (!base) return;
+    const vals = (deptSrc && deptSrc[key]) ? deptSrc[key] : base.values;
+    const val = vals[mi];
+    const prevVal = mi > 0 ? vals[mi-1] : null;
+    const color = getStatusColor(val, base.meta, base.dir);
+
+    // Update value
+    const valEl = card.querySelector('.ind-card-value');
+    if (valEl) valEl.textContent = (base.prefix||'') + (Number.isInteger(val) ? val : val.toFixed ? (val % 1 === 0 ? val : val.toFixed(1)) : val) + (base.unit === 'K' ? 'K' : '');
+
+    const unitEl = card.querySelector('.ind-card-unit');
+    if (unitEl) unitEl.textContent = base.unit === 'K' ? '' : base.unit;
+
+    // Update semaforo
+    const sem = card.querySelector('.ind-semaforo');
+    if (sem) { sem.className = 'ind-semaforo ' + color; }
+
+    // Update trend
+    const trendEl = card.querySelector('.ind-card-trend');
+    if (trendEl && prevVal !== null) {
+      const diff = val - prevVal;
+      const arrow = diff > 0 ? '↑' : diff < 0 ? '↓' : '—';
+      const absDiff = Math.abs(diff);
+      const diffStr = absDiff % 1 === 0 ? absDiff : absDiff.toFixed(1);
+      const prevMonth = monthLabels[mi-1] ? monthLabels[mi-1].toLowerCase() : '';
+      trendEl.textContent = arrow + ' ' + diffStr + (base.unit === '%' || base.unit === '/10' ? '' : ' ') + (base.unit !== 'K' && base.unit !== '' ? base.unit : '') + ' vs ' + prevMonth;
+      // Color: for 'down' indicators, decrease is good (green)
+      let trendColor = 'gray';
+      if (base.dir === 'up') trendColor = diff >= 0 ? 'green' : 'red';
+      else if (base.dir === 'down') trendColor = diff <= 0 ? 'green' : 'red';
+      trendEl.className = 'ind-card-trend ' + trendColor;
+    }
+
+    // Update sparkline
+    const sparkEl = card.querySelector('.ind-sparkline');
+    if (sparkEl) {
+      const sliceVals = vals.slice(0, mi + 1);
+      if (sliceVals.length > 1) {
+        sparkEl.innerHTML = buildSparkSvg(sliceVals, color, cardIdx + 1);
+      }
+    }
+
+    // Update spark labels
+    const labelsEl = card.querySelector('.ind-spark-labels');
+    if (labelsEl) {
+      labelsEl.innerHTML = monthLabels.slice(0, mi + 1).map(m => '<span>' + m + '</span>').join('');
+    }
+  });
+
+  // Update summary cards
+  const summaryCards = document.querySelectorAll('.ind-summary-card');
+  if (summaryCards.length >= 4) {
+    // Headcount - simple estimate
+    const hcBase = [21,22,23,24,24,25];
+    const hc = currentDept === 'todos' ? hcBase[mi] : Math.round(hcBase[mi] * (currentDept === 'Operaciones' ? 0.4 : currentDept === 'Administración' ? 0.24 : currentDept === 'Comercial' ? 0.2 : 0.08));
+    summaryCards[0].querySelector('.ind-summary-value').textContent = hc;
+  }
+}
 
 // Inicialización
 renderEmployees();
