@@ -2362,15 +2362,16 @@ body {
               <option value="mar26" selected>Marzo 2026</option>
             </select>
           </div>
-        </div>
-
-        <div class="ind-filters" id="ind-dept-filters">
-          <button class="ind-filter-pill active" data-dept="todos" onclick="filterDept(this)">Todos</button>
-          <button class="ind-filter-pill" data-dept="Operaciones" onclick="filterDept(this)">Operaciones</button>
-          <button class="ind-filter-pill" data-dept="Administración" onclick="filterDept(this)">Administración</button>
-          <button class="ind-filter-pill" data-dept="Comercial" onclick="filterDept(this)">Comercial</button>
-          <button class="ind-filter-pill" data-dept="Recursos Humanos" onclick="filterDept(this)">RH</button>
-          <button class="ind-filter-pill" data-dept="Finanzas" onclick="filterDept(this)">Finanzas</button>
+          <div class="ind-period">
+            <select id="ind-dept-select" onchange="filterDept()">
+              <option value="todos">Todos los departamentos</option>
+              <option value="Operaciones">Operaciones</option>
+              <option value="Administración">Administración</option>
+              <option value="Comercial">Comercial</option>
+              <option value="Recursos Humanos">Recursos Humanos</option>
+              <option value="Finanzas">Finanzas</option>
+            </select>
+          </div>
         </div>
 
         <!-- Resumen General -->
@@ -3743,10 +3744,8 @@ const monthLabels = ['Oct','Nov','Dic','Ene','Feb','Mar'];
 const monthKeys = ['oct25','nov25','dic25','ene26','feb26','mar26'];
 let currentDept = 'todos';
 
-function filterDept(btn) {
-  document.querySelectorAll('.ind-filter-pill').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentDept = btn.dataset.dept;
+function filterDept() {
+  currentDept = document.getElementById('ind-dept-select').value;
   updateIndicadores();
 }
 
