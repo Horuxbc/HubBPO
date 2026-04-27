@@ -1919,27 +1919,27 @@ body {
           <div class="kpi-card" style="border-left-color: #3FD33F;">
             <div class="kpi-label">Activos</div>
             <div class="kpi-value" id="kpi-activos">25</div>
-            <div class="kpi-trend green">↑ +1 este mes</div>
+            <div class="kpi-trend gray" id="kpi-activos-trend">colaboradores</div>
           </div>
           <div class="kpi-card" style="border-left-color: #9e8075;">
             <div class="kpi-label">Inactivos</div>
             <div class="kpi-value" id="kpi-inactivos">0</div>
-            <div class="kpi-trend gray">— sin cambios</div>
+            <div class="kpi-trend gray">— sin movimientos</div>
           </div>
           <div class="kpi-card" style="border-left-color: #108277;">
             <div class="kpi-label">Asistencia</div>
-            <div class="kpi-value" id="kpi-asistencia">96%</div>
-            <div class="kpi-trend green">↑ +2% vs ant.</div>
+            <div class="kpi-value" id="kpi-asistencia">—</div>
+            <div class="kpi-trend gray">Pendiente captura</div>
           </div>
           <div class="kpi-card" style="border-left-color: #564dba;">
             <div class="kpi-label">Capacitación</div>
-            <div class="kpi-value">78%</div>
-            <div class="kpi-trend yellow">● en progreso</div>
+            <div class="kpi-value">—</div>
+            <div class="kpi-trend gray">Pendiente captura</div>
           </div>
           <div class="kpi-card" style="border-left-color: #edc283;">
             <div class="kpi-label">Reclutamiento</div>
-            <div class="kpi-value" id="kpi-reclutamiento">2</div>
-            <div class="kpi-trend yellow">● vacantes abiertas</div>
+            <div class="kpi-value" id="kpi-reclutamiento">0</div>
+            <div class="kpi-trend gray">vacantes abiertas</div>
           </div>
         </div>
 
@@ -1948,56 +1948,17 @@ body {
 
           <div class="dash-panel">
             <div class="dash-panel-title">⏰ Contratos por vencer</div>
-            <div class="contract-list">
-              <div class="contract-item">
-                <span class="contract-name">Daniel Castillo</span>
-                <span class="date-badge red">28 abr</span>
-              </div>
-              <div class="contract-item">
-                <span class="contract-name">Andrea Ruiz</span>
-                <span class="date-badge yellow">15 may</span>
-              </div>
-              <div class="contract-item">
-                <span class="contract-name">Mariana Quintero</span>
-                <span class="date-badge green">10 jun</span>
-              </div>
-            </div>
+            <div class="contract-list" id="contracts-list"></div>
           </div>
 
           <div class="dash-panel">
             <div class="dash-panel-title">✅ Planes de acción por vencer</div>
-            <div class="plan-list">
-              <div class="plan-item">
-                <div class="plan-title">Rediseño carga ops</div>
-                <div class="plan-meta">Responsable: RH · Vence 15 may</div>
-              </div>
-              <div class="plan-item">
-                <div class="plan-title">Taller liderazgo</div>
-                <div class="plan-meta">Responsable: Gerencia · Vence 30 jun</div>
-              </div>
-              <div class="plan-item">
-                <div class="plan-title">1:1 mensuales</div>
-                <div class="plan-meta done">● Implementado</div>
-              </div>
-            </div>
+            <div class="plan-list" id="plans-list"></div>
           </div>
 
           <div class="dash-panel">
             <div class="dash-panel-title">🔔 Alertas operativas</div>
-            <div class="alert-list-compact">
-              <div class="alert-compact">
-                <span class="alert-dot" style="background: var(--info);"></span>
-                <div class="alert-compact-text">🎂 Cumpleaños este mes<span class="alert-compact-sub">Roberto Salinas (18 abr) · Fernanda López (24 abr)</span></div>
-              </div>
-              <div class="alert-compact">
-                <span class="alert-dot" style="background: #3FD33F;"></span>
-                <div class="alert-compact-text">🎉 Aniversarios laborales<span class="alert-compact-sub">Carlos Méndez · 3 años el 22 abril</span></div>
-              </div>
-              <div class="alert-compact">
-                <span class="alert-dot" style="background: var(--warning);"></span>
-                <div class="alert-compact-text">📋 Expedientes incompletos<span class="alert-compact-sub">2 colaboradores pendientes</span></div>
-              </div>
-            </div>
+            <div class="alert-list-compact" id="alerts-list"></div>
           </div>
 
         </div>
@@ -2026,18 +1987,18 @@ body {
               <div class="donut-legend">
                 <div class="legend-item">
                   <span class="legend-color" style="background: #3FD33F;"></span>
-                  <span class="legend-label">Operaciones</span>
-                  <span class="legend-value" id="dept-ops">2</span>
+                  <span class="legend-label" id="dept-ops-label">—</span>
+                  <span class="legend-value" id="dept-ops">0</span>
                 </div>
                 <div class="legend-item">
                   <span class="legend-color" style="background: #1E3A5F;"></span>
-                  <span class="legend-label">Administración</span>
-                  <span class="legend-value" id="dept-adm">2</span>
+                  <span class="legend-label" id="dept-adm-label">—</span>
+                  <span class="legend-value" id="dept-adm">0</span>
                 </div>
                 <div class="legend-item">
                   <span class="legend-color" style="background: #108277;"></span>
-                  <span class="legend-label">Comercial</span>
-                  <span class="legend-value" id="dept-com">1</span>
+                  <span class="legend-label" id="dept-com-label">—</span>
+                  <span class="legend-value" id="dept-com">0</span>
                 </div>
               </div>
             </div>
@@ -3281,7 +3242,7 @@ const state = {
     45: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     46: {ine: false, curp: false, acta: true, domicilio: false, contrato: true}
   },
-  asistencia: [95, 97, 94, 98, 96, 95, 97, 96],
+  asistencia: [],
   empresa: "HT Rent"
 };
 
@@ -3421,35 +3382,135 @@ function updateDashboard() {
   const inactivos = total - activos;
   document.getElementById('kpi-activos').textContent = activos;
   document.getElementById('kpi-inactivos').textContent = inactivos;
-  document.getElementById('donut-total').textContent = total;
+  const totalEl = document.getElementById('donut-total');
+  if (totalEl) totalEl.textContent = total;
 
-  // Conteo por departamento
+  // Conteo dinámico por departamento (Top 3 reales)
   const deptos = {};
   state.employees.forEach(e => {
-    deptos[e.depto] = (deptos[e.depto] || 0) + 1;
+    const d = e.depto || 'Sin asignar';
+    deptos[d] = (deptos[d] || 0) + 1;
   });
+  const sorted = Object.entries(deptos).sort((a,b) => b[1] - a[1]);
+  const top3 = sorted.slice(0, 3);
+  const otros = sorted.slice(3).reduce((s, x) => s + x[1], 0);
 
-  const ops = deptos['Operaciones'] || 0;
-  const adm = deptos['Administración'] || 0;
-  const com = deptos['Comercial'] || 0;
+  const setLegend = (idLabel, idValue, label, value) => {
+    const lEl = document.getElementById(idLabel);
+    const vEl = document.getElementById(idValue);
+    if (lEl) lEl.textContent = label;
+    if (vEl) vEl.textContent = value;
+  };
+  setLegend('dept-ops-label', 'dept-ops', top3[0] ? top3[0][0] : '—', top3[0] ? top3[0][1] : 0);
+  setLegend('dept-adm-label', 'dept-adm', top3[1] ? top3[1][0] : '—', top3[1] ? top3[1][1] : 0);
+  setLegend('dept-com-label', 'dept-com', top3[2] ? top3[2][0] : (otros > 0 ? 'Otros' : '—'), top3[2] ? top3[2][1] : otros);
 
-  document.getElementById('dept-ops').textContent = ops;
-  document.getElementById('dept-adm').textContent = adm;
-  document.getElementById('dept-com').textContent = com;
-
-  // Actualizar donut dinámicamente (radio 35)
-  const circ = 2 * Math.PI * 35; // ≈ 219.9
+  // Donut dinámico (radio 35)
+  const circ = 2 * Math.PI * 35;
   const safeTotal = Math.max(total, 1);
-  const l1 = (ops/safeTotal) * circ;
-  const l2 = (adm/safeTotal) * circ;
-  const l3 = (com/safeTotal) * circ;
+  const v1 = top3[0] ? top3[0][1] : 0;
+  const v2 = top3[1] ? top3[1][1] : 0;
+  const v3 = top3[2] ? top3[2][1] : otros;
+  const l1 = (v1/safeTotal) * circ;
+  const l2 = (v2/safeTotal) * circ;
+  const l3 = (v3/safeTotal) * circ;
+  const setDonut = (id, len, off) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.setAttribute('stroke-dasharray', `${len} ${circ}`);
+      el.setAttribute('stroke-dashoffset', off);
+    }
+  };
+  setDonut('donut-1', l1, 0);
+  setDonut('donut-2', l2, -l1);
+  setDonut('donut-3', l3, -(l1+l2));
 
-  document.getElementById('donut-1').setAttribute('stroke-dasharray', `${l1} ${circ}`);
-  document.getElementById('donut-1').setAttribute('stroke-dashoffset', 0);
-  document.getElementById('donut-2').setAttribute('stroke-dasharray', `${l2} ${circ}`);
-  document.getElementById('donut-2').setAttribute('stroke-dashoffset', -l1);
-  document.getElementById('donut-3').setAttribute('stroke-dasharray', `${l3} ${circ}`);
-  document.getElementById('donut-3').setAttribute('stroke-dashoffset', -(l1+l2));
+  // KPI Activos trend
+  const trend = document.getElementById('kpi-activos-trend');
+  if (trend) trend.textContent = `${activos} colaborador${activos===1?'':'es'} activo${activos===1?'':'s'}`;
+
+  // Panel: Contratos por vencer (basado en fin_contrato si existe; si no, mensaje)
+  const cList = document.getElementById('contracts-list');
+  if (cList) {
+    const conFin = state.employees.filter(e => e.fin_contrato);
+    if (conFin.length === 0) {
+      cList.innerHTML = `<div style="padding:14px;text-align:center;color:var(--text-muted);font-size:12px;">
+        Sin contratos próximos a vencer<br><span style="font-size:10px;">Pendiente captura de fechas de fin de contrato</span></div>`;
+    } else {
+      cList.innerHTML = conFin.slice(0, 5).map(e =>
+        `<div class="contract-item"><span class="contract-name">${e.nombre} ${e.apellidos}</span><span class="date-badge gray">${e.fin_contrato}</span></div>`
+      ).join('');
+    }
+  }
+
+  // Panel: Planes de acción (vacío por ahora)
+  const pList = document.getElementById('plans-list');
+  if (pList) {
+    pList.innerHTML = `<div style="padding:14px;text-align:center;color:var(--text-muted);font-size:12px;">
+      Sin planes de acción registrados<br><span style="font-size:10px;">Módulo pendiente de configuración</span></div>`;
+  }
+
+  // Panel: Alertas (calculadas reales)
+  const aList = document.getElementById('alerts-list');
+  if (aList) {
+    // Expedientes incompletos: contar empleados con algún campo del expediente en false
+    let incompletos = 0;
+    if (state.expediente) {
+      Object.keys(state.expediente).forEach(id => {
+        const exp = state.expediente[id];
+        if (Object.values(exp).some(v => v === false)) incompletos++;
+      });
+    }
+    // Aniversarios este mes
+    const hoy = new Date();
+    const mesActual = hoy.getMonth();
+    const aniversarios = state.employees.filter(e => {
+      if (!e.ingreso) return false;
+      const f = new Date(e.ingreso);
+      return f.getMonth() === mesActual && !isNaN(f);
+    }).length;
+
+    const alerts = [];
+    if (aniversarios > 0) {
+      alerts.push(`<div class="alert-compact">
+        <span class="alert-dot" style="background: #3FD33F;"></span>
+        <div class="alert-compact-text">🎉 Aniversarios laborales<span class="alert-compact-sub">${aniversarios} colaborador${aniversarios===1?'':'es'} este mes</span></div>
+      </div>`);
+    }
+    if (incompletos > 0) {
+      alerts.push(`<div class="alert-compact">
+        <span class="alert-dot" style="background: var(--warning);"></span>
+        <div class="alert-compact-text">📋 Expedientes incompletos<span class="alert-compact-sub">${incompletos} colaborador${incompletos===1?'':'es'} pendiente${incompletos===1?'':'s'}</span></div>
+      </div>`);
+    }
+    alerts.push(`<div class="alert-compact">
+      <span class="alert-dot" style="background: var(--text-muted);"></span>
+      <div class="alert-compact-text">🎂 Cumpleaños este mes<span class="alert-compact-sub">Pendiente captura de fechas de nacimiento</span></div>
+    </div>`);
+    aList.innerHTML = alerts.join('');
+  }
+
+  // Limpiar tarjetas de indicadores ficticios del módulo "Indicadores"
+  document.querySelectorAll('#view-indicadores .ind-card-row').forEach(row => {
+    const valEl = row.querySelector('.ind-card-value');
+    const semEl = row.querySelector('.ind-semaforo');
+    if (valEl && !valEl.dataset.dynamic) {
+      valEl.textContent = '—';
+    }
+    if (semEl) {
+      semEl.classList.remove('green', 'yellow', 'red');
+      semEl.classList.add('gray');
+    }
+  });
+  document.querySelectorAll('#view-indicadores .ind-card').forEach(card => {
+    if (!card.querySelector('.ind-pendiente-tag')) {
+      const tag = document.createElement('div');
+      tag.className = 'ind-pendiente-tag';
+      tag.style.cssText = 'font-size:10px;color:var(--text-muted);margin-top:4px;font-style:italic;';
+      tag.textContent = 'Pendiente captura de información';
+      card.appendChild(tag);
+    }
+  });
 }
 
 // ============================================
@@ -3460,6 +3521,13 @@ function renderChart() {
   const labels = document.getElementById('chart-labels');
   const data = state.asistencia;
   const n = data.length;
+
+  if (n === 0) {
+    svg.innerHTML = '<text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Pendiente captura de asistencia</text>';
+    labels.innerHTML = '';
+    return;
+  }
+
   const w = 280, h = 60;
   const minV = Math.min(...data) - 5;
   const maxV = Math.max(...data) + 2;
