@@ -2865,232 +2865,421 @@ body {
 const state = {
   employees: [
     {
-      id: 1, nombre: "Carlos", apellidos: "Méndez Rodríguez",
-      puesto: "Coordinador de Operaciones", depto: "Operaciones",
-      ingreso: "2022-04-22", contrato: "Indefinido", salario: 32000,
-      rfc: "MERC900122ABC", curp: "MERC900122HNLNDR03", nss: "12345678901",
-      tel: "81 1234 5678", email: "carlos.mendez@htrent.com",
-      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+      id: 1, nombre: "Ilse", apellidos: "Cortes Arias",
+      puesto: "Gerente de Operaciones", depto: "Procesos y Operaciones",
+      ingreso: "2023-06-01", contrato: "Indefinido", salario: 37674,
+      rfc: "COAI960905PJ2", curp: "GASR741114MNLRGS05", nss: "68169634703",
+      tel: "9331517662", email: "",
+      estatus: "Activo", jefe: "Francisco Alejandro Méndoza Villareal", sede: "Escobedo"
     },
     {
-      id: 2, nombre: "Fernanda", apellidos: "López García",
-      puesto: "Ejecutiva de Cuenta", depto: "Comercial",
-      ingreso: "2023-08-15", contrato: "Indefinido", salario: 28000,
-      rfc: "LOGF920424DEF", curp: "LOGF920424MNLPRN05", nss: "23456789012",
-      tel: "81 2345 6789", email: "fernanda.lopez@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 2, nombre: "Rosario Adriana", apellidos: "García Segovia",
+      puesto: "Auxiliar de Operaciones", depto: "Procesos y Operaciones",
+      ingreso: "2026-04-16", contrato: "Indefinido", salario: 20000,
+      rfc: "GASR7411141Q9", curp: "MACA870820HNLTRZ08", nss: "47917448277",
+      tel: "8117565551", email: "",
+      estatus: "Activo", jefe: "Ilse Cortes Arias", sede: "Escobedo"
     },
     {
-      id: 3, nombre: "Roberto", apellidos: "Salinas Treviño",
-      puesto: "Asistente Administrativo", depto: "Administración",
-      ingreso: "2024-01-10", contrato: "Indefinido", salario: 18500,
-      rfc: "SATR950418GHI", curp: "SATR950418HNLLRB02", nss: "34567890123",
-      tel: "81 3456 7890", email: "roberto.salinas@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 3, nombre: "José Azael", apellidos: "Mata Cruz",
+      puesto: "Ejecutivo de Venta", depto: "Ventas",
+      ingreso: "2023-06-19", contrato: "Indefinido", salario: 32292,
+      rfc: "MACA870820SR1", curp: "GUSO860619HNLVLM06", nss: "43048723613",
+      tel: "8117598587", email: "",
+      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
     },
     {
-      id: 4, nombre: "Gabriela", apellidos: "Herrera Vázquez",
-      puesto: "Gerente Administrativa", depto: "Administración",
-      ingreso: "2021-06-01", contrato: "Indefinido", salario: 42000,
-      rfc: "HEVG870712JKL", curp: "HEVG870712MNLRZB09", nss: "45678901234",
-      tel: "81 4567 8901", email: "gabriela.herrera@htrent.com",
-      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+      id: 4, nombre: "Omar Ali", apellidos: "Guevara Salinas",
+      puesto: "Ejecutivo de Venta", depto: "Ventas",
+      ingreso: "2023-07-20", contrato: "Indefinido", salario: 32292,
+      rfc: "GUSO860619910", curp: "VASM001127HNLRCRA9", nss: "43108601246",
+      tel: "8119990909", email: "",
+      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
     },
     {
-      id: 5, nombre: "Daniel", apellidos: "Castillo Ramos",
-      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
-      ingreso: "2024-11-04", contrato: "Periodo de prueba", salario: 22000,
-      rfc: "CARD000215MNO", curp: "CARD000215HNLSTM04", nss: "56789012345",
-      tel: "81 5678 9012", email: "daniel.castillo@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 5, nombre: "Cesar", apellidos: "Valadez Nares",
+      puesto: "Gerente de Ventas", depto: "Ventas",
+      ingreso: "2023-08-02", contrato: "Indefinido", salario: 116074,
+      rfc: "VANC810707JE0", curp: "FOHM930421HNLLNG07", nss: "23998185435",
+      tel: "3314116791", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
     },
     {
-      id: 6, nombre: "Luis", apellidos: "Garza Peña",
-      puesto: "Supervisor de Operaciones", depto: "Operaciones",
-      ingreso: "2021-03-15", contrato: "Indefinido", salario: 28000,
-      rfc: "GAPL880315QRS", curp: "GAPL880315HNLRZS07", nss: "67890123456",
-      tel: "81 6789 0123", email: "luis.garza@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 6, nombre: "Miguel Angel", apellidos: "Flores Hinojosa",
+      puesto: "Coordinador de Marketing", depto: "Marketing",
+      ingreso: "2023-09-18", contrato: "Indefinido", salario: 41400,
+      rfc: "FOHM930421KW6", curp: "OUTR870907MNLSRC02", nss: "35159307707",
+      tel: "8127249348", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
     },
     {
-      id: 7, nombre: "Paola", apellidos: "Martínez Delgado",
-      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
-      ingreso: "2022-09-01", contrato: "Indefinido", salario: 22000,
-      rfc: "MADP930901TUV", curp: "MADP930901MNLRLR08", nss: "78901234567",
-      tel: "81 7890 1234", email: "paola.martinez@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 7, nombre: "Rocio", apellidos: "Osuna Trujillo",
+      puesto: "Coordinadora de Facturación", depto: "Contabilidad",
+      ingreso: "2023-09-12", contrato: "Indefinido", salario: 32292,
+      rfc: "OUTR870907RT0", curp: "ROHA011023MNLBNLA4", nss: "43068761055",
+      tel: "8127481690", email: "",
+      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
     },
     {
-      id: 8, nombre: "Andrea", apellidos: "Ruiz Navarro",
-      puesto: "Analista de Operaciones", depto: "Operaciones",
-      ingreso: "2024-06-10", contrato: "Tiempo determinado", salario: 20000,
-      rfc: "RUNA960610WXY", curp: "RUNA960610MNLZVN01", nss: "89012345678",
-      tel: "81 8901 2345", email: "andrea.ruiz@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 8, nombre: "Alejandra Elizabeth", apellidos: "Robles Hinojosa",
+      puesto: "Ejecutivo de Marketing", depto: "Marketing",
+      ingreso: "2023-12-06", contrato: "Indefinido", salario: 10764,
+      rfc: "ROHA011023G76", curp: "FICR840810MNLGSS04", nss: "03230157673",
+      tel: "3313512801", email: "",
+      estatus: "Activo", jefe: "Miguel Angel Flores Hinojosa", sede: "Escobedo"
     },
     {
-      id: 9, nombre: "Javier", apellidos: "Torres Elizondo",
-      puesto: "Auxiliar de Operaciones", depto: "Operaciones",
-      ingreso: "2023-02-20", contrato: "Indefinido", salario: 16000,
-      rfc: "TOEJ940220ZAB", curp: "TOEJ940220HNLRLV06", nss: "90123456789",
-      tel: "81 9012 3456", email: "javier.torres@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 9, nombre: "Rosaura", apellidos: "Figueroa Castillo",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2023-12-06", contrato: "Indefinido", salario: 19375,
+      rfc: "FICR840810EJ7", curp: "GOHL900823MTSLRR08", nss: "43028402220",
+      tel: "8112281746", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
     },
     {
-      id: 10, nombre: "Sofía", apellidos: "Villarreal Cantú",
-      puesto: "Ejecutivo de Operaciones", depto: "Operaciones",
-      ingreso: "2023-07-14", contrato: "Indefinido", salario: 23000,
-      rfc: "VICS950714CDE", curp: "VICS950714MNLLRF04", nss: "01234567890",
-      tel: "81 0123 4567", email: "sofia.villarreal@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 10, nombre: "Laura Karina", apellidos: "Gloria Hernández",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2024-02-19", contrato: "Indefinido", salario: 19375,
+      rfc: "GOHL900823UH7", curp: "CUMC830709HNLRLS02", nss: "09099019839",
+      tel: "8123603214", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
     },
     {
-      id: 11, nombre: "Miguel", apellidos: "Reyes Guzmán",
-      puesto: "Analista de Operaciones", depto: "Operaciones",
-      ingreso: "2020-11-02", contrato: "Indefinido", salario: 24000,
-      rfc: "REGM910102FGH", curp: "REGM910102HNLYSG05", nss: "11234567890",
-      tel: "81 1123 4567", email: "miguel.reyes@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 11, nombre: "Cesar Noe", apellidos: "Cruz Maldonado",
+      puesto: "Coordinador de Placas y Permisos", depto: "Procesos y Operaciones",
+      ingreso: "2024-04-08", contrato: "Indefinido", salario: 25000,
+      rfc: "CUMC830709KGA", curp: "VASM001127HNLRCRA9", nss: "47008328370",
+      tel: "8114106600", email: "",
+      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
     },
     {
-      id: 12, nombre: "Alejandra", apellidos: "Fuentes Ríos",
-      puesto: "Auxiliar de Operaciones", depto: "Operaciones",
-      ingreso: "2025-01-13", contrato: "Periodo de prueba", salario: 15000,
-      rfc: "FURA000113IJK", curp: "FURA000113MNLNSL02", nss: "12234567890",
-      tel: "81 1223 4567", email: "alejandra.fuentes@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 12, nombre: "Mauricio Alejandro", apellidos: "Vargas Saucedo",
+      puesto: "Coordinador de Control Interno", depto: "Contraloría",
+      ingreso: "2024-05-16", contrato: "Indefinido", salario: 37292,
+      rfc: "VASM001127JY1", curp: "AOZG830508MNLRPB01", nss: "04170048880",
+      tel: "8132800010", email: "",
+      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
     },
     {
-      id: 13, nombre: "Héctor", apellidos: "Ochoa Balderas",
-      puesto: "Supervisor de Operaciones", depto: "Operaciones",
-      ingreso: "2019-08-19", contrato: "Indefinido", salario: 30000,
-      rfc: "OOBH850819LMN", curp: "OOBH850819HNLCLC03", nss: "13234567890",
-      tel: "81 1323 4567", email: "hector.ochoa@htrent.com",
-      estatus: "Activo", jefe: "Carlos Méndez", sede: "Monterrey"
+      id: 13, nombre: "Gabriela", apellidos: "Arroyo Zapata",
+      puesto: "Ejecutivo de Venta", depto: "Ventas",
+      ingreso: "2024-06-03", contrato: "Indefinido", salario: 26910,
+      rfc: "AOZG8305081I5", curp: "UARB860411MNLRDR07", nss: "43018374538",
+      tel: "8126556265", email: "",
+      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
     },
     {
-      id: 14, nombre: "Laura", apellidos: "Peña Montemayor",
-      puesto: "Contador", depto: "Administración",
-      ingreso: "2020-05-11", contrato: "Indefinido", salario: 28000,
-      rfc: "PEML900511OPQ", curp: "PEML900511MNLNNR09", nss: "14234567890",
-      tel: "81 1423 4567", email: "laura.pena@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 14, nombre: "Brenda Leticia", apellidos: "Urbano Rodriguez",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2024-09-10", contrato: "Indefinido", salario: 32292,
+      rfc: "UARB860411GE7", curp: "MAGM820809MNLLNR07", nss: "43058666165",
+      tel: "8120016077", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
     },
     {
-      id: 15, nombre: "Ernesto", apellidos: "Dávila Leal",
-      puesto: "Auxiliar Contable", depto: "Administración",
-      ingreso: "2023-04-03", contrato: "Indefinido", salario: 17000,
-      rfc: "DALE970403RST", curp: "DALE970403HNLVLR01", nss: "15234567890",
-      tel: "81 1523 4567", email: "ernesto.davila@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 15, nombre: "Marcela Del Roble", apellidos: "Maldonado González",
+      puesto: "Gerente de Planeación Financiera", depto: "Planeación Financiera y Tesorería",
+      ingreso: "2024-09-23", contrato: "Indefinido", salario: 75348,
+      rfc: "MAGM820809AI5", curp: "GACT911014MNLMRR04", nss: "43078205895",
+      tel: "8110458663", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
     },
     {
-      id: 16, nombre: "Valeria", apellidos: "Ibarra Chávez",
-      puesto: "Asistente de Dirección", depto: "Administración",
-      ingreso: "2022-01-17", contrato: "Indefinido", salario: 22000,
-      rfc: "IACV940117UVW", curp: "IACV940117MNLBRL06", nss: "16234567890",
-      tel: "81 1623 4567", email: "valeria.ibarra@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 16, nombre: "Teresa De Jesús", apellidos: "Gámez Cruz",
+      puesto: "Ejecutivo de Tesorería", depto: "Planeación Financiera y Tesorería",
+      ingreso: "2024-10-16", contrato: "Indefinido", salario: 34444,
+      rfc: "GACT9110144C0", curp: "FOHE870804MNLLNR02", nss: "43139120455",
+      tel: "8132685311", email: "",
+      estatus: "Activo", jefe: "Marcela Del Roble Maldonado González", sede: "Escobedo"
     },
     {
-      id: 17, nombre: "Francisco", apellidos: "Montes Sáenz",
-      puesto: "Analista Administrativo", depto: "Administración",
-      ingreso: "2024-03-25", contrato: "Tiempo determinado", salario: 19000,
-      rfc: "MOSF980325XYZ", curp: "MOSF980325HNLNNR07", nss: "17234567890",
-      tel: "81 1723 4567", email: "francisco.montes@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 17, nombre: "Erika Aide", apellidos: "Flores Hinojosa",
+      puesto: "Ejecutivo de Marketing", depto: "Marketing",
+      ingreso: "2024-11-01", contrato: "Indefinido", salario: 10764,
+      rfc: "FOHE870804998", curp: "MARM901223HNLTML05", nss: "47048741681",
+      tel: "8136190272", email: "",
+      estatus: "Activo", jefe: "Miguel Angel Flores Hinojosa", sede: "Escobedo"
     },
     {
-      id: 18, nombre: "Ricardo", apellidos: "Canales Domínguez",
-      puesto: "Coordinador Comercial", depto: "Comercial",
-      ingreso: "2020-02-10", contrato: "Indefinido", salario: 35000,
-      rfc: "CADR870210ABC", curp: "CADR870210HNLNMC08", nss: "18234567890",
-      tel: "81 1823 4567", email: "ricardo.canales@htrent.com",
-      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+      id: 18, nombre: "Milton Charly", apellidos: "Mata Ramirez",
+      puesto: "Contador", depto: "Contabilidad",
+      ingreso: "2024-11-01", contrato: "Indefinido", salario: 24633,
+      rfc: "MARM901223JL0", curp: "HECR011208HNLRRCA4", nss: "43129008926",
+      tel: "8180939713", email: "",
+      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
     },
     {
-      id: 19, nombre: "Mariana", apellidos: "Quintero Salazar",
-      puesto: "Ejecutivo de Ventas", depto: "Comercial",
-      ingreso: "2024-08-05", contrato: "Tiempo determinado", salario: 21000,
-      rfc: "QUSM960805DEF", curp: "QUSM960805MNLNLR04", nss: "19234567890",
-      tel: "81 1923 4567", email: "mariana.quintero@htrent.com",
-      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+      id: 19, nombre: "Ricardo Antonio", apellidos: "Hernández Carranza",
+      puesto: "Contador Jr", depto: "Contabilidad",
+      ingreso: "2024-11-11", contrato: "Indefinido", salario: 17525,
+      rfc: "HECR011208D89", curp: "MOAJ711212HTSRLN08", nss: "06170113762",
+      tel: "8123708348", email: "",
+      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
     },
     {
-      id: 20, nombre: "Sergio", apellidos: "Tamez Garza",
-      puesto: "Asesor Comercial", depto: "Comercial",
-      ingreso: "2021-10-18", contrato: "Indefinido", salario: 24000,
-      rfc: "TAGS890318GHI", curp: "TAGS890318HNLMRR02", nss: "20234567890",
-      tel: "81 2023 4567", email: "sergio.tamez@htrent.com",
-      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+      id: 20, nombre: "Juan Rogelio", apellidos: "Morejon Alcocer",
+      puesto: "Jefe Inventarios y Atención al cliente", depto: "Procesos y Operaciones",
+      ingreso: "2025-02-16", contrato: "Indefinido", salario: 28630,
+      rfc: "MOAJ711212EH2", curp: "MAMS940521HTCRYL04", nss: "49957144915",
+      tel: "8117233062", email: "",
+      estatus: "Activo", jefe: "Francisco Alejandro Méndoza Villareal", sede: "Escobedo"
     },
     {
-      id: 21, nombre: "Diana", apellidos: "Coronado Flores",
-      puesto: "Ejecutivo de Ventas", depto: "Comercial",
-      ingreso: "2023-11-27", contrato: "Indefinido", salario: 22000,
-      rfc: "COFD950227JKL", curp: "COFD950227MNLRLN05", nss: "21234567890",
-      tel: "81 2123 4567", email: "diana.coronado@htrent.com",
-      estatus: "Activo", jefe: "Ricardo Canales", sede: "Monterrey"
+      id: 21, nombre: "José Salvador", apellidos: "Martínez Mayorga",
+      puesto: "Auxiliar de Operaciones", depto: "Procesos y Operaciones",
+      ingreso: "2025-03-05", contrato: "Indefinido", salario: 18630,
+      rfc: "MAMS9405217W6", curp: "GAMM770321MNLRRN05", nss: "83139402115",
+      tel: "8187778016", email: "",
+      estatus: "Activo", jefe: "Ilse Cortes Arias", sede: "Escobedo"
     },
     {
-      id: 22, nombre: "Patricia", apellidos: "Soto Nájera",
-      puesto: "Coordinador de RH", depto: "Recursos Humanos",
-      ingreso: "2019-06-03", contrato: "Indefinido", salario: 34000,
-      rfc: "SONP860603MNO", curp: "SONP860603MNLTJR01", nss: "22234567890",
-      tel: "81 2223 4567", email: "patricia.soto@htrent.com",
-      estatus: "Activo", jefe: "Director General", sede: "Monterrey"
+      id: 22, nombre: "Monica", apellidos: "García Martinez",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2025-03-04", contrato: "Indefinido", salario: 19375,
+      rfc: "GAMM770321RH8", curp: "OOMA881107MNLCNR02", nss: "43937741320",
+      tel: "8180152314", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
     },
     {
-      id: 23, nombre: "Omar", apellidos: "Estrada Villegas",
-      puesto: "Auxiliar de RH", depto: "Recursos Humanos",
-      ingreso: "2024-02-12", contrato: "Indefinido", salario: 26000,
-      rfc: "ESVO970212PQR", curp: "ESVO970212HNLSRM03", nss: "23234567890",
-      tel: "81 2323 4567", email: "omar.estrada@htrent.com",
-      estatus: "Activo", jefe: "Patricia Soto", sede: "Monterrey"
+      id: 23, nombre: "Aracely Arizbeth Margarita", apellidos: "De Ochoa Méndez",
+      puesto: "Ejecutivo de Venta", depto: "Ventas",
+      ingreso: "2025-04-01", contrato: "Indefinido", salario: 31050,
+      rfc: "OOMA881107QN5", curp: "SUGG860723HNLRRR02", nss: "47068852012",
+      tel: "8131391880", email: "",
+      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
     },
     {
-      id: 24, nombre: "Adriana", apellidos: "Guerra Sepúlveda",
-      puesto: "Analista Financiero", depto: "Finanzas",
-      ingreso: "2022-07-08", contrato: "Indefinido", salario: 27000,
-      rfc: "GUSA910708STU", curp: "GUSA910708MNLRRR06", nss: "24234567890",
-      tel: "81 2423 4567", email: "adriana.guerra@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 24, nombre: "Gerardo Misael", apellidos: "Suárez Garza",
+      puesto: "Contralor", depto: "Contraloría",
+      ingreso: "2025-04-01", contrato: "Indefinido", salario: 82450,
+      rfc: "SUGG860723RC9", curp: "ROMR980111HTSSRG04", nss: "43078600558",
+      tel: "8114181772", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
     },
     {
-      id: 25, nombre: "Raúl", apellidos: "Cavazos Lozano",
-      puesto: "Tesorero", depto: "Finanzas",
-      ingreso: "2020-09-22", contrato: "Indefinido", salario: 32000,
-      rfc: "CALR880922VWX", curp: "CALR880922HNLVZL04", nss: "25234567890",
-      tel: "81 2523 4567", email: "raul.cavazos@htrent.com",
-      estatus: "Activo", jefe: "Gabriela Herrera", sede: "Monterrey"
+      id: 25, nombre: "Rigoberto", apellidos: "De La Rosa Mercado",
+      puesto: "Gerente Contabilidad", depto: "Contabilidad",
+      ingreso: "2025-04-16", contrato: "Indefinido", salario: 44400,
+      rfc: "ROMR980111DCA", curp: "OICL970718HNLLBS02", nss: "83169818115",
+      tel: "8341037800", email: "",
+      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
+    },
+    {
+      id: 26, nombre: "Luis Gerardo", apellidos: "Oliva Cabrera",
+      puesto: "Analista de Seguros", depto: "Legal- Seguros",
+      ingreso: "2025-05-26", contrato: "Indefinido", salario: 24840,
+      rfc: "OICL970718CL0", curp: "MEVF920120HNLNLR00", nss: "64159739313",
+      tel: "8127590467", email: "",
+      estatus: "Activo", jefe: "Alfredo Sustaita Huitron", sede: "Escobedo"
+    },
+    {
+      id: 27, nombre: "Francisco Alejandro", apellidos: "Mendoza Villarreal",
+      puesto: "Gerente De Procesos y Operaciones", depto: "Procesos y Operaciones",
+      ingreso: "2025-06-03", contrato: "Indefinido", salario: 86940,
+      rfc: "MEVF9201208U0", curp: "ZATR920418HSPMDB04", nss: "43139207799",
+      tel: "8117419964", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
+    },
+    {
+      id: 28, nombre: "Roberto", apellidos: "Zamora Teodoro",
+      puesto: "Analista de Negocios", depto: "Contraloría",
+      ingreso: "2025-06-16", contrato: "Indefinido", salario: 45158,
+      rfc: "ZATR920418J30", curp: "VIEJ730623HDFLLS06", nss: "47109206657",
+      tel: "8116403425", email: "",
+      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
+    },
+    {
+      id: 29, nombre: "José", apellidos: "Villarreal Elnecave",
+      puesto: "Director General", depto: "Dirección General",
+      ingreso: "2025-07-16", contrato: "Indefinido", salario: 214524,
+      rfc: "VIEJ730623EZ8", curp: "ZUGJ001202HNLXRRA3", nss: "63917365205",
+      tel: "3318037283", email: "",
+      estatus: "Activo", jefe: "Comité Directivo", sede: "Escobedo"
+    },
+    {
+      id: 30, nombre: "Jorge Angel", apellidos: "Zuñiga Garcia",
+      puesto: "Analista de Contratos Jr", depto: "Mesa de Control",
+      ingreso: "2025-07-16", contrato: "Indefinido", salario: 16000,
+      rfc: "ZUGJ001202TF0", curp: "SUHA880422HNLSTL00", nss: "8170061561",
+      tel: "8122019068", email: "",
+      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
+    },
+    {
+      id: 31, nombre: "Alfredo", apellidos: "Sustaita Huitron",
+      puesto: "Coordinador Legal- Seguros", depto: "Contraloría",
+      ingreso: "2025-04-16", contrato: "Indefinido", salario: 46800,
+      rfc: "SUHA880422E68", curp: "TURS730507MNLRYN03", nss: "43048841464",
+      tel: "8115314623", email: "",
+      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
+    },
+    {
+      id: 32, nombre: "Sandra Elizabeth", apellidos: "Trujillo Reyes",
+      puesto: "Gerente de Cobranza y Facturación", depto: "Facturación y Cobranza",
+      ingreso: "2025-11-01", contrato: "Indefinido", salario: 68310,
+      rfc: "TURS730507HR5", curp: "LOCB961004HNLPNR09", nss: "47917363914",
+      tel: "81 1615 9400", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
+    },
+    {
+      id: 33, nombre: "Brayan Isaac", apellidos: "López Cántu",
+      puesto: "Ejecutivo Servicio a Clientes", depto: "Procesos y Operaciones",
+      ingreso: "2025-08-20", contrato: "Indefinido", salario: 16560,
+      rfc: "LOCB961004JA1|", curp: "GUAJ050606MVZTNSA0", nss: "10169641320",
+      tel: "8134031323", email: "",
+      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
+    },
+    {
+      id: 34, nombre: "Jesica Lizbeth", apellidos: "Gutiérrez Antonio",
+      puesto: "Coordinador Servicio a Clientes", depto: "Procesos y Operaciones",
+      ingreso: "2025-09-01", contrato: "Indefinido", salario: 15500,
+      rfc: "GUAJ0506068HH7", curp: "CALL890815HNLMZS07", nss: "3240512842",
+      tel: "‭2722047171‬", email: "",
+      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
+    },
+    {
+      id: 35, nombre: "Luis Javier", apellidos: "Campos Lozano",
+      puesto: "Analista de Contratos", depto: "Mesa de Control",
+      ingreso: "2025-09-22", contrato: "Indefinido", salario: 20000,
+      rfc: "CALL8998158C8", curp: "GUGE940820HNLRRL05", nss: "43128912268",
+      tel: "8123881130", email: "",
+      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
+    },
+    {
+      id: 36, nombre: "Eulalio", apellidos: "Guerra Guerrero",
+      puesto: "Analista de Créditos Jr", depto: "Mesa de Control",
+      ingreso: "2025-11-06", contrato: "Indefinido", salario: 23000,
+      rfc: "GUGE940820UQ7", curp: "AUAR830202HCMNYF00", nss: "‭43119428035‬",
+      tel: "8133986155", email: "",
+      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
+    },
+    {
+      id: 37, nombre: "Rafael Humberto", apellidos: "Anguiano Ayala",
+      puesto: "Agente de Cobranza en Campo", depto: "Legal- Seguros",
+      ingreso: "2025-11-05", contrato: "Indefinido", salario: 18000,
+      rfc: "AUAR830202JJ8", curp: "MAVN011021MQTRLRA0", nss: "52978301308",
+      tel: "3121052452", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
+    },
+    {
+      id: 38, nombre: "Norma", apellidos: "Martínez Valentin",
+      puesto: "Auxiliar Administrativo", depto: "Procesos y Operaciones",
+      ingreso: "2025-11-27", contrato: "Indefinido", salario: 16000,
+      rfc: "MAVN011021G29", curp: "KERJ880503HNLLDN02", nss: "17170113876",
+      tel: "8181682798", email: "",
+      estatus: "Activo", jefe: "Cesar Noe Cruz Maldonado", sede: "Escobedo"
+    },
+    {
+      id: 39, nombre: "Jonhatan Remington", apellidos: "Kleanthes Rodríguez",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2025-12-08", contrato: "Indefinido", salario: 21500,
+      rfc: "KERJ880503V42", curp: "MARL911226MNLRML00", nss: "43058885336",
+      tel: "8119442200", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
+    },
+    {
+      id: 40, nombre: "Liliana", apellidos: "Martínez Ramos",
+      puesto: "Coordinador de Mesa de Control", depto: "Control Interno",
+      ingreso: "2026-02-03", contrato: "Indefinido", salario: 28000,
+      rfc: "MARL911226UZ1", curp: "ZACP011024MTCPRLA6", nss: "43099182511",
+      tel: "8110498056", email: "",
+      estatus: "Activo", jefe: "Mauricio Alejandro Vargas Saucedo", sede: "Escobedo"
+    },
+    {
+      id: 41, nombre: "Paula Ivanel", apellidos: "Zapata de la Cruz",
+      puesto: "Auxiliar Mesa de Control", depto: "Mesa de Control",
+      ingreso: "2026-02-04", contrato: "Indefinido", salario: 12000,
+      rfc: "ZACP0110248U4", curp: "AAXF630917HNENXR00", nss: "85160128113",
+      tel: "8112143235", email: "",
+      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
+    },
+    {
+      id: 42, nombre: "Francisco", apellidos: "Ramon Andrade",
+      puesto: "Analista de Control Documental", depto: "Planeación Financiera y Tesorería",
+      ingreso: "2026-03-01", contrato: "Indefinido", salario: 17000,
+      rfc: "AAFR630917GD1", curp: "ROBR750922HDFMTF03", nss: "11066300390",
+      tel: "811637 2775", email: "",
+      estatus: "Activo", jefe: "Marcela Del Roble Maldonado González", sede: "Escobedo"
+    },
+    {
+      id: 43, nombre: "Rafael", apellidos: "Romero Bautista",
+      puesto: "Ejecutivo de Venta", depto: "Ventas",
+      ingreso: "2026-03-17", contrato: "Indefinido", salario: 25000,
+      rfc: "ROBR750922KL0", curp: "LURM041013HNLNYRA4", nss: "76967501081",
+      tel: "8180903803", email: "",
+      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
+    },
+    {
+      id: 44, nombre: "Marco Antonio", apellidos: "Luna Reyes",
+      puesto: "Practicante Costos", depto: "Control Interno",
+      ingreso: "2026-03-23", contrato: "Indefinido", salario: 11000,
+      rfc: "LURM0410133M5", curp: "TERR870106MNLRYY08", nss: "´05250453742",
+      tel: "826 265 6501", email: "",
+      estatus: "Activo", jefe: "Mauricio Alejandro Vargas Saucedo", sede: "Escobedo"
+    },
+    {
+      id: 45, nombre: "Reyna Elizabeth", apellidos: "Treviño Reyes",
+      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
+      ingreso: "2026-04-06", contrato: "Indefinido", salario: 21500,
+      rfc: "TERR870106U51", curp: "GOVJ900619HSPNDN14", nss: "43068782374",
+      tel: "8125980708", email: "",
+      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
+    },
+    {
+      id: 46, nombre: "Juan Carlos", apellidos: "Gonzalez Vidales",
+      puesto: "Gerente Ventas", depto: "Ventas",
+      ingreso: "2026-04-06", contrato: "Indefinido", salario: 65000,
+      rfc: "GOVJ900619G25", curp: "", nss: "41099015913",
+      tel: "81 2516 7341", email: "",
+      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
     }
   ],
   expediente: {
-    1: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    1: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     2: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
-    3: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    4: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    5: {ine: true, curp: true, acta: false, domicilio: true, contrato: false},
-    6: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    7: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
+    3: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    4: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    5: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    6: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    7: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     8: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
-    9: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    10: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    11: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    12: {ine: true, curp: false, acta: false, domicilio: true, contrato: false},
-    13: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    14: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    15: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    16: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    17: {ine: true, curp: true, acta: false, domicilio: true, contrato: true},
-    18: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    19: {ine: true, curp: true, acta: true, domicilio: false, contrato: false},
-    20: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    21: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    22: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    23: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    24: {ine: true, curp: true, acta: true, domicilio: true, contrato: true},
-    25: {ine: true, curp: true, acta: true, domicilio: true, contrato: true}
+    9: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    10: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    11: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    12: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    13: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    14: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    15: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    16: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    17: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    18: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    19: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    20: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    21: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    22: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    23: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    24: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    25: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    26: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    27: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    28: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    29: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    30: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    31: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    32: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    33: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    34: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    35: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    36: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    37: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    38: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    39: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    40: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    41: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    42: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    43: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    44: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    45: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
+    46: {ine: false, curp: false, acta: true, domicilio: false, contrato: true}
   },
   asistencia: [95, 97, 94, 98, 96, 95, 97, 96],
   empresa: "HT Rent"
