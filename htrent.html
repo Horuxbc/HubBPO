@@ -2215,6 +2215,32 @@ body {
 
         </div>
 
+        <!-- FILA 4.5: Reclutamiento · vacantes activas e insight -->
+        <div class="charts-grid" style="grid-template-columns: 2.2fr 1fr;">
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Reclutamiento · vacantes activas</div>
+                <div class="chart-panel-subtitle">Estatus y días en proceso · 2026</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="VACANTES">Ver detalle →</a>
+            </div>
+            <div id="vacantes-table-wrap" style="margin-top:8px;"></div>
+          </div>
+
+          <div class="chart-panel" style="background:linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Tiempo de cobertura</div>
+                <div class="chart-panel-subtitle">Benchmark vs realidad</div>
+              </div>
+            </div>
+            <div id="vacantes-insight" style="padding:6px 4px;"></div>
+          </div>
+
+        </div>
+
         <!-- FILA 5: Accesos rápidos -->
         <div class="quick-actions">
           <button class="quick-btn" onclick="openEmployeeModal()">+ Colaborador</button>
@@ -4960,6 +4986,93 @@ updateDashboard();
     });
   }
 
+  function renderVacantesTable(data) {
+    const wrap = document.getElementById('vacantes-table-wrap');
+    if (!wrap || !data?.vacantes_activas_2026) return;
+    const benchmark = data.vacantes_2025?.dias_promedio_cobertura || 17;
+    const vacantes = data.vacantes_activas_2026;
+
+    const semaforo = (dias) => {
+      if (dias === 0) return { color: '#9aa5a3', label: 'Por abrir' };
+      if (dias <= 20) return { color: '#3FD33F', label: 'En tiempo' };
+      if (dias <= 35) return { color: '#E89B2B', label: 'Atención' };
+      return { color: '#D64545', label: 'Riesgo' };
+    };
+
+    const fmtSueldo = (n) => {
+      if (!n) return '—';
+      return '$' + Number(n).toLocaleString('es-MX');
+    };
+
+    let html = `
+      <table style="width:100%; border-collapse:collapse; font-size:12px;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border); color:var(--text-muted); text-align:left;">
+            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Puesto</th>
+            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Departamento</th>
+            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px; text-align:center;">Días</th>
+            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Estatus</th>
+            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px; text-align:right;">Sueldo</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+    vacantes.forEach((v, i) => {
+      const s = semaforo(v.dias_abierta);
+      const isLast = i === vacantes.length - 1;
+      html += `
+        <tr style="${isLast ? '' : 'border-bottom:1px solid var(--border-light);'}">
+          <td style="padding:10px 6px; font-weight:500; color:var(--text-primary);">${v.puesto}</td>
+          <td style="padding:10px 6px; color:var(--text-secondary);">${v.departamento}</td>
+          <td style="padding:10px 6px; text-align:center;">
+            <span style="display:inline-flex; align-items:center; gap:6px; font-weight:600; color:${s.color};">
+              <span style="width:8px; height:8px; border-radius:50%; background:${s.color}; display:inline-block;"></span>
+              ${v.dias_abierta}
+            </span>
+          </td>
+          <td style="padding:10px 6px; color:var(--text-secondary); font-size:11.5px;">${v.estatus}</td>
+          <td style="padding:10px 6px; text-align:right; font-weight:500; color:var(--text-primary); white-space:nowrap;">
+            ${fmtSueldo(v.sueldo_ofrecido)}
+            <span style="font-size:9.5px; color:var(--text-muted); display:block; font-weight:400;">${v.tipo_sueldo || ''}</span>
+          </td>
+        </tr>`;
+    });
+
+    html += `</tbody></table>`;
+    wrap.innerHTML = html;
+  }
+
+  function renderVacantesInsight(data) {
+    const wrap = document.getElementById('vacantes-insight');
+    if (!wrap || !data?.vacantes_activas_2026) return;
+    const benchmark = data.vacantes_2025?.dias_promedio_cobertura || 17;
+    const vacantes = data.vacantes_activas_2026.filter(v => v.dias_abierta > 0);
+    const exceden = vacantes.filter(v => v.dias_abierta > benchmark);
+    const promedio_actual = vacantes.length > 0
+      ? (vacantes.reduce((s, v) => s + v.dias_abierta, 0) / vacantes.length).toFixed(0)
+      : 0;
+
+    wrap.innerHTML = `
+      <div style="margin-bottom:14px;">
+        <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Benchmark 2025</div>
+        <div style="font-size:24px; font-weight:700; color:var(--horux-green); line-height:1.1;">${benchmark} <span style="font-size:13px; color:var(--text-muted); font-weight:500;">días promedio</span></div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">10 vacantes cubiertas el año pasado</div>
+      </div>
+
+      <div style="margin-bottom:14px; padding:10px 12px; background:rgba(214,69,69,0.06); border-left:3px solid #D64545; border-radius:4px;">
+        <div style="font-size:11px; color:#D64545; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Punto de atención</div>
+        <div style="font-size:13px; color:var(--text-primary); margin-top:4px; line-height:1.4;">
+          <strong>${exceden.length} de ${vacantes.length}</strong> vacantes activas exceden el benchmark
+        </div>
+      </div>
+
+      <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.5;">
+        <p style="margin-bottom:6px;">El promedio actual de las vacantes en proceso es de <strong style="color:var(--text-primary);">${promedio_actual} días</strong>.</p>
+        <p style="margin:0; padding-top:8px; border-top:1px solid var(--border-light); color:var(--text-muted); font-size:10.5px;">Fuentes de éxito 2025: OCC (6), Referido (2), Indeed (1)</p>
+      </div>
+    `;
+  }
+
   // ───────── BOOTSTRAP ─────────
   async function init() {
     const data = await loadData();
@@ -4976,6 +5089,8 @@ updateDashboard();
       renderNiveles(data);
       renderAsistenciaDepto(data);
       renderPuntualidadMin(data);
+      renderVacantesTable(data);
+      renderVacantesInsight(data);
     };
     // Render inicial
     setTimeout(renderAll, 100);
