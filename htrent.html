@@ -2158,6 +2158,36 @@ body {
 
         </div>
 
+        <!-- FILA 3.5: Composición por nivel jerárquico -->
+        <div class="charts-grid" style="grid-template-columns: 1.5fr 2fr;">
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Composición por nivel jerárquico</div>
+                <div class="chart-panel-subtitle">Plantilla activa · 47 colaboradores</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ACTIVOS">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap" style="min-height:240px;"><canvas id="chart-niveles"></canvas></div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Insight de plantilla</div>
+                <div class="chart-panel-subtitle">Lectura ejecutiva</div>
+              </div>
+            </div>
+            <div style="padding:8px 4px; font-size:12.5px; line-height:1.6; color:var(--text-primary);">
+              <p style="margin-bottom:10px;"><strong style="color:#3FD33F;">64%</strong> de la plantilla es operativa (30 personas), <strong>15%</strong> coordinación, <strong>17%</strong> gerencial, <strong>2%</strong> dirección.</p>
+              <p style="margin-bottom:10px;">Estructura tipo pirámide saludable: amplia base ejecutora, capa media de coordinación que conecta con 8 gerencias funcionales reportando a 1 dirección general.</p>
+              <p style="color:var(--text-secondary); font-size:11.5px; border-left:3px solid var(--horux-teal); padding-left:10px; margin-top:14px;">Punto de atención: la rotación 2026 YTD de 22.9% se concentra en niveles operativo y coordinación. Análisis de causa raíz pendiente para el siguiente corte.</p>
+            </div>
+          </div>
+
+        </div>
+
         <!-- FILA 4: Asistencia y puntualidad -->
         <div class="charts-grid-2">
 
@@ -4864,6 +4894,72 @@ updateDashboard();
     });
   }
 
+  function renderNiveles(data) {
+    const ctx = document.getElementById('chart-niveles');
+    if (!ctx || !data?.colaboradores_por_nivel) return;
+    destroyIfExists('niveles');
+    const arr = data.colaboradores_por_nivel;
+    const total = arr.reduce((s, d) => s + d.count, 0);
+    // Paleta por nivel: oscuro arriba (dirección), verde abajo (operativo)
+    const colorMap = {
+      'Dirección':    PALETTE.horuxGreen,
+      'Gerencia':     PALETTE.dark,
+      'Coordinación': PALETTE.teal,
+      'Operativo':    PALETTE.primary
+    };
+    charts.niveles = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: arr.map(d => d.nivel),
+        datasets: [{
+          data: arr.map(d => d.count),
+          backgroundColor: arr.map(d => colorMap[d.nivel] || PALETTE.taupe),
+          borderColor: '#fff',
+          borderWidth: 3,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '62%',
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              boxWidth: 12,
+              boxHeight: 12,
+              padding: 12,
+              font: { size: 11 },
+              generateLabels: (chart) => {
+                const ds = chart.data.datasets[0];
+                return chart.data.labels.map((lbl, i) => {
+                  const val = ds.data[i];
+                  const pct = ((val / total) * 100).toFixed(0);
+                  return {
+                    text: `${lbl}  ·  ${val}  (${pct}%)`,
+                    fillStyle: ds.backgroundColor[i],
+                    strokeStyle: ds.backgroundColor[i],
+                    lineWidth: 0,
+                    index: i
+                  };
+                });
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: (c) => {
+                const pct = ((c.parsed / total) * 100).toFixed(1);
+                return `${c.parsed} colaboradores  (${pct}%)`;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
   // ───────── BOOTSTRAP ─────────
   async function init() {
     const data = await loadData();
@@ -4877,6 +4973,7 @@ updateDashboard();
       renderDepartamentos(data);
       renderContrataciones(data);
       renderBajas(data);
+      renderNiveles(data);
       renderAsistenciaDepto(data);
       renderPuntualidadMin(data);
     };
