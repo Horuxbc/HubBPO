@@ -2090,35 +2090,47 @@ body {
         <div class="charts-grid" style="grid-template-columns: 1fr 1.2fr 1.2fr 1.2fr;">
 
           <!-- Tarjeta KPI Año -->
-          <div class="kpi-tag-card">
-            <div>
-              <div class="kpi-tag-year" id="kpi-tag-year">2026</div>
-              <div class="kpi-tag-rotation">
-                <svg width="60" height="60" viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
-                  <circle id="rotation-arc" cx="30" cy="30" r="24" fill="none" stroke="#3FD33F" stroke-width="6"
-                          stroke-dasharray="34.5 150.8" stroke-dashoffset="0" transform="rotate(-90 30 30)" stroke-linecap="round"/>
-                </svg>
-                <div>
-                  <div class="kpi-tag-rotation-num" id="kpi-tag-rotation">22.9%</div>
-                  <div class="kpi-tag-rotation-lbl">Índice de rotación YTD</div>
-                </div>
+          <div class="chart-panel" style="border-left:4px solid #1D9E75; padding:18px 20px; display:flex; flex-direction:column;">
+
+            <!-- Encabezado -->
+            <div style="font-size:10.5px; color:var(--text-muted); letter-spacing:0.8px; text-transform:uppercase; font-weight:600; margin-bottom:8px;">Rotación YTD · 2026</div>
+
+            <!-- Número grande -->
+            <div style="font-size:44px; font-weight:700; color:var(--text-primary); line-height:1; margin-bottom:6px;" id="kpi-tag-rotation">22.9%</div>
+            <div style="font-size:11.5px; color:var(--text-secondary); margin-bottom:16px;">Bajas YTD entre HC promedio del periodo</div>
+
+            <!-- Composición -->
+            <div style="margin-bottom:14px;">
+              <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin-bottom:8px;">Composición</div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:12.5px; color:var(--text-primary); padding:4px 0;">
+                <span>Involuntarias</span>
+                <span><strong style="font-weight:600;">8</strong> <span style="color:var(--text-muted); font-size:11px;">(73%)</span></span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; font-size:12.5px; color:var(--text-primary); padding:4px 0;">
+                <span>Voluntarias</span>
+                <span><strong style="font-weight:600; color:#BA7517;">3</strong> <span style="color:var(--text-muted); font-size:11px;">(27%)</span></span>
               </div>
             </div>
-            <div class="kpi-tag-stats">
-              <div class="kpi-tag-row">
-                <span class="lbl">Colaboradores</span>
-                <span class="num" id="kpi-tag-activos">47</span>
+
+            <!-- Stats inferiores -->
+            <div style="margin-top:auto; padding-top:14px; border-top:1px solid var(--border-light); display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; font-size:12.5px;">
+                <span style="color:var(--text-secondary);">Colaboradores</span>
+                <span style="font-weight:600; color:var(--text-primary);" id="kpi-tag-activos">47</span>
               </div>
-              <div class="kpi-tag-row">
-                <span class="lbl">Ingresos</span>
-                <span class="num" id="kpi-tag-ingresos">9</span>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px;">
+                <span style="color:var(--text-secondary);">Ingresos · 2026</span>
+                <span style="font-weight:600; color:var(--text-primary);" id="kpi-tag-ingresos">9</span>
               </div>
-              <div class="kpi-tag-row">
-                <span class="lbl">Bajas</span>
-                <span class="num" id="kpi-tag-bajas">11</span>
+              <div style="display:flex; justify-content:space-between; font-size:12.5px;">
+                <span style="color:var(--text-secondary);">Bajas · 2026</span>
+                <span style="font-weight:600; color:var(--text-primary);" id="kpi-tag-bajas">11</span>
               </div>
             </div>
+
+            <!-- IDs ocultos para compatibilidad -->
+            <span id="kpi-tag-year" style="display:none;">2026</span>
+            <svg id="rotation-arc-wrapper" style="display:none;"><circle id="rotation-arc"/></svg>
           </div>
 
           <!-- Gráfica: Colaboradores por departamento -->
@@ -4892,13 +4904,14 @@ updateDashboard();
     if (data.capacitacion_resumen) {
       setText('kpi-capacitacion', Math.round(data.capacitacion_resumen.cumplimiento_promedio_pct) + '%');
     }
-    // Tarjeta KPI tag
+    // Tarjeta KPI tag (rotación comparativa 2026 vs 2025)
     setText('kpi-tag-activos', k.colaboradores_activos);
     setText('kpi-tag-ingresos', k.ingresos_2026);
     setText('kpi-tag-bajas', k.bajas_2026);
     if (k.rotacion_2026_ytd !== undefined) {
       setText('kpi-tag-rotation', k.rotacion_2026_ytd.toFixed(1) + '%');
-      // Arco rotación (out of 50% como tope visual)
+
+      // Arco rotación oculto (mantener compatibilidad con código JS heredado)
       const arc = document.getElementById('rotation-arc');
       if (arc) {
         const pct = Math.min(k.rotacion_2026_ytd / 50, 1);
