@@ -1076,5 +1076,57 @@
       "fecha_ingreso": null,
       "antiguedad_meses": null
     }
-  ]
+  ],
+  "historico_mensual_2026": {
+    "ene26": {
+      "mes_label": "Ene 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 0,
+      "bajas_mes": 2,
+      "rotacion_mes_pct": 4.2,
+      "rotacion_ytd_pct": 4.2,
+      "altas_ytd": 0,
+      "bajas_ytd": 2
+    },
+    "feb26": {
+      "mes_label": "Feb 2026",
+      "headcount_cierre": 48,
+      "altas_mes": 2,
+      "bajas_mes": 1,
+      "rotacion_mes_pct": 2.1,
+      "rotacion_ytd_pct": 6.2,
+      "altas_ytd": 2,
+      "bajas_ytd": 3
+    },
+    "mar26": {
+      "mes_label": "Mar 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 3,
+      "bajas_mes": 4,
+      "rotacion_mes_pct": 8.4,
+      "rotacion_ytd_pct": 14.6,
+      "altas_ytd": 5,
+      "bajas_ytd": 7
+    },
+    "abr26": {
+      "mes_label": "Abr 2026",
+      "headcount_cierre": 46,
+      "altas_mes": 3,
+      "bajas_mes": 4,
+      "rotacion_mes_pct": 8.6,
+      "rotacion_ytd_pct": 23.2,
+      "altas_ytd": 8,
+      "bajas_ytd": 11
+    },
+    "may26": {
+      "mes_label": "May 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 1,
+      "bajas_mes": 0,
+      "rotacion_mes_pct": 0.0,
+      "rotacion_ytd_pct": 22.9,
+      "altas_ytd": 9,
+      "bajas_ytd": 11
+    }
+  }
 }

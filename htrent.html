@@ -2286,29 +2286,42 @@ body {
         <!-- Panel de cobertura de plantilla -->
         <div class="charts-grid" style="grid-template-columns: 1fr 1.1fr 1.4fr; margin-bottom: 16px;">
 
-          <div class="chart-panel" style="background:linear-gradient(135deg, #1a2b29 0%, #003834 100%); color:#fff;">
-            <div style="display:flex; flex-direction:column; height:100%; justify-content:space-between;">
+          <div class="chart-panel">
+            <div class="chart-panel-header" style="margin-bottom:14px;">
               <div>
-                <div style="font-size:11px; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;">Cobertura de plantilla</div>
-                <div style="font-size:42px; font-weight:700; color:#3FD33F; line-height:1;" id="cov-pct">92%</div>
-                <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-top:6px;">de la plantilla objetivo</div>
+                <div class="chart-panel-title">Cobertura de plantilla</div>
+                <div class="chart-panel-subtitle">Activos vs plantilla objetivo</div>
               </div>
-
-              <div style="display:flex; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12);">
-                <div style="flex:1;">
-                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Activos</div>
-                  <div style="font-size:22px; font-weight:600; color:#fff;" id="cov-activos">46</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:18px; flex:1;">
+              <svg width="92" height="92" viewBox="0 0 92 92" style="flex-shrink:0;">
+                <circle cx="46" cy="46" r="36" fill="none" stroke="#EDF1F0" stroke-width="10"/>
+                <circle id="cov-arc" cx="46" cy="46" r="36" fill="none" stroke="#1D9E75" stroke-width="10"
+                        stroke-dasharray="208 226" stroke-dashoffset="0" transform="rotate(-90 46 46)" stroke-linecap="round"/>
+                <text id="cov-pct-text" x="46" y="51" text-anchor="middle" style="font-size:18px; font-weight:600; fill:#1a2b29;">92%</text>
+              </svg>
+              <div style="flex:1;">
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+                  <div>
+                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Activos</div>
+                    <div style="font-size:20px; font-weight:600; color:var(--text-primary);" id="cov-activos">46</div>
+                  </div>
+                  <div>
+                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Vacantes</div>
+                    <div style="font-size:20px; font-weight:600; color:#BA7517;" id="cov-vacantes">4</div>
+                  </div>
+                  <div>
+                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Objetivo</div>
+                    <div style="font-size:20px; font-weight:600; color:var(--text-primary);" id="cov-target">50</div>
+                  </div>
                 </div>
-                <div style="flex:1;">
-                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Vacantes</div>
-                  <div style="font-size:22px; font-weight:600; color:#E89B2B;" id="cov-vacantes">4</div>
-                </div>
-                <div style="flex:1;">
-                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Objetivo</div>
-                  <div style="font-size:22px; font-weight:600; color:#fff;" id="cov-target">50</div>
+                <div style="margin-top:10px; padding-top:10px; border-top:1px solid var(--border-light); font-size:11px; color:var(--text-secondary); line-height:1.4;" id="cov-resumen">
+                  4 vacantes activas en proceso de cobertura
                 </div>
               </div>
             </div>
+            <!-- ID oculto para mantener compatibilidad con el código JS existente -->
+            <span id="cov-pct" style="display:none;">92%</span>
           </div>
 
           <div class="chart-panel">
@@ -2615,24 +2628,33 @@ body {
 
         <div class="ind-header" style="justify-content:flex-start;gap:12px;flex-wrap:wrap;">
           <div class="ind-period">
-            <select id="ind-month-select" onchange="updateIndicadores()">
-              <option value="oct25">Octubre 2025</option>
-              <option value="nov25">Noviembre 2025</option>
-              <option value="dic25">Diciembre 2025</option>
+            <select id="ind-month-select" onchange="window.updateMonthFilter && window.updateMonthFilter()">
               <option value="ene26">Enero 2026</option>
               <option value="feb26">Febrero 2026</option>
-              <option value="mar26" selected>Marzo 2026</option>
+              <option value="mar26">Marzo 2026</option>
+              <option value="abr26">Abril 2026</option>
+              <option value="may26" selected>Mayo 2026 (corte actual)</option>
             </select>
           </div>
           <div class="ind-period">
-            <select id="ind-dept-select" onchange="filterDept()">
+            <select id="ind-dept-select" onchange="return false;">
               <option value="todos">Todos los departamentos</option>
-              <option value="Operaciones">Operaciones</option>
-              <option value="Administración">Administración</option>
-              <option value="Comercial">Comercial</option>
-              <option value="Recursos Humanos">Recursos Humanos</option>
-              <option value="Finanzas">Finanzas</option>
+              <option value="Procesos y Operaciones">Procesos y Operaciones</option>
+              <option value="Ventas">Ventas</option>
+              <option value="Facturación y Cobranza">Facturación y Cobranza</option>
+              <option value="Contabilidad">Contabilidad</option>
+              <option value="Mesa de Control">Mesa de Control</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Contraloría">Contraloría</option>
+              <option value="Planeación Financiera y Tesorería">Planeación Financiera y Tesorería</option>
+              <option value="Control Interno">Control Interno</option>
+              <option value="Legal- Seguros">Legal- Seguros</option>
+              <option value="Dirección General">Dirección General</option>
+              <option value="TI">TI</option>
             </select>
+          </div>
+          <div style="font-size:11px; color:var(--text-muted); align-self:center;">
+            <span style="display:inline-block; padding:3px 9px; background:rgba(63,211,63,0.1); color:#003834; border-radius:10px; font-weight:600; letter-spacing:0.3px; font-size:10px;">Filtro de mes activo en resumen general · resto Fase 2</span>
           </div>
         </div>
 
@@ -5253,9 +5275,31 @@ updateDashboard();
     // Update tarjeta KPI cobertura
     const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
     setText('cov-pct', Math.round(pctCob) + '%');
+    setText('cov-pct-text', Math.round(pctCob) + '%');
     setText('cov-activos', totalActivos);
     setText('cov-vacantes', totalVac);
     setText('cov-target', totalTarget);
+
+    // Animar arco del donut (circunferencia ≈ 226 a r=36)
+    const arc = document.getElementById('cov-arc');
+    if (arc) {
+      const circumference = 2 * Math.PI * 36;
+      const fillLength = (pctCob / 100) * circumference;
+      arc.setAttribute('stroke-dasharray', `${fillLength} ${circumference}`);
+    }
+
+    // Resumen narrativo
+    const resumen = document.getElementById('cov-resumen');
+    if (resumen) {
+      const departamentosConVacante = filas.filter(f => f.vac > 0).map(f => f.nombre);
+      if (totalVac === 0) {
+        resumen.textContent = 'Plantilla 100% cubierta · sin vacantes activas';
+      } else if (departamentosConVacante.length <= 2) {
+        resumen.textContent = `${totalVac} vacante${totalVac > 1 ? 's' : ''} activa${totalVac > 1 ? 's' : ''} en ${departamentosConVacante.join(' y ')}`;
+      } else {
+        resumen.textContent = `${totalVac} vacantes activas distribuidas en ${departamentosConVacante.length} departamentos`;
+      }
+    }
 
     // Renderizar lista
     let html = '<div style="display:flex; flex-direction:column; gap:8px; max-height:240px; overflow-y:auto;">';
@@ -5704,41 +5748,78 @@ updateDashboard();
       sections.forEach(s => viewInd.appendChild(s)); // mueve en orden nuevo
     }
 
-    // Actualizar resumen general (las 4 cards arriba)
+    // Actualizar resumen general (las 4 cards arriba) según mes seleccionado
+    const monthSelect = document.getElementById('ind-month-select');
+    const selectedMonth = monthSelect ? monthSelect.value : 'may26';
+    const histMes = data.historico_mensual_2026?.[selectedMonth];
+
     const summaryCards = document.querySelectorAll('#view-indicadores .ind-summary-card');
-    if (summaryCards.length >= 4) {
-      // Card 1: Headcount
+    if (summaryCards.length >= 4 && histMes) {
+      // Card 1: Headcount al cierre del mes seleccionado
       const c1Val = summaryCards[0].querySelector('.ind-summary-value');
-      if (c1Val) c1Val.textContent = k.colaboradores_activos || '—';
+      if (c1Val) {
+        c1Val.textContent = histMes.headcount_cierre;
+        c1Val.style.color = '';
+      }
+      const c1Trend = summaryCards[0].querySelector('.ind-summary-trend');
+      if (c1Trend) {
+        c1Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#3FD33F; color:#003834; border-radius:10px; font-size:9.5px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">Dato real</span>';
+        c1Trend.className = 'ind-summary-trend';
+      }
       const c1Ins = summaryCards[0].querySelector('.ind-insight-text');
-      if (c1Ins) c1Ins.textContent = `${k.colaboradores_activos} colaboradores activos al ${(data.meta?.fecha_corte || '12/05/2026')}. Plantilla objetivo: 50 puestos (92% cubierta).`;
+      if (c1Ins) c1Ins.textContent = `Colaboradores activos al cierre de ${histMes.mes_label}. YTD: ${histMes.altas_ytd} altas, ${histMes.bajas_ytd} bajas acumuladas.`;
+      summaryCards[0].style.opacity = '1';
 
-      // Card 2: Evolución HC - Fase 2
+      // Card 2: Rotación mensual (reemplaza el "Evolución HC" anterior)
+      const c2Label = summaryCards[1].querySelector('.ind-summary-label');
+      if (c2Label) c2Label.textContent = 'Rotación del mes';
       const c2Val = summaryCards[1].querySelector('.ind-summary-value');
-      if (c2Val) { c2Val.textContent = '—'; c2Val.style.color = '#9aa5a3'; }
+      if (c2Val) {
+        c2Val.textContent = histMes.rotacion_mes_pct + '%';
+        c2Val.style.color = '';
+      }
       const c2Trend = summaryCards[1].querySelector('.ind-summary-trend');
-      if (c2Trend) c2Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#108277; color:#fff; border-radius:10px; font-size:9.5px; font-weight:600; letter-spacing:0.4px; text-transform:uppercase;">Fase 2</span>';
+      if (c2Trend) {
+        c2Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#3FD33F; color:#003834; border-radius:10px; font-size:9.5px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">Dato real</span>';
+        c2Trend.className = 'ind-summary-trend';
+      }
       const c2Ins = summaryCards[1].querySelector('.ind-insight-text');
-      if (c2Ins) c2Ins.innerHTML = '<strong>En implementación.</strong> Requiere captura mensual histórica de headcount.';
-      summaryCards[1].style.opacity = '0.78';
+      if (c2Ins) c2Ins.textContent = `Rotación de ${histMes.mes_label}: ${histMes.bajas_mes} bajas / HC promedio. YTD acumulada: ${histMes.rotacion_ytd_pct}%.`;
+      summaryCards[1].style.opacity = '1';
 
-      // Card 3: Altas mes (mayo)
+      // Card 3: Altas del mes seleccionado
       const c3Val = summaryCards[2].querySelector('.ind-summary-value');
-      if (c3Val) c3Val.textContent = data.contrataciones_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 1;
+      if (c3Val) c3Val.textContent = histMes.altas_mes;
+      const c3Trend = summaryCards[2].querySelector('.ind-summary-trend');
+      if (c3Trend) {
+        c3Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#3FD33F; color:#003834; border-radius:10px; font-size:9.5px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">Dato real</span>';
+      }
       const c3Ins = summaryCards[2].querySelector('.ind-insight-text');
-      if (c3Ins) c3Ins.textContent = '9 contrataciones acumuladas YTD 2026 vs 26 en todo 2025.';
+      if (c3Ins) c3Ins.textContent = `${histMes.altas_mes} contratacion${histMes.altas_mes === 1 ? '' : 'es'} en ${histMes.mes_label}. YTD: ${histMes.altas_ytd} acumuladas.`;
 
-      // Card 4: Bajas mes (mayo)
+      // Card 4: Bajas del mes seleccionado
       const c4Val = summaryCards[3].querySelector('.ind-summary-value');
-      if (c4Val) c4Val.textContent = data.bajas_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 0;
+      if (c4Val) c4Val.textContent = histMes.bajas_mes;
+      const c4Trend = summaryCards[3].querySelector('.ind-summary-trend');
+      if (c4Trend) {
+        c4Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#3FD33F; color:#003834; border-radius:10px; font-size:9.5px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">Dato real</span>';
+      }
       const c4Ins = summaryCards[3].querySelector('.ind-insight-text');
-      if (c4Ins) c4Ins.textContent = '11 bajas YTD 2026 (rotación 22.9%) vs 12 bajas en todo 2025 (rotación 30.4%).';
+      if (c4Ins) c4Ins.textContent = `${histMes.bajas_mes} baja${histMes.bajas_mes === 1 ? '' : 's'} en ${histMes.mes_label}. YTD: ${histMes.bajas_ytd} acumuladas (rotación ${histMes.rotacion_ytd_pct}%).`;
     }
   }
+
+  // Exponer función global para que el onchange del dropdown la llame
+  // Necesita _data en closure, lo guardamos al final del init
+  let _lastData = null;
+  window.updateMonthFilter = () => {
+    if (_lastData) renderIndicadoresRH(_lastData);
+  };
 
   // ───────── BOOTSTRAP ─────────
   async function init() {
     const data = await loadData();
+    _lastData = data; // Guardar referencia para que updateMonthFilter funcione
     paintKPIs(data);
     if (!window.Chart) {
       console.warn('[HT Rent] Chart.js no se cargó. Verifica conexión a CDN.');
@@ -5765,9 +5846,13 @@ updateDashboard();
     };
     // Render inicial
     setTimeout(renderAll, 100);
-    // Re-render al cambiar vista (Chart.js a veces necesita reflow)
-    document.querySelectorAll('.nav-item[data-view="dashboard"]').forEach(el => {
-      el.addEventListener('click', () => setTimeout(renderAll, 150));
+    // Re-render al cambiar a cualquier vista (Chart.js a veces necesita reflow, e indicadores/colaboradores requieren reapintar)
+    document.querySelectorAll('.nav-item').forEach(el => {
+      el.addEventListener('click', () => setTimeout(renderAll, 200));
+    });
+    // También cuando se entra desde tiles de módulos
+    document.querySelectorAll('.module-tile').forEach(el => {
+      el.addEventListener('click', () => setTimeout(renderAll, 200));
     });
   }
 
