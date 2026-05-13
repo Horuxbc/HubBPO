@@ -1,0 +1,529 @@
+{
+  "meta": {
+    "cliente": "HT Rent",
+    "fecha_corte": "2026-05-12",
+    "fuente": "Información compartida por HT Rent (Base de Datos 06/05/2026, Fichajes 16/04-12/05, Dashboard 2025)",
+    "periodo_fichajes": "16 abril 2026 a 12 mayo 2026",
+    "estado": "Indicadores en construcción - Etapa de pruebas"
+  },
+  "kpis_principales": {
+    "colaboradores_activos": 47,
+    "ingresos_2026": 9,
+    "bajas_2026": 11,
+    "bajas_2025": 12,
+    "rotacion_2025": 30.4,
+    "rotacion_2026_ytd": 22.9,
+    "inicio_2026": 49
+  },
+  "colaboradores_por_departamento": [
+    {
+      "departamento": "Procesos y Operaciones",
+      "count": 9
+    },
+    {
+      "departamento": "Ventas",
+      "count": 7
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "count": 7
+    },
+    {
+      "departamento": "Contabilidad",
+      "count": 4
+    },
+    {
+      "departamento": "Mesa de Control",
+      "count": 4
+    },
+    {
+      "departamento": "Marketing",
+      "count": 3
+    },
+    {
+      "departamento": "Contraloría",
+      "count": 3
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "count": 3
+    },
+    {
+      "departamento": "Control Interno",
+      "count": 2
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "count": 2
+    },
+    {
+      "departamento": "Dirección General",
+      "count": 1
+    },
+    {
+      "departamento": "TI",
+      "count": 1
+    }
+  ],
+  "colaboradores_por_nivel": [
+    {
+      "nivel": "Operativo",
+      "count": 30
+    },
+    {
+      "nivel": "Gerencia",
+      "count": 8
+    },
+    {
+      "nivel": "Coordinación",
+      "count": 7
+    },
+    {
+      "nivel": "Dirección",
+      "count": 1
+    }
+  ],
+  "contrataciones_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 0
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 2
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 3
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 2
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 1
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 4
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 4
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 0
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2025": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 1
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 0
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 1
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 1
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 1
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 2
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 1
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 1
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "asistencia_puntualidad": {
+    "periodo": "16 abril 2026 - 12 mayo 2026",
+    "total_fichajes": 717,
+    "empleados_con_fichaje": 46,
+    "dias_periodo": 18,
+    "puntuales_pct": 73.1,
+    "retardos_pct": 26.9,
+    "total_retardos_eventos": 193,
+    "minutos_retardo_total": 12867,
+    "tolerancia_min": 10,
+    "nota": "Horarios inferidos por tendencia. Pendiente validación oficial."
+  },
+  "puntualidad_por_departamento": [
+    {
+      "departamento": "Procesos y Operaciones",
+      "retardos": 49,
+      "minutos_total": 2842
+    },
+    {
+      "departamento": "Ventas",
+      "retardos": 17,
+      "minutos_total": 2029
+    },
+    {
+      "departamento": "Marketing",
+      "retardos": 15,
+      "minutos_total": 1919
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "retardos": 22,
+      "minutos_total": 1180
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "retardos": 10,
+      "minutos_total": 966
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "retardos": 34,
+      "minutos_total": 926
+    },
+    {
+      "departamento": "Contabilidad",
+      "retardos": 16,
+      "minutos_total": 851
+    },
+    {
+      "departamento": "Mesa de Control",
+      "retardos": 9,
+      "minutos_total": 431
+    },
+    {
+      "departamento": "TI",
+      "retardos": 2,
+      "minutos_total": 341
+    },
+    {
+      "departamento": "Control Interno",
+      "retardos": 11,
+      "minutos_total": 193
+    },
+    {
+      "departamento": "Contraloría",
+      "retardos": 6,
+      "minutos_total": 127
+    },
+    {
+      "departamento": "Dirección General",
+      "retardos": 1,
+      "minutos_total": 53
+    }
+  ],
+  "incidencias_totales": {
+    "home_office_solicitudes": 21,
+    "permisos_total": 60,
+    "vacaciones_solicitudes": 79,
+    "nota": "Histórico desde implementación de bitácoras"
+  },
+  "vacantes_2025": {
+    "total": 11,
+    "por_estatus": {
+      "Cubierta": 10,
+      "Cancelada": 1
+    },
+    "dias_promedio_cobertura": 16.9,
+    "contratados": 9
+  },
+  "fuentes_reclutamiento_2025": [
+    {
+      "fuente": "OCC",
+      "count": 6
+    },
+    {
+      "fuente": "Referido",
+      "count": 2
+    },
+    {
+      "fuente": "Indeed",
+      "count": 1
+    }
+  ],
+  "vacantes_activas_2026": [
+    {
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_apertura": "2026-04-04",
+      "dias_abierta": 38,
+      "estatus": "Psicometría pendiente",
+      "sueldo_ofrecido": 17000,
+      "tipo_sueldo": "Netos"
+    },
+    {
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_apertura": "2026-03-17",
+      "dias_abierta": 56,
+      "estatus": "Esperando decisión cliente",
+      "sueldo_ofrecido": 30000,
+      "tipo_sueldo": "+ Variable"
+    },
+    {
+      "puesto": "Auxiliar Contable (Tractomundo)",
+      "departamento": "Contabilidad",
+      "fecha_apertura": "2026-04-28",
+      "dias_abierta": 14,
+      "estatus": "Entrevistas pendientes",
+      "sueldo_ofrecido": 17000,
+      "tipo_sueldo": "Netos"
+    },
+    {
+      "puesto": "Analista de Cobranza",
+      "departamento": "Cobranza",
+      "fecha_apertura": "2026-05-16",
+      "dias_abierta": 0,
+      "estatus": "Por abrir",
+      "sueldo_ofrecido": 21500,
+      "tipo_sueldo": "+ Variable"
+    }
+  ],
+  "capacitacion_catalogo": [
+    {
+      "clave": "C1",
+      "titulo": "Inducción a la Empresa",
+      "dirigido_a": "Nuevo Ingreso",
+      "horas": 1.0,
+      "tipo": "Inducción",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 6,
+      "completados": 6,
+      "pendientes": 0
+    },
+    {
+      "clave": "C2",
+      "titulo": "Socialización de Temas Generales",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 88.4,
+      "total_personas": 43,
+      "completados": 38,
+      "pendientes": 5
+    },
+    {
+      "clave": "C3",
+      "titulo": "Socialización de Temas Especificos",
+      "dirigido_a": "Lideres",
+      "horas": 1.0,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 15,
+      "completados": 15,
+      "pendientes": 0
+    },
+    {
+      "clave": "C4",
+      "titulo": "Kick off del Fortalecimiento Cultural",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Informativa",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C5",
+      "titulo": "Taller 1 Fortalecimiento de Cultura: Nuestros Valores en Acción",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C6",
+      "titulo": "Taller 2 Comunicación Efectiva y Servicio Interno",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 31.9,
+      "total_personas": 47,
+      "completados": 15,
+      "pendientes": 32
+    }
+  ],
+  "capacitacion_horas_por_departamento": [
+    {
+      "departamento": "Ventas",
+      "horas": 87.0
+    },
+    {
+      "departamento": "Procesos y Operaciones",
+      "horas": 84.0
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "horas": 82.0
+    },
+    {
+      "departamento": "Contraloría",
+      "horas": 52.5
+    },
+    {
+      "departamento": "Mesa de Control",
+      "horas": 45.0
+    },
+    {
+      "departamento": "Contabilidad",
+      "horas": 33.0
+    },
+    {
+      "departamento": "Marketing",
+      "horas": 31.0
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "horas": 27.0
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "horas": 12.0
+    },
+    {
+      "departamento": "Comité Directivo",
+      "horas": 1.0
+    }
+  ],
+  "capacitacion_resumen": {
+    "total_horas_persona_completadas": 454.5,
+    "personas_unicas_capacitadas": 47,
+    "cursos_en_catalogo": 6,
+    "cumplimiento_promedio_pct": 86.7
+  }
+}
