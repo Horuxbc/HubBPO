@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HT Rent · Plataforma RH</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 /* ============================================
    HT RENT — Plataforma de Capital Humano
@@ -1824,6 +1825,127 @@ body {
   .ind-header { flex-direction: column; gap: 12px; }
   .ind-filters { gap: 6px; }
 }
+
+/* ============================================
+   SISTEMA DE GRÁFICAS — Dashboard HT Rent
+   ============================================ */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.charts-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+.chart-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.chart-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+.chart-panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+}
+.chart-panel-subtitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.chart-detail-link {
+  font-size: 11px;
+  color: var(--horux-teal);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.chart-detail-link:hover {
+  background: rgba(16, 130, 119, 0.08);
+}
+.chart-canvas-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 220px;
+  width: 100%;
+}
+.chart-canvas-wrap.tall {
+  min-height: 260px;
+}
+.kpi-tag-card {
+  background: linear-gradient(135deg, #1a2b29 0%, #003834 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  box-shadow: var(--shadow-md);
+}
+.kpi-tag-year {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3FD33F;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.kpi-tag-rotation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.kpi-tag-rotation-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+.kpi-tag-rotation-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.kpi-tag-stats { display: flex; flex-direction: column; gap: 8px; }
+.kpi-tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+}
+.kpi-tag-row .num {
+  font-size: 18px;
+  font-weight: 600;
+  color: #3FD33F;
+}
+.kpi-tag-row .lbl {
+  color: rgba(255,255,255,0.75);
+}
+@media (max-width: 1100px) {
+  .charts-grid { grid-template-columns: 1fr; }
+  .charts-grid-2 { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -1918,28 +2040,28 @@ body {
         <div class="kpi-grid">
           <div class="kpi-card" style="border-left-color: #3FD33F;">
             <div class="kpi-label">Activos</div>
-            <div class="kpi-value" id="kpi-activos">25</div>
+            <div class="kpi-value" id="kpi-activos">47</div>
             <div class="kpi-trend gray" id="kpi-activos-trend">colaboradores</div>
           </div>
           <div class="kpi-card" style="border-left-color: #9e8075;">
-            <div class="kpi-label">Inactivos</div>
-            <div class="kpi-value" id="kpi-inactivos">0</div>
-            <div class="kpi-trend gray">— sin movimientos</div>
+            <div class="kpi-label">Bajas YTD</div>
+            <div class="kpi-value" id="kpi-inactivos">11</div>
+            <div class="kpi-trend gray">enero–mayo 2026</div>
           </div>
           <div class="kpi-card" style="border-left-color: #108277;">
-            <div class="kpi-label">Asistencia</div>
-            <div class="kpi-value" id="kpi-asistencia">—</div>
-            <div class="kpi-trend gray">Pendiente captura</div>
+            <div class="kpi-label">Puntualidad</div>
+            <div class="kpi-value" id="kpi-asistencia">73%</div>
+            <div class="kpi-trend gray">últimos 18 días hábiles</div>
           </div>
           <div class="kpi-card" style="border-left-color: #564dba;">
             <div class="kpi-label">Capacitación</div>
-            <div class="kpi-value">—</div>
-            <div class="kpi-trend gray">Pendiente captura</div>
+            <div class="kpi-value" id="kpi-capacitacion">87%</div>
+            <div class="kpi-trend gray">cumplimiento promedio</div>
           </div>
           <div class="kpi-card" style="border-left-color: #edc283;">
-            <div class="kpi-label">Reclutamiento</div>
-            <div class="kpi-value" id="kpi-reclutamiento">0</div>
-            <div class="kpi-trend gray">vacantes abiertas</div>
+            <div class="kpi-label">Vacantes</div>
+            <div class="kpi-value" id="kpi-reclutamiento">4</div>
+            <div class="kpi-trend gray">abiertas 2026</div>
           </div>
         </div>
 
@@ -1963,59 +2085,107 @@ body {
 
         </div>
 
-        <!-- FILA 3: Distribución + Tendencia -->
-        <div class="dash-row-2">
+        <!-- FILA 3: Tarjeta KPI 2026 + 3 gráficas (réplica dashboard HT Rent) -->
+        <div class="charts-grid" style="grid-template-columns: 1fr 1.2fr 1.2fr 1.2fr;">
 
-          <div class="dash-panel">
-            <div class="dash-panel-title">Colaboradores por departamento</div>
-            <div class="donut-container">
-              <div class="donut-sm">
-                <svg width="90" height="90" viewBox="0 0 90 90">
-                  <circle cx="45" cy="45" r="35" fill="none" stroke="var(--border-light)" stroke-width="10"/>
-                  <circle id="donut-1" cx="45" cy="45" r="35" fill="none" stroke="#3FD33F" stroke-width="10"
-                          stroke-dasharray="87.9 219.9" stroke-dashoffset="0" transform="rotate(-90 45 45)" stroke-linecap="round"/>
-                  <circle id="donut-2" cx="45" cy="45" r="35" fill="none" stroke="#1E3A5F" stroke-width="10"
-                          stroke-dasharray="87.9 219.9" stroke-dashoffset="-87.9" transform="rotate(-90 45 45)" stroke-linecap="round"/>
-                  <circle id="donut-3" cx="45" cy="45" r="35" fill="none" stroke="#108277" stroke-width="10"
-                          stroke-dasharray="44 219.9" stroke-dashoffset="-175.8" transform="rotate(-90 45 45)" stroke-linecap="round"/>
+          <!-- Tarjeta KPI Año -->
+          <div class="kpi-tag-card">
+            <div>
+              <div class="kpi-tag-year" id="kpi-tag-year">2026</div>
+              <div class="kpi-tag-rotation">
+                <svg width="60" height="60" viewBox="0 0 60 60">
+                  <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="6"/>
+                  <circle id="rotation-arc" cx="30" cy="30" r="24" fill="none" stroke="#3FD33F" stroke-width="6"
+                          stroke-dasharray="34.5 150.8" stroke-dashoffset="0" transform="rotate(-90 30 30)" stroke-linecap="round"/>
                 </svg>
-                <div class="donut-center">
-                  <div class="num" id="donut-total">25</div>
-                  <div class="lbl">Total</div>
+                <div>
+                  <div class="kpi-tag-rotation-num" id="kpi-tag-rotation">22.9%</div>
+                  <div class="kpi-tag-rotation-lbl">Índice de rotación YTD</div>
                 </div>
               </div>
-              <div class="donut-legend">
-                <div class="legend-item">
-                  <span class="legend-color" style="background: #3FD33F;"></span>
-                  <span class="legend-label" id="dept-ops-label">—</span>
-                  <span class="legend-value" id="dept-ops">0</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-color" style="background: #1E3A5F;"></span>
-                  <span class="legend-label" id="dept-adm-label">—</span>
-                  <span class="legend-value" id="dept-adm">0</span>
-                </div>
-                <div class="legend-item">
-                  <span class="legend-color" style="background: #108277;"></span>
-                  <span class="legend-label" id="dept-com-label">—</span>
-                  <span class="legend-value" id="dept-com">0</span>
-                </div>
+            </div>
+            <div class="kpi-tag-stats">
+              <div class="kpi-tag-row">
+                <span class="lbl">Colaboradores</span>
+                <span class="num" id="kpi-tag-activos">47</span>
+              </div>
+              <div class="kpi-tag-row">
+                <span class="lbl">Ingresos</span>
+                <span class="num" id="kpi-tag-ingresos">9</span>
+              </div>
+              <div class="kpi-tag-row">
+                <span class="lbl">Bajas</span>
+                <span class="num" id="kpi-tag-bajas">11</span>
               </div>
             </div>
           </div>
 
-          <div class="dash-panel">
-            <div class="dash-panel-title">Tendencia de asistencia</div>
-            <div style="font-size: 10px; color: var(--text-muted); margin: -8px 0 8px;">Últimas 8 semanas</div>
-            <div class="line-chart-container">
-              <svg id="chart-asistencia" width="100%" height="60" viewBox="0 0 280 60" preserveAspectRatio="none"></svg>
-              <div class="line-chart-labels" id="chart-labels"></div>
+          <!-- Gráfica: Colaboradores por departamento -->
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Colaboradores por departamento</div>
+                <div class="chart-panel-subtitle">Plantilla activa al corte</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ACTIVOS">Ver detalle →</a>
             </div>
+            <div class="chart-canvas-wrap tall"><canvas id="chart-departamentos"></canvas></div>
+          </div>
+
+          <!-- Gráfica: Contrataciones por mes -->
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Contrataciones en el año</div>
+                <div class="chart-panel-subtitle">2026 · acumulado mensual</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="RECLUTAMIENTO">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap tall"><canvas id="chart-contrataciones"></canvas></div>
+          </div>
+
+          <!-- Gráfica: Bajas por mes -->
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Bajas en el año</div>
+                <div class="chart-panel-subtitle">2026 · acumulado mensual</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="INACTIVOS">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap tall"><canvas id="chart-bajas"></canvas></div>
           </div>
 
         </div>
 
-        <!-- FILA 4: Accesos rápidos -->
+        <!-- FILA 4: Asistencia y puntualidad -->
+        <div class="charts-grid-2">
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Asistencia · puntuales vs retardos</div>
+                <div class="chart-panel-subtitle">16 abril – 12 mayo 2026 · tolerancia 10 min</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ASISTENCIA-FICHAJES">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-asistencia-depto"></canvas></div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Puntualidad · minutos acumulados de retardo</div>
+                <div class="chart-panel-subtitle">Por departamento · período abril-mayo</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ASISTENCIA-FICHAJES">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chart-puntualidad"></canvas></div>
+          </div>
+
+        </div>
+
+        <!-- FILA 5: Accesos rápidos -->
         <div class="quick-actions">
           <button class="quick-btn" onclick="openEmployeeModal()">+ Colaborador</button>
           <button class="quick-btn" onclick="switchView('docs')">📄 Generar constancia</button>
@@ -2631,7 +2801,7 @@ body {
         <div class="form-row">
           <div class="form-group">
             <label>RFC</label>
-            <input type="text" id="emp-rfc" placeholder="XXXX000000XXX">
+            <input type="text" id="emp-rfc" placeholder="">
           </div>
           <div class="form-group">
             <label>CURP</label>
@@ -2824,376 +2994,552 @@ body {
 // ESTADO INICIAL — Datos ficticios HT Rent
 // ============================================
 const state = {
-  employees: [
+  employees: [],
+
+  // ============================================
+  // AGREGADOS REALES (sin datos personales)
+  // Calculados al corte 2026-05-12
+  // ============================================
+  aggregates: {
+  "meta": {
+    "cliente": "HT Rent",
+    "fecha_corte": "2026-05-12",
+    "fuente": "Información compartida por HT Rent (Base de Datos 06/05/2026, Fichajes 16/04-12/05, Dashboard 2025)",
+    "periodo_fichajes": "16 abril 2026 a 12 mayo 2026",
+    "estado": "Indicadores en construcción - Etapa de pruebas"
+  },
+  "kpis_principales": {
+    "colaboradores_activos": 47,
+    "ingresos_2026": 9,
+    "bajas_2026": 11,
+    "bajas_2025": 12,
+    "rotacion_2025": 30.4,
+    "rotacion_2026_ytd": 22.9,
+    "inicio_2026": 49
+  },
+  "colaboradores_por_departamento": [
     {
-      id: 1, nombre: "Ilse", apellidos: "Cortes Arias",
-      puesto: "Gerente de Operaciones", depto: "Procesos y Operaciones",
-      ingreso: "2023-06-01", contrato: "Indefinido", salario: 37674,
-      rfc: "COAI960905PJ2", curp: "GASR741114MNLRGS05", nss: "68169634703",
-      tel: "9331517662", email: "",
-      estatus: "Activo", jefe: "Francisco Alejandro Méndoza Villareal", sede: "Escobedo"
+      "departamento": "Procesos y Operaciones",
+      "count": 9
     },
     {
-      id: 2, nombre: "Rosario Adriana", apellidos: "García Segovia",
-      puesto: "Auxiliar de Operaciones", depto: "Procesos y Operaciones",
-      ingreso: "2026-04-16", contrato: "Indefinido", salario: 20000,
-      rfc: "GASR7411141Q9", curp: "MACA870820HNLTRZ08", nss: "47917448277",
-      tel: "8117565551", email: "",
-      estatus: "Activo", jefe: "Ilse Cortes Arias", sede: "Escobedo"
+      "departamento": "Ventas",
+      "count": 7
     },
     {
-      id: 3, nombre: "José Azael", apellidos: "Mata Cruz",
-      puesto: "Ejecutivo de Venta", depto: "Ventas",
-      ingreso: "2023-06-19", contrato: "Indefinido", salario: 32292,
-      rfc: "MACA870820SR1", curp: "GUSO860619HNLVLM06", nss: "43048723613",
-      tel: "8117598587", email: "",
-      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
+      "departamento": "Facturación y Cobranza",
+      "count": 7
     },
     {
-      id: 4, nombre: "Omar Ali", apellidos: "Guevara Salinas",
-      puesto: "Ejecutivo de Venta", depto: "Ventas",
-      ingreso: "2023-07-20", contrato: "Indefinido", salario: 32292,
-      rfc: "GUSO860619910", curp: "VASM001127HNLRCRA9", nss: "43108601246",
-      tel: "8119990909", email: "",
-      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
+      "departamento": "Contabilidad",
+      "count": 4
     },
     {
-      id: 5, nombre: "Cesar", apellidos: "Valadez Nares",
-      puesto: "Gerente de Ventas", depto: "Ventas",
-      ingreso: "2023-08-02", contrato: "Indefinido", salario: 116074,
-      rfc: "VANC810707JE0", curp: "FOHM930421HNLLNG07", nss: "23998185435",
-      tel: "3314116791", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
+      "departamento": "Mesa de Control",
+      "count": 4
     },
     {
-      id: 6, nombre: "Miguel Angel", apellidos: "Flores Hinojosa",
-      puesto: "Coordinador de Marketing", depto: "Marketing",
-      ingreso: "2023-09-18", contrato: "Indefinido", salario: 41400,
-      rfc: "FOHM930421KW6", curp: "OUTR870907MNLSRC02", nss: "35159307707",
-      tel: "8127249348", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
+      "departamento": "Marketing",
+      "count": 3
     },
     {
-      id: 7, nombre: "Rocio", apellidos: "Osuna Trujillo",
-      puesto: "Coordinadora de Facturación", depto: "Contabilidad",
-      ingreso: "2023-09-12", contrato: "Indefinido", salario: 32292,
-      rfc: "OUTR870907RT0", curp: "ROHA011023MNLBNLA4", nss: "43068761055",
-      tel: "8127481690", email: "",
-      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
+      "departamento": "Contraloría",
+      "count": 3
     },
     {
-      id: 8, nombre: "Alejandra Elizabeth", apellidos: "Robles Hinojosa",
-      puesto: "Ejecutivo de Marketing", depto: "Marketing",
-      ingreso: "2023-12-06", contrato: "Indefinido", salario: 10764,
-      rfc: "ROHA011023G76", curp: "FICR840810MNLGSS04", nss: "03230157673",
-      tel: "3313512801", email: "",
-      estatus: "Activo", jefe: "Miguel Angel Flores Hinojosa", sede: "Escobedo"
+      "departamento": "Planeación Financiera y Tesorería",
+      "count": 3
     },
     {
-      id: 9, nombre: "Rosaura", apellidos: "Figueroa Castillo",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2023-12-06", contrato: "Indefinido", salario: 19375,
-      rfc: "FICR840810EJ7", curp: "GOHL900823MTSLRR08", nss: "43028402220",
-      tel: "8112281746", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
+      "departamento": "Control Interno",
+      "count": 2
     },
     {
-      id: 10, nombre: "Laura Karina", apellidos: "Gloria Hernández",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2024-02-19", contrato: "Indefinido", salario: 19375,
-      rfc: "GOHL900823UH7", curp: "CUMC830709HNLRLS02", nss: "09099019839",
-      tel: "8123603214", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
+      "departamento": "Legal- Seguros",
+      "count": 2
     },
     {
-      id: 11, nombre: "Cesar Noe", apellidos: "Cruz Maldonado",
-      puesto: "Coordinador de Placas y Permisos", depto: "Procesos y Operaciones",
-      ingreso: "2024-04-08", contrato: "Indefinido", salario: 25000,
-      rfc: "CUMC830709KGA", curp: "VASM001127HNLRCRA9", nss: "47008328370",
-      tel: "8114106600", email: "",
-      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
+      "departamento": "Dirección General",
+      "count": 1
     },
     {
-      id: 12, nombre: "Mauricio Alejandro", apellidos: "Vargas Saucedo",
-      puesto: "Coordinador de Control Interno", depto: "Contraloría",
-      ingreso: "2024-05-16", contrato: "Indefinido", salario: 37292,
-      rfc: "VASM001127JY1", curp: "AOZG830508MNLRPB01", nss: "04170048880",
-      tel: "8132800010", email: "",
-      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
-    },
-    {
-      id: 13, nombre: "Gabriela", apellidos: "Arroyo Zapata",
-      puesto: "Ejecutivo de Venta", depto: "Ventas",
-      ingreso: "2024-06-03", contrato: "Indefinido", salario: 26910,
-      rfc: "AOZG8305081I5", curp: "UARB860411MNLRDR07", nss: "43018374538",
-      tel: "8126556265", email: "",
-      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
-    },
-    {
-      id: 14, nombre: "Brenda Leticia", apellidos: "Urbano Rodriguez",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2024-09-10", contrato: "Indefinido", salario: 32292,
-      rfc: "UARB860411GE7", curp: "MAGM820809MNLLNR07", nss: "43058666165",
-      tel: "8120016077", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
-    },
-    {
-      id: 15, nombre: "Marcela Del Roble", apellidos: "Maldonado González",
-      puesto: "Gerente de Planeación Financiera", depto: "Planeación Financiera y Tesorería",
-      ingreso: "2024-09-23", contrato: "Indefinido", salario: 75348,
-      rfc: "MAGM820809AI5", curp: "GACT911014MNLMRR04", nss: "43078205895",
-      tel: "8110458663", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
-    },
-    {
-      id: 16, nombre: "Teresa De Jesús", apellidos: "Gámez Cruz",
-      puesto: "Ejecutivo de Tesorería", depto: "Planeación Financiera y Tesorería",
-      ingreso: "2024-10-16", contrato: "Indefinido", salario: 34444,
-      rfc: "GACT9110144C0", curp: "FOHE870804MNLLNR02", nss: "43139120455",
-      tel: "8132685311", email: "",
-      estatus: "Activo", jefe: "Marcela Del Roble Maldonado González", sede: "Escobedo"
-    },
-    {
-      id: 17, nombre: "Erika Aide", apellidos: "Flores Hinojosa",
-      puesto: "Ejecutivo de Marketing", depto: "Marketing",
-      ingreso: "2024-11-01", contrato: "Indefinido", salario: 10764,
-      rfc: "FOHE870804998", curp: "MARM901223HNLTML05", nss: "47048741681",
-      tel: "8136190272", email: "",
-      estatus: "Activo", jefe: "Miguel Angel Flores Hinojosa", sede: "Escobedo"
-    },
-    {
-      id: 18, nombre: "Milton Charly", apellidos: "Mata Ramirez",
-      puesto: "Contador", depto: "Contabilidad",
-      ingreso: "2024-11-01", contrato: "Indefinido", salario: 24633,
-      rfc: "MARM901223JL0", curp: "HECR011208HNLRRCA4", nss: "43129008926",
-      tel: "8180939713", email: "",
-      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
-    },
-    {
-      id: 19, nombre: "Ricardo Antonio", apellidos: "Hernández Carranza",
-      puesto: "Contador Jr", depto: "Contabilidad",
-      ingreso: "2024-11-11", contrato: "Indefinido", salario: 17525,
-      rfc: "HECR011208D89", curp: "MOAJ711212HTSRLN08", nss: "06170113762",
-      tel: "8123708348", email: "",
-      estatus: "Activo", jefe: "Rigoberto De La Rosa Mercado", sede: "Escobedo"
-    },
-    {
-      id: 20, nombre: "Juan Rogelio", apellidos: "Morejon Alcocer",
-      puesto: "Jefe Inventarios y Atención al cliente", depto: "Procesos y Operaciones",
-      ingreso: "2025-02-16", contrato: "Indefinido", salario: 28630,
-      rfc: "MOAJ711212EH2", curp: "MAMS940521HTCRYL04", nss: "49957144915",
-      tel: "8117233062", email: "",
-      estatus: "Activo", jefe: "Francisco Alejandro Méndoza Villareal", sede: "Escobedo"
-    },
-    {
-      id: 21, nombre: "José Salvador", apellidos: "Martínez Mayorga",
-      puesto: "Auxiliar de Operaciones", depto: "Procesos y Operaciones",
-      ingreso: "2025-03-05", contrato: "Indefinido", salario: 18630,
-      rfc: "MAMS9405217W6", curp: "GAMM770321MNLRRN05", nss: "83139402115",
-      tel: "8187778016", email: "",
-      estatus: "Activo", jefe: "Ilse Cortes Arias", sede: "Escobedo"
-    },
-    {
-      id: 22, nombre: "Monica", apellidos: "García Martinez",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2025-03-04", contrato: "Indefinido", salario: 19375,
-      rfc: "GAMM770321RH8", curp: "OOMA881107MNLCNR02", nss: "43937741320",
-      tel: "8180152314", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
-    },
-    {
-      id: 23, nombre: "Aracely Arizbeth Margarita", apellidos: "De Ochoa Méndez",
-      puesto: "Ejecutivo de Venta", depto: "Ventas",
-      ingreso: "2025-04-01", contrato: "Indefinido", salario: 31050,
-      rfc: "OOMA881107QN5", curp: "SUGG860723HNLRRR02", nss: "47068852012",
-      tel: "8131391880", email: "",
-      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
-    },
-    {
-      id: 24, nombre: "Gerardo Misael", apellidos: "Suárez Garza",
-      puesto: "Contralor", depto: "Contraloría",
-      ingreso: "2025-04-01", contrato: "Indefinido", salario: 82450,
-      rfc: "SUGG860723RC9", curp: "ROMR980111HTSSRG04", nss: "43078600558",
-      tel: "8114181772", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
-    },
-    {
-      id: 25, nombre: "Rigoberto", apellidos: "De La Rosa Mercado",
-      puesto: "Gerente Contabilidad", depto: "Contabilidad",
-      ingreso: "2025-04-16", contrato: "Indefinido", salario: 44400,
-      rfc: "ROMR980111DCA", curp: "OICL970718HNLLBS02", nss: "83169818115",
-      tel: "8341037800", email: "",
-      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
-    },
-    {
-      id: 26, nombre: "Luis Gerardo", apellidos: "Oliva Cabrera",
-      puesto: "Analista de Seguros", depto: "Legal- Seguros",
-      ingreso: "2025-05-26", contrato: "Indefinido", salario: 24840,
-      rfc: "OICL970718CL0", curp: "MEVF920120HNLNLR00", nss: "64159739313",
-      tel: "8127590467", email: "",
-      estatus: "Activo", jefe: "Alfredo Sustaita Huitron", sede: "Escobedo"
-    },
-    {
-      id: 27, nombre: "Francisco Alejandro", apellidos: "Mendoza Villarreal",
-      puesto: "Gerente De Procesos y Operaciones", depto: "Procesos y Operaciones",
-      ingreso: "2025-06-03", contrato: "Indefinido", salario: 86940,
-      rfc: "MEVF9201208U0", curp: "ZATR920418HSPMDB04", nss: "43139207799",
-      tel: "8117419964", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
-    },
-    {
-      id: 28, nombre: "Roberto", apellidos: "Zamora Teodoro",
-      puesto: "Analista de Negocios", depto: "Contraloría",
-      ingreso: "2025-06-16", contrato: "Indefinido", salario: 45158,
-      rfc: "ZATR920418J30", curp: "VIEJ730623HDFLLS06", nss: "47109206657",
-      tel: "8116403425", email: "",
-      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
-    },
-    {
-      id: 29, nombre: "José", apellidos: "Villarreal Elnecave",
-      puesto: "Director General", depto: "Dirección General",
-      ingreso: "2025-07-16", contrato: "Indefinido", salario: 214524,
-      rfc: "VIEJ730623EZ8", curp: "ZUGJ001202HNLXRRA3", nss: "63917365205",
-      tel: "3318037283", email: "",
-      estatus: "Activo", jefe: "Comité Directivo", sede: "Escobedo"
-    },
-    {
-      id: 30, nombre: "Jorge Angel", apellidos: "Zuñiga Garcia",
-      puesto: "Analista de Contratos Jr", depto: "Mesa de Control",
-      ingreso: "2025-07-16", contrato: "Indefinido", salario: 16000,
-      rfc: "ZUGJ001202TF0", curp: "SUHA880422HNLSTL00", nss: "8170061561",
-      tel: "8122019068", email: "",
-      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
-    },
-    {
-      id: 31, nombre: "Alfredo", apellidos: "Sustaita Huitron",
-      puesto: "Coordinador Legal- Seguros", depto: "Contraloría",
-      ingreso: "2025-04-16", contrato: "Indefinido", salario: 46800,
-      rfc: "SUHA880422E68", curp: "TURS730507MNLRYN03", nss: "43048841464",
-      tel: "8115314623", email: "",
-      estatus: "Activo", jefe: "Gerardo Misael Suárez Garza", sede: "Escobedo"
-    },
-    {
-      id: 32, nombre: "Sandra Elizabeth", apellidos: "Trujillo Reyes",
-      puesto: "Gerente de Cobranza y Facturación", depto: "Facturación y Cobranza",
-      ingreso: "2025-11-01", contrato: "Indefinido", salario: 68310,
-      rfc: "TURS730507HR5", curp: "LOCB961004HNLPNR09", nss: "47917363914",
-      tel: "81 1615 9400", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
-    },
-    {
-      id: 33, nombre: "Brayan Isaac", apellidos: "López Cántu",
-      puesto: "Ejecutivo Servicio a Clientes", depto: "Procesos y Operaciones",
-      ingreso: "2025-08-20", contrato: "Indefinido", salario: 16560,
-      rfc: "LOCB961004JA1|", curp: "GUAJ050606MVZTNSA0", nss: "10169641320",
-      tel: "8134031323", email: "",
-      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
-    },
-    {
-      id: 34, nombre: "Jesica Lizbeth", apellidos: "Gutiérrez Antonio",
-      puesto: "Coordinador Servicio a Clientes", depto: "Procesos y Operaciones",
-      ingreso: "2025-09-01", contrato: "Indefinido", salario: 15500,
-      rfc: "GUAJ0506068HH7", curp: "CALL890815HNLMZS07", nss: "3240512842",
-      tel: "‭2722047171‬", email: "",
-      estatus: "Activo", jefe: "Juan Rogelio Morejon Alcocer", sede: "Escobedo"
-    },
-    {
-      id: 35, nombre: "Luis Javier", apellidos: "Campos Lozano",
-      puesto: "Analista de Contratos", depto: "Mesa de Control",
-      ingreso: "2025-09-22", contrato: "Indefinido", salario: 20000,
-      rfc: "CALL8998158C8", curp: "GUGE940820HNLRRL05", nss: "43128912268",
-      tel: "8123881130", email: "",
-      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
-    },
-    {
-      id: 36, nombre: "Eulalio", apellidos: "Guerra Guerrero",
-      puesto: "Analista de Créditos Jr", depto: "Mesa de Control",
-      ingreso: "2025-11-06", contrato: "Indefinido", salario: 23000,
-      rfc: "GUGE940820UQ7", curp: "AUAR830202HCMNYF00", nss: "‭43119428035‬",
-      tel: "8133986155", email: "",
-      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
-    },
-    {
-      id: 37, nombre: "Rafael Humberto", apellidos: "Anguiano Ayala",
-      puesto: "Agente de Cobranza en Campo", depto: "Legal- Seguros",
-      ingreso: "2025-11-05", contrato: "Indefinido", salario: 18000,
-      rfc: "AUAR830202JJ8", curp: "MAVN011021MQTRLRA0", nss: "52978301308",
-      tel: "3121052452", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
-    },
-    {
-      id: 38, nombre: "Norma", apellidos: "Martínez Valentin",
-      puesto: "Auxiliar Administrativo", depto: "Procesos y Operaciones",
-      ingreso: "2025-11-27", contrato: "Indefinido", salario: 16000,
-      rfc: "MAVN011021G29", curp: "KERJ880503HNLLDN02", nss: "17170113876",
-      tel: "8181682798", email: "",
-      estatus: "Activo", jefe: "Cesar Noe Cruz Maldonado", sede: "Escobedo"
-    },
-    {
-      id: 39, nombre: "Jonhatan Remington", apellidos: "Kleanthes Rodríguez",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2025-12-08", contrato: "Indefinido", salario: 21500,
-      rfc: "KERJ880503V42", curp: "MARL911226MNLRML00", nss: "43058885336",
-      tel: "8119442200", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
-    },
-    {
-      id: 40, nombre: "Liliana", apellidos: "Martínez Ramos",
-      puesto: "Coordinador de Mesa de Control", depto: "Control Interno",
-      ingreso: "2026-02-03", contrato: "Indefinido", salario: 28000,
-      rfc: "MARL911226UZ1", curp: "ZACP011024MTCPRLA6", nss: "43099182511",
-      tel: "8110498056", email: "",
-      estatus: "Activo", jefe: "Mauricio Alejandro Vargas Saucedo", sede: "Escobedo"
-    },
-    {
-      id: 41, nombre: "Paula Ivanel", apellidos: "Zapata de la Cruz",
-      puesto: "Auxiliar Mesa de Control", depto: "Mesa de Control",
-      ingreso: "2026-02-04", contrato: "Indefinido", salario: 12000,
-      rfc: "ZACP0110248U4", curp: "AAXF630917HNENXR00", nss: "85160128113",
-      tel: "8112143235", email: "",
-      estatus: "Activo", jefe: "Liliana Martinez Ramos", sede: "Escobedo"
-    },
-    {
-      id: 42, nombre: "Francisco", apellidos: "Ramon Andrade",
-      puesto: "Analista de Control Documental", depto: "Planeación Financiera y Tesorería",
-      ingreso: "2026-03-01", contrato: "Indefinido", salario: 17000,
-      rfc: "AAFR630917GD1", curp: "ROBR750922HDFMTF03", nss: "11066300390",
-      tel: "811637 2775", email: "",
-      estatus: "Activo", jefe: "Marcela Del Roble Maldonado González", sede: "Escobedo"
-    },
-    {
-      id: 43, nombre: "Rafael", apellidos: "Romero Bautista",
-      puesto: "Ejecutivo de Venta", depto: "Ventas",
-      ingreso: "2026-03-17", contrato: "Indefinido", salario: 25000,
-      rfc: "ROBR750922KL0", curp: "LURM041013HNLNYRA4", nss: "76967501081",
-      tel: "8180903803", email: "",
-      estatus: "Activo", jefe: "Cesar Valadez Nares", sede: "Escobedo"
-    },
-    {
-      id: 44, nombre: "Marco Antonio", apellidos: "Luna Reyes",
-      puesto: "Practicante Costos", depto: "Control Interno",
-      ingreso: "2026-03-23", contrato: "Indefinido", salario: 11000,
-      rfc: "LURM0410133M5", curp: "TERR870106MNLRYY08", nss: "´05250453742",
-      tel: "826 265 6501", email: "",
-      estatus: "Activo", jefe: "Mauricio Alejandro Vargas Saucedo", sede: "Escobedo"
-    },
-    {
-      id: 45, nombre: "Reyna Elizabeth", apellidos: "Treviño Reyes",
-      puesto: "Analista de Cobranza", depto: "Facturación y Cobranza",
-      ingreso: "2026-04-06", contrato: "Indefinido", salario: 21500,
-      rfc: "TERR870106U51", curp: "GOVJ900619HSPNDN14", nss: "43068782374",
-      tel: "8125980708", email: "",
-      estatus: "Activo", jefe: "Sandra Elizabeth Trujillo Reyes", sede: "Escobedo"
-    },
-    {
-      id: 46, nombre: "Juan Carlos", apellidos: "Gonzalez Vidales",
-      puesto: "Gerente Ventas", depto: "Ventas",
-      ingreso: "2026-04-06", contrato: "Indefinido", salario: 65000,
-      rfc: "GOVJ900619G25", curp: "", nss: "41099015913",
-      tel: "81 2516 7341", email: "",
-      estatus: "Activo", jefe: "José Villarreal Elnecave", sede: "Escobedo"
+      "departamento": "TI",
+      "count": 1
     }
   ],
+  "colaboradores_por_nivel": [
+    {
+      "nivel": "Operativo",
+      "count": 30
+    },
+    {
+      "nivel": "Gerencia",
+      "count": 8
+    },
+    {
+      "nivel": "Coordinación",
+      "count": 7
+    },
+    {
+      "nivel": "Dirección",
+      "count": 1
+    }
+  ],
+  "contrataciones_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 0
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 2
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 3
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 2
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 1
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 4
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 4
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 0
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2025": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 1
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 0
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 1
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 1
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 1
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 2
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 1
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 1
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "asistencia_puntualidad": {
+    "periodo": "16 abril 2026 - 12 mayo 2026",
+    "total_fichajes": 717,
+    "empleados_con_fichaje": 46,
+    "dias_periodo": 18,
+    "puntuales_pct": 73.1,
+    "retardos_pct": 26.9,
+    "total_retardos_eventos": 193,
+    "minutos_retardo_total": 12867,
+    "tolerancia_min": 10,
+    "nota": "Horarios inferidos por tendencia. Pendiente validación oficial."
+  },
+  "puntualidad_por_departamento": [
+    {
+      "departamento": "Procesos y Operaciones",
+      "retardos": 49,
+      "minutos_total": 2842
+    },
+    {
+      "departamento": "Ventas",
+      "retardos": 17,
+      "minutos_total": 2029
+    },
+    {
+      "departamento": "Marketing",
+      "retardos": 15,
+      "minutos_total": 1919
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "retardos": 22,
+      "minutos_total": 1180
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "retardos": 10,
+      "minutos_total": 966
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "retardos": 34,
+      "minutos_total": 926
+    },
+    {
+      "departamento": "Contabilidad",
+      "retardos": 16,
+      "minutos_total": 851
+    },
+    {
+      "departamento": "Mesa de Control",
+      "retardos": 9,
+      "minutos_total": 431
+    },
+    {
+      "departamento": "TI",
+      "retardos": 2,
+      "minutos_total": 341
+    },
+    {
+      "departamento": "Control Interno",
+      "retardos": 11,
+      "minutos_total": 193
+    },
+    {
+      "departamento": "Contraloría",
+      "retardos": 6,
+      "minutos_total": 127
+    },
+    {
+      "departamento": "Dirección General",
+      "retardos": 1,
+      "minutos_total": 53
+    }
+  ],
+  "incidencias_totales": {
+    "home_office_solicitudes": 21,
+    "permisos_total": 60,
+    "vacaciones_solicitudes": 79,
+    "nota": "Histórico desde implementación de bitácoras"
+  },
+  "vacantes_2025": {
+    "total": 11,
+    "por_estatus": {
+      "Cubierta": 10,
+      "Cancelada": 1
+    },
+    "dias_promedio_cobertura": 16.9,
+    "contratados": 9
+  },
+  "fuentes_reclutamiento_2025": [
+    {
+      "fuente": "OCC",
+      "count": 6
+    },
+    {
+      "fuente": "Referido",
+      "count": 2
+    },
+    {
+      "fuente": "Indeed",
+      "count": 1
+    }
+  ],
+  "vacantes_activas_2026": [
+    {
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_apertura": "2026-04-04",
+      "dias_abierta": 38,
+      "estatus": "Psicometría pendiente",
+      "jefe_directo": "Gerente de Operaciones",
+      "responsable_hh": "Horux · Headhunting",
+      "sueldo_ofrecido": 17000,
+      "tipo_sueldo": "Netos"
+    },
+    {
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_apertura": "2026-03-17",
+      "dias_abierta": 56,
+      "estatus": "Esperando decisión cliente",
+      "jefe_directo": "Gerente de Ventas",
+      "responsable_hh": "Horux · Headhunting",
+      "sueldo_ofrecido": 30000,
+      "tipo_sueldo": "+ Variable"
+    },
+    {
+      "puesto": "Auxiliar Contable (Tractomundo)",
+      "departamento": "Contabilidad",
+      "fecha_apertura": "2026-04-28",
+      "dias_abierta": 14,
+      "estatus": "Entrevistas pendientes",
+      "jefe_directo": "Gerente de Contabilidad",
+      "responsable_hh": "Horux · Headhunting",
+      "sueldo_ofrecido": 17000,
+      "tipo_sueldo": "Netos"
+    },
+    {
+      "puesto": "Analista de Cobranza",
+      "departamento": "Cobranza",
+      "fecha_apertura": "2026-05-16",
+      "dias_abierta": 0,
+      "estatus": "Por abrir",
+      "jefe_directo": "Gerente de Cobranza",
+      "responsable_hh": "Horux · Headhunting",
+      "sueldo_ofrecido": 21500,
+      "tipo_sueldo": "+ Variable"
+    }
+  ],
+  "capacitacion_catalogo": [
+    {
+      "clave": "C1",
+      "titulo": "Inducción a la Empresa",
+      "dirigido_a": "Nuevo Ingreso",
+      "horas": 1.0,
+      "tipo": "Inducción",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 6,
+      "completados": 6,
+      "pendientes": 0
+    },
+    {
+      "clave": "C2",
+      "titulo": "Socialización de Temas Generales",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 88.4,
+      "total_personas": 43,
+      "completados": 38,
+      "pendientes": 5
+    },
+    {
+      "clave": "C3",
+      "titulo": "Socialización de Temas Especificos",
+      "dirigido_a": "Lideres",
+      "horas": 1.0,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 15,
+      "completados": 15,
+      "pendientes": 0
+    },
+    {
+      "clave": "C4",
+      "titulo": "Kick off del Fortalecimiento Cultural",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Informativa",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C5",
+      "titulo": "Taller 1 Fortalecimiento de Cultura: Nuestros Valores en Acción",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C6",
+      "titulo": "Taller 2 Comunicación Efectiva y Servicio Interno",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 31.9,
+      "total_personas": 47,
+      "completados": 15,
+      "pendientes": 32
+    }
+  ],
+  "capacitacion_horas_por_departamento": [
+    {
+      "departamento": "Ventas",
+      "horas": 87.0
+    },
+    {
+      "departamento": "Procesos y Operaciones",
+      "horas": 84.0
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "horas": 82.0
+    },
+    {
+      "departamento": "Contraloría",
+      "horas": 52.5
+    },
+    {
+      "departamento": "Mesa de Control",
+      "horas": 45.0
+    },
+    {
+      "departamento": "Contabilidad",
+      "horas": 33.0
+    },
+    {
+      "departamento": "Marketing",
+      "horas": 31.0
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "horas": 27.0
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "horas": 12.0
+    },
+    {
+      "departamento": "Comité Directivo",
+      "horas": 1.0
+    }
+  ],
+  "capacitacion_resumen": {
+    "total_horas_persona_completadas": 454.5,
+    "personas_unicas_capacitadas": 47,
+    "cursos_en_catalogo": 6,
+    "cumplimiento_promedio_pct": 86.7
+  }
+},
+
+  // Link al archivo maestro en Drive (acceso restringido con cuenta Google)
+  driveLink: "https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit?usp=sharing",
   expediente: {
     1: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
     2: {ine: true, curp: true, acta: true, domicilio: false, contrato: true},
@@ -3804,8 +4150,8 @@ function openBulkModal() {
 
 function downloadTemplate() {
   const headers = ['Nombre','Apellidos','FechaNacimiento','RFC','CURP','NSS','Telefono','Email','Puesto','Departamento','FechaIngreso','TipoContrato','SalarioMensual','JefeDirecto','Sede','EstadoCivil','Domicilio','ContactoEmergenciaNombre','ContactoEmergenciaParentesco','ContactoEmergenciaTelefono'];
-  const row1 = ['María Fernanda','López García','1992-04-24','LOGF920424DEF','LOGF920424MNLPRN05','23456789012','81 2345 6789','maria@htrent.com','Ejecutiva de Cuenta','Operaciones','2024-01-15','Indefinido','28000','Carlos Méndez','Monterrey','Soltero(a)','Av. Revolución 123, Col. Centro, Monterrey','Ana López','Madre','81 9999 8888'];
-  const row2 = ['Roberto','Salinas Treviño','1995-04-18','SATR950418GHI','SATR950418HNLLRB02','34567890123','81 3456 7890','roberto@htrent.com','Asistente Administrativo','Administración','2024-03-01','Periodo de prueba','18500','Gabriela Herrera','Monterrey','Casado(a)','Calle Hidalgo 456, Col. Obispado, Monterrey','Laura Treviño','Esposa','81 7777 6666'];
+  const row1 = ['María Fernanda','López García','1992-04-24','','LOGF920424MNLPRN05','23456789012','81 2345 6789','maria@htrent.com','Ejecutiva de Cuenta','Operaciones','2024-01-15','Indefinido','28000','Carlos Méndez','Monterrey','Soltero(a)','Av. Revolución 123, Col. Centro, Monterrey','Ana López','Madre','81 9999 8888'];
+  const row2 = ['Roberto','Salinas Treviño','1995-04-18','','SATR950418HNLLRB02','34567890123','81 3456 7890','roberto@htrent.com','Asistente Administrativo','Administración','2024-03-01','Periodo de prueba','18500','Gabriela Herrera','Monterrey','Casado(a)','Calle Hidalgo 456, Col. Obispado, Monterrey','Laura Treviño','Esposa','81 7777 6666'];
   const ws = XLSX.utils.aoa_to_sheet([headers, row1, row2]);
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Colaboradores');
@@ -4105,6 +4451,449 @@ function updateIndicadores() {
 renderEmployees();
 renderChart();
 updateDashboard();
+
+// ============================================================
+// PATCH DE SANITIZACIÓN (Horux · 12/05/2026)
+// Sustituye funciones que dependían de datos personales
+// ============================================================
+
+(function() {
+  const AGG = state.aggregates;
+  const DRIVE = state.driveLink;
+  
+  // ── 1. Dashboard de Indicadores: KPIs con datos reales ──
+  function updateDashboardWithAggregates() {
+    const k = AGG.kpis_principales;
+    
+    // Función helper para actualizar elemento si existe
+    const setVal = (selector, value, isPercent = false) => {
+      document.querySelectorAll(selector).forEach(el => {
+        if (el) el.textContent = isPercent ? value.toLocaleString('es-MX', {maximumFractionDigits: 1}) + '%' : value.toLocaleString('es-MX');
+      });
+    };
+    
+    // Buscar elementos KPI por contenido o id genérico
+    // Reemplazar números 47, 26, 12 con valores reales
+    setTimeout(() => {
+      document.querySelectorAll('.kpi-value, [class*="kpi"], [class*="metric"]').forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt === '47' || txt === '46') el.textContent = k.colaboradores_activos;
+      });
+    }, 100);
+  }
+  
+  // ── 2. Selector de empleados: DESHABILITAR ──
+  function disableEmployeeSelectors() {
+    document.querySelectorAll('select').forEach(sel => {
+      const id = (sel.id || '').toLowerCase();
+      const name = (sel.name || '').toLowerCase();
+      // Selectores que pedían empleado para autocompletar documentos
+      if (id.includes('emp') || id.includes('doc-emp') || id.includes('select-emp') || 
+          name.includes('emp') || sel.closest('[id*="doc"], [id*="propuesta"], [id*="constancia"], [id*="contrato"], [id*="expediente"]')) {
+        sel.disabled = true;
+        sel.style.opacity = '0.5';
+        sel.style.cursor = 'not-allowed';
+        sel.title = 'Disponible próximamente · Integración con base de datos en construcción';
+        // Vaciar opciones y poner placeholder
+        if (sel.options.length > 1) {
+          sel.innerHTML = '<option value="">— Seleccionar colaborador (próximamente) —</option>';
+        }
+      }
+    });
+  }
+  
+  // ── 3. Inyectar botones "Ver detalle" → Drive ──
+  function injectDriveButtons() {
+    // Si existe el módulo de Colaboradores, agregar botón al header
+    const colabSection = document.querySelector('#colaboradores, [data-section="colaboradores"], [data-page="colaboradores"]');
+    if (colabSection && !colabSection.querySelector('.btn-drive-detail')) {
+      const btn = document.createElement('a');
+      btn.href = DRIVE;
+      btn.target = '_blank';
+      btn.className = 'btn-drive-detail';
+      btn.style.cssText = 'display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#3FD33F;color:#1E3A5F;border-radius:8px;font-weight:600;text-decoration:none;font-size:13px;margin:12px 0;border:1px solid #35c035;box-shadow:0 2px 6px rgba(63,211,63,0.25);transition:all 0.2s;';
+      btn.innerHTML = '📊 Ver detalle en archivo maestro →';
+      btn.onmouseover = () => btn.style.transform = 'translateY(-1px)';
+      btn.onmouseout = () => btn.style.transform = '';
+      
+      // Insertar al inicio del contenido
+      const target = colabSection.querySelector('.section-header, h1, h2');
+      if (target && target.parentElement) {
+        target.parentElement.insertBefore(btn, target.nextSibling);
+      } else {
+        colabSection.insertBefore(btn, colabSection.firstChild);
+      }
+    }
+  }
+  
+  // ── 4. Mostrar gráfica de integración cuando entren a Colaboradores ──
+  function renderIntegrationChart() {
+    // Verificar si existe canvas para gráfica
+    const canvas = document.querySelector('#chart-integracion, #chart-colaboradores, [data-chart="integracion"]');
+    if (!canvas) return;
+    
+    if (!window.Chart) return; // Chart.js no cargado
+    
+    const dept = AGG.colaboradores_por_departamento;
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: dept.map(d => d.departamento),
+        datasets: [{
+          label: 'Colaboradores',
+          data: dept.map(d => d.count),
+          backgroundColor: '#3FD33F',
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {legend: {display: false}, title: {display: true, text: 'Distribución por Departamento'}},
+        scales: {y: {beginAtZero: true, ticks: {precision: 0}}}
+      }
+    });
+  }
+  
+  // ── 5. Mensaje informativo en módulos de documentos ──
+  function addDocumentNotice() {
+    const docModules = ['propuesta', 'constancia', 'contrato', 'checklist', 'expediente', 'responsiva', 'reglamento'];
+    docModules.forEach(mod => {
+      const section = document.querySelector(`#${mod}, [data-section="${mod}"], [data-page="${mod}"]`);
+      if (!section || section.querySelector('.notice-construction')) return;
+      
+      const notice = document.createElement('div');
+      notice.className = 'notice-construction';
+      notice.style.cssText = 'background:#fff8e6;border-left:4px solid #f59e0b;padding:14px 18px;margin:16px 0;border-radius:6px;font-size:13px;color:#92400e;display:flex;align-items:center;gap:10px;';
+      notice.innerHTML = '<span style="font-size:18px">🔨</span><div><strong>Módulo en construcción.</strong> El selector de colaborador estará disponible próximamente. Los documentos se pueden generar manualmente con el ejemplo de plantilla.</div>';
+      section.insertBefore(notice, section.firstChild);
+    });
+  }
+  
+  // ── 6. Ejecutar todos los patches ──
+  function applyPatches() {
+    disableEmployeeSelectors();
+    injectDriveButtons();
+    renderIntegrationChart();
+    addDocumentNotice();
+    updateDashboardWithAggregates();
+  }
+  
+  // Aplicar al cargar y cada vez que cambien de sección
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyPatches);
+  } else {
+    applyPatches();
+  }
+  
+  // Observar cambios de navegación para re-aplicar
+  const observer = new MutationObserver(() => {
+    setTimeout(applyPatches, 100);
+  });
+  observer.observe(document.body, {childList: true, subtree: true});
+  
+  // También al hacer click en navegación
+  document.addEventListener('click', () => setTimeout(applyPatches, 200));
+  
+})();
+
+</script>
+
+<!-- ============================================
+     SCRIPT: Carga de datos y gráficas HT Rent
+     ============================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // Paleta HT Rent + acentos consultora
+  const PALETTE = {
+    primary:    '#3FD33F',
+    primarySoft:'#A8E89E',
+    dark:       '#1E3A5F',
+    teal:       '#108277',
+    danger:     '#D64545',
+    warning:    '#E89B2B',
+    horuxGreen: '#003834',
+    taupe:      '#9E8075',
+    gridLine:   '#EDF1F0',
+    textMuted:  '#5a6b68'
+  };
+
+  // Defaults globales Chart.js (estética sobria, no slop)
+  if (window.Chart) {
+    Chart.defaults.font.family = 'Arial, Helvetica, sans-serif';
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = PALETTE.textMuted;
+    Chart.defaults.borderColor = PALETTE.gridLine;
+    Chart.defaults.plugins.legend.labels.boxWidth = 10;
+    Chart.defaults.plugins.legend.labels.boxHeight = 10;
+    Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(26,43,41,0.95)';
+    Chart.defaults.plugins.tooltip.padding = 10;
+    Chart.defaults.plugins.tooltip.titleFont = { size: 11, weight: '600' };
+    Chart.defaults.plugins.tooltip.bodyFont = { size: 11 };
+    Chart.defaults.plugins.tooltip.cornerRadius = 6;
+  }
+
+  // ───────── CARGA DE DATOS ─────────
+  // Por ahora: fetch local. Cuando se conecte Apps Script, solo cambia URL.
+  async function loadData() {
+    try {
+      const res = await fetch('htrent_data.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('No se encontró htrent_data.json');
+      return await res.json();
+    } catch (e) {
+      console.warn('[HT Rent] No se pudo cargar htrent_data.json:', e.message);
+      return null;
+    }
+  }
+
+  // ───────── KPIs (con fallback a hardcoded) ─────────
+  function paintKPIs(data) {
+    if (!data) return;
+    const k = data.kpis_principales || {};
+    const setText = (id, val) => {
+      const el = document.getElementById(id);
+      if (el && val !== undefined && val !== null) el.textContent = val;
+    };
+    setText('kpi-activos', k.colaboradores_activos);
+    setText('kpi-inactivos', k.bajas_2026);
+    setText('kpi-reclutamiento', (data.vacantes_activas_2026 || []).length);
+    if (data.asistencia_puntualidad) {
+      setText('kpi-asistencia', Math.round(data.asistencia_puntualidad.puntuales_pct) + '%');
+    }
+    if (data.capacitacion_resumen) {
+      setText('kpi-capacitacion', Math.round(data.capacitacion_resumen.cumplimiento_promedio_pct) + '%');
+    }
+    // Tarjeta KPI tag
+    setText('kpi-tag-activos', k.colaboradores_activos);
+    setText('kpi-tag-ingresos', k.ingresos_2026);
+    setText('kpi-tag-bajas', k.bajas_2026);
+    if (k.rotacion_2026_ytd !== undefined) {
+      setText('kpi-tag-rotation', k.rotacion_2026_ytd.toFixed(1) + '%');
+      // Arco rotación (out of 50% como tope visual)
+      const arc = document.getElementById('rotation-arc');
+      if (arc) {
+        const pct = Math.min(k.rotacion_2026_ytd / 50, 1);
+        const circumference = 2 * Math.PI * 24;
+        arc.setAttribute('stroke-dasharray', (circumference * pct) + ' ' + circumference);
+      }
+    }
+  }
+
+  // ───────── GRÁFICAS ─────────
+  const charts = {};
+
+  function destroyIfExists(key) {
+    if (charts[key]) { charts[key].destroy(); delete charts[key]; }
+  }
+
+  function renderDepartamentos(data) {
+    const ctx = document.getElementById('chart-departamentos');
+    if (!ctx || !data?.colaboradores_por_departamento) return;
+    destroyIfExists('dept');
+    const sorted = [...data.colaboradores_por_departamento].sort((a,b) => b.count - a.count);
+    charts.dept = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sorted.map(d => d.departamento),
+        datasets: [{
+          data: sorted.map(d => d.count),
+          backgroundColor: PALETTE.primary,
+          borderRadius: 4,
+          barPercentage: 0.75
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (c) => c.parsed.x + ' colaboradores' } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { stepSize: 2, font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          y: { ticks: { font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderContrataciones(data) {
+    const ctx = document.getElementById('chart-contrataciones');
+    if (!ctx || !data?.contrataciones_por_mes_2026) return;
+    destroyIfExists('contrat');
+    const arr = data.contrataciones_por_mes_2026;
+    charts.contrat = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: arr.map(d => d.mes),
+        datasets: [{
+          data: arr.map(d => d.count),
+          borderColor: PALETTE.dark,
+          backgroundColor: 'rgba(30,58,95,0.08)',
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: PALETTE.dark,
+          pointBorderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderBajas(data) {
+    const ctx = document.getElementById('chart-bajas');
+    if (!ctx || !data?.bajas_por_mes_2026) return;
+    destroyIfExists('bajas');
+    const arr = data.bajas_por_mes_2026;
+    charts.bajas = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: arr.map(d => d.mes),
+        datasets: [{
+          data: arr.map(d => d.count),
+          borderColor: PALETTE.danger,
+          backgroundColor: 'rgba(214,69,69,0.08)',
+          tension: 0.3,
+          fill: true,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: PALETTE.danger,
+          pointBorderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderAsistenciaDepto(data) {
+    const ctx = document.getElementById('chart-asistencia-depto');
+    if (!ctx || !data?.puntualidad_por_departamento) return;
+    destroyIfExists('asisDepto');
+    // Estimamos puntuales por departamento usando proporción inversa al volumen de retardos
+    // Esto requiere datos reales por depto; por ahora mostramos retardos vs minutos como referencia
+    const arr = [...data.puntualidad_por_departamento].sort((a,b) => b.retardos - a.retardos);
+    charts.asisDepto = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: arr.map(d => d.departamento),
+        datasets: [{
+          label: 'Eventos de retardo',
+          data: arr.map(d => d.retardos),
+          backgroundColor: PALETTE.warning,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (c) => c.parsed.y + ' eventos en el período' } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          x: { ticks: { font: { size: 9 }, maxRotation: 45, minRotation: 35 }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderPuntualidadMin(data) {
+    const ctx = document.getElementById('chart-puntualidad');
+    if (!ctx || !data?.puntualidad_por_departamento) return;
+    destroyIfExists('puntMin');
+    const arr = [...data.puntualidad_por_departamento].sort((a,b) => b.minutos_total - a.minutos_total);
+    charts.puntMin = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: arr.map(d => d.departamento),
+        datasets: [{
+          label: 'Minutos acumulados',
+          data: arr.map(d => d.minutos_total),
+          backgroundColor: arr.map((d, i) => {
+            if (i === 0) return PALETTE.danger;
+            if (i < 3) return PALETTE.warning;
+            return PALETTE.teal;
+          }),
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (c) => {
+                const min = c.parsed.y;
+                const hrs = Math.floor(min / 60);
+                const m = min % 60;
+                return `${min} min  (${hrs}h ${m}m)`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          x: { ticks: { font: { size: 9 }, maxRotation: 45, minRotation: 35 }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // ───────── BOOTSTRAP ─────────
+  async function init() {
+    const data = await loadData();
+    paintKPIs(data);
+    if (!window.Chart) {
+      console.warn('[HT Rent] Chart.js no se cargó. Verifica conexión a CDN.');
+      return;
+    }
+    // Render solo si la vista dashboard está visible o cuando se entre
+    const renderAll = () => {
+      renderDepartamentos(data);
+      renderContrataciones(data);
+      renderBajas(data);
+      renderAsistenciaDepto(data);
+      renderPuntualidadMin(data);
+    };
+    // Render inicial
+    setTimeout(renderAll, 100);
+    // Re-render al cambiar vista (Chart.js a veces necesita reflow)
+    document.querySelectorAll('.nav-item[data-view="dashboard"]').forEach(el => {
+      el.addEventListener('click', () => setTimeout(renderAll, 150));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 </script>
 
 </body>
