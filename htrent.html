@@ -2293,34 +2293,37 @@ body {
                 <div class="chart-panel-subtitle">Activos vs plantilla objetivo</div>
               </div>
             </div>
-            <div style="display:flex; align-items:center; gap:18px; flex:1;">
-              <svg width="92" height="92" viewBox="0 0 92 92" style="flex-shrink:0;">
-                <circle cx="46" cy="46" r="36" fill="none" stroke="#EDF1F0" stroke-width="10"/>
-                <circle id="cov-arc" cx="46" cy="46" r="36" fill="none" stroke="#1D9E75" stroke-width="10"
-                        stroke-dasharray="208 226" stroke-dashoffset="0" transform="rotate(-90 46 46)" stroke-linecap="round"/>
-                <text id="cov-pct-text" x="46" y="51" text-anchor="middle" style="font-size:18px; font-weight:600; fill:#1a2b29;">92%</text>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:16px; flex:1;">
+
+              <!-- Donut centrado arriba -->
+              <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink:0;">
+                <circle cx="60" cy="60" r="48" fill="none" stroke="#EDF1F0" stroke-width="12"/>
+                <circle id="cov-arc" cx="60" cy="60" r="48" fill="none" stroke="#1D9E75" stroke-width="12"
+                        stroke-dasharray="277 302" stroke-dashoffset="0" transform="rotate(-90 60 60)" stroke-linecap="round"/>
+                <text id="cov-pct-text" x="60" y="66" text-anchor="middle" style="font-size:24px; font-weight:600; fill:#1a2b29;">92%</text>
               </svg>
-              <div style="flex:1;">
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
-                  <div>
-                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Activos</div>
-                    <div style="font-size:20px; font-weight:600; color:var(--text-primary);" id="cov-activos">46</div>
-                  </div>
-                  <div>
-                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Vacantes</div>
-                    <div style="font-size:20px; font-weight:600; color:#BA7517;" id="cov-vacantes">4</div>
-                  </div>
-                  <div>
-                    <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px;">Objetivo</div>
-                    <div style="font-size:20px; font-weight:600; color:var(--text-primary);" id="cov-target">50</div>
-                  </div>
+
+              <!-- 3 stats en fila abajo, centrados -->
+              <div style="width:100%; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; text-align:center;">
+                <div>
+                  <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Activos</div>
+                  <div style="font-size:24px; font-weight:600; color:var(--text-primary);" id="cov-activos">46</div>
                 </div>
-                <div style="margin-top:10px; padding-top:10px; border-top:1px solid var(--border-light); font-size:11px; color:var(--text-secondary); line-height:1.4;" id="cov-resumen">
-                  4 vacantes activas en proceso de cobertura
+                <div>
+                  <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Vacantes</div>
+                  <div style="font-size:24px; font-weight:600; color:#BA7517;" id="cov-vacantes">4</div>
+                </div>
+                <div>
+                  <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Objetivo</div>
+                  <div style="font-size:24px; font-weight:600; color:var(--text-primary);" id="cov-target">50</div>
                 </div>
               </div>
+
+              <!-- Línea explicativa abajo -->
+              <div style="width:100%; padding-top:12px; border-top:1px solid var(--border-light); font-size:11.5px; color:var(--text-secondary); text-align:center; line-height:1.4;" id="cov-resumen">
+                4 vacantes activas en proceso de cobertura
+              </div>
             </div>
-            <!-- ID oculto para mantener compatibilidad con el código JS existente -->
             <span id="cov-pct" style="display:none;">92%</span>
           </div>
 
@@ -5280,10 +5283,10 @@ updateDashboard();
     setText('cov-vacantes', totalVac);
     setText('cov-target', totalTarget);
 
-    // Animar arco del donut (circunferencia ≈ 226 a r=36)
+    // Animar arco del donut (circunferencia ≈ 302 a r=48)
     const arc = document.getElementById('cov-arc');
     if (arc) {
-      const circumference = 2 * Math.PI * 36;
+      const circumference = 2 * Math.PI * 48;
       const fillLength = (pctCob / 100) * circumference;
       arc.setAttribute('stroke-dasharray', `${fillLength} ${circumference}`);
     }
