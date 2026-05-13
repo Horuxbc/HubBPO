@@ -525,5 +525,556 @@
     "personas_unicas_capacitadas": 47,
     "cursos_en_catalogo": 6,
     "cumplimiento_promedio_pct": 86.7
-  }
+  },
+  "seguimiento_periodo_prueba": {
+    "total": 9,
+    "con_fecha_ingreso": 5,
+    "sin_fecha_ingreso": 4,
+    "onboarding_completados": 1,
+    "onboarding_en_proceso": 3,
+    "onboarding_sin_captura": 5,
+    "periodo_excedido": 1,
+    "colaboradores": [
+      {
+        "iniciales": "E.G.",
+        "puesto": "Analista de Créditos Jr",
+        "departamento": "Mesa de Control",
+        "fecha_ingreso": "2025-11-06",
+        "dias_desde_ingreso": 188,
+        "estatus_onboarding": "EN PROCESO",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "N.M.",
+        "puesto": "Auxiliar Administrativo",
+        "departamento": "Procesos y Operaciones",
+        "fecha_ingreso": "2025-11-27",
+        "dias_desde_ingreso": 167,
+        "estatus_onboarding": "EN PROCESO",
+        "ev_onboarding_jefe": "2026-02-17",
+        "ev_onboarding_colaborador": "2026-02-17",
+        "renovacion": "SI",
+        "tipo_contrato": "CTI"
+      },
+      {
+        "iniciales": "J.R.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "fecha_ingreso": "2025-12-08",
+        "dias_desde_ingreso": 156,
+        "estatus_onboarding": "COMPLETADO",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "L.M.",
+        "puesto": "Especialista de Control Interno",
+        "departamento": "Control Interno",
+        "fecha_ingreso": "2026-02-03",
+        "dias_desde_ingreso": 99,
+        "estatus_onboarding": "EN PROCESO",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "P.I.",
+        "puesto": "Practicante",
+        "departamento": "Mesa de Control",
+        "fecha_ingreso": "2026-02-04",
+        "dias_desde_ingreso": 98,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "R.R.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "fecha_ingreso": null,
+        "dias_desde_ingreso": null,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "M.A.",
+        "puesto": "Practicante Costos",
+        "departamento": "Control Interno",
+        "fecha_ingreso": null,
+        "dias_desde_ingreso": null,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "R.E.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "fecha_ingreso": null,
+        "dias_desde_ingreso": null,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      },
+      {
+        "iniciales": "J.C.",
+        "puesto": "Gerente Ventas",
+        "departamento": "Ventas",
+        "fecha_ingreso": null,
+        "dias_desde_ingreso": null,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null
+      }
+    ]
+  },
+  "bajas_clasificadas": {
+    "2026": {
+      "total": 11,
+      "voluntarias": 3,
+      "involuntarias": 8,
+      "sin_clasificar": 0,
+      "pct_voluntarias": 27.3,
+      "pct_involuntarias": 72.7,
+      "motivos": {
+        "cambio tracto": 1,
+        "bajo rendimiento": 1,
+        "otro empleo": 1,
+        "jefe": 2
+      },
+      "detalle": [
+        {
+          "fecha": "2026-01-22",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "cambio tracto"
+        },
+        {
+          "fecha": "2026-01-31",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "bajo rendimiento"
+        },
+        {
+          "fecha": "2026-02-27",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "otro empleo"
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Analista de Cobranza",
+          "departamento": "Facturación y Cobranza",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Practicante",
+          "departamento": "Control Interno",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": "jefe"
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": "jefe"
+        },
+        {
+          "fecha": "2026-03-27",
+          "puesto": "Ejecutivo de Tesorería",
+          "departamento": "Planeación Financiera y Tesorería",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Gestora",
+          "departamento": "Contraloría",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Coordinador de Mesa de Control",
+          "departamento": "Contraloría",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Ejecutivo de Facturación",
+          "departamento": "Facturación y Cobranza",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Gerente de Inventarios",
+          "departamento": "Procesos y Operaciones",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        }
+      ]
+    },
+    "2025": {
+      "total": 12,
+      "voluntarias": 3,
+      "involuntarias": 5,
+      "sin_clasificar": 4
+    }
+  },
+  "colaboradores_iniciales": [
+    {
+      "iniciales": "O.E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "fecha_ingreso": "2026-05-04",
+      "antiguedad_meses": 0.0
+    },
+    {
+      "iniciales": "R.A.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2026-04-16",
+      "antiguedad_meses": 1.0
+    },
+    {
+      "iniciales": "R.E.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1.0
+    },
+    {
+      "iniciales": "J.C.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1.0
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "fecha_ingreso": "2026-03-23",
+      "antiguedad_meses": 2.0
+    },
+    {
+      "iniciales": "R.R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2026-03-17",
+      "antiguedad_meses": 2.0
+    },
+    {
+      "iniciales": "F.R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2026-03-01",
+      "antiguedad_meses": 2.0
+    },
+    {
+      "iniciales": "P.I.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2026-02-04",
+      "antiguedad_meses": 3.0
+    },
+    {
+      "iniciales": "L.M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "fecha_ingreso": "2026-02-03",
+      "antiguedad_meses": 3.0
+    },
+    {
+      "iniciales": "J.R.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-12-08",
+      "antiguedad_meses": 5.0
+    },
+    {
+      "iniciales": "N.M.",
+      "puesto": "Auxiliar Administrativo",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-11-27",
+      "antiguedad_meses": 6.0
+    },
+    {
+      "iniciales": "E.G.",
+      "puesto": "Analista de Créditos Jr",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-11-06",
+      "antiguedad_meses": 6.0
+    },
+    {
+      "iniciales": "R.H.",
+      "puesto": "Agente de Cobranza en Campo",
+      "departamento": "Legal- Seguros",
+      "fecha_ingreso": "2025-11-05",
+      "antiguedad_meses": 6.0
+    },
+    {
+      "iniciales": "S.E.",
+      "puesto": "Gerente de Cobranza y Facturación",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-11-01",
+      "antiguedad_meses": 6.0
+    },
+    {
+      "iniciales": "L.J.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-09-22",
+      "antiguedad_meses": 8.0
+    },
+    {
+      "iniciales": "J.L.",
+      "puesto": "Coordinador Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-09-01",
+      "antiguedad_meses": 8.0
+    },
+    {
+      "iniciales": "B.I.",
+      "puesto": "Ejecutivo Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-08-20",
+      "antiguedad_meses": 9.0
+    },
+    {
+      "iniciales": "J.V.",
+      "puesto": "Director General",
+      "departamento": "Dirección General",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10.0
+    },
+    {
+      "iniciales": "J.A.",
+      "puesto": "Analista de Contratos Jr",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10.0
+    },
+    {
+      "iniciales": "R.Z.",
+      "puesto": "Analista de Negocios",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2025-06-16",
+      "antiguedad_meses": 11.0
+    },
+    {
+      "iniciales": "F.A.",
+      "puesto": "Gerente De Procesos y Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-06-03",
+      "antiguedad_meses": 11.0
+    },
+    {
+      "iniciales": "L.G.",
+      "puesto": "Analista de Seguros",
+      "departamento": "Legal- Seguros",
+      "fecha_ingreso": "2025-05-26",
+      "antiguedad_meses": 12.0
+    },
+    {
+      "iniciales": "R.D.",
+      "puesto": "Gerente Contabilidad",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2025-04-16",
+      "antiguedad_meses": 13.0
+    },
+    {
+      "iniciales": "A.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 14.0
+    },
+    {
+      "iniciales": "G.M.",
+      "puesto": "Contralor",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 14.0
+    },
+    {
+      "iniciales": "J.S.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-03-05",
+      "antiguedad_meses": 14.0
+    },
+    {
+      "iniciales": "M.G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-03-04",
+      "antiguedad_meses": 14.0
+    },
+    {
+      "iniciales": "J.R.",
+      "puesto": "Jefe Inventarios y Atención al cliente",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-02-16",
+      "antiguedad_meses": 15.0
+    },
+    {
+      "iniciales": "R.A.",
+      "puesto": "Contador Jr",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2024-11-11",
+      "antiguedad_meses": 18.0
+    },
+    {
+      "iniciales": "E.A.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 19.0
+    },
+    {
+      "iniciales": "M.C.",
+      "puesto": "Contador",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 19.0
+    },
+    {
+      "iniciales": "T.D.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2024-10-16",
+      "antiguedad_meses": 19.0
+    },
+    {
+      "iniciales": "M.D.",
+      "puesto": "Gerente de Planeación Financiera",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2024-09-23",
+      "antiguedad_meses": 20.0
+    },
+    {
+      "iniciales": "B.L.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2024-09-10",
+      "antiguedad_meses": 20.0
+    },
+    {
+      "iniciales": "G.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2024-06-03",
+      "antiguedad_meses": 24.0
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Control Interno",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2024-05-16",
+      "antiguedad_meses": 24.0
+    },
+    {
+      "iniciales": "C.N.",
+      "puesto": "Coordinador de Placas y Permisos",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2024-04-08",
+      "antiguedad_meses": 26.0
+    },
+    {
+      "iniciales": "L.K.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2024-02-19",
+      "antiguedad_meses": 27.0
+    },
+    {
+      "iniciales": "A.E.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 30.0
+    },
+    {
+      "iniciales": "R.F.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 30.0
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2023-09-18",
+      "antiguedad_meses": 32.0
+    },
+    {
+      "iniciales": "R.O.",
+      "puesto": "Coordinadora de Facturación",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2023-09-12",
+      "antiguedad_meses": 32.0
+    },
+    {
+      "iniciales": "C.V.",
+      "puesto": "Gerente de Ventas",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-08-02",
+      "antiguedad_meses": 34.0
+    },
+    {
+      "iniciales": "O.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-07-20",
+      "antiguedad_meses": 34.0
+    },
+    {
+      "iniciales": "J.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-06-19",
+      "antiguedad_meses": 35.0
+    },
+    {
+      "iniciales": "I.C.",
+      "puesto": "Gerente de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2023-06-01",
+      "antiguedad_meses": 36.0
+    },
+    {
+      "iniciales": "A.S.",
+      "puesto": "Gerente Legal",
+      "departamento": "Contraloría",
+      "fecha_ingreso": null,
+      "antiguedad_meses": null
+    }
+  ]
 }

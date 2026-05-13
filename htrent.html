@@ -2020,9 +2020,9 @@ body {
       </div>
       <div class="main-header-right">
         <div class="user-badge">
-          <div class="user-avatar">LM</div>
+          <div class="user-avatar">AR</div>
           <div class="user-info">
-            <span class="name">Liz Martínez</span>
+            <span class="name">Alejandra Reséndiz</span>
             <span class="role">Generalista RH</span>
           </div>
         </div>
@@ -2065,17 +2065,18 @@ body {
           </div>
         </div>
 
-        <!-- FILA 2: 3 paneles accionables -->
-        <div class="dash-row-3">
+        <!-- FILA 2: Paneles accionables -->
+        <div class="charts-grid" style="grid-template-columns: 2fr 1fr;">
 
-          <div class="dash-panel">
-            <div class="dash-panel-title">⏰ Contratos por vencer</div>
-            <div class="contract-list" id="contracts-list"></div>
-          </div>
-
-          <div class="dash-panel">
-            <div class="dash-panel-title">✅ Planes de acción por vencer</div>
-            <div class="plan-list" id="plans-list"></div>
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">⏰ Período de prueba · seguimiento</div>
+                <div class="chart-panel-subtitle">Colaboradores con período activo · Onboarding y renovación</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link">Ver detalle →</a>
+            </div>
+            <div id="periodo-prueba-list" style="margin-top:8px;"></div>
           </div>
 
           <div class="dash-panel">
@@ -2188,6 +2189,32 @@ body {
 
         </div>
 
+        <!-- FILA 3.7: Bajas clasificadas 2026 -->
+        <div class="charts-grid" style="grid-template-columns: 1fr 1.4fr;">
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Bajas por tipo · 2026</div>
+                <div class="chart-panel-subtitle">Clasificación voluntaria vs involuntaria · YTD</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="INACTIVOS">Ver detalle →</a>
+            </div>
+            <div class="chart-canvas-wrap" style="min-height:240px;"><canvas id="chart-bajas-tipo"></canvas></div>
+          </div>
+
+          <div class="chart-panel" style="background:linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Insight de rotación</div>
+                <div class="chart-panel-subtitle">Lectura ejecutiva 2026</div>
+              </div>
+            </div>
+            <div id="bajas-insight" style="padding:6px 4px;"></div>
+          </div>
+
+        </div>
+
         <!-- FILA 4: Asistencia y puntualidad -->
         <div class="charts-grid-2">
 
@@ -2256,6 +2283,57 @@ body {
            ============================================ -->
       <div class="view" id="view-crm">
 
+        <!-- Panel de cobertura de plantilla -->
+        <div class="charts-grid" style="grid-template-columns: 1fr 1.1fr 1.4fr; margin-bottom: 16px;">
+
+          <div class="chart-panel" style="background:linear-gradient(135deg, #1a2b29 0%, #003834 100%); color:#fff;">
+            <div style="display:flex; flex-direction:column; height:100%; justify-content:space-between;">
+              <div>
+                <div style="font-size:11px; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;">Cobertura de plantilla</div>
+                <div style="font-size:42px; font-weight:700; color:#3FD33F; line-height:1;" id="cov-pct">92%</div>
+                <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-top:6px;">de la plantilla objetivo</div>
+              </div>
+
+              <div style="display:flex; gap:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12);">
+                <div style="flex:1;">
+                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Activos</div>
+                  <div style="font-size:22px; font-weight:600; color:#fff;" id="cov-activos">46</div>
+                </div>
+                <div style="flex:1;">
+                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Vacantes</div>
+                  <div style="font-size:22px; font-weight:600; color:#E89B2B;" id="cov-vacantes">4</div>
+                </div>
+                <div style="flex:1;">
+                  <div style="font-size:10px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:0.5px;">Objetivo</div>
+                  <div style="font-size:22px; font-weight:600; color:#fff;" id="cov-target">50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Composición por nivel</div>
+                <div class="chart-panel-subtitle">Plantilla activa actual</div>
+              </div>
+            </div>
+            <div class="chart-canvas-wrap" style="min-height:200px;"><canvas id="chart-niveles-colab"></canvas></div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-panel-header">
+              <div>
+                <div class="chart-panel-title">Cobertura por departamento</div>
+                <div class="chart-panel-subtitle">Activos vs vacantes en proceso</div>
+              </div>
+              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ACTIVOS">Ver detalle →</a>
+            </div>
+            <div id="cobertura-list" style="margin-top:8px;"></div>
+          </div>
+
+        </div>
+
         <div class="crm-toolbar">
           <div class="search-box">
             <span class="search-icon">🔍</span>
@@ -2316,7 +2394,7 @@ body {
           </div>
         </div>
 
-        <h3 style="font-family: Arial, sans-serif; font-size: 16px; color: var(--text-secondary); margin: 32px 0 16px; font-weight: 500;">Próximamente</h3>
+        <h3 style="font-family: Arial, sans-serif; font-size: 16px; color: var(--text-secondary); margin: 32px 0 16px; font-weight: 500;">Módulos inactivos · Fase 2</h3>
 
         <div class="docs-grid">
           <div class="doc-card disabled">
@@ -2375,7 +2453,7 @@ body {
            ============================================ -->
       <div class="view" id="view-modulos">
         <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 20px; max-width: 640px;">
-          Mapa completo de módulos de la plataforma. Los activos están funcionando en este demo; los marcados como "próximamente" se activarán en la versión de producción.
+          Mapa completo de módulos de la plataforma. Los activos están funcionando en este demo; los marcados como "inactivos" se activan en la siguiente fase del servicio BPO.
         </p>
 
         <h3 style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 700;">Gestión de personal</h3>
@@ -2393,12 +2471,12 @@ body {
           <div class="module-tile">
             <div class="module-tile-icon">📞</div>
             <div class="module-tile-title">Contactos de emergencia</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📝</div>
             <div class="module-tile-title">Descripción de puesto</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
         </div>
 
@@ -2422,27 +2500,27 @@ body {
           <div class="module-tile">
             <div class="module-tile-icon">🔐</div>
             <div class="module-tile-title">Contrato confidencialidad</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📱</div>
             <div class="module-tile-title">Responsiva de celular</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">💻</div>
             <div class="module-tile-title">Responsiva equipo cómputo</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">💰</div>
             <div class="module-tile-title">Carta de préstamo</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📖</div>
             <div class="module-tile-title">Reglamento (acuse)</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
         </div>
 
@@ -2451,32 +2529,32 @@ body {
           <div class="module-tile">
             <div class="module-tile-icon">📋</div>
             <div class="module-tile-title">Requisición de puesto</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">🏖️</div>
             <div class="module-tile-title">Solicitud de vacaciones</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">🎓</div>
             <div class="module-tile-title">Solicitud de capacitación</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📈</div>
             <div class="module-tile-title">Cambio de puesto</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">💵</div>
             <div class="module-tile-title">Incremento de sueldo</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">⭐</div>
             <div class="module-tile-title">Promoción laboral</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
         </div>
 
@@ -2485,32 +2563,32 @@ body {
           <div class="module-tile">
             <div class="module-tile-icon">🚗</div>
             <div class="module-tile-title">Carpooling</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">❌</div>
             <div class="module-tile-title">Permisos sin goce</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📊</div>
             <div class="module-tile-title">Control de asistencia</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">🎤</div>
             <div class="module-tile-title">Reporte de entrevista</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">🧠</div>
             <div class="module-tile-title">Reporte de psicometría</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📞</div>
             <div class="module-tile-title">Referencias laborales</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
         </div>
 
@@ -2524,7 +2602,7 @@ body {
           <div class="module-tile">
             <div class="module-tile-icon">📊</div>
             <div class="module-tile-title">Reportes Ejecutivos</div>
-            <div class="module-tile-soon">Próximamente</div>
+            <div class="module-tile-soon">Inactivo</div>
           </div>
         </div>
 
@@ -3050,7 +3128,76 @@ body {
 // ESTADO INICIAL — Datos ficticios HT Rent
 // ============================================
 const state = {
-  employees: [],
+  employees: [
+    {
+      id: 1,
+      nombre: 'Empleado',
+      apellidos: 'Demo Uno',
+      puesto: 'Coordinador de Operaciones',
+      departamento: 'Procesos y Operaciones',
+      fecha_ingreso: '2024-03-15',
+      fin_contrato: '',
+      salario: 25000,
+      estatus: 'Activo',
+      curp: 'XXXX000000HXXXXX00',
+      rfc: 'XXXX000000XXX',
+      nss: '00000000000',
+      email: 'demo1@htrent.mx',
+      telefono: '',
+      direccion: ''
+    },
+    {
+      id: 2,
+      nombre: 'Empleado',
+      apellidos: 'Demo Dos',
+      puesto: 'Ejecutivo de Ventas',
+      departamento: 'Ventas',
+      fecha_ingreso: '2025-01-10',
+      fin_contrato: '',
+      salario: 22000,
+      estatus: 'Activo',
+      curp: 'XXXX000000HXXXXX01',
+      rfc: 'XXXX000000XX1',
+      nss: '00000000001',
+      email: 'demo2@htrent.mx',
+      telefono: '',
+      direccion: ''
+    },
+    {
+      id: 3,
+      nombre: 'Empleado',
+      apellidos: 'Demo Tres',
+      puesto: 'Auxiliar Contable',
+      departamento: 'Contabilidad',
+      fecha_ingreso: '2024-09-01',
+      fin_contrato: '',
+      salario: 18000,
+      estatus: 'Activo',
+      curp: 'XXXX000000MXXXXX02',
+      rfc: 'XXXX000000XX2',
+      nss: '00000000002',
+      email: 'demo3@htrent.mx',
+      telefono: '',
+      direccion: ''
+    },
+    {
+      id: 4,
+      nombre: 'Empleada',
+      apellidos: 'Demo Cuatro',
+      puesto: 'Analista de Cobranza',
+      departamento: 'Facturación y Cobranza',
+      fecha_ingreso: '2025-06-20',
+      fin_contrato: '',
+      salario: 20000,
+      estatus: 'Activo',
+      curp: 'XXXX000000MXXXXX03',
+      rfc: 'XXXX000000XX3',
+      nss: '00000000003',
+      email: 'demo4@htrent.mx',
+      telefono: '',
+      direccion: ''
+    }
+  ],
 
   // ============================================
   // AGREGADOS REALES (sin datos personales)
@@ -5073,6 +5220,522 @@ updateDashboard();
     `;
   }
 
+  function renderCobertura(data) {
+    const wrap = document.getElementById('cobertura-list');
+    if (!wrap || !data?.colaboradores_por_departamento) return;
+
+    // Calcular vacantes por depto
+    const vacPorDepto = {};
+    (data.vacantes_activas_2026 || []).forEach(v => {
+      const dep = v.departamento;
+      vacPorDepto[dep] = (vacPorDepto[dep] || 0) + 1;
+      // Caso especial: "Cobranza" sin "Facturación"
+      if (dep === 'Cobranza') {
+        vacPorDepto['Facturación y Cobranza'] = (vacPorDepto['Facturación y Cobranza'] || 0) + 1;
+      }
+    });
+
+    // Construir filas con activos + vacantes
+    const filas = data.colaboradores_por_departamento.map(d => {
+      const activos = d.count;
+      const vac = vacPorDepto[d.departamento] || 0;
+      const total = activos + vac;
+      const pct = total > 0 ? (activos / total) * 100 : 100;
+      return { nombre: d.departamento, activos, vac, total, pct };
+    }).sort((a, b) => a.pct - b.pct); // Los menos cubiertos primero
+
+    // Top KPIs cobertura
+    const totalActivos = filas.reduce((s, f) => s + f.activos, 0);
+    const totalVac = filas.reduce((s, f) => s + f.vac, 0);
+    const totalTarget = totalActivos + totalVac;
+    const pctCob = totalTarget > 0 ? (totalActivos / totalTarget) * 100 : 0;
+
+    // Update tarjeta KPI cobertura
+    const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    setText('cov-pct', Math.round(pctCob) + '%');
+    setText('cov-activos', totalActivos);
+    setText('cov-vacantes', totalVac);
+    setText('cov-target', totalTarget);
+
+    // Renderizar lista
+    let html = '<div style="display:flex; flex-direction:column; gap:8px; max-height:240px; overflow-y:auto;">';
+    filas.forEach(f => {
+      const color = f.pct === 100 ? '#3FD33F' : f.pct >= 80 ? '#E89B2B' : '#D64545';
+      const vacLabel = f.vac > 0 ? `<span style="color:#E89B2B; font-weight:600;">+${f.vac} vacante${f.vac > 1 ? 's' : ''}</span>` : '<span style="color:var(--text-muted); font-size:10.5px;">completo</span>';
+      html += `
+        <div style="display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid var(--border-light);">
+          <div style="flex:1; min-width:0;">
+            <div style="font-size:12px; font-weight:500; color:var(--text-primary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${f.nombre}</div>
+            <div style="font-size:10.5px; color:var(--text-muted); margin-top:2px;">${f.activos} activo${f.activos !== 1 ? 's' : ''} · ${vacLabel}</div>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px; min-width:60px;">
+            <div style="font-size:12px; font-weight:600; color:${color};">${Math.round(f.pct)}%</div>
+            <div style="width:60px; height:5px; background:var(--border-light); border-radius:3px; overflow:hidden;">
+              <div style="width:${f.pct}%; height:100%; background:${color};"></div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+    wrap.innerHTML = html;
+  }
+
+  function renderNivelesColab(data) {
+    const ctx = document.getElementById('chart-niveles-colab');
+    if (!ctx || !data?.colaboradores_por_nivel) return;
+    if (charts.nivelesColab) { charts.nivelesColab.destroy(); delete charts.nivelesColab; }
+    const arr = data.colaboradores_por_nivel;
+    const total = arr.reduce((s, d) => s + d.count, 0);
+    const colorMap = {
+      'Dirección':    '#003834',
+      'Gerencia':     '#1E3A5F',
+      'Coordinación': '#108277',
+      'Operativo':    '#3FD33F'
+    };
+    charts.nivelesColab = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: arr.map(d => d.nivel),
+        datasets: [{
+          data: arr.map(d => d.count),
+          backgroundColor: arr.map(d => colorMap[d.nivel] || '#9E8075'),
+          borderColor: '#fff',
+          borderWidth: 3,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '60%',
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 8,
+              font: { size: 10.5 },
+              generateLabels: (chart) => {
+                const ds = chart.data.datasets[0];
+                return chart.data.labels.map((lbl, i) => {
+                  const val = ds.data[i];
+                  const pct = ((val / total) * 100).toFixed(0);
+                  return {
+                    text: `${lbl}: ${val} (${pct}%)`,
+                    fillStyle: ds.backgroundColor[i],
+                    strokeStyle: ds.backgroundColor[i],
+                    lineWidth: 0,
+                    index: i
+                  };
+                });
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: (c) => `${c.parsed} colaboradores  (${((c.parsed / total) * 100).toFixed(1)}%)`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function fixSidebarCounter(data) {
+    if (!data?.kpis_principales?.colaboradores_activos) return;
+    const target = data.kpis_principales.colaboradores_activos;
+    const badge = document.getElementById('nav-count');
+    if (!badge) return;
+    badge.textContent = target;
+    // Resistir sobreescrituras del HTML original (que cuenta filas de tabla vacía → 0)
+    const observer = new MutationObserver(() => {
+      if (badge.textContent != target) badge.textContent = target;
+    });
+    observer.observe(badge, { childList: true, characterData: true, subtree: true });
+  }
+
+  function renderColaboradoresIniciales(data) {
+    const tbody = document.getElementById('employees-tbody');
+    if (!tbody || !data?.colaboradores_iniciales) return;
+
+    const lista = data.colaboradores_iniciales;
+    const html = lista.map(c => {
+      const antiguedadTxt = c.antiguedad_meses !== null
+        ? (c.antiguedad_meses >= 12
+            ? `${(c.antiguedad_meses / 12).toFixed(1)} años`
+            : `${c.antiguedad_meses} meses`)
+        : 'N/D';
+      const fechaTxt = c.fecha_ingreso || 'No registrada';
+      return `
+        <tr>
+          <td>
+            <div class="employee-cell">
+              <div class="employee-avatar">${c.iniciales}</div>
+              <span class="employee-name">${c.iniciales}</span>
+            </div>
+          </td>
+          <td>${c.puesto || '—'}</td>
+          <td>${c.departamento || '—'}</td>
+          <td>${fechaTxt}<br><span style="font-size:10px; color:var(--text-muted);">${antiguedadTxt}</span></td>
+          <td><span style="display:inline-block; padding:2px 10px; background:rgba(63,211,63,0.15); color:#003834; border-radius:10px; font-size:11px; font-weight:600;">Activo</span></td>
+          <td>
+            <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" style="color:var(--horux-teal); font-size:11px; text-decoration:none;">Ver en Sheet →</a>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    tbody.innerHTML = html;
+
+    // Observer para resistir sobreescrituras del HTML original
+    if (!tbody._iniObserver) {
+      const observer = new MutationObserver(() => {
+        if (tbody.children.length !== lista.length) {
+          tbody.innerHTML = html;
+        }
+      });
+      observer.observe(tbody, { childList: true });
+      tbody._iniObserver = observer;
+    }
+  }
+
+  function renderBajasTipo(data) {
+    const ctx = document.getElementById('chart-bajas-tipo');
+    if (!ctx || !data?.bajas_clasificadas?.['2026']) return;
+    if (charts.bajasTipo) { charts.bajasTipo.destroy(); delete charts.bajasTipo; }
+    const b2026 = data.bajas_clasificadas['2026'];
+    const total = b2026.total;
+    charts.bajasTipo = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Involuntarias', 'Voluntarias', 'Sin clasificar'],
+        datasets: [{
+          data: [b2026.involuntarias, b2026.voluntarias, b2026.sin_clasificar],
+          backgroundColor: ['#1E3A5F', '#E89B2B', '#9aa5a3'],
+          borderColor: '#fff',
+          borderWidth: 3,
+          hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '62%',
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              boxWidth: 10,
+              boxHeight: 10,
+              padding: 10,
+              font: { size: 11 },
+              generateLabels: (chart) => {
+                const ds = chart.data.datasets[0];
+                return chart.data.labels.map((lbl, i) => {
+                  const val = ds.data[i];
+                  if (val === 0) return null;
+                  const pct = total > 0 ? ((val / total) * 100).toFixed(0) : 0;
+                  return {
+                    text: `${lbl}: ${val} (${pct}%)`,
+                    fillStyle: ds.backgroundColor[i],
+                    strokeStyle: ds.backgroundColor[i],
+                    lineWidth: 0,
+                    index: i
+                  };
+                }).filter(Boolean);
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: (c) => `${c.parsed} bajas  (${((c.parsed / total) * 100).toFixed(1)}%)`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function renderBajasInsight(data) {
+    const wrap = document.getElementById('bajas-insight');
+    if (!wrap || !data?.bajas_clasificadas?.['2026']) return;
+    const b = data.bajas_clasificadas['2026'];
+    const motivos = b.motivos || {};
+    const totalConMotivo = Object.values(motivos).reduce((s, v) => s + v, 0);
+
+    let motivosHtml = '';
+    if (totalConMotivo > 0) {
+      const orden = Object.entries(motivos).sort((a, b) => b[1] - a[1]);
+      motivosHtml = orden.map(([m, c]) =>
+        `<span style="display:inline-block; padding:3px 9px; background:rgba(30,58,95,0.08); color:#1E3A5F; border-radius:12px; font-size:10.5px; font-weight:500; margin:2px 4px 2px 0;">${m} (${c})</span>`
+      ).join('');
+    }
+
+    wrap.innerHTML = `
+      <div style="margin-bottom:12px;">
+        <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Distribución 2026</div>
+        <div style="font-size:13px; color:var(--text-primary); margin-top:6px; line-height:1.5;">
+          <strong style="color:#1E3A5F;">${b.pct_involuntarias}%</strong> de las bajas fueron por decisión gerencial (involuntarias), <strong style="color:#E89B2B;">${b.pct_voluntarias}%</strong> por renuncia voluntaria.
+        </div>
+      </div>
+
+      <div style="margin-bottom:12px; padding:10px 12px; background:rgba(63,211,63,0.08); border-left:3px solid #3FD33F; border-radius:4px;">
+        <div style="font-size:11px; color:#003834; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Lectura ejecutiva</div>
+        <div style="font-size:12.5px; color:var(--text-primary); margin-top:5px; line-height:1.5;">
+          El problema no es <strong>retención</strong>: la rotación voluntaria real es ~${(b.voluntarias / 47 * 100).toFixed(1)}% sobre plantilla. El indicador alto viene de <strong>decisiones gerenciales</strong> de depuración.
+        </div>
+      </div>
+
+      ${totalConMotivo > 0 ? `
+        <div>
+          <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Motivos registrados</div>
+          <div>${motivosHtml}</div>
+          <div style="font-size:10.5px; color:var(--text-muted); margin-top:8px; padding-top:8px; border-top:1px solid var(--border-light);">
+            ${b.total - totalConMotivo} bajas sin motivo capturado · oportunidad de mejora en bitácora de salida
+          </div>
+        </div>
+      ` : ''}
+    `;
+  }
+
+  function renderPeriodoPrueba(data) {
+    const wrap = document.getElementById('periodo-prueba-list');
+    if (!wrap || !data?.seguimiento_periodo_prueba) return;
+    const sp = data.seguimiento_periodo_prueba;
+    const colabs = sp.colaboradores || [];
+
+    // Ordenar: excedidos primero, luego por días desc, sin captura al final
+    const ordenados = [...colabs].sort((a, b) => {
+      if (a.dias_desde_ingreso === null && b.dias_desde_ingreso === null) return 0;
+      if (a.dias_desde_ingreso === null) return 1;
+      if (b.dias_desde_ingreso === null) return -1;
+      return b.dias_desde_ingreso - a.dias_desde_ingreso;
+    });
+
+    // Semáforo
+    const semColor = (dias) => {
+      if (dias === null) return '#9aa5a3';
+      if (dias > 180) return '#D64545';
+      if (dias > 90) return '#E89B2B';
+      return '#3FD33F';
+    };
+
+    // Header con resumen
+    let html = `
+      <div style="display:flex; gap:8px; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid var(--border-light);">
+        <div style="flex:1; text-align:center;">
+          <div style="font-size:18px; font-weight:700; color:#D64545; line-height:1;">${sp.periodo_excedido}</div>
+          <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Excedidos</div>
+        </div>
+        <div style="flex:1; text-align:center;">
+          <div style="font-size:18px; font-weight:700; color:#3FD33F; line-height:1;">${sp.onboarding_completados}</div>
+          <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Completados</div>
+        </div>
+        <div style="flex:1; text-align:center;">
+          <div style="font-size:18px; font-weight:700; color:#E89B2B; line-height:1;">${sp.onboarding_en_proceso}</div>
+          <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">En proceso</div>
+        </div>
+        <div style="flex:1; text-align:center;">
+          <div style="font-size:18px; font-weight:700; color:#9aa5a3; line-height:1;">${sp.onboarding_sin_captura}</div>
+          <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Sin captura</div>
+        </div>
+      </div>
+      <div style="max-height:200px; overflow-y:auto;">
+    `;
+
+    ordenados.forEach(c => {
+      const color = semColor(c.dias_desde_ingreso);
+      const diasTxt = c.dias_desde_ingreso !== null ? `${c.dias_desde_ingreso}d` : 'N/D';
+      const estatusBadge = c.estatus_onboarding === 'COMPLETADO'
+        ? '<span style="color:#3FD33F; font-weight:600;">✓ Completado</span>'
+        : c.estatus_onboarding === 'EN PROCESO'
+        ? '<span style="color:#E89B2B; font-weight:600;">⏳ En proceso</span>'
+        : '<span style="color:#9aa5a3;">Sin captura</span>';
+
+      html += `
+        <div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid var(--border-light); font-size:11.5px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:${color}; flex-shrink:0;"></span>
+          <div style="flex:1; min-width:0;">
+            <div style="font-weight:600; color:var(--text-primary);">${c.iniciales} <span style="font-weight:400; color:var(--text-secondary);">· ${c.puesto}</span></div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:1px;">${c.departamento}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:600; color:${color}; font-size:11px;">${diasTxt}</div>
+            <div style="font-size:9.5px; margin-top:2px;">${estatusBadge}</div>
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+
+    wrap.innerHTML = html;
+  }
+
+  // ───────── INDICADORES DE RH ─────────
+  function renderIndicadoresRH(data) {
+    if (!data) return;
+    const k = data.kpis_principales || {};
+    const ap = data.asistencia_puntualidad || {};
+    const cap = data.capacitacion_resumen || {};
+    const vac2025 = data.vacantes_2025 || {};
+
+    // Calcular ausentismo bruto desde fichajes
+    const fichajesEsperados = (ap.empleados_con_fichaje || 0) * (ap.dias_periodo || 0);
+    const fichajesReales = ap.total_fichajes || 0;
+    const ausentismoBruto = fichajesEsperados > 0
+      ? ((fichajesEsperados - fichajesReales) / fichajesEsperados) * 100
+      : 0;
+
+    // % vacantes cubiertas 2025
+    const cubierta = vac2025.por_estatus?.Cubierta || 0;
+    const totalVac = vac2025.total || 1;
+    const pctCubiertas = (cubierta / totalVac) * 100;
+
+    // ─── 9 indicadores con datos reales ───
+    const dataMap = {
+      // Resumen general
+      'headcount':         { value: k.colaboradores_activos, unit: '', state: 'real', insight: `${k.colaboradores_activos} colaboradores activos al ${(data.meta?.fecha_corte || '12/05/2026')}. Plantilla objetivo: 50 puestos (92% cubierta). 4 vacantes en proceso de cobertura.` },
+      'evolucion_hc':      { state: 'fase2', motivo: 'Requiere captura mensual histórica de headcount para comparativos.' },
+      'altas_mes':         { value: data.contrataciones_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 1, unit: '', state: 'real', insight: '1 alta en mayo. YTD 2026: 9 contrataciones acumuladas. Referencia 2025: 26 altas en el año (15.6% del HC promedio).' },
+      'bajas_mes':         { value: data.bajas_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 0, unit: '', state: 'real', insight: '0 bajas en mayo. YTD 2026: 11 bajas acumuladas (enero 2, febrero 1, marzo 4, abril 4). Referencia 2025: 12 bajas en todo el año.' },
+      // Reclutamiento
+      'tiempo_cobertura':  { value: vac2025.dias_promedio_cobertura, unit: 'días', state: 'real', context: 'Benchmark 2025 · 10 vacantes cubiertas', insight: 'Promedio de cobertura 2025: 16.9 días. Realidad 2026: 2 de 3 vacantes activas ya exceden ese benchmark (Auxiliar Operaciones 38 días, Ejecutivo Ventas 56 días).' },
+      'vacantes_cubiertas':{ value: Math.round(pctCubiertas), unit: '%', state: 'real', context: '10 de 11 vacantes en 2025', insight: 'Cobertura 2025: 91% (10 cubiertas, 1 cancelada). Fuentes principales: OCC 60%, Referidos 20%, Indeed 10%.' },
+      // Capacitación
+      'capacitacion':      { value: Math.round(cap.cumplimiento_promedio_pct), unit: '%', state: 'real', context: 'Promedio simple · 6 cursos del catálogo', insight: 'Promedio simple de 6 cursos. Detalle: 5 cursos al 100% (C1, C3, C4, C5 e Inducción), C2 Socialización 88.4%, C6 Comunicación Efectiva 31.9% (oportunidad: solo 15 de 47 completaron).' },
+      // Desempeño
+      'evaluaciones':      { state: 'fase2', motivo: 'Requiere implementar proceso formal de evaluación con calendario y formato de retroalimentación.' },
+      // Admin Personal
+      'tiempo_respuesta':  { state: 'fase2', motivo: 'Requiere bitácora de solicitudes RH con timestamp de entrada y resolución.' },
+      'expedientes':       { state: 'fase2', motivo: 'Requiere checklist de expedientes digitales con campos obligatorios verificables.' },
+      'rotacion_total':    { value: k.rotacion_2026_ytd, unit: '%', state: 'real', context: 'YTD 2026 · Bajas / HC promedio', insight: 'Calculada como bajas acumuladas (11) entre headcount promedio del periodo. YTD 22.9% vs cierre 2025 30.4%. Concentración en niveles operativo y coordinación.' },
+      'rotacion_voluntaria':{ state: 'fase2', motivo: 'Requiere clasificar cada baja por motivo (renuncia, despido, fin de contrato, jubilación).' },
+      'ausentismo':        { value: ausentismoBruto.toFixed(1), unit: '%', state: 'real', context: 'Bruto · 16 abril–12 mayo 2026', insight: `Calculado sobre 717 fichajes registrados de un total esperado de 828 (46 colaboradores × 18 días). El 13.4% bruto incluye permisos legítimos (60), vacaciones (79) y home office (21). Ausentismo neto real estimado: 2-4%.` },
+      'retardos':          { value: ap.retardos_pct, unit: '%', state: 'real', context: 'Tolerancia 10 min · 193 eventos', insight: 'De 717 fichajes en 18 días hábiles, 193 fueron retardos (más de 10 min después del horario). Acumulan 12,867 minutos perdidos = 214 horas = 27 jornadas. Concentración: Procesos y Operaciones (49 eventos, 2,842 min).' },
+      // Servicio RH
+      'servicio_rh':       { state: 'fase2', motivo: 'Requiere encuesta de satisfacción interna trimestral con metodología NPS o similar.' },
+      // Contratos por vencer (nuevo)
+      'contratos_vencer':  { state: 'fase2', motivo: 'Requiere captura de fechas de fin de contrato y tipo de contratación (indefinido vs temporal).' }
+    };
+
+    // Aplicar cambios a cada card
+    document.querySelectorAll('#view-indicadores .ind-card').forEach(card => {
+      const key = card.getAttribute('data-ind');
+      const info = dataMap[key];
+      if (!info) return;
+
+      if (info.state === 'fase2') {
+        // Marcar como Fase 2
+        const semaforo = card.querySelector('.ind-semaforo');
+        const valEl = card.querySelector('.ind-card-value');
+        const unitEl = card.querySelector('.ind-card-unit');
+        const trendEl = card.querySelector('.ind-card-trend');
+        const metaEl = card.querySelector('.ind-card-meta');
+        const sparkEl = card.querySelector('.ind-sparkline');
+        const sparkLblEl = card.querySelector('.ind-spark-labels');
+        const insightTxt = card.querySelector('.ind-insight-text');
+
+        if (semaforo) { semaforo.style.background = '#9aa5a3'; }
+        if (valEl) { valEl.textContent = '—'; valEl.style.color = '#9aa5a3'; }
+        if (unitEl) { unitEl.textContent = ''; }
+        if (trendEl) {
+          trendEl.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#108277; color:#fff; border-radius:10px; font-size:9.5px; font-weight:600; letter-spacing:0.4px; text-transform:uppercase;">Fase 2</span>';
+          trendEl.className = 'ind-card-trend';
+        }
+        if (metaEl) { metaEl.textContent = ''; }
+        if (sparkEl) { sparkEl.style.display = 'none'; }
+        if (sparkLblEl) { sparkLblEl.style.display = 'none'; }
+        if (insightTxt) {
+          insightTxt.innerHTML = '<strong>En implementación.</strong> ' + (info.motivo || 'Pendiente captura de datos base.');
+        }
+        card.style.opacity = '0.78';
+      } else {
+        // Actualizar con dato real
+        const valEl = card.querySelector('.ind-card-value');
+        const unitEl = card.querySelector('.ind-card-unit');
+        const trendEl = card.querySelector('.ind-card-trend');
+        const metaEl = card.querySelector('.ind-card-meta');
+        const insightTxt = card.querySelector('.ind-insight-text');
+
+        if (valEl && info.value !== undefined) valEl.textContent = info.value;
+        if (unitEl && info.unit !== undefined) unitEl.textContent = info.unit;
+        if (trendEl) {
+          trendEl.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#3FD33F; color:#003834; border-radius:10px; font-size:9.5px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;">Dato real</span>';
+        }
+        if (metaEl && info.context) {
+          metaEl.textContent = info.context;
+        }
+        if (insightTxt && info.insight) {
+          insightTxt.textContent = info.insight;
+        }
+      }
+    });
+
+    // Reordenar: dentro de cada sección, mover las cards Fase 2 al final
+    document.querySelectorAll('#view-indicadores .ind-grid').forEach(grid => {
+      const fase2Cards = Array.from(grid.querySelectorAll('.ind-card')).filter(c => {
+        const key = c.getAttribute('data-ind');
+        return dataMap[key] && dataMap[key].state === 'fase2';
+      });
+      fase2Cards.forEach(c => grid.appendChild(c)); // appendChild mueve al final
+    });
+
+    // Reordenar secciones completas: las que tienen al menos 1 card real arriba, las puras Fase 2 al final
+    const viewInd = document.getElementById('view-indicadores');
+    if (viewInd) {
+      const sections = Array.from(viewInd.querySelectorAll('.ind-section'));
+      sections.sort((a, b) => {
+        const aCards = Array.from(a.querySelectorAll('.ind-card'));
+        const bCards = Array.from(b.querySelectorAll('.ind-card'));
+        const aHasReal = aCards.some(c => {
+          const k = c.getAttribute('data-ind');
+          return dataMap[k] && dataMap[k].state === 'real';
+        });
+        const bHasReal = bCards.some(c => {
+          const k = c.getAttribute('data-ind');
+          return dataMap[k] && dataMap[k].state === 'real';
+        });
+        if (aHasReal && !bHasReal) return -1;
+        if (!aHasReal && bHasReal) return 1;
+        return 0;
+      });
+      sections.forEach(s => viewInd.appendChild(s)); // mueve en orden nuevo
+    }
+
+    // Actualizar resumen general (las 4 cards arriba)
+    const summaryCards = document.querySelectorAll('#view-indicadores .ind-summary-card');
+    if (summaryCards.length >= 4) {
+      // Card 1: Headcount
+      const c1Val = summaryCards[0].querySelector('.ind-summary-value');
+      if (c1Val) c1Val.textContent = k.colaboradores_activos || '—';
+      const c1Ins = summaryCards[0].querySelector('.ind-insight-text');
+      if (c1Ins) c1Ins.textContent = `${k.colaboradores_activos} colaboradores activos al ${(data.meta?.fecha_corte || '12/05/2026')}. Plantilla objetivo: 50 puestos (92% cubierta).`;
+
+      // Card 2: Evolución HC - Fase 2
+      const c2Val = summaryCards[1].querySelector('.ind-summary-value');
+      if (c2Val) { c2Val.textContent = '—'; c2Val.style.color = '#9aa5a3'; }
+      const c2Trend = summaryCards[1].querySelector('.ind-summary-trend');
+      if (c2Trend) c2Trend.innerHTML = '<span style="display:inline-block; padding:2px 8px; background:#108277; color:#fff; border-radius:10px; font-size:9.5px; font-weight:600; letter-spacing:0.4px; text-transform:uppercase;">Fase 2</span>';
+      const c2Ins = summaryCards[1].querySelector('.ind-insight-text');
+      if (c2Ins) c2Ins.innerHTML = '<strong>En implementación.</strong> Requiere captura mensual histórica de headcount.';
+      summaryCards[1].style.opacity = '0.78';
+
+      // Card 3: Altas mes (mayo)
+      const c3Val = summaryCards[2].querySelector('.ind-summary-value');
+      if (c3Val) c3Val.textContent = data.contrataciones_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 1;
+      const c3Ins = summaryCards[2].querySelector('.ind-insight-text');
+      if (c3Ins) c3Ins.textContent = '9 contrataciones acumuladas YTD 2026 vs 26 en todo 2025.';
+
+      // Card 4: Bajas mes (mayo)
+      const c4Val = summaryCards[3].querySelector('.ind-summary-value');
+      if (c4Val) c4Val.textContent = data.bajas_por_mes_2026?.find(m => m.mes === 'May')?.count ?? 0;
+      const c4Ins = summaryCards[3].querySelector('.ind-insight-text');
+      if (c4Ins) c4Ins.textContent = '11 bajas YTD 2026 (rotación 22.9%) vs 12 bajas en todo 2025 (rotación 30.4%).';
+    }
+  }
+
   // ───────── BOOTSTRAP ─────────
   async function init() {
     const data = await loadData();
@@ -5087,10 +5750,18 @@ updateDashboard();
       renderContrataciones(data);
       renderBajas(data);
       renderNiveles(data);
+      renderBajasTipo(data);
+      renderBajasInsight(data);
       renderAsistenciaDepto(data);
       renderPuntualidadMin(data);
       renderVacantesTable(data);
       renderVacantesInsight(data);
+      renderCobertura(data);
+      renderNivelesColab(data);
+      renderColaboradoresIniciales(data);
+      fixSidebarCounter(data);
+      renderPeriodoPrueba(data);
+      renderIndicadoresRH(data);
     };
     // Render inicial
     setTimeout(renderAll, 100);
