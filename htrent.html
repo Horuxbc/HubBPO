@@ -4898,13 +4898,31 @@ updateDashboard();
     setText('kpi-activos', k.colaboradores_activos);
     setText('kpi-inactivos', k.bajas_2026);
     setText('kpi-reclutamiento', (data.vacantes_activas_2026 || []).length);
+
+    // Fix: sobreescribir el trend de "colaboradores activos" con el conteo real
+    // El HTML original lo sobrescribe con state.employees.length (4 demos)
+    const activosTrend = document.getElementById('kpi-activos-trend');
+    if (activosTrend && k.colaboradores_activos) {
+      activosTrend.textContent = 'colaboradores al corte';
+      // Observer para resistir sobreescritura del código heredado
+      if (!activosTrend._fixObserver) {
+        const obs = new MutationObserver(() => {
+          if (activosTrend.textContent !== 'colaboradores al corte') {
+            activosTrend.textContent = 'colaboradores al corte';
+          }
+        });
+        obs.observe(activosTrend, { childList: true, characterData: true, subtree: true });
+        activosTrend._fixObserver = obs;
+      }
+    }
+
     if (data.asistencia_puntualidad) {
       setText('kpi-asistencia', Math.round(data.asistencia_puntualidad.puntuales_pct) + '%');
     }
     if (data.capacitacion_resumen) {
       setText('kpi-capacitacion', Math.round(data.capacitacion_resumen.cumplimiento_promedio_pct) + '%');
     }
-    // Tarjeta KPI tag (rotación comparativa 2026 vs 2025)
+    // Tarjeta KPI tag
     setText('kpi-tag-activos', k.colaboradores_activos);
     setText('kpi-tag-ingresos', k.ingresos_2026);
     setText('kpi-tag-bajas', k.bajas_2026);
