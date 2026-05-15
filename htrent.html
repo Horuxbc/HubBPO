@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD: 2026-05-15-v9-PERIODO-PRUEBA-FECHAS -->
+<!-- BUILD: 2026-05-15-v11-SIN-INDICADORES-RECLU -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -2415,7 +2415,7 @@ body {
             <div class="chart-panel-header">
               <div>
                 <div class="chart-panel-title">Puntualidad · tiempo equivalente de retardos</div>
-                <div class="chart-panel-subtitle">Equivalencia en días de 8.5h · jornada base 42.5h semanal</div>
+                <div class="chart-panel-subtitle">Equivalencia en días de 8.5h · base 42.5h semanales</div>
               </div>
               <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('puntualidad')">Ver detalle →</a>
             </div>
@@ -2425,28 +2425,18 @@ body {
 
         </div>
 
-        <!-- FILA 4.5: Reclutamiento · vacantes activas e insight -->
-        <div class="charts-grid" style="grid-template-columns: 2.2fr 1fr;">
+        <!-- FILA 4.5: Reclutamiento · vacantes activas -->
+        <div class="charts-grid" style="grid-template-columns: 1fr;">
 
           <div class="chart-panel">
             <div class="chart-panel-header">
               <div>
                 <div class="chart-panel-title">Reclutamiento · vacantes activas</div>
-                <div class="chart-panel-subtitle">Estatus, etapa y días en proceso · 2026</div>
+                <div class="chart-panel-subtitle">Estatus, etapa y días en proceso · 2026 · meta de cobertura 30 días</div>
               </div>
               <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('vacantes')">Ver detalle →</a>
             </div>
             <div id="vacantes-table-wrap" style="margin-top:8px;"></div>
-          </div>
-
-          <div class="chart-panel" style="background:linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);">
-            <div class="chart-panel-header">
-              <div>
-                <div class="chart-panel-title">Indicadores de reclutamiento</div>
-                <div class="chart-panel-subtitle">Meta y desempeño</div>
-              </div>
-            </div>
-            <div id="vacantes-insight" style="padding:6px 4px;"></div>
           </div>
 
         </div>

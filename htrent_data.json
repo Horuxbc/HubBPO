@@ -15,7 +15,8 @@
     "rotacion_2025": 30.4,
     "rotacion_2026_ytd": 22.9,
     "inicio_2026": 49,
-    "vacantes_activas_corte": 3
+    "vacantes_activas_corte": 3,
+    "puntualidad_pct": 66.2
   },
   "colaboradores_por_departamento": [
     {
@@ -276,27 +277,27 @@
     }
   ],
   "asistencia_puntualidad": {
-    "periodo": "16 abril 2026 - 12 mayo 2026",
-    "total_fichajes": 717,
-    "empleados_con_fichaje": 46,
+    "periodo": "16 abril – 12 mayo 2026",
+    "total_fichajes": 761,
+    "empleados_con_fichaje": 45,
     "dias_periodo": 18,
-    "puntuales_pct": 73.1,
-    "retardos_pct": 26.9,
-    "total_retardos_eventos": 193,
-    "minutos_retardo_total": 12867,
+    "puntuales_pct": 66.2,
+    "retardos_pct": 33.8,
+    "total_retardos_eventos": 257,
+    "minutos_retardo_total": 14948,
     "tolerancia_min": 10,
-    "nota": "Horarios inferidos por tendencia. Pendiente validación oficial."
+    "nota": "Excluye Dirección General. Descontado 1 de mayo (Día del Trabajo). Tolerancia 10 min."
   },
   "puntualidad_por_departamento": [
     {
       "departamento": "Procesos y Operaciones",
-      "retardos": 49,
-      "minutos_total": 2842
+      "retardos": 60,
+      "minutos_total": 3672
     },
     {
       "departamento": "Ventas",
-      "retardos": 17,
-      "minutos_total": 2029
+      "retardos": 45,
+      "minutos_total": 2944
     },
     {
       "departamento": "Marketing",
@@ -304,19 +305,19 @@
       "minutos_total": 1919
     },
     {
-      "departamento": "Planeación Financiera y Tesorería",
-      "retardos": 22,
-      "minutos_total": 1180
+      "departamento": "Facturación y Cobranza",
+      "retardos": 52,
+      "minutos_total": 1884
     },
     {
       "departamento": "Legal- Seguros",
-      "retardos": 10,
-      "minutos_total": 966
+      "retardos": 21,
+      "minutos_total": 1514
     },
     {
-      "departamento": "Facturación y Cobranza",
-      "retardos": 34,
-      "minutos_total": 926
+      "departamento": "Planeación Financiera y Tesorería",
+      "retardos": 20,
+      "minutos_total": 1114
     },
     {
       "departamento": "Contabilidad",
@@ -325,8 +326,8 @@
     },
     {
       "departamento": "Mesa de Control",
-      "retardos": 9,
-      "minutos_total": 431
+      "retardos": 8,
+      "minutos_total": 376
     },
     {
       "departamento": "TI",
@@ -344,9 +345,9 @@
       "minutos_total": 127
     },
     {
-      "departamento": "Dirección General",
+      "departamento": "Sin asignar",
       "retardos": 1,
-      "minutos_total": 53
+      "minutos_total": 13
     }
   ],
   "incidencias_totales": {
