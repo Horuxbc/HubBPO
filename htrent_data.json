@@ -382,7 +382,7 @@
   "vacantes_activas_2026": [
     {
       "puesto": "Auxiliar operaciones",
-      "departamento": "",
+      "departamento": "Procesos y Operaciones",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
       "dias_abierta": 0,
@@ -396,7 +396,7 @@
     },
     {
       "puesto": "Ejecutivo de venta",
-      "departamento": "",
+      "departamento": "Ventas",
       "fecha_apertura": "2026-03-17",
       "fecha_apertura_display": "17/03/2026",
       "dias_abierta": 58,
@@ -409,7 +409,7 @@
     },
     {
       "puesto": "Auxiliar contable (tracto)",
-      "departamento": "",
+      "departamento": "Contabilidad",
       "fecha_apertura": "2026-04-28",
       "fecha_apertura_display": "28/04/2026",
       "dias_abierta": 16,
@@ -422,7 +422,7 @@
     },
     {
       "puesto": "Ansalista de cobranza",
-      "departamento": "",
+      "departamento": "Facturación y Cobranza",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
       "dias_abierta": 0,
@@ -2099,7 +2099,7 @@
   "detalle_vacantes_2026": [
     {
       "puesto": "Auxiliar operaciones",
-      "departamento": "",
+      "departamento": "Procesos y Operaciones",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
       "dias_abierta": 0,
@@ -2113,7 +2113,7 @@
     },
     {
       "puesto": "Ejecutivo de venta",
-      "departamento": "",
+      "departamento": "Ventas",
       "fecha_apertura": "2026-03-17",
       "fecha_apertura_display": "17/03/2026",
       "dias_abierta": 58,
@@ -2126,7 +2126,7 @@
     },
     {
       "puesto": "Auxiliar contable (tracto)",
-      "departamento": "",
+      "departamento": "Contabilidad",
       "fecha_apertura": "2026-04-28",
       "fecha_apertura_display": "28/04/2026",
       "dias_abierta": 16,
@@ -2139,7 +2139,7 @@
     },
     {
       "puesto": "Ansalista de cobranza",
-      "departamento": "",
+      "departamento": "Facturación y Cobranza",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
       "dias_abierta": 0,
