@@ -2413,7 +2413,7 @@ body {
           <div class="chart-panel">
             <div class="chart-panel-header">
               <div>
-                <div class="chart-panel-title">Puntualidad · jornadas productivas perdidas</div>
+                <div class="chart-panel-title">Puntualidad · tiempo equivalente de retardos</div>
                 <div class="chart-panel-subtitle">Equivalencia en jornadas de 8.5h · jornada base 42.5h semanal</div>
               </div>
               <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('puntualidad')">Ver detalle →</a>
@@ -5122,7 +5122,7 @@ updateDashboard();
       resumen.innerHTML = `
         <div style="display:flex; gap:14px; align-items:baseline; padding:6px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:11.5px;">
           <span style="color:#78350f;"><strong style="font-size:14px;">${totMin.toLocaleString()}</strong> min totales</span>
-          <span style="color:#92400e;">= <strong style="font-size:14px;">${jornTot}</strong> jornadas productivas perdidas</span>
+          <span style="color:#92400e;">= <strong style="font-size:14px;">${jornTot}</strong> jornadas equivalentes (8.5h c/u)</span>
         </div>
       `;
     }
@@ -5248,82 +5248,68 @@ updateDashboard();
     const META = 30;
     const vacantes = data.vacantes_activas_2026;
 
-    const ETAPAS = ['Publicación', 'Filtro RH', 'Psicometría', 'Cliente interno', 'Selección'];
+    // Folios — usar Vxx en orden continuo arrancando en V32
+    const folioStart = 32;
 
-    const colorDias = (dias) => {
+    const colorDias = (dias, cubierta) => {
+      if (cubierta) return '#10b981';
       if (dias <= 0) return '#9aa5a3';
-      if (dias <= META * 0.7) return '#3FD33F';
-      if (dias <= META) return '#E89B2B';
-      return '#D64545';
-    };
-
-    const fmtSueldo = (n) => {
-      if (!n) return '—';
-      return '$' + Number(n).toLocaleString('es-MX');
-    };
-
-    // Mapear estatus a número de etapa actual (1-5)
-    const etapaActual = (v) => {
-      // Vacante cubierta = etapa 5 completa
-      if (v.cubierta || (v.estatus || '').toLowerCase().includes('cubierta')) return 5;
-      const est = (v.estatus || '').toLowerCase();
-      if (est.includes('por abrir')) return 0;
-      if (est.includes('entrevistas pendientes') || est.includes('filtro')) return 2;
-      if (est.includes('psicometr')) return 3;
-      if (est.includes('cliente interno') || est.includes('decisión cliente') || est.includes('decision cliente')) return 4;
-      if (est.includes('selecc')) return 5;
-      // Fallback: si hay candidatos pero no se sabe etapa, mostrar 1 (publicación / sourcing)
-      return 1;
+      if (dias > META) return '#D64545';
+      return 'var(--text-primary)';
     };
 
     let html = `
-      <div style="display:flex; flex-direction:column; gap:10px;">
-    `;
+      <table style="width:100%; border-collapse:collapse; font-size:12.5px;">
+        <thead>
+          <tr style="background:var(--bg); color:var(--text-muted); text-align:left;">
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px;">Folio</th>
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px;">Puesto</th>
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px;">Departamento</th>
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px;">Días abiertos</th>
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px; text-align:center;">Candidatos en proceso</th>
+            <th style="padding:10px 12px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.6px; text-align:right;">Estado</th>
+          </tr>
+        </thead>
+        <tbody>`;
 
-    vacantes.forEach(v => {
+    vacantes.forEach((v, i) => {
+      const folio = `V${folioStart + i}`;
       const dias = v.dias_abierta != null ? v.dias_abierta : 0;
       const cubierta = v.cubierta === true || (v.estatus || '').toLowerCase().includes('cubierta');
-      const c = cubierta ? '#3FD33F' : colorDias(dias);
-      const etapa = etapaActual(v);
+      const cDias = colorDias(dias, cubierta);
       const candidatos = v.num_candidatos != null ? v.num_candidatos : 0;
 
-      // Stepper visual
-      let stepper = '<div style="display:flex; gap:4px; margin-top:6px;">';
-      for (let i = 1; i <= 5; i++) {
-        const activo = i <= etapa;
-        const actual = i === etapa && !cubierta;
-        stepper += `<div title="${ETAPAS[i-1]}" style="flex:1; height:6px; border-radius:3px; background:${activo ? (cubierta ? '#3FD33F' : '#108277') : '#e4ebea'}; ${actual ? 'box-shadow:0 0 0 2px rgba(16,130,119,0.2);' : ''}"></div>`;
+      let estadoBadge;
+      if (cubierta) {
+        estadoBadge = '<span style="display:inline-block; padding:3px 10px; border-radius:10px; background:#d1fae5; color:#065f46; font-size:10.5px; font-weight:700; letter-spacing:0.3px;">CUBIERTA</span>';
+      } else if (dias > META) {
+        estadoBadge = '<span style="display:inline-block; padding:3px 10px; border-radius:10px; background:#fee2e2; color:#991b1b; font-size:10.5px; font-weight:700; letter-spacing:0.3px;">ATRASADO</span>';
+      } else if (dias <= 0) {
+        estadoBadge = '<span style="display:inline-block; padding:3px 10px; border-radius:10px; background:var(--bg); color:var(--text-muted); font-size:10.5px; font-weight:700; letter-spacing:0.3px;">POR ABRIR</span>';
+      } else {
+        estadoBadge = '<span style="display:inline-block; padding:3px 10px; border-radius:10px; background:#d1fae5; color:#065f46; font-size:10.5px; font-weight:700; letter-spacing:0.3px;">EN TIEMPO</span>';
       }
-      stepper += `</div>
-        <div style="display:flex; justify-content:space-between; font-size:9.5px; color:var(--text-muted); margin-top:4px;">
-          ${ETAPAS.map((e, i) => `<span style="${(i+1) === etapa ? 'color:#108277; font-weight:700;' : ''} ${cubierta ? 'color:#3FD33F;' : ''}">${e}</span>`).join('')}
-        </div>`;
+
+      const isLast = i === vacantes.length - 1;
+      const diasDisplay = cubierta ? '—' : `${dias} días`;
 
       html += `
-        <div style="border:1px solid var(--border-light); border-radius:8px; padding:12px 14px; background:${cubierta ? '#f0fdf4' : 'var(--white)'};">
-          <div style="display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:6px;">
-            <div style="flex:1; min-width:0;">
-              <div style="font-weight:600; color:var(--text-primary); font-size:13px;">${v.puesto || ''} ${cubierta ? '<span style="background:#10b981; color:white; font-size:9px; padding:2px 7px; border-radius:8px; font-weight:700; margin-left:6px;">CUBIERTA</span>' : ''}</div>
-              <div style="color:var(--text-secondary); font-size:11.5px;">${v.departamento || ''}</div>
-            </div>
-            <div style="text-align:right; flex-shrink:0;">
-              <div style="display:inline-flex; align-items:center; gap:6px; font-weight:700; color:${c}; font-size:14px;">
-                <span style="width:8px; height:8px; border-radius:50%; background:${c}; display:inline-block;"></span>
-                ${cubierta ? '✓' : dias + 'd'}
-              </div>
-              <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Meta: ≤${META}d</div>
-            </div>
-          </div>
-          <div style="display:flex; gap:18px; font-size:11px; color:var(--text-secondary); margin-bottom:6px;">
-            <span><strong>${candidatos}</strong> candidato${candidatos === 1 ? '' : 's'} en proceso</span>
-            <span>Sueldo: <strong>${fmtSueldo(v.sueldo_ofrecido)}</strong> ${v.tipo_sueldo || ''}</span>
-          </div>
-          ${stepper}
-          ${v.comentarios ? `<div style="font-size:10.5px; color:var(--text-muted); font-style:italic; margin-top:8px; padding-top:8px; border-top:1px solid var(--border-light);">💬 ${v.comentarios}</div>` : ''}
-        </div>`;
+        <tr style="${isLast ? '' : 'border-bottom:1px solid var(--border-light);'} cursor:pointer; transition:background 0.15s;" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background='transparent'" onclick="openDrillDown('vacantes')">
+          <td style="padding:12px; color:var(--text-muted); font-family:monospace; font-size:11.5px;">${folio}</td>
+          <td style="padding:12px; font-weight:500; color:var(--text-primary);">${v.puesto || ''}</td>
+          <td style="padding:12px;">
+            <span style="display:inline-block; padding:3px 9px; border-radius:6px; background:#eef2f7; color:#1E3A5F; font-size:11px;">${v.departamento || ''}</span>
+          </td>
+          <td style="padding:12px; font-weight:600; color:${cDias};">${diasDisplay}</td>
+          <td style="padding:12px; text-align:center; color:var(--text-primary);">${candidatos}</td>
+          <td style="padding:12px; text-align:right;">${estadoBadge}</td>
+        </tr>`;
     });
 
-    html += `</div>`;
+    html += `</tbody></table>
+      <div style="padding:10px 12px; font-size:11px; color:var(--text-muted); border-top:1px solid var(--border-light);">
+        Meta de cobertura: ${META} días · Clic en cualquier fila para ver pipeline y avance por etapa
+      </div>`;
     wrap.innerHTML = html;
   }
 
@@ -6185,13 +6171,13 @@ updateDashboard();
       const jornTot = (totMin / (8.5 * 60)).toFixed(1);
       let html = `
         <div style="background:#fef3c7; padding:16px; border-radius:8px; margin-bottom:16px; border-left:4px solid #f59e0b;">
-          <div style="font-size:11px; color:#92400e; text-transform:uppercase; letter-spacing:0.6px; font-weight:700; margin-bottom:6px;">Equivalencia en jornadas productivas</div>
+          <div style="font-size:11px; color:#92400e; text-transform:uppercase; letter-spacing:0.6px; font-weight:700; margin-bottom:6px;">Tiempo equivalente de retardos</div>
           <div style="font-size:24px; font-weight:700; color:#78350f;">${totMin.toLocaleString()} min = ${jornTot} jornadas</div>
-          <div style="font-size:12px; color:#78350f; margin-top:6px;">Cálculo: jornada base 42.5h semanal = 8.5h/día · período ${escape(ad.periodo || '')}</div>
+          <div style="font-size:12px; color:#78350f; margin-top:6px;">Equivalencia ejecutiva: minutos de retardo traducidos a jornadas de 8.5h (42.5h semanales ÷ 5 días) · período ${escape(ad.periodo || '')}</div>
         </div>
         <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Por departamento</h3>
         <table class="detail-table">
-          <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos</th><th style="text-align:right;">Jornadas perdidas</th></tr></thead>
+          <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos</th><th style="text-align:right;">Jornadas equiv.</th></tr></thead>
           <tbody>
       `;
       dep.forEach(d2 => {
@@ -6200,10 +6186,10 @@ updateDashboard();
         html += `<tr><td class="col-name">${escape(d2.departamento)}</td><td style="text-align:right;">${d2.retardos}</td><td style="text-align:right;">${d2.minutos_total.toLocaleString()}</td><td style="text-align:right; color:${heat}; font-weight:700;">${jorn}</td></tr>`;
       });
       html += '</tbody></table>';
-      html += `<p style="font-size:11px; color:var(--text-muted); margin-top:14px; line-height:1.5;">📊 La equivalencia en jornadas permite traducir minutos a impacto productivo. Cada jornada perdida representa un día efectivo de trabajo que se acumula en el periodo.</p>`;
+      html += `<p style="font-size:11px; color:var(--text-muted); margin-top:14px; line-height:1.5;">Esta métrica traduce minutos de retardo a una unidad ejecutiva más comprensible. Mide cumplimiento del horario de entrada, no productividad neta del periodo.</p>`;
       return {
-        title: 'Puntualidad · jornadas productivas',
-        subtitle: `${totMin.toLocaleString()} min de retardo acumulado = ${jornTot} jornadas equivalentes`,
+        title: 'Puntualidad · tiempo equivalente de retardos',
+        subtitle: `${totMin.toLocaleString()} min de retardo acumulado · ${jornTot} jornadas equivalentes`,
         html
       };
     },
@@ -6326,22 +6312,94 @@ updateDashboard();
 
   function tablaVacantes(lista) {
     if (!lista || !lista.length) return '<div class="modal-empty">Sin vacantes</div>';
-    let h = `<table class="detail-table">
-      <thead><tr><th>Puesto</th><th>Departamento</th><th style="text-align:right;">Apertura</th><th style="text-align:right;">Días</th><th>Estatus</th><th>Candidatos</th></tr></thead>
-      <tbody>`;
-    lista.forEach(v => {
+
+    const ETAPAS = ['Publicación', 'Filtro RH', 'Psicometría', 'Cliente interno', 'Selección'];
+    const folioStart = 32;
+    const META = 30;
+
+    const etapaActual = (v) => {
+      if (v.cubierta || (v.estatus || '').toLowerCase().includes('cubierta')) return 5;
+      const est = (v.estatus || '').toLowerCase();
+      if (est.includes('por abrir')) return 0;
+      if (est.includes('entrevistas pendientes') || est.includes('filtro')) return 2;
+      if (est.includes('psicometr')) return 3;
+      if (est.includes('cliente interno') || est.includes('decisión cliente') || est.includes('decision cliente')) return 4;
+      if (est.includes('selecc')) return 5;
+      return 1;
+    };
+
+    const fmtSueldo = (n) => {
+      if (!n) return '—';
+      return '$' + Number(n).toLocaleString('es-MX');
+    };
+
+    let h = '<div style="display:flex; flex-direction:column; gap:12px;">';
+
+    lista.forEach((v, i) => {
+      const folio = `V${folioStart + i}`;
       const dias = v.dias_abierta != null ? v.dias_abierta : 0;
-      const colorD = dias > 30 ? '#ef4444' : dias > 20 ? '#f59e0b' : '#10b981';
-      h += `<tr>
-        <td class="col-name">${escape(v.puesto || '')}</td>
-        <td class="col-muted">${escape(v.departamento || '')}</td>
-        <td style="text-align:right;" class="col-muted">${v.fecha_apertura_display || fmtFecha(v.fecha_apertura)}</td>
-        <td style="text-align:right; color:${colorD}; font-weight:700;">${dias}d</td>
-        <td><span class="badge-pill pending">${escape(v.estatus || '')}</span></td>
-        <td class="col-muted">${v.num_candidatos || 0}</td>
-      </tr>`;
+      const cubierta = v.cubierta === true || (v.estatus || '').toLowerCase().includes('cubierta');
+      const etapa = etapaActual(v);
+      const candidatos = v.num_candidatos != null ? v.num_candidatos : 0;
+
+      const cDias = cubierta ? '#10b981' : (dias > META ? '#ef4444' : dias > META * 0.7 ? '#f59e0b' : '#10b981');
+
+      let stepper = '<div style="display:flex; gap:5px; margin-top:4px;">';
+      for (let s = 1; s <= 5; s++) {
+        const activo = s <= etapa;
+        const actual = s === etapa && !cubierta;
+        const color = activo ? (cubierta ? '#10b981' : (dias > META ? '#ef4444' : '#108277')) : '#e4ebea';
+        stepper += `<div title="${ETAPAS[s-1]}" style="flex:1; height:8px; border-radius:4px; background:${color}; ${actual ? 'box-shadow:0 0 0 2px rgba(16,130,119,0.25);' : ''}"></div>`;
+      }
+      stepper += `</div>
+        <div style="display:flex; justify-content:space-between; font-size:9.5px; color:var(--text-muted); margin-top:6px;">
+          ${ETAPAS.map((e, idx) => {
+            const isCurrent = (idx + 1) === etapa && !cubierta;
+            const isPast = (idx + 1) < etapa;
+            const isCubierta = cubierta;
+            let style = '';
+            if (isCubierta) style = 'color:#10b981; font-weight:600;';
+            else if (isCurrent) style = (dias > META ? 'color:#ef4444' : 'color:#108277') + '; font-weight:700;';
+            else if (isPast) style = 'color:var(--text-secondary);';
+            return `<span style="${style}">${e}</span>`;
+          }).join('')}
+        </div>`;
+
+      const estadoTxt = cubierta ? 'CUBIERTA' : (dias > META ? 'ATRASADO' : dias <= 0 ? 'POR ABRIR' : 'EN TIEMPO');
+      const estadoBg = cubierta ? '#d1fae5' : (dias > META ? '#fee2e2' : dias <= 0 ? 'var(--bg)' : '#d1fae5');
+      const estadoCol = cubierta ? '#065f46' : (dias > META ? '#991b1b' : dias <= 0 ? 'var(--text-muted)' : '#065f46');
+
+      h += `
+        <div style="border:1px solid var(--border-light); border-radius:10px; padding:14px 16px; background:${cubierta ? '#f0fdf4' : 'white'};">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:10px;">
+            <div style="flex:1; min-width:0;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:2px;">
+                <span style="font-family:monospace; font-size:10.5px; color:var(--text-muted);">${folio}</span>
+                <span style="display:inline-block; padding:2px 8px; border-radius:10px; background:${estadoBg}; color:${estadoCol}; font-size:9.5px; font-weight:700; letter-spacing:0.4px;">${estadoTxt}</span>
+              </div>
+              <div style="font-weight:600; color:var(--text-primary); font-size:14px;">${escape(v.puesto || '')}</div>
+              <div style="color:var(--text-secondary); font-size:12px;">${escape(v.departamento || '')}</div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <div style="font-weight:700; color:${cDias}; font-size:16px; line-height:1;">${cubierta ? '✓' : dias + 'd'}</div>
+              <div style="font-size:9.5px; color:var(--text-muted); margin-top:3px;">Meta ${META}d</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:18px; font-size:11.5px; color:var(--text-secondary); margin-bottom:10px; padding:8px 0; border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+            <span><strong>${candidatos}</strong> candidato${candidatos === 1 ? '' : 's'} en proceso</span>
+            <span>Apertura: <strong>${v.fecha_apertura_display || fmtFecha(v.fecha_apertura)}</strong></span>
+            ${v.sueldo_ofrecido ? `<span>Sueldo: <strong>${fmtSueldo(v.sueldo_ofrecido)}</strong>${v.tipo_sueldo ? ' ' + escape(v.tipo_sueldo) : ''}</span>` : ''}
+          </div>
+
+          <div style="font-size:10.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin-bottom:4px;">Pipeline · avance por etapa</div>
+          ${stepper}
+
+          ${v.comentarios ? `<div style="font-size:11px; color:var(--text-secondary); font-style:italic; margin-top:12px; padding:8px 10px; background:var(--bg); border-radius:6px;">💬 ${escape(v.comentarios)}</div>` : ''}
+        </div>`;
     });
-    h += '</tbody></table>';
+
+    h += '</div>';
     return h;
   }
 
