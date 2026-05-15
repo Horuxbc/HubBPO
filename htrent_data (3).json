@@ -1,0 +1,3368 @@
+{
+  "meta": {
+    "cliente": "HT Rent",
+    "fecha_corte": "2026-05-14",
+    "fuente": "Base de Datos HT Rent 06/05/2026 + Clasificación validada + Fichajes 16/04-12/05",
+    "periodo_fichajes": "16 abril 2026 a 12 mayo 2026",
+    "estado": "Indicadores en construcción - Etapa de pruebas",
+    "version": "2026-05-14 drill-down v1"
+  },
+  "kpis_principales": {
+    "colaboradores_activos": 47,
+    "ingresos_2026": 9,
+    "bajas_2026": 11,
+    "bajas_2025": 12,
+    "rotacion_2025": 30.4,
+    "rotacion_2026_ytd": 22.9,
+    "inicio_2026": 49,
+    "vacantes_activas_corte": 3,
+    "puntualidad_pct": 66.2
+  },
+  "colaboradores_por_departamento": [
+    {
+      "departamento": "Procesos y Operaciones",
+      "count": 9
+    },
+    {
+      "departamento": "Ventas",
+      "count": 7
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "count": 7
+    },
+    {
+      "departamento": "Contabilidad",
+      "count": 4
+    },
+    {
+      "departamento": "Mesa de Control",
+      "count": 4
+    },
+    {
+      "departamento": "Marketing",
+      "count": 3
+    },
+    {
+      "departamento": "Contraloría",
+      "count": 3
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "count": 3
+    },
+    {
+      "departamento": "Control Interno",
+      "count": 2
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "count": 2
+    },
+    {
+      "departamento": "Dirección General",
+      "count": 1
+    },
+    {
+      "departamento": "TI",
+      "count": 1
+    }
+  ],
+  "colaboradores_por_nivel": [
+    {
+      "nivel": "Operativo",
+      "count": 29
+    },
+    {
+      "nivel": "Coordinación",
+      "count": 6
+    },
+    {
+      "nivel": "Jefatura",
+      "count": 1
+    },
+    {
+      "nivel": "Gerencia",
+      "count": 10
+    },
+    {
+      "nivel": "Dirección",
+      "count": 1
+    }
+  ],
+  "contrataciones_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 0
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 2
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 3
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2026": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 2
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 1
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 4
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 4
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 0
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 0
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 0
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 0
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 0
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 0
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "bajas_por_mes_2025": [
+    {
+      "mes": "Ene",
+      "mes_num": 1,
+      "count": 1
+    },
+    {
+      "mes": "Feb",
+      "mes_num": 2,
+      "count": 0
+    },
+    {
+      "mes": "Mar",
+      "mes_num": 3,
+      "count": 3
+    },
+    {
+      "mes": "Abr",
+      "mes_num": 4,
+      "count": 1
+    },
+    {
+      "mes": "May",
+      "mes_num": 5,
+      "count": 1
+    },
+    {
+      "mes": "Jun",
+      "mes_num": 6,
+      "count": 1
+    },
+    {
+      "mes": "Jul",
+      "mes_num": 7,
+      "count": 1
+    },
+    {
+      "mes": "Ago",
+      "mes_num": 8,
+      "count": 2
+    },
+    {
+      "mes": "Sep",
+      "mes_num": 9,
+      "count": 0
+    },
+    {
+      "mes": "Oct",
+      "mes_num": 10,
+      "count": 1
+    },
+    {
+      "mes": "Nov",
+      "mes_num": 11,
+      "count": 1
+    },
+    {
+      "mes": "Dic",
+      "mes_num": 12,
+      "count": 0
+    }
+  ],
+  "asistencia_puntualidad": {
+    "periodo": "16 abril – 12 mayo 2026",
+    "total_fichajes": 761,
+    "empleados_con_fichaje": 45,
+    "dias_periodo": 18,
+    "puntuales_pct": 66.2,
+    "retardos_pct": 33.8,
+    "total_retardos_eventos": 257,
+    "minutos_retardo_total": 14948,
+    "tolerancia_min": 10,
+    "nota": "Excluye Dirección General. Descontado 1 de mayo (Día del Trabajo). Tolerancia 10 min."
+  },
+  "puntualidad_por_departamento": [
+    {
+      "departamento": "Procesos y Operaciones",
+      "retardos": 60,
+      "minutos_total": 3672
+    },
+    {
+      "departamento": "Ventas",
+      "retardos": 45,
+      "minutos_total": 2944
+    },
+    {
+      "departamento": "Marketing",
+      "retardos": 15,
+      "minutos_total": 1919
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "retardos": 52,
+      "minutos_total": 1884
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "retardos": 21,
+      "minutos_total": 1514
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "retardos": 20,
+      "minutos_total": 1114
+    },
+    {
+      "departamento": "Contabilidad",
+      "retardos": 16,
+      "minutos_total": 851
+    },
+    {
+      "departamento": "Mesa de Control",
+      "retardos": 8,
+      "minutos_total": 376
+    },
+    {
+      "departamento": "TI",
+      "retardos": 2,
+      "minutos_total": 341
+    },
+    {
+      "departamento": "Control Interno",
+      "retardos": 11,
+      "minutos_total": 193
+    },
+    {
+      "departamento": "Contraloría",
+      "retardos": 6,
+      "minutos_total": 127
+    },
+    {
+      "departamento": "Sin asignar",
+      "retardos": 1,
+      "minutos_total": 13
+    }
+  ],
+  "incidencias_totales": {
+    "home_office_solicitudes": 21,
+    "permisos_total": 60,
+    "vacaciones_solicitudes": 79,
+    "nota": "Histórico desde implementación de bitácoras"
+  },
+  "vacantes_2025": {
+    "total": 11,
+    "por_estatus": {
+      "Cubierta": 10,
+      "Cancelada": 1
+    },
+    "dias_promedio_cobertura": 16.9,
+    "contratados": 9
+  },
+  "fuentes_reclutamiento_2025": [
+    {
+      "fuente": "OCC",
+      "count": 6
+    },
+    {
+      "fuente": "Referido",
+      "count": 2
+    },
+    {
+      "fuente": "Indeed",
+      "count": 1
+    }
+  ],
+  "vacantes_activas_2026": [
+    {
+      "puesto": "Auxiliar operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_apertura": "2026-05-16",
+      "fecha_apertura_display": "16/05/2026",
+      "dias_abierta": 0,
+      "num_candidatos": 1,
+      "entrevistas": "ok",
+      "psicometria": "pendiente",
+      "seleccionado": "",
+      "estatus": "Cubierta · ingresa 18/05",
+      "comentarios": "Cubierta. Candidato seleccionado, ingresa lunes 18/05/2026.",
+      "cubierta": true
+    },
+    {
+      "puesto": "Ejecutivo de venta",
+      "departamento": "Ventas",
+      "fecha_apertura": "2026-03-17",
+      "fecha_apertura_display": "17/03/2026",
+      "dias_abierta": 58,
+      "num_candidatos": 2,
+      "entrevistas": "ok",
+      "psicometria": "ok",
+      "seleccionado": "",
+      "estatus": "Esperando decisión cliente",
+      "comentarios": "pendiente que César seleccione candiato"
+    },
+    {
+      "puesto": "Auxiliar contable (tracto)",
+      "departamento": "Contabilidad",
+      "fecha_apertura": "2026-04-28",
+      "fecha_apertura_display": "28/04/2026",
+      "dias_abierta": 16,
+      "num_candidatos": 1,
+      "entrevistas": "pend",
+      "psicometria": "",
+      "seleccionado": "",
+      "estatus": "Entrevistas pendientes",
+      "comentarios": "Se cuenta con  candidato viable. 2 candidatos declinaron por distancia."
+    },
+    {
+      "puesto": "Ansalista de cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_apertura": "2026-05-16",
+      "fecha_apertura_display": "16/05/2026",
+      "dias_abierta": 0,
+      "num_candidatos": 0,
+      "entrevistas": "",
+      "psicometria": "",
+      "seleccionado": "",
+      "estatus": "POR ABRIR · inicia 16/05",
+      "comentarios": "Apertura programada para 16 de mayo 2026.",
+      "cubierta": false
+    }
+  ],
+  "capacitacion_catalogo": [
+    {
+      "clave": "C1",
+      "titulo": "Inducción a la Empresa",
+      "dirigido_a": "Nuevo Ingreso",
+      "horas": 1.0,
+      "tipo": "Inducción",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 6,
+      "completados": 6,
+      "pendientes": 0
+    },
+    {
+      "clave": "C2",
+      "titulo": "Socialización de Temas Generales",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 88.4,
+      "total_personas": 43,
+      "completados": 38,
+      "pendientes": 5
+    },
+    {
+      "clave": "C3",
+      "titulo": "Socialización de Temas Especificos",
+      "dirigido_a": "Lideres",
+      "horas": 1.0,
+      "tipo": "Reforzamiento",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 15,
+      "completados": 15,
+      "pendientes": 0
+    },
+    {
+      "clave": "C4",
+      "titulo": "Kick off del Fortalecimiento Cultural",
+      "dirigido_a": "Todos",
+      "horas": 1.5,
+      "tipo": "Informativa",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C5",
+      "titulo": "Taller 1 Fortalecimiento de Cultura: Nuestros Valores en Acción",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 100.0,
+      "total_personas": 43,
+      "completados": 43,
+      "pendientes": 0
+    },
+    {
+      "clave": "C6",
+      "titulo": "Taller 2 Comunicación Efectiva y Servicio Interno",
+      "dirigido_a": "Todos",
+      "horas": 4.0,
+      "tipo": "Taller",
+      "cumplimiento_pct": 31.9,
+      "total_personas": 47,
+      "completados": 15,
+      "pendientes": 32
+    }
+  ],
+  "capacitacion_horas_por_departamento": [
+    {
+      "departamento": "Ventas",
+      "horas": 87.0
+    },
+    {
+      "departamento": "Procesos y Operaciones",
+      "horas": 84.0
+    },
+    {
+      "departamento": "Facturación y Cobranza",
+      "horas": 82.0
+    },
+    {
+      "departamento": "Contraloría",
+      "horas": 52.5
+    },
+    {
+      "departamento": "Mesa de Control",
+      "horas": 45.0
+    },
+    {
+      "departamento": "Contabilidad",
+      "horas": 33.0
+    },
+    {
+      "departamento": "Marketing",
+      "horas": 31.0
+    },
+    {
+      "departamento": "Planeación Financiera y Tesorería",
+      "horas": 27.0
+    },
+    {
+      "departamento": "Legal- Seguros",
+      "horas": 12.0
+    },
+    {
+      "departamento": "Comité Directivo",
+      "horas": 1.0
+    }
+  ],
+  "capacitacion_resumen": {
+    "total_horas_persona_completadas": 454.5,
+    "personas_unicas_capacitadas": 47,
+    "cursos_en_catalogo": 6,
+    "cumplimiento_promedio_pct": 86.7
+  },
+  "seguimiento_periodo_prueba": {
+    "total": 5,
+    "fuente": "Pestaña CONTRATOS · Base de Datos HT Rent",
+    "nota_validacion": "Lista oficial provista por HT Rent. Pendiente validar con Ricardo: por qué Francisco Ramón Andrade (74d) y Rosario Adriana García (28d) no figuran aquí pese a tener <90 días desde ingreso.",
+    "colaboradores": [
+      {
+        "nombre_visible": "Rafael R.",
+        "iniciales": "R.R.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "responsable_directo": "Cesar Valadez Nares",
+        "fecha_ingreso": "2026-03-17",
+        "fecha_ingreso_display": "17/03/2026",
+        "dias_desde_ingreso": 58,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-06-15",
+        "fecha_vencimiento_display": "15/06/2026",
+        "dias_restantes_prueba": 31
+      },
+      {
+        "nombre_visible": "Marco Antonio L.",
+        "iniciales": "M.A.",
+        "puesto": "Practicante Costos",
+        "departamento": "Control Interno",
+        "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+        "fecha_ingreso": "2026-03-23",
+        "fecha_ingreso_display": "23/03/2026",
+        "dias_desde_ingreso": 52,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-06-21",
+        "fecha_vencimiento_display": "21/06/2026",
+        "dias_restantes_prueba": 37
+      },
+      {
+        "nombre_visible": "Reyna Elizabeth T.",
+        "iniciales": "R.E.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+        "fecha_ingreso": "2026-04-06",
+        "fecha_ingreso_display": "06/04/2026",
+        "dias_desde_ingreso": 38,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-07-05",
+        "fecha_vencimiento_display": "05/07/2026",
+        "dias_restantes_prueba": 51
+      },
+      {
+        "nombre_visible": "Juan Carlos G.",
+        "iniciales": "J.C.",
+        "puesto": "Gerente Ventas",
+        "departamento": "Ventas",
+        "responsable_directo": "José Villarreal Elnecave",
+        "fecha_ingreso": "2026-04-06",
+        "fecha_ingreso_display": "06/04/2026",
+        "dias_desde_ingreso": 38,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-07-05",
+        "fecha_vencimiento_display": "05/07/2026",
+        "dias_restantes_prueba": 51
+      },
+      {
+        "nombre_visible": "Omar Eduardo V.",
+        "iniciales": "O.E.",
+        "puesto": "Gerente TI",
+        "departamento": "TI",
+        "responsable_directo": "José Villarreal Elnecave",
+        "fecha_ingreso": "2026-05-04",
+        "fecha_ingreso_display": "04/05/2026",
+        "dias_desde_ingreso": 10,
+        "estatus_onboarding": "Sin captura",
+        "ev_onboarding_jefe": null,
+        "ev_onboarding_colaborador": null,
+        "renovacion": null,
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-08-02",
+        "fecha_vencimiento_display": "02/08/2026",
+        "dias_restantes_prueba": 79
+      }
+    ]
+  },
+  "bajas_clasificadas": {
+    "2026": {
+      "total": 11,
+      "voluntarias": 3,
+      "involuntarias": 8,
+      "sin_clasificar": 0,
+      "pct_voluntarias": 27.3,
+      "pct_involuntarias": 72.7,
+      "motivos": {
+        "cambio tracto": 1,
+        "bajo rendimiento": 1,
+        "otro empleo": 1,
+        "jefe": 2
+      },
+      "detalle": [
+        {
+          "fecha": "2026-01-22",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "cambio tracto"
+        },
+        {
+          "fecha": "2026-01-31",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "bajo rendimiento"
+        },
+        {
+          "fecha": "2026-02-27",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": "otro empleo"
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Analista de Cobranza",
+          "departamento": "Facturación y Cobranza",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Practicante",
+          "departamento": "Control Interno",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": "jefe"
+        },
+        {
+          "fecha": "2026-03-06",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "clasificacion": "VOLUNTARIA",
+          "motivo": "jefe"
+        },
+        {
+          "fecha": "2026-03-27",
+          "puesto": "Ejecutivo de Tesorería",
+          "departamento": "Planeación Financiera y Tesorería",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Gestora",
+          "departamento": "Contraloría",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Coordinador de Mesa de Control",
+          "departamento": "Contraloría",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Ejecutivo de Facturación",
+          "departamento": "Facturación y Cobranza",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        },
+        {
+          "fecha": "2026-04-01",
+          "puesto": "Gerente de Inventarios",
+          "departamento": "Procesos y Operaciones",
+          "clasificacion": "INVOLUNTARIA",
+          "motivo": null
+        }
+      ],
+      "detalle_enriquecido": [
+        {
+          "nombre_visible": "Martha Graciela G.",
+          "iniciales": "M.G.",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "fecha_baja": "2026-01-22",
+          "fecha_baja_display": "22/01/2026",
+          "fecha_alta": "2023-09-11",
+          "antiguedad_dias": 864,
+          "tipo": "Involuntaria",
+          "motivo": "cambio tracto",
+          "mes_baja": "january"
+        },
+        {
+          "nombre_visible": "Oscar Adrian S.",
+          "iniciales": "O.A.",
+          "puesto": "Analista de Contratos",
+          "departamento": "Mesa de Control",
+          "fecha_baja": "2026-01-31",
+          "fecha_baja_display": "31/01/2026",
+          "fecha_alta": "2023-12-18",
+          "antiguedad_dias": 775,
+          "tipo": "Involuntaria",
+          "motivo": "bajo rendimiento",
+          "mes_baja": "january"
+        },
+        {
+          "nombre_visible": "Daniel Octavio G.",
+          "iniciales": "D.O.",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "fecha_baja": "2026-02-27",
+          "fecha_baja_display": "27/02/2026",
+          "fecha_alta": "2023-06-19",
+          "antiguedad_dias": 984,
+          "tipo": "Involuntaria",
+          "motivo": "otro empleo",
+          "mes_baja": "february"
+        },
+        {
+          "nombre_visible": "Janeth G.",
+          "iniciales": "J.G.",
+          "puesto": "Analista de Cobranza",
+          "departamento": "Facturación y Cobranza",
+          "fecha_baja": "2026-03-06",
+          "fecha_baja_display": "06/03/2026",
+          "fecha_alta": "2023-12-07",
+          "antiguedad_dias": 820,
+          "tipo": "Voluntaria",
+          "motivo": null,
+          "mes_baja": "march"
+        },
+        {
+          "nombre_visible": "José Pablo A.",
+          "iniciales": "J.P.",
+          "puesto": "Practicante",
+          "departamento": "Control Interno",
+          "fecha_baja": "2026-03-06",
+          "fecha_baja_display": "06/03/2026",
+          "fecha_alta": "2026-02-12",
+          "antiguedad_dias": 22,
+          "tipo": "Voluntaria",
+          "motivo": "jefe",
+          "mes_baja": "march"
+        },
+        {
+          "nombre_visible": "Cecilia G.",
+          "iniciales": "C.G.",
+          "puesto": "Ejecutivo de Venta",
+          "departamento": "Ventas",
+          "fecha_baja": "2026-03-06",
+          "fecha_baja_display": "06/03/2026",
+          "fecha_alta": "2026-02-16",
+          "antiguedad_dias": 18,
+          "tipo": "Voluntaria",
+          "motivo": "jefe",
+          "mes_baja": "march"
+        },
+        {
+          "nombre_visible": "Liliana De L.",
+          "iniciales": "L.D.",
+          "puesto": "Ejecutivo de Tesorería",
+          "departamento": "Planeación Financiera y Tesorería",
+          "fecha_baja": "2026-03-27",
+          "fecha_baja_display": "27/03/2026",
+          "fecha_alta": "2025-11-10",
+          "antiguedad_dias": 137,
+          "tipo": "Involuntaria",
+          "motivo": null,
+          "mes_baja": "march"
+        },
+        {
+          "nombre_visible": "Cynthia Desiree V.",
+          "iniciales": "C.D.",
+          "puesto": "Gestora",
+          "departamento": "Contraloría",
+          "fecha_baja": "2026-04-01",
+          "fecha_baja_display": "01/04/2026",
+          "fecha_alta": "2023-09-16",
+          "antiguedad_dias": 928,
+          "tipo": "Involuntaria",
+          "motivo": null,
+          "mes_baja": "april"
+        },
+        {
+          "nombre_visible": "Hilda Marlene S.",
+          "iniciales": "H.M.",
+          "puesto": "Coordinador de Mesa de Control",
+          "departamento": "Contraloría",
+          "fecha_baja": "2026-04-01",
+          "fecha_baja_display": "01/04/2026",
+          "fecha_alta": "2024-11-01",
+          "antiguedad_dias": 516,
+          "tipo": "Involuntaria",
+          "motivo": null,
+          "mes_baja": "april"
+        },
+        {
+          "nombre_visible": "Kelly C.",
+          "iniciales": "K.C.",
+          "puesto": "Ejecutivo de Facturación",
+          "departamento": "Facturación y Cobranza",
+          "fecha_baja": "2026-04-01",
+          "fecha_baja_display": "01/04/2026",
+          "fecha_alta": "2025-08-29",
+          "antiguedad_dias": 215,
+          "tipo": "Involuntaria",
+          "motivo": null,
+          "mes_baja": "april"
+        },
+        {
+          "nombre_visible": "Jonathan D.",
+          "iniciales": "J.D.",
+          "puesto": "Gerente de Inventarios",
+          "departamento": "Procesos y Operaciones",
+          "fecha_baja": "2026-04-01",
+          "fecha_baja_display": "01/04/2026",
+          "fecha_alta": "2025-10-01",
+          "antiguedad_dias": 182,
+          "tipo": "Involuntaria",
+          "motivo": null,
+          "mes_baja": "april"
+        }
+      ]
+    },
+    "2025": {
+      "total": 12,
+      "voluntarias": 3,
+      "involuntarias": 5,
+      "sin_clasificar": 4
+    }
+  },
+  "colaboradores_iniciales": [
+    {
+      "iniciales": "O.E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "fecha_ingreso": "2026-05-04",
+      "antiguedad_meses": 0
+    },
+    {
+      "iniciales": "R.A.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2026-04-16",
+      "antiguedad_meses": 1
+    },
+    {
+      "iniciales": "R.E.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1
+    },
+    {
+      "iniciales": "J.C.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "fecha_ingreso": "2026-03-23",
+      "antiguedad_meses": 2
+    },
+    {
+      "iniciales": "R.R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2026-03-17",
+      "antiguedad_meses": 2
+    },
+    {
+      "iniciales": "F.R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2026-03-01",
+      "antiguedad_meses": 2
+    },
+    {
+      "iniciales": "P.I.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2026-02-04",
+      "antiguedad_meses": 3
+    },
+    {
+      "iniciales": "L.M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "fecha_ingreso": "2026-02-03",
+      "antiguedad_meses": 3
+    },
+    {
+      "iniciales": "J.R.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-12-08",
+      "antiguedad_meses": 5
+    },
+    {
+      "iniciales": "N.M.",
+      "puesto": "Auxiliar Administrativo",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-11-27",
+      "antiguedad_meses": 6
+    },
+    {
+      "iniciales": "E.G.",
+      "puesto": "Analista de Créditos Jr",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-11-06",
+      "antiguedad_meses": 6
+    },
+    {
+      "iniciales": "R.H.",
+      "puesto": "Agente de Cobranza en Campo",
+      "departamento": "Legal- Seguros",
+      "fecha_ingreso": "2025-11-05",
+      "antiguedad_meses": 6
+    },
+    {
+      "iniciales": "S.E.",
+      "puesto": "Gerente de Cobranza y Facturación",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-11-01",
+      "antiguedad_meses": 6
+    },
+    {
+      "iniciales": "L.J.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-09-22",
+      "antiguedad_meses": 8
+    },
+    {
+      "iniciales": "J.L.",
+      "puesto": "Coordinador Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-09-01",
+      "antiguedad_meses": 8
+    },
+    {
+      "iniciales": "B.I.",
+      "puesto": "Ejecutivo Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-08-20",
+      "antiguedad_meses": 9
+    },
+    {
+      "iniciales": "J.V.",
+      "puesto": "Director General",
+      "departamento": "Dirección General",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10
+    },
+    {
+      "iniciales": "J.A.",
+      "puesto": "Analista de Contratos Jr",
+      "departamento": "Mesa de Control",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10
+    },
+    {
+      "iniciales": "R.Z.",
+      "puesto": "Analista de Negocios",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2025-06-16",
+      "antiguedad_meses": 11
+    },
+    {
+      "iniciales": "F.A.",
+      "puesto": "Gerente De Procesos y Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-06-03",
+      "antiguedad_meses": 11
+    },
+    {
+      "iniciales": "L.G.",
+      "puesto": "Analista de Seguros",
+      "departamento": "Legal- Seguros",
+      "fecha_ingreso": "2025-05-26",
+      "antiguedad_meses": 12
+    },
+    {
+      "iniciales": "R.D.",
+      "puesto": "Gerente Contabilidad",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2025-04-16",
+      "antiguedad_meses": 13
+    },
+    {
+      "iniciales": "A.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 13
+    },
+    {
+      "iniciales": "G.M.",
+      "puesto": "Contralor",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 13
+    },
+    {
+      "iniciales": "J.S.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-03-05",
+      "antiguedad_meses": 14
+    },
+    {
+      "iniciales": "M.G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2025-03-04",
+      "antiguedad_meses": 14
+    },
+    {
+      "iniciales": "J.R.",
+      "puesto": "Jefe Inventarios y Atención al cliente",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2025-02-16",
+      "antiguedad_meses": 15
+    },
+    {
+      "iniciales": "R.A.",
+      "puesto": "Contador Jr",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2024-11-11",
+      "antiguedad_meses": 18
+    },
+    {
+      "iniciales": "E.A.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 18
+    },
+    {
+      "iniciales": "M.C.",
+      "puesto": "Contador",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 18
+    },
+    {
+      "iniciales": "T.D.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2024-10-16",
+      "antiguedad_meses": 19
+    },
+    {
+      "iniciales": "M.D.",
+      "puesto": "Gerente de Planeación Financiera",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_ingreso": "2024-09-23",
+      "antiguedad_meses": 20
+    },
+    {
+      "iniciales": "B.L.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2024-09-10",
+      "antiguedad_meses": 20
+    },
+    {
+      "iniciales": "G.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2024-06-03",
+      "antiguedad_meses": 23
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Control Interno",
+      "departamento": "Contraloría",
+      "fecha_ingreso": "2024-05-16",
+      "antiguedad_meses": 24
+    },
+    {
+      "iniciales": "C.N.",
+      "puesto": "Coordinador de Placas y Permisos",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2024-04-08",
+      "antiguedad_meses": 25
+    },
+    {
+      "iniciales": "L.K.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2024-02-19",
+      "antiguedad_meses": 27
+    },
+    {
+      "iniciales": "A.E.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 29
+    },
+    {
+      "iniciales": "R.F.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 29
+    },
+    {
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Marketing",
+      "departamento": "Marketing",
+      "fecha_ingreso": "2023-09-18",
+      "antiguedad_meses": 32
+    },
+    {
+      "iniciales": "R.O.",
+      "puesto": "Coordinadora de Facturación",
+      "departamento": "Contabilidad",
+      "fecha_ingreso": "2023-09-12",
+      "antiguedad_meses": 32
+    },
+    {
+      "iniciales": "C.V.",
+      "puesto": "Gerente de Ventas",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-08-02",
+      "antiguedad_meses": 33
+    },
+    {
+      "iniciales": "O.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-07-20",
+      "antiguedad_meses": 34
+    },
+    {
+      "iniciales": "J.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_ingreso": "2023-06-19",
+      "antiguedad_meses": 35
+    },
+    {
+      "iniciales": "I.C.",
+      "puesto": "Gerente de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_ingreso": "2023-06-01",
+      "antiguedad_meses": 35
+    },
+    {
+      "iniciales": "A.S.",
+      "puesto": "Gerente Legal",
+      "departamento": "Contraloría",
+      "fecha_ingreso": null,
+      "antiguedad_meses": null
+    }
+  ],
+  "historico_mensual_2026": {
+    "ene26": {
+      "mes_label": "Ene 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 0,
+      "bajas_mes": 2,
+      "rotacion_mes_pct": 4.2,
+      "rotacion_ytd_pct": 4.2,
+      "altas_ytd": 0,
+      "bajas_ytd": 2
+    },
+    "feb26": {
+      "mes_label": "Feb 2026",
+      "headcount_cierre": 48,
+      "altas_mes": 2,
+      "bajas_mes": 1,
+      "rotacion_mes_pct": 2.1,
+      "rotacion_ytd_pct": 6.2,
+      "altas_ytd": 2,
+      "bajas_ytd": 3
+    },
+    "mar26": {
+      "mes_label": "Mar 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 3,
+      "bajas_mes": 4,
+      "rotacion_mes_pct": 8.4,
+      "rotacion_ytd_pct": 14.6,
+      "altas_ytd": 5,
+      "bajas_ytd": 7
+    },
+    "abr26": {
+      "mes_label": "Abr 2026",
+      "headcount_cierre": 46,
+      "altas_mes": 3,
+      "bajas_mes": 4,
+      "rotacion_mes_pct": 8.6,
+      "rotacion_ytd_pct": 23.2,
+      "altas_ytd": 8,
+      "bajas_ytd": 11
+    },
+    "may26": {
+      "mes_label": "May 2026",
+      "headcount_cierre": 47,
+      "altas_mes": 1,
+      "bajas_mes": 0,
+      "rotacion_mes_pct": 0.0,
+      "rotacion_ytd_pct": 22.9,
+      "altas_ytd": 9,
+      "bajas_ytd": 11
+    }
+  },
+  "detalle_ingresos_2026": [
+    {
+      "nombre_visible": "Liliana M.",
+      "iniciales": "L.M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+      "fecha_ingreso": "2026-02-03",
+      "fecha_ingreso_display": "03/02/2026",
+      "dias_antiguedad": 100,
+      "nivel": "Coordinación",
+      "mes_ingreso": "february"
+    },
+    {
+      "nombre_visible": "Paula Ivanel Z.",
+      "iniciales": "P.I.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "responsable_directo": "Liliana Martinez Ramos",
+      "fecha_ingreso": "2026-02-04",
+      "fecha_ingreso_display": "04/02/2026",
+      "dias_antiguedad": 99,
+      "nivel": "Operativo",
+      "mes_ingreso": "february"
+    },
+    {
+      "nombre_visible": "Francisco R.",
+      "iniciales": "F.R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "responsable_directo": "Marcela Del Roble Maldonado González",
+      "fecha_ingreso": "2026-03-01",
+      "fecha_ingreso_display": "01/03/2026",
+      "dias_antiguedad": 74,
+      "nivel": "Operativo",
+      "mes_ingreso": "march"
+    },
+    {
+      "nombre_visible": "Rafael R.",
+      "iniciales": "R.R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2026-03-17",
+      "fecha_ingreso_display": "17/03/2026",
+      "dias_antiguedad": 58,
+      "nivel": "Operativo",
+      "mes_ingreso": "march"
+    },
+    {
+      "nombre_visible": "Marco Antonio L.",
+      "iniciales": "M.A.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+      "fecha_ingreso": "2026-03-23",
+      "fecha_ingreso_display": "23/03/2026",
+      "dias_antiguedad": 52,
+      "nivel": "Operativo",
+      "mes_ingreso": "march"
+    },
+    {
+      "nombre_visible": "Reyna Elizabeth T.",
+      "iniciales": "R.E.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2026-04-06",
+      "fecha_ingreso_display": "06/04/2026",
+      "dias_antiguedad": 38,
+      "nivel": "Operativo",
+      "mes_ingreso": "april"
+    },
+    {
+      "nombre_visible": "Juan Carlos G.",
+      "iniciales": "J.C.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-04-06",
+      "fecha_ingreso_display": "06/04/2026",
+      "dias_antiguedad": 38,
+      "nivel": "Gerencia",
+      "mes_ingreso": "april"
+    },
+    {
+      "nombre_visible": "Rosario Adriana G.",
+      "iniciales": "R.A.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Ilse Cortes Arias",
+      "fecha_ingreso": "2026-04-16",
+      "fecha_ingreso_display": "16/04/2026",
+      "dias_antiguedad": 28,
+      "nivel": "Operativo",
+      "mes_ingreso": "april"
+    },
+    {
+      "nombre_visible": "Omar Eduardo V.",
+      "iniciales": "O.E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-05-04",
+      "fecha_ingreso_display": "04/05/2026",
+      "dias_antiguedad": 10,
+      "nivel": "Gerencia",
+      "mes_ingreso": "may"
+    }
+  ],
+  "detalle_bajas_2026": [
+    {
+      "nombre_visible": "Martha Graciela G.",
+      "iniciales": "M.G.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "fecha_baja": "2026-01-22",
+      "fecha_baja_display": "22/01/2026",
+      "fecha_alta": "2023-09-11",
+      "antiguedad_dias": 864,
+      "tipo": "Involuntaria",
+      "motivo": "cambio tracto",
+      "mes_baja": "january"
+    },
+    {
+      "nombre_visible": "Oscar Adrian S.",
+      "iniciales": "O.A.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "fecha_baja": "2026-01-31",
+      "fecha_baja_display": "31/01/2026",
+      "fecha_alta": "2023-12-18",
+      "antiguedad_dias": 775,
+      "tipo": "Involuntaria",
+      "motivo": "bajo rendimiento",
+      "mes_baja": "january"
+    },
+    {
+      "nombre_visible": "Daniel Octavio G.",
+      "iniciales": "D.O.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_baja": "2026-02-27",
+      "fecha_baja_display": "27/02/2026",
+      "fecha_alta": "2023-06-19",
+      "antiguedad_dias": 984,
+      "tipo": "Involuntaria",
+      "motivo": "otro empleo",
+      "mes_baja": "february"
+    },
+    {
+      "nombre_visible": "Janeth G.",
+      "iniciales": "J.G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_baja": "2026-03-06",
+      "fecha_baja_display": "06/03/2026",
+      "fecha_alta": "2023-12-07",
+      "antiguedad_dias": 820,
+      "tipo": "Voluntaria",
+      "motivo": null,
+      "mes_baja": "march"
+    },
+    {
+      "nombre_visible": "José Pablo A.",
+      "iniciales": "J.P.",
+      "puesto": "Practicante",
+      "departamento": "Control Interno",
+      "fecha_baja": "2026-03-06",
+      "fecha_baja_display": "06/03/2026",
+      "fecha_alta": "2026-02-12",
+      "antiguedad_dias": 22,
+      "tipo": "Voluntaria",
+      "motivo": "jefe",
+      "mes_baja": "march"
+    },
+    {
+      "nombre_visible": "Cecilia G.",
+      "iniciales": "C.G.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "fecha_baja": "2026-03-06",
+      "fecha_baja_display": "06/03/2026",
+      "fecha_alta": "2026-02-16",
+      "antiguedad_dias": 18,
+      "tipo": "Voluntaria",
+      "motivo": "jefe",
+      "mes_baja": "march"
+    },
+    {
+      "nombre_visible": "Liliana De L.",
+      "iniciales": "L.D.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "fecha_baja": "2026-03-27",
+      "fecha_baja_display": "27/03/2026",
+      "fecha_alta": "2025-11-10",
+      "antiguedad_dias": 137,
+      "tipo": "Involuntaria",
+      "motivo": null,
+      "mes_baja": "march"
+    },
+    {
+      "nombre_visible": "Cynthia Desiree V.",
+      "iniciales": "C.D.",
+      "puesto": "Gestora",
+      "departamento": "Contraloría",
+      "fecha_baja": "2026-04-01",
+      "fecha_baja_display": "01/04/2026",
+      "fecha_alta": "2023-09-16",
+      "antiguedad_dias": 928,
+      "tipo": "Involuntaria",
+      "motivo": null,
+      "mes_baja": "april"
+    },
+    {
+      "nombre_visible": "Hilda Marlene S.",
+      "iniciales": "H.M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Contraloría",
+      "fecha_baja": "2026-04-01",
+      "fecha_baja_display": "01/04/2026",
+      "fecha_alta": "2024-11-01",
+      "antiguedad_dias": 516,
+      "tipo": "Involuntaria",
+      "motivo": null,
+      "mes_baja": "april"
+    },
+    {
+      "nombre_visible": "Kelly C.",
+      "iniciales": "K.C.",
+      "puesto": "Ejecutivo de Facturación",
+      "departamento": "Facturación y Cobranza",
+      "fecha_baja": "2026-04-01",
+      "fecha_baja_display": "01/04/2026",
+      "fecha_alta": "2025-08-29",
+      "antiguedad_dias": 215,
+      "tipo": "Involuntaria",
+      "motivo": null,
+      "mes_baja": "april"
+    },
+    {
+      "nombre_visible": "Jonathan D.",
+      "iniciales": "J.D.",
+      "puesto": "Gerente de Inventarios",
+      "departamento": "Procesos y Operaciones",
+      "fecha_baja": "2026-04-01",
+      "fecha_baja_display": "01/04/2026",
+      "fecha_alta": "2025-10-01",
+      "antiguedad_dias": 182,
+      "tipo": "Involuntaria",
+      "motivo": null,
+      "mes_baja": "april"
+    }
+  ],
+  "detalle_activos": [
+    {
+      "nombre_visible": "Omar Eduardo V.",
+      "iniciales": "O.E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-05-04",
+      "antiguedad_meses": 0,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Rosario Adriana G.",
+      "iniciales": "R.A.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Ilse Cortes Arias",
+      "fecha_ingreso": "2026-04-16",
+      "antiguedad_meses": 1,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Reyna Elizabeth T.",
+      "iniciales": "R.E.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Juan Carlos G.",
+      "iniciales": "J.C.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-04-06",
+      "antiguedad_meses": 1,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Marco Antonio L.",
+      "iniciales": "M.A.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+      "fecha_ingreso": "2026-03-23",
+      "antiguedad_meses": 2,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Rafael R.",
+      "iniciales": "R.R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2026-03-17",
+      "antiguedad_meses": 2,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Francisco R.",
+      "iniciales": "F.R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "responsable_directo": "Marcela Del Roble Maldonado González",
+      "fecha_ingreso": "2026-03-01",
+      "antiguedad_meses": 2,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Paula Ivanel Z.",
+      "iniciales": "P.I.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "responsable_directo": "Liliana Martinez Ramos",
+      "fecha_ingreso": "2026-02-04",
+      "antiguedad_meses": 3,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Liliana M.",
+      "iniciales": "L.M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+      "fecha_ingreso": "2026-02-03",
+      "antiguedad_meses": 3,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Jonhatan Remington K.",
+      "iniciales": "J.R.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2025-12-08",
+      "antiguedad_meses": 5,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Norma M.",
+      "iniciales": "N.M.",
+      "puesto": "Auxiliar Administrativo",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Cesar Noe Cruz Maldonado",
+      "fecha_ingreso": "2025-11-27",
+      "antiguedad_meses": 6,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Eulalio G.",
+      "iniciales": "E.G.",
+      "puesto": "Analista de Créditos Jr",
+      "departamento": "Mesa de Control",
+      "responsable_directo": "Liliana Martinez Ramos",
+      "fecha_ingreso": "2025-11-06",
+      "antiguedad_meses": 6,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Rafael Humberto A.",
+      "iniciales": "R.H.",
+      "puesto": "Agente de Cobranza en Campo",
+      "departamento": "Legal- Seguros",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2025-11-05",
+      "antiguedad_meses": 6,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Sandra Elizabeth T.",
+      "iniciales": "S.E.",
+      "puesto": "Gerente de Cobranza y Facturación",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2025-11-01",
+      "antiguedad_meses": 6,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Luis Javier C.",
+      "iniciales": "L.J.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "responsable_directo": "Liliana Martinez Ramos",
+      "fecha_ingreso": "2025-09-22",
+      "antiguedad_meses": 8,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Jesica Lizbeth G.",
+      "iniciales": "J.L.",
+      "puesto": "Coordinador Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Juan Rogelio Morejon Alcocer",
+      "fecha_ingreso": "2025-09-01",
+      "antiguedad_meses": 8,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Brayan Isaac L.",
+      "iniciales": "B.I.",
+      "puesto": "Ejecutivo Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Juan Rogelio Morejon Alcocer",
+      "fecha_ingreso": "2025-08-20",
+      "antiguedad_meses": 9,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "José V.",
+      "iniciales": "J.V.",
+      "puesto": "Director General",
+      "departamento": "Dirección General",
+      "responsable_directo": "Comité Directivo",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10,
+      "nivel": "Dirección"
+    },
+    {
+      "nombre_visible": "Jorge Angel Z.",
+      "iniciales": "J.A.",
+      "puesto": "Analista de Contratos Jr",
+      "departamento": "Mesa de Control",
+      "responsable_directo": "Liliana Martinez Ramos",
+      "fecha_ingreso": "2025-07-16",
+      "antiguedad_meses": 10,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Roberto Z.",
+      "iniciales": "R.Z.",
+      "puesto": "Analista de Negocios",
+      "departamento": "Contraloría",
+      "responsable_directo": "Gerardo Misael Suárez Garza",
+      "fecha_ingreso": "2025-06-16",
+      "antiguedad_meses": 11,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Francisco Alejandro M.",
+      "iniciales": "F.A.",
+      "puesto": "Gerente De Procesos y Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2025-06-03",
+      "antiguedad_meses": 11,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Luis Gerardo O.",
+      "iniciales": "L.G.",
+      "puesto": "Analista de Seguros",
+      "departamento": "Legal- Seguros",
+      "responsable_directo": "Alfredo Sustaita Huitron",
+      "fecha_ingreso": "2025-05-26",
+      "antiguedad_meses": 12,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Rigoberto De L.",
+      "iniciales": "R.D.",
+      "puesto": "Gerente Contabilidad",
+      "departamento": "Contabilidad",
+      "responsable_directo": "Gerardo Misael Suárez Garza",
+      "fecha_ingreso": "2025-04-16",
+      "antiguedad_meses": 13,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Aracely Arizbeth M.",
+      "iniciales": "A.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 13,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Gerardo Misael S.",
+      "iniciales": "G.M.",
+      "puesto": "Contralor",
+      "departamento": "Contraloría",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2025-04-01",
+      "antiguedad_meses": 13,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "José Salvador M.",
+      "iniciales": "J.S.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Ilse Cortes Arias",
+      "fecha_ingreso": "2025-03-05",
+      "antiguedad_meses": 14,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Monica G.",
+      "iniciales": "M.G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2025-03-04",
+      "antiguedad_meses": 14,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Juan Rogelio M.",
+      "iniciales": "J.R.",
+      "puesto": "Jefe Inventarios y Atención al cliente",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Francisco Alejandro Méndoza Villareal",
+      "fecha_ingreso": "2025-02-16",
+      "antiguedad_meses": 15,
+      "nivel": "Jefatura"
+    },
+    {
+      "nombre_visible": "Ricardo Antonio H.",
+      "iniciales": "R.A.",
+      "puesto": "Contador Jr",
+      "departamento": "Contabilidad",
+      "responsable_directo": "Rigoberto De La Rosa Mercado",
+      "fecha_ingreso": "2024-11-11",
+      "antiguedad_meses": 18,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Erika Aide F.",
+      "iniciales": "E.A.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "responsable_directo": "Miguel Angel Flores Hinojosa",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 18,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Milton Charly M.",
+      "iniciales": "M.C.",
+      "puesto": "Contador",
+      "departamento": "Contabilidad",
+      "responsable_directo": "Rigoberto De La Rosa Mercado",
+      "fecha_ingreso": "2024-11-01",
+      "antiguedad_meses": 18,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Teresa De J.",
+      "iniciales": "T.D.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "responsable_directo": "Marcela Del Roble Maldonado González",
+      "fecha_ingreso": "2024-10-16",
+      "antiguedad_meses": 19,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Marcela Del R.",
+      "iniciales": "M.D.",
+      "puesto": "Gerente de Planeación Financiera",
+      "departamento": "Planeación Financiera y Tesorería",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2024-09-23",
+      "antiguedad_meses": 20,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Brenda Leticia U.",
+      "iniciales": "B.L.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2024-09-10",
+      "antiguedad_meses": 20,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Gabriela A.",
+      "iniciales": "G.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2024-06-03",
+      "antiguedad_meses": 23,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Mauricio Alejandro V.",
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Control Interno",
+      "departamento": "Contraloría",
+      "responsable_directo": "Gerardo Misael Suárez Garza",
+      "fecha_ingreso": "2024-05-16",
+      "antiguedad_meses": 24,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Cesar Noe C.",
+      "iniciales": "C.N.",
+      "puesto": "Coordinador de Placas y Permisos",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Juan Rogelio Morejon Alcocer",
+      "fecha_ingreso": "2024-04-08",
+      "antiguedad_meses": 25,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Laura Karina G.",
+      "iniciales": "L.K.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2024-02-19",
+      "antiguedad_meses": 27,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Alejandra Elizabeth R.",
+      "iniciales": "A.E.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "responsable_directo": "Miguel Angel Flores Hinojosa",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 29,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Rosaura F.",
+      "iniciales": "R.F.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2023-12-06",
+      "antiguedad_meses": 29,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Miguel Angel F.",
+      "iniciales": "M.A.",
+      "puesto": "Coordinador de Marketing",
+      "departamento": "Marketing",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2023-09-18",
+      "antiguedad_meses": 32,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Rocio O.",
+      "iniciales": "R.O.",
+      "puesto": "Coordinadora de Facturación",
+      "departamento": "Contabilidad",
+      "responsable_directo": "Rigoberto De La Rosa Mercado",
+      "fecha_ingreso": "2023-09-12",
+      "antiguedad_meses": 32,
+      "nivel": "Coordinación"
+    },
+    {
+      "nombre_visible": "Cesar V.",
+      "iniciales": "C.V.",
+      "puesto": "Gerente de Ventas",
+      "departamento": "Ventas",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2023-08-02",
+      "antiguedad_meses": 33,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Omar Ali G.",
+      "iniciales": "O.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2023-07-20",
+      "antiguedad_meses": 34,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "José Azael M.",
+      "iniciales": "J.A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2023-06-19",
+      "antiguedad_meses": 35,
+      "nivel": "Operativo"
+    },
+    {
+      "nombre_visible": "Ilse C.",
+      "iniciales": "I.C.",
+      "puesto": "Gerente de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "responsable_directo": "Francisco Alejandro Méndoza Villareal",
+      "fecha_ingreso": "2023-06-01",
+      "antiguedad_meses": 35,
+      "nivel": "Gerencia"
+    },
+    {
+      "nombre_visible": "Alfredo S.",
+      "iniciales": "A.S.",
+      "puesto": "Gerente Legal",
+      "departamento": "Contraloría",
+      "responsable_directo": "Gerardo Misael Suárez Garza",
+      "fecha_ingreso": null,
+      "antiguedad_meses": null,
+      "nivel": "Gerencia"
+    }
+  ],
+  "detalle_periodo_prueba": [
+    {
+      "nombre_visible": "Rafael R.",
+      "iniciales": "R.R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "responsable_directo": "Cesar Valadez Nares",
+      "fecha_ingreso": "2026-03-17",
+      "fecha_ingreso_display": "17/03/2026",
+      "dias_desde_ingreso": 58,
+      "estatus_onboarding": "Sin captura",
+      "ev_onboarding_jefe": null,
+      "ev_onboarding_colaborador": null,
+      "renovacion": null,
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-06-15",
+      "fecha_vencimiento_display": "15/06/2026",
+      "dias_restantes_prueba": 31
+    },
+    {
+      "nombre_visible": "Marco Antonio L.",
+      "iniciales": "M.A.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "responsable_directo": "Mauricio Alejandro Vargas Saucedo",
+      "fecha_ingreso": "2026-03-23",
+      "fecha_ingreso_display": "23/03/2026",
+      "dias_desde_ingreso": 52,
+      "estatus_onboarding": "Sin captura",
+      "ev_onboarding_jefe": null,
+      "ev_onboarding_colaborador": null,
+      "renovacion": null,
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-06-21",
+      "fecha_vencimiento_display": "21/06/2026",
+      "dias_restantes_prueba": 37
+    },
+    {
+      "nombre_visible": "Reyna Elizabeth T.",
+      "iniciales": "R.E.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "responsable_directo": "Sandra Elizabeth Trujillo Reyes",
+      "fecha_ingreso": "2026-04-06",
+      "fecha_ingreso_display": "06/04/2026",
+      "dias_desde_ingreso": 38,
+      "estatus_onboarding": "Sin captura",
+      "ev_onboarding_jefe": null,
+      "ev_onboarding_colaborador": null,
+      "renovacion": null,
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-07-05",
+      "fecha_vencimiento_display": "05/07/2026",
+      "dias_restantes_prueba": 51
+    },
+    {
+      "nombre_visible": "Juan Carlos G.",
+      "iniciales": "J.C.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-04-06",
+      "fecha_ingreso_display": "06/04/2026",
+      "dias_desde_ingreso": 38,
+      "estatus_onboarding": "Sin captura",
+      "ev_onboarding_jefe": null,
+      "ev_onboarding_colaborador": null,
+      "renovacion": null,
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-07-05",
+      "fecha_vencimiento_display": "05/07/2026",
+      "dias_restantes_prueba": 51
+    },
+    {
+      "nombre_visible": "Omar Eduardo V.",
+      "iniciales": "O.E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "responsable_directo": "José Villarreal Elnecave",
+      "fecha_ingreso": "2026-05-04",
+      "fecha_ingreso_display": "04/05/2026",
+      "dias_desde_ingreso": 10,
+      "estatus_onboarding": "Sin captura",
+      "ev_onboarding_jefe": null,
+      "ev_onboarding_colaborador": null,
+      "renovacion": null,
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-08-02",
+      "fecha_vencimiento_display": "02/08/2026",
+      "dias_restantes_prueba": 79
+    }
+  ],
+  "detalle_vacantes_2026": [
+    {
+      "puesto": "Auxiliar operaciones",
+      "departamento": "Procesos y Operaciones",
+      "fecha_apertura": "2026-05-16",
+      "fecha_apertura_display": "16/05/2026",
+      "dias_abierta": 0,
+      "num_candidatos": 1,
+      "entrevistas": "ok",
+      "psicometria": "pendiente",
+      "seleccionado": "",
+      "estatus": "Cubierta · ingresa 18/05",
+      "comentarios": "Cubierta. Candidato seleccionado, ingresa lunes 18/05/2026.",
+      "cubierta": true
+    },
+    {
+      "puesto": "Ejecutivo de venta",
+      "departamento": "Ventas",
+      "fecha_apertura": "2026-03-17",
+      "fecha_apertura_display": "17/03/2026",
+      "dias_abierta": 58,
+      "num_candidatos": 2,
+      "entrevistas": "ok",
+      "psicometria": "ok",
+      "seleccionado": "",
+      "estatus": "Esperando decisión cliente",
+      "comentarios": "pendiente que César seleccione candiato"
+    },
+    {
+      "puesto": "Auxiliar contable (tracto)",
+      "departamento": "Contabilidad",
+      "fecha_apertura": "2026-04-28",
+      "fecha_apertura_display": "28/04/2026",
+      "dias_abierta": 16,
+      "num_candidatos": 1,
+      "entrevistas": "pend",
+      "psicometria": "",
+      "seleccionado": "",
+      "estatus": "Entrevistas pendientes",
+      "comentarios": "Se cuenta con  candidato viable. 2 candidatos declinaron por distancia."
+    },
+    {
+      "puesto": "Ansalista de cobranza",
+      "departamento": "Facturación y Cobranza",
+      "fecha_apertura": "2026-05-16",
+      "fecha_apertura_display": "16/05/2026",
+      "dias_abierta": 0,
+      "num_candidatos": 0,
+      "entrevistas": "",
+      "psicometria": "",
+      "seleccionado": "",
+      "estatus": "POR ABRIR · inicia 16/05",
+      "comentarios": "Apertura programada para 16 de mayo 2026.",
+      "cubierta": false
+    }
+  ],
+  "cumplimiento_asistencia": {
+    "periodo": "16 abril – 12 mayo 2026",
+    "dias_habiles": 18,
+    "plantilla": 47,
+    "dias_posibles_total": 846,
+    "faltas_periodo": 0,
+    "permisos_periodo": 0,
+    "cumplimiento_pct": 100.0,
+    "nota": "Sin incidencias capturadas en este período (validado contra PERMISOS-AUSENCIAS al corte 12/05/2026)."
+  },
+  "detalle_asistencia_personas": [
+    {
+      "nombre_visible": "Alejandra R.",
+      "puesto": "Generalista de RH",
+      "departamento": "Recursos Humanos",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Alejandra R.",
+      "puesto": "Generalista de RH",
+      "departamento": "Recursos Humanos",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Aracely O.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Brayan L.",
+      "puesto": "Ejecutivo Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Brenda L.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Cesar N.",
+      "puesto": "Coordinador de Placas y Permisos",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Cesar V.",
+      "puesto": "Gerente de Ventas",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Erika F.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Eulalio G.",
+      "puesto": "Analista de Créditos Jr",
+      "departamento": "Mesa de Control",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Francisco M.",
+      "puesto": "Gerente De Procesos y Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Francisco R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Gabriela A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Gerardo S.",
+      "puesto": "Contralor",
+      "departamento": "Contraloría",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Ilse C.",
+      "puesto": "Gerente de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Jesica G.",
+      "puesto": "Coordinador Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Jonhatan K.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Jorge Z.",
+      "puesto": "Analista de Contratos Jr",
+      "departamento": "Mesa de Control",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "José M.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "José M.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "José V.",
+      "puesto": "Director General",
+      "departamento": "Dirección General",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Juan G.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Juan M.",
+      "puesto": "Jefe Inventarios y Atención al cliente",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Laura G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Liliana M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Luis O.",
+      "puesto": "Analista de Seguros",
+      "departamento": "Legal- Seguros",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Luis C.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Marcela M.",
+      "puesto": "Gerente de Planeación Financiera",
+      "departamento": "Planeación Financiera y Tesorería",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Marco L.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Mauricio V.",
+      "puesto": "Coordinador de Control Interno",
+      "departamento": "Contraloría",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Miguel F.",
+      "puesto": "Coordinador de Marketing",
+      "departamento": "Marketing",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Milton M.",
+      "puesto": "Contador",
+      "departamento": "Contabilidad",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Monica G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Norma M.",
+      "puesto": "Auxiliar Administrativo",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Omar E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Paula L.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rafael A.",
+      "puesto": "Agente de Cobranza en Campo",
+      "departamento": "Legal- Seguros",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rafael R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Reyna T.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Ricardo H.",
+      "puesto": "Contador Jr",
+      "departamento": "Contabilidad",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rigoberto R.",
+      "puesto": "Gerente Contabilidad",
+      "departamento": "Contabilidad",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Roberto Z.",
+      "puesto": "Analista de Negocios",
+      "departamento": "Contraloría",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rocio O.",
+      "puesto": "Coordinadora de Facturación",
+      "departamento": "Contabilidad",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rosario G.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rosaura F.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Sandra T.",
+      "puesto": "Gerente de Cobranza y Facturación",
+      "departamento": "Facturación y Cobranza",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    },
+    {
+      "nombre_visible": "Teresa G.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "dias_posibles": 18,
+      "faltas": 0,
+      "permisos": 0,
+      "cumplimiento_pct": 100.0
+    }
+  ],
+  "detalle_puntualidad_personas": [
+    {
+      "nombre_visible": "Alejandra R.",
+      "puesto": "Generalista de RH",
+      "departamento": "Recursos Humanos",
+      "total_fichajes": 21,
+      "retardos": 6,
+      "min_retardo_total": 890,
+      "jornadas_equiv": 1.75,
+      "puntualidad_pct": 71.4
+    },
+    {
+      "nombre_visible": "Alejandra R.",
+      "puesto": "Generalista de RH",
+      "departamento": "Recursos Humanos",
+      "total_fichajes": 18,
+      "retardos": 1,
+      "min_retardo_total": 13,
+      "jornadas_equiv": 0.03,
+      "puntualidad_pct": 94.4
+    },
+    {
+      "nombre_visible": "Aracely O.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "total_fichajes": 17,
+      "retardos": 15,
+      "min_retardo_total": 520,
+      "jornadas_equiv": 1.02,
+      "puntualidad_pct": 11.8
+    },
+    {
+      "nombre_visible": "Brayan L.",
+      "puesto": "Ejecutivo Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 17,
+      "retardos": 5,
+      "min_retardo_total": 186,
+      "jornadas_equiv": 0.36,
+      "puntualidad_pct": 70.6
+    },
+    {
+      "nombre_visible": "Brenda L.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 16,
+      "retardos": 13,
+      "min_retardo_total": 871,
+      "jornadas_equiv": 1.71,
+      "puntualidad_pct": 18.8
+    },
+    {
+      "nombre_visible": "Cesar N.",
+      "puesto": "Coordinador de Placas y Permisos",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 16,
+      "retardos": 11,
+      "min_retardo_total": 198,
+      "jornadas_equiv": 0.39,
+      "puntualidad_pct": 31.2
+    },
+    {
+      "nombre_visible": "Cesar V.",
+      "puesto": "Gerente de Ventas",
+      "departamento": "Ventas",
+      "total_fichajes": 15,
+      "retardos": 10,
+      "min_retardo_total": 822,
+      "jornadas_equiv": 1.61,
+      "puntualidad_pct": 33.3
+    },
+    {
+      "nombre_visible": "Erika F.",
+      "puesto": "Ejecutivo de Marketing",
+      "departamento": "Marketing",
+      "total_fichajes": 11,
+      "retardos": 5,
+      "min_retardo_total": 155,
+      "jornadas_equiv": 0.3,
+      "puntualidad_pct": 54.5
+    },
+    {
+      "nombre_visible": "Eulalio G.",
+      "puesto": "Analista de Créditos Jr",
+      "departamento": "Mesa de Control",
+      "total_fichajes": 17,
+      "retardos": 3,
+      "min_retardo_total": 256,
+      "jornadas_equiv": 0.5,
+      "puntualidad_pct": 82.4
+    },
+    {
+      "nombre_visible": "Francisco M.",
+      "puesto": "Gerente De Procesos y Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 17,
+      "retardos": 16,
+      "min_retardo_total": 927,
+      "jornadas_equiv": 1.82,
+      "puntualidad_pct": 5.9
+    },
+    {
+      "nombre_visible": "Francisco R.",
+      "puesto": "Analista de Control Documental",
+      "departamento": "Planeación Financiera y Tesorería",
+      "total_fichajes": 11,
+      "retardos": 1,
+      "min_retardo_total": 98,
+      "jornadas_equiv": 0.19,
+      "puntualidad_pct": 90.9
+    },
+    {
+      "nombre_visible": "Gabriela A.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "total_fichajes": 17,
+      "retardos": 4,
+      "min_retardo_total": 920,
+      "jornadas_equiv": 1.8,
+      "puntualidad_pct": 76.5
+    },
+    {
+      "nombre_visible": "Gerardo S.",
+      "puesto": "Contralor",
+      "departamento": "Contraloría",
+      "total_fichajes": 18,
+      "retardos": 3,
+      "min_retardo_total": 41,
+      "jornadas_equiv": 0.08,
+      "puntualidad_pct": 83.3
+    },
+    {
+      "nombre_visible": "Ilse C.",
+      "puesto": "Gerente de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 17,
+      "retardos": 7,
+      "min_retardo_total": 554,
+      "jornadas_equiv": 1.09,
+      "puntualidad_pct": 58.8
+    },
+    {
+      "nombre_visible": "Jesica G.",
+      "puesto": "Coordinador Servicio a Clientes",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 17,
+      "retardos": 9,
+      "min_retardo_total": 234,
+      "jornadas_equiv": 0.46,
+      "puntualidad_pct": 47.1
+    },
+    {
+      "nombre_visible": "Jonhatan K.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 19,
+      "retardos": 5,
+      "min_retardo_total": 73,
+      "jornadas_equiv": 0.14,
+      "puntualidad_pct": 73.7
+    },
+    {
+      "nombre_visible": "Jorge Z.",
+      "puesto": "Analista de Contratos Jr",
+      "departamento": "Mesa de Control",
+      "total_fichajes": 19,
+      "retardos": 5,
+      "min_retardo_total": 120,
+      "jornadas_equiv": 0.24,
+      "puntualidad_pct": 73.7
+    },
+    {
+      "nombre_visible": "José M.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "total_fichajes": 14,
+      "retardos": 9,
+      "min_retardo_total": 525,
+      "jornadas_equiv": 1.03,
+      "puntualidad_pct": 35.7
+    },
+    {
+      "nombre_visible": "José M.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 16,
+      "retardos": 1,
+      "min_retardo_total": 30,
+      "jornadas_equiv": 0.06,
+      "puntualidad_pct": 93.8
+    },
+    {
+      "nombre_visible": "José V.",
+      "puesto": "Director General",
+      "departamento": "Dirección General",
+      "total_fichajes": 2,
+      "retardos": 1,
+      "min_retardo_total": 53,
+      "jornadas_equiv": 0.1,
+      "puntualidad_pct": 50.0
+    },
+    {
+      "nombre_visible": "Juan G.",
+      "puesto": "Gerente Ventas",
+      "departamento": "Ventas",
+      "total_fichajes": 17,
+      "retardos": 2,
+      "min_retardo_total": 29,
+      "jornadas_equiv": 0.06,
+      "puntualidad_pct": 88.2
+    },
+    {
+      "nombre_visible": "Juan M.",
+      "puesto": "Jefe Inventarios y Atención al cliente",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 18,
+      "retardos": 7,
+      "min_retardo_total": 541,
+      "jornadas_equiv": 1.06,
+      "puntualidad_pct": 61.1
+    },
+    {
+      "nombre_visible": "Laura G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 14,
+      "retardos": 11,
+      "min_retardo_total": 441,
+      "jornadas_equiv": 0.86,
+      "puntualidad_pct": 21.4
+    },
+    {
+      "nombre_visible": "Liliana M.",
+      "puesto": "Coordinador de Mesa de Control",
+      "departamento": "Control Interno",
+      "total_fichajes": 17,
+      "retardos": 5,
+      "min_retardo_total": 81,
+      "jornadas_equiv": 0.16,
+      "puntualidad_pct": 70.6
+    },
+    {
+      "nombre_visible": "Luis O.",
+      "puesto": "Analista de Seguros",
+      "departamento": "Legal- Seguros",
+      "total_fichajes": 20,
+      "retardos": 3,
+      "min_retardo_total": 202,
+      "jornadas_equiv": 0.4,
+      "puntualidad_pct": 85.0
+    },
+    {
+      "nombre_visible": "Luis C.",
+      "puesto": "Analista de Contratos",
+      "departamento": "Mesa de Control",
+      "total_fichajes": 19,
+      "retardos": 0,
+      "min_retardo_total": 0,
+      "jornadas_equiv": 0.0,
+      "puntualidad_pct": 100.0
+    },
+    {
+      "nombre_visible": "Marcela M.",
+      "puesto": "Gerente de Planeación Financiera",
+      "departamento": "Planeación Financiera y Tesorería",
+      "total_fichajes": 19,
+      "retardos": 14,
+      "min_retardo_total": 839,
+      "jornadas_equiv": 1.65,
+      "puntualidad_pct": 26.3
+    },
+    {
+      "nombre_visible": "Marco L.",
+      "puesto": "Practicante Costos",
+      "departamento": "Control Interno",
+      "total_fichajes": 20,
+      "retardos": 6,
+      "min_retardo_total": 112,
+      "jornadas_equiv": 0.22,
+      "puntualidad_pct": 70.0
+    },
+    {
+      "nombre_visible": "Mauricio V.",
+      "puesto": "Coordinador de Control Interno",
+      "departamento": "Contraloría",
+      "total_fichajes": 19,
+      "retardos": 0,
+      "min_retardo_total": 0,
+      "jornadas_equiv": 0.0,
+      "puntualidad_pct": 100.0
+    },
+    {
+      "nombre_visible": "Miguel F.",
+      "puesto": "Coordinador de Marketing",
+      "departamento": "Marketing",
+      "total_fichajes": 5,
+      "retardos": 4,
+      "min_retardo_total": 874,
+      "jornadas_equiv": 1.71,
+      "puntualidad_pct": 20.0
+    },
+    {
+      "nombre_visible": "Milton M.",
+      "puesto": "Contador",
+      "departamento": "Contabilidad",
+      "total_fichajes": 16,
+      "retardos": 3,
+      "min_retardo_total": 58,
+      "jornadas_equiv": 0.11,
+      "puntualidad_pct": 81.2
+    },
+    {
+      "nombre_visible": "Monica G.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 18,
+      "retardos": 4,
+      "min_retardo_total": 81,
+      "jornadas_equiv": 0.16,
+      "puntualidad_pct": 77.8
+    },
+    {
+      "nombre_visible": "Norma M.",
+      "puesto": "Auxiliar Administrativo",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 16,
+      "retardos": 1,
+      "min_retardo_total": 15,
+      "jornadas_equiv": 0.03,
+      "puntualidad_pct": 93.8
+    },
+    {
+      "nombre_visible": "Omar E.",
+      "puesto": "Gerente TI",
+      "departamento": "TI",
+      "total_fichajes": 7,
+      "retardos": 2,
+      "min_retardo_total": 341,
+      "jornadas_equiv": 0.67,
+      "puntualidad_pct": 71.4
+    },
+    {
+      "nombre_visible": "Paula L.",
+      "puesto": "Auxiliar Mesa de Control",
+      "departamento": "Mesa de Control",
+      "total_fichajes": 19,
+      "retardos": 0,
+      "min_retardo_total": 0,
+      "jornadas_equiv": 0.0,
+      "puntualidad_pct": 100.0
+    },
+    {
+      "nombre_visible": "Rafael A.",
+      "puesto": "Agente de Cobranza en Campo",
+      "departamento": "Legal- Seguros",
+      "total_fichajes": 19,
+      "retardos": 18,
+      "min_retardo_total": 1312,
+      "jornadas_equiv": 2.57,
+      "puntualidad_pct": 5.3
+    },
+    {
+      "nombre_visible": "Rafael R.",
+      "puesto": "Ejecutivo de Venta",
+      "departamento": "Ventas",
+      "total_fichajes": 15,
+      "retardos": 5,
+      "min_retardo_total": 128,
+      "jornadas_equiv": 0.25,
+      "puntualidad_pct": 66.7
+    },
+    {
+      "nombre_visible": "Reyna T.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 21,
+      "retardos": 2,
+      "min_retardo_total": 66,
+      "jornadas_equiv": 0.13,
+      "puntualidad_pct": 90.5
+    },
+    {
+      "nombre_visible": "Ricardo H.",
+      "puesto": "Contador Jr",
+      "departamento": "Contabilidad",
+      "total_fichajes": 17,
+      "retardos": 4,
+      "min_retardo_total": 60,
+      "jornadas_equiv": 0.12,
+      "puntualidad_pct": 76.5
+    },
+    {
+      "nombre_visible": "Rigoberto R.",
+      "puesto": "Gerente Contabilidad",
+      "departamento": "Contabilidad",
+      "total_fichajes": 17,
+      "retardos": 3,
+      "min_retardo_total": 622,
+      "jornadas_equiv": 1.22,
+      "puntualidad_pct": 82.4
+    },
+    {
+      "nombre_visible": "Roberto Z.",
+      "puesto": "Analista de Negocios",
+      "departamento": "Contraloría",
+      "total_fichajes": 19,
+      "retardos": 3,
+      "min_retardo_total": 86,
+      "jornadas_equiv": 0.17,
+      "puntualidad_pct": 84.2
+    },
+    {
+      "nombre_visible": "Rocio O.",
+      "puesto": "Coordinadora de Facturación",
+      "departamento": "Contabilidad",
+      "total_fichajes": 22,
+      "retardos": 6,
+      "min_retardo_total": 111,
+      "jornadas_equiv": 0.22,
+      "puntualidad_pct": 72.7
+    },
+    {
+      "nombre_visible": "Rosario G.",
+      "puesto": "Auxiliar de Operaciones",
+      "departamento": "Procesos y Operaciones",
+      "total_fichajes": 17,
+      "retardos": 3,
+      "min_retardo_total": 987,
+      "jornadas_equiv": 1.94,
+      "puntualidad_pct": 82.4
+    },
+    {
+      "nombre_visible": "Rosaura F.",
+      "puesto": "Analista de Cobranza",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 18,
+      "retardos": 11,
+      "min_retardo_total": 268,
+      "jornadas_equiv": 0.53,
+      "puntualidad_pct": 38.9
+    },
+    {
+      "nombre_visible": "Sandra T.",
+      "puesto": "Gerente de Cobranza y Facturación",
+      "departamento": "Facturación y Cobranza",
+      "total_fichajes": 19,
+      "retardos": 6,
+      "min_retardo_total": 84,
+      "jornadas_equiv": 0.16,
+      "puntualidad_pct": 68.4
+    },
+    {
+      "nombre_visible": "Teresa G.",
+      "puesto": "Ejecutivo de Tesorería",
+      "departamento": "Planeación Financiera y Tesorería",
+      "total_fichajes": 20,
+      "retardos": 5,
+      "min_retardo_total": 177,
+      "jornadas_equiv": 0.35,
+      "puntualidad_pct": 75.0
+    }
+  ],
+  "historico_incidencias": {
+    "periodo": "septiembre 2025 – abril 2026",
+    "total_registros": 59,
+    "por_tipo": {
+      "Llegada tarde": 16,
+      "Salida temprano": 15,
+      "Falta": 11,
+      "Retardo": 3,
+      "Permiso sin goce": 2,
+      "No registro": 1,
+      "Recorrio horario": 1,
+      "Banco de Horas": 1,
+      "Permiso": 1,
+      "Permiso paternidad": 1,
+      "Incapacidad": 1
+    },
+    "por_departamento": {
+      "Planeación Financiera y Tesorería": 16,
+      "Mesa de Control": 13,
+      "Cobranza y Facturación": 6,
+      "Contabilidad": 6,
+      "Procesos y Operaciones": 6,
+      "Contraloría": 6,
+      "Facturación y Cobranza": 4,
+      "Ventas": 2
+    }
+  },
+  "asistencia_periodo": {
+    "periodo": "16 abril – 12 mayo 2026",
+    "dias_habiles_periodo": 18,
+    "plantilla_evaluada": 46,
+    "festivos_descontados": "1 de mayo (Día del Trabajo)",
+    "nota_exclusion": "Excluye Dirección General. Métrica basada en fichajes del checador, ajustada por fecha de ingreso individual.",
+    "nota_gap": "Los días sin fichar aún no están categorizados (Faltas / Permisos / Incapacidades). La pestaña PERMISOS-AUSENCIAS no tiene registros en este período; pendiente alinear captura con HT Rent para mostrar el desglose por motivo.",
+    "faltistas_descendente": [
+      {
+        "nombre_visible": "Miguel F.",
+        "puesto": "Coordinador de Marketing",
+        "departamento": "Marketing",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 5,
+        "dias_sin_fichar": 13,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 27.8
+      },
+      {
+        "nombre_visible": "Erika F.",
+        "puesto": "Ejecutivo de Marketing",
+        "departamento": "Marketing",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 11,
+        "dias_sin_fichar": 7,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 61.1
+      },
+      {
+        "nombre_visible": "Francisco R.",
+        "puesto": "Analista de Control Documental",
+        "departamento": "Planeación Financiera y Tesorería",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 11,
+        "dias_sin_fichar": 7,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 61.1
+      },
+      {
+        "nombre_visible": "José M.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 14,
+        "dias_sin_fichar": 4,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 77.8
+      },
+      {
+        "nombre_visible": "Laura G.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 14,
+        "dias_sin_fichar": 4,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 77.8
+      },
+      {
+        "nombre_visible": "Rafael R.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 15,
+        "dias_sin_fichar": 3,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 83.3
+      },
+      {
+        "nombre_visible": "Cesar V.",
+        "puesto": "Gerente de Ventas",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 15,
+        "dias_sin_fichar": 3,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 83.3
+      },
+      {
+        "nombre_visible": "Cesar N.",
+        "puesto": "Coordinador de Placas y Permisos",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
+      },
+      {
+        "nombre_visible": "José M.",
+        "puesto": "Auxiliar de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
+      },
+      {
+        "nombre_visible": "Brenda L.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
+      },
+      {
+        "nombre_visible": "Norma M.",
+        "puesto": "Auxiliar Administrativo",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
+      },
+      {
+        "nombre_visible": "Milton M.",
+        "puesto": "Contador",
+        "departamento": "Contabilidad",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
+      },
+      {
+        "nombre_visible": "Brayan L.",
+        "puesto": "Ejecutivo Servicio a Clientes",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Eulalio G.",
+        "puesto": "Analista de Créditos Jr",
+        "departamento": "Mesa de Control",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Aracely O.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Ricardo H.",
+        "puesto": "Contador Jr",
+        "departamento": "Contabilidad",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Rigoberto R.",
+        "puesto": "Gerente Contabilidad",
+        "departamento": "Contabilidad",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Jesica G.",
+        "puesto": "Coordinador Servicio a Clientes",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Rosario G.",
+        "puesto": "Auxiliar de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Gabriela A.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Francisco M.",
+        "puesto": "Gerente De Procesos y Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Juan G.",
+        "puesto": "Gerente Ventas",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Liliana M.",
+        "puesto": "Coordinador de Mesa de Control",
+        "departamento": "Control Interno",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Ilse C.",
+        "puesto": "Gerente de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      }
+    ]
+  }
+}
