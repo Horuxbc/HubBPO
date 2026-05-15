@@ -384,7 +384,7 @@
       "departamento": "",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
-      "dias_abierta": -2,
+      "dias_abierta": 0,
       "num_candidatos": 1,
       "entrevistas": "ok",
       "psicometria": "pendiente",
@@ -2070,13 +2070,14 @@
       "departamento": "",
       "fecha_apertura": "2026-05-16",
       "fecha_apertura_display": "16/05/2026",
-      "dias_abierta": -2,
+      "dias_abierta": 0,
       "num_candidatos": 1,
       "entrevistas": "ok",
       "psicometria": "pendiente",
       "seleccionado": "",
-      "estatus": "Psicometría pendiente",
-      "comentarios": "Pendiente que candidato concluya las pruebas"
+      "estatus": "Cubierta · ingresa 18/05",
+      "comentarios": "Cubierta. Candidato seleccionado, ingresa lunes 18/05/2026.",
+      "cubierta": true
     },
     {
       "puesto": "Ejecutivo de venta",
