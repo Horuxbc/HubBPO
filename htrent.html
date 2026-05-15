@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD: 2026-05-15-v7-GRAFICA-BARRAS-DIAS -->
+<!-- BUILD: 2026-05-15-v9-PERIODO-PRUEBA-FECHAS -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -5714,7 +5714,14 @@ updateDashboard();
 
     ordenados.forEach(c => {
       const color = semColor(c.dias_desde_ingreso);
-      const diasTxt = (c.dias_desde_ingreso !== null && c.dias_desde_ingreso !== undefined) ? `${c.dias_desde_ingreso}d` : 'N/D';
+      const diasRest = c.dias_restantes_prueba;
+      let colorDR = '#10b981';
+      let etiquetaDR = '';
+      if (diasRest != null) {
+        if (diasRest < 0) { colorDR = '#ef4444'; etiquetaDR = 'vencido'; }
+        else if (diasRest <= 15) { colorDR = '#f59e0b'; etiquetaDR = `${diasRest}d`; }
+        else { etiquetaDR = `${diasRest}d`; }
+      }
       const est = (c.estatus_onboarding || '').toLowerCase();
       const estatusBadge = est.includes('completa')
         ? '<span style="color:#3FD33F; font-weight:600;">✓ Completado</span>'
@@ -5722,16 +5729,21 @@ updateDashboard();
         ? '<span style="color:#E89B2B; font-weight:600;">⏳ En proceso</span>'
         : '<span style="color:#9aa5a3;">Sin captura</span>';
       const display = c.nombre_visible || c.iniciales || '';
+      const ingreso = c.fecha_ingreso_display || '—';
+      const vencimiento = c.fecha_vencimiento_display || '—';
 
       html += `
-        <div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid var(--border-light); font-size:11.5px;">
+        <div style="display:flex; align-items:center; gap:8px; padding:8px 0; border-bottom:1px solid var(--border-light); font-size:11.5px;">
           <span style="width:7px; height:7px; border-radius:50%; background:${color}; flex-shrink:0;"></span>
           <div style="flex:1; min-width:0;">
             <div style="font-weight:600; color:var(--text-primary);">${display} <span style="font-weight:400; color:var(--text-secondary);">· ${c.puesto || ''}</span></div>
-            <div style="font-size:10px; color:var(--text-muted); margin-top:1px;">${c.departamento || ''}</div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">
+              <span>Ingreso: <strong style="color:var(--text-secondary);">${ingreso}</strong></span>
+              <span style="margin-left:8px;">Vence: <strong style="color:var(--text-primary);">${vencimiento}</strong></span>
+            </div>
           </div>
           <div style="text-align:right;">
-            <div style="font-weight:600; color:${color}; font-size:11px;">${diasTxt}</div>
+            <div style="font-weight:700; color:${colorDR}; font-size:11px;">${etiquetaDR}</div>
             <div style="font-size:9.5px; margin-top:2px;">${estatusBadge}</div>
           </div>
         </div>
@@ -6140,21 +6152,21 @@ updateDashboard();
       const ap = d.asistencia_periodo || {};
       const lista = ap.faltistas_descendente || [];
       const totalConFaltas = lista.length;
-      const totalDiasSinFichar = lista.reduce((s, p) => s + p.dias_no_fichados, 0);
+      const totalDiasSinFichar = lista.reduce((s, p) => s + p.dias_sin_fichar, 0);
 
       let html = `
-        <div style="background:var(--bg); padding:14px 16px; border-radius:6px; margin-bottom:16px;">
+        <div style="background:var(--bg); padding:14px 16px; border-radius:6px; margin-bottom:14px;">
           <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; margin-bottom:6px;">Período</div>
           <div style="font-size:13.5px; color:var(--text-primary); font-weight:600;">${escape(ap.periodo || '')}</div>
-          <div style="font-size:11.5px; color:var(--text-secondary); margin-top:4px;">${ap.dias_habiles || 0} días hábiles · ${ap.plantilla_evaluada || 0} colaboradores evaluados</div>
+          <div style="font-size:11.5px; color:var(--text-secondary); margin-top:4px;">${ap.dias_habiles_periodo || 0} días hábiles · ${ap.plantilla_evaluada || 0} colaboradores evaluados · descontado ${escape(ap.festivos_descontados || '')}</div>
           <div style="font-size:10.5px; color:var(--text-muted); margin-top:6px; font-style:italic;">${escape(ap.nota_exclusion || '')}</div>
         </div>
 
-        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-bottom:18px;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-bottom:14px;">
           <div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
             <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700;">Plantilla evaluada</div>
             <div style="font-size:22px; font-weight:700; color:var(--text-primary); line-height:1; margin-top:4px;">${ap.plantilla_evaluada || 0}</div>
-            <div style="font-size:10.5px; color:var(--text-muted); margin-top:3px;">${ap.dias_habiles || 0} días hábiles</div>
+            <div style="font-size:10.5px; color:var(--text-muted); margin-top:3px;">${ap.dias_habiles_periodo || 0} días hábiles</div>
           </div>
           <div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
             <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700;">Con días sin fichar</div>
@@ -6168,6 +6180,10 @@ updateDashboard();
           </div>
         </div>
 
+        <div style="background:#fef3c7; border-left:3px solid #f59e0b; padding:10px 12px; border-radius:0 4px 4px 0; font-size:11.5px; color:#78350f; margin-bottom:16px; line-height:1.5;">
+          <strong>Nota metodológica:</strong> ${escape(ap.nota_gap || '')}
+        </div>
+
         <h3 style="font-size:13px; color:var(--brand-dark); margin: 0 0 10px;">Colaboradores con días sin fichar · orden descendente</h3>
       `;
 
@@ -6179,18 +6195,24 @@ updateDashboard();
             <th>Colaborador</th>
             <th>Puesto</th>
             <th>Departamento</th>
-            <th style="text-align:center;">Días fichados</th>
+            <th style="text-align:center;">Días posibles</th>
+            <th style="text-align:center;">Faltas</th>
+            <th style="text-align:center;">Permisos</th>
+            <th style="text-align:center;">Incapacidades</th>
             <th style="text-align:right;">Días sin fichar</th>
           </tr></thead>
           <tbody>`;
         lista.forEach(p => {
-          const heat = p.dias_no_fichados >= 10 ? '#ef4444' : p.dias_no_fichados >= 5 ? '#f59e0b' : '#64748b';
+          const heat = p.dias_sin_fichar >= 10 ? '#ef4444' : p.dias_sin_fichar >= 5 ? '#f59e0b' : '#64748b';
           html += `<tr>
             <td class="col-name">${escape(p.nombre_visible)}</td>
             <td>${escape(p.puesto)}</td>
             <td class="col-muted">${escape(p.departamento)}</td>
-            <td style="text-align:center; color:var(--text-secondary);">${p.dias_fichados} / ${p.dias_habiles}</td>
-            <td style="text-align:right; color:${heat}; font-weight:700;">${p.dias_no_fichados}</td>
+            <td style="text-align:center; color:var(--text-secondary);">${p.dias_habiles_persona}</td>
+            <td style="text-align:center; color:var(--text-muted);">${p.faltas}</td>
+            <td style="text-align:center; color:var(--text-muted);">${p.permisos}</td>
+            <td style="text-align:center; color:var(--text-muted);">${p.incapacidades}</td>
+            <td style="text-align:right; color:${heat}; font-weight:700;">${p.dias_sin_fichar}</td>
           </tr>`;
         });
         html += `</tbody></table>`;
@@ -6326,13 +6348,20 @@ updateDashboard();
 
   function tablaPeriodoPrueba(lista) {
     if (!lista || !lista.length) return '<div class="modal-empty">Sin registros</div>';
-    let h = `<table class="detail-table">
-      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th>Responsable</th><th style="text-align:right;">Ingreso</th><th style="text-align:right;">Días</th><th>Estatus</th></tr></thead>
+    let h = `<div style="background:#fef3c7; border-left:3px solid #f59e0b; padding:10px 12px; border-radius:0 4px 4px 0; font-size:11.5px; color:#78350f; margin-bottom:14px; line-height:1.5;">
+      <strong>Nota metodológica:</strong> Vencimiento calculado a 90 días naturales desde fecha de ingreso. Validar con HT Rent si algún puesto aplica plazo distinto (LFT permite hasta 180 días en puestos de dirección o gerencia).
+    </div>
+    <table class="detail-table">
+      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th style="text-align:center;">Ingreso</th><th style="text-align:center;">Vencimiento prueba</th><th style="text-align:right;">Días restantes</th><th>Estatus</th></tr></thead>
       <tbody>`;
     lista.forEach(p => {
       const nom = p.nombre_visible || p.iniciales || '';
-      const dias = p.dias_desde_ingreso != null ? p.dias_desde_ingreso : '—';
-      const colorDias = dias > 90 ? '#ef4444' : dias > 60 ? '#f59e0b' : '#10b981';
+      const diasRest = p.dias_restantes_prueba;
+      let colorDR = '#10b981';
+      if (diasRest != null) {
+        if (diasRest < 0) colorDR = '#ef4444';
+        else if (diasRest <= 15) colorDR = '#f59e0b';
+      }
       let pill = 'muted';
       const est = (p.estatus_onboarding || '').toLowerCase();
       if (est.includes('completa')) pill = 'ok';
@@ -6341,9 +6370,9 @@ updateDashboard();
         <td class="col-name">${escape(nom)}</td>
         <td>${escape(p.puesto || '')}</td>
         <td class="col-muted">${escape(p.departamento || '')}</td>
-        <td class="col-muted">${escape(p.responsable_directo || '')}</td>
-        <td style="text-align:right;" class="col-muted">${p.fecha_ingreso_display || fmtFecha(p.fecha_ingreso)}</td>
-        <td style="text-align:right; color:${colorDias}; font-weight:700;">${dias}</td>
+        <td style="text-align:center;" class="col-muted">${p.fecha_ingreso_display || fmtFecha(p.fecha_ingreso)}</td>
+        <td style="text-align:center; font-weight:600; color:var(--text-primary);">${p.fecha_vencimiento_display || '—'}</td>
+        <td style="text-align:right; color:${colorDR}; font-weight:700;">${diasRest != null ? diasRest + 'd' : '—'}</td>
         <td><span class="badge-pill ${pill}">${escape(p.estatus_onboarding || 'Sin captura')}</span></td>
       </tr>`;
     });

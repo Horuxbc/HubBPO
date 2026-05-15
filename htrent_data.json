@@ -568,7 +568,10 @@
         "ev_onboarding_jefe": null,
         "ev_onboarding_colaborador": null,
         "renovacion": null,
-        "tipo_contrato": null
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-06-15",
+        "fecha_vencimiento_display": "15/06/2026",
+        "dias_restantes_prueba": 31
       },
       {
         "nombre_visible": "Marco Antonio L.",
@@ -583,7 +586,10 @@
         "ev_onboarding_jefe": null,
         "ev_onboarding_colaborador": null,
         "renovacion": null,
-        "tipo_contrato": null
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-06-21",
+        "fecha_vencimiento_display": "21/06/2026",
+        "dias_restantes_prueba": 37
       },
       {
         "nombre_visible": "Reyna Elizabeth T.",
@@ -598,7 +604,10 @@
         "ev_onboarding_jefe": null,
         "ev_onboarding_colaborador": null,
         "renovacion": null,
-        "tipo_contrato": null
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-07-05",
+        "fecha_vencimiento_display": "05/07/2026",
+        "dias_restantes_prueba": 51
       },
       {
         "nombre_visible": "Juan Carlos G.",
@@ -613,7 +622,10 @@
         "ev_onboarding_jefe": null,
         "ev_onboarding_colaborador": null,
         "renovacion": null,
-        "tipo_contrato": null
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-07-05",
+        "fecha_vencimiento_display": "05/07/2026",
+        "dias_restantes_prueba": 51
       },
       {
         "nombre_visible": "Omar Eduardo V.",
@@ -628,7 +640,10 @@
         "ev_onboarding_jefe": null,
         "ev_onboarding_colaborador": null,
         "renovacion": null,
-        "tipo_contrato": null
+        "tipo_contrato": null,
+        "fecha_vencimiento_prueba": "2026-08-02",
+        "fecha_vencimiento_display": "02/08/2026",
+        "dias_restantes_prueba": 79
       }
     ]
   },
@@ -2002,7 +2017,10 @@
       "ev_onboarding_jefe": null,
       "ev_onboarding_colaborador": null,
       "renovacion": null,
-      "tipo_contrato": null
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-06-15",
+      "fecha_vencimiento_display": "15/06/2026",
+      "dias_restantes_prueba": 31
     },
     {
       "nombre_visible": "Marco Antonio L.",
@@ -2017,7 +2035,10 @@
       "ev_onboarding_jefe": null,
       "ev_onboarding_colaborador": null,
       "renovacion": null,
-      "tipo_contrato": null
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-06-21",
+      "fecha_vencimiento_display": "21/06/2026",
+      "dias_restantes_prueba": 37
     },
     {
       "nombre_visible": "Reyna Elizabeth T.",
@@ -2032,7 +2053,10 @@
       "ev_onboarding_jefe": null,
       "ev_onboarding_colaborador": null,
       "renovacion": null,
-      "tipo_contrato": null
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-07-05",
+      "fecha_vencimiento_display": "05/07/2026",
+      "dias_restantes_prueba": 51
     },
     {
       "nombre_visible": "Juan Carlos G.",
@@ -2047,7 +2071,10 @@
       "ev_onboarding_jefe": null,
       "ev_onboarding_colaborador": null,
       "renovacion": null,
-      "tipo_contrato": null
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-07-05",
+      "fecha_vencimiento_display": "05/07/2026",
+      "dias_restantes_prueba": 51
     },
     {
       "nombre_visible": "Omar Eduardo V.",
@@ -2062,7 +2089,10 @@
       "ev_onboarding_jefe": null,
       "ev_onboarding_colaborador": null,
       "renovacion": null,
-      "tipo_contrato": null
+      "tipo_contrato": null,
+      "fecha_vencimiento_prueba": "2026-08-02",
+      "fecha_vencimiento_display": "02/08/2026",
+      "dias_restantes_prueba": 79
     }
   ],
   "detalle_vacantes_2026": [
@@ -3038,249 +3068,299 @@
   },
   "asistencia_periodo": {
     "periodo": "16 abril – 12 mayo 2026",
-    "dias_habiles": 19,
+    "dias_habiles_periodo": 18,
     "plantilla_evaluada": 46,
-    "nota_exclusion": "Excluye Dirección General. Métrica basada en fichajes del checador.",
+    "festivos_descontados": "1 de mayo (Día del Trabajo)",
+    "nota_exclusion": "Excluye Dirección General. Métrica basada en fichajes del checador, ajustada por fecha de ingreso individual.",
+    "nota_gap": "Los días sin fichar aún no están categorizados (Faltas / Permisos / Incapacidades). La pestaña PERMISOS-AUSENCIAS no tiene registros en este período; pendiente alinear captura con HT Rent para mostrar el desglose por motivo.",
     "faltistas_descendente": [
       {
         "nombre_visible": "Miguel F.",
         "puesto": "Coordinador de Marketing",
         "departamento": "Marketing",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 5,
-        "dias_no_fichados": 14
-      },
-      {
-        "nombre_visible": "Omar E.",
-        "puesto": "Gerente TI",
-        "departamento": "TI",
-        "dias_habiles": 19,
-        "dias_fichados": 7,
-        "dias_no_fichados": 12
-      },
-      {
-        "nombre_visible": "Francisco R.",
-        "puesto": "Analista de Control Documental",
-        "departamento": "Planeación Financiera y Tesorería",
-        "dias_habiles": 19,
-        "dias_fichados": 11,
-        "dias_no_fichados": 8
+        "dias_sin_fichar": 13,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 27.8
       },
       {
         "nombre_visible": "Erika F.",
         "puesto": "Ejecutivo de Marketing",
         "departamento": "Marketing",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 11,
-        "dias_no_fichados": 8
+        "dias_sin_fichar": 7,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 61.1
+      },
+      {
+        "nombre_visible": "Francisco R.",
+        "puesto": "Analista de Control Documental",
+        "departamento": "Planeación Financiera y Tesorería",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 11,
+        "dias_sin_fichar": 7,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 61.1
       },
       {
         "nombre_visible": "José M.",
         "puesto": "Ejecutivo de Venta",
         "departamento": "Ventas",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 14,
-        "dias_no_fichados": 5
+        "dias_sin_fichar": 4,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 77.8
       },
       {
         "nombre_visible": "Laura G.",
         "puesto": "Analista de Cobranza",
         "departamento": "Facturación y Cobranza",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 14,
-        "dias_no_fichados": 5
-      },
-      {
-        "nombre_visible": "Cesar V.",
-        "puesto": "Gerente de Ventas",
-        "departamento": "Ventas",
-        "dias_habiles": 19,
-        "dias_fichados": 15,
-        "dias_no_fichados": 4
+        "dias_sin_fichar": 4,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 77.8
       },
       {
         "nombre_visible": "Rafael R.",
         "puesto": "Ejecutivo de Venta",
         "departamento": "Ventas",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 15,
-        "dias_no_fichados": 4
+        "dias_sin_fichar": 3,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 83.3
       },
       {
-        "nombre_visible": "Norma M.",
-        "puesto": "Auxiliar Administrativo",
-        "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 16,
-        "dias_no_fichados": 3
-      },
-      {
-        "nombre_visible": "Milton M.",
-        "puesto": "Contador",
-        "departamento": "Contabilidad",
-        "dias_habiles": 19,
-        "dias_fichados": 16,
-        "dias_no_fichados": 3
-      },
-      {
-        "nombre_visible": "José M.",
-        "puesto": "Auxiliar de Operaciones",
-        "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 16,
-        "dias_no_fichados": 3
-      },
-      {
-        "nombre_visible": "Brenda L.",
-        "puesto": "Analista de Cobranza",
-        "departamento": "Facturación y Cobranza",
-        "dias_habiles": 19,
-        "dias_fichados": 16,
-        "dias_no_fichados": 3
+        "nombre_visible": "Cesar V.",
+        "puesto": "Gerente de Ventas",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 15,
+        "dias_sin_fichar": 3,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 83.3
       },
       {
         "nombre_visible": "Cesar N.",
         "puesto": "Coordinador de Placas y Permisos",
         "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 16,
-        "dias_no_fichados": 3
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
       },
       {
-        "nombre_visible": "Aracely O.",
-        "puesto": "Ejecutivo de Venta",
-        "departamento": "Ventas",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
-      },
-      {
-        "nombre_visible": "Rosario G.",
+        "nombre_visible": "José M.",
         "puesto": "Auxiliar de Operaciones",
         "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
       },
       {
-        "nombre_visible": "Liliana M.",
-        "puesto": "Coordinador de Mesa de Control",
-        "departamento": "Control Interno",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "nombre_visible": "Brenda L.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
       },
       {
-        "nombre_visible": "Ilse C.",
-        "puesto": "Gerente de Operaciones",
+        "nombre_visible": "Norma M.",
+        "puesto": "Auxiliar Administrativo",
         "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
       },
       {
-        "nombre_visible": "Jesica G.",
-        "puesto": "Coordinador Servicio a Clientes",
-        "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
-      },
-      {
-        "nombre_visible": "Francisco M.",
-        "puesto": "Gerente De Procesos y Operaciones",
-        "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
-      },
-      {
-        "nombre_visible": "Eulalio G.",
-        "puesto": "Analista de Créditos Jr",
-        "departamento": "Mesa de Control",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "nombre_visible": "Milton M.",
+        "puesto": "Contador",
+        "departamento": "Contabilidad",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 16,
+        "dias_sin_fichar": 2,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 88.9
       },
       {
         "nombre_visible": "Brayan L.",
         "puesto": "Ejecutivo Servicio a Clientes",
         "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       },
       {
-        "nombre_visible": "Gabriela A.",
+        "nombre_visible": "Eulalio G.",
+        "puesto": "Analista de Créditos Jr",
+        "departamento": "Mesa de Control",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Aracely O.",
         "puesto": "Ejecutivo de Venta",
         "departamento": "Ventas",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 17,
-        "dias_no_fichados": 2
-      },
-      {
-        "nombre_visible": "Rigoberto R.",
-        "puesto": "Gerente Contabilidad",
-        "departamento": "Contabilidad",
-        "dias_habiles": 19,
-        "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       },
       {
         "nombre_visible": "Ricardo H.",
         "puesto": "Contador Jr",
         "departamento": "Contabilidad",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Rigoberto R.",
+        "puesto": "Gerente Contabilidad",
+        "departamento": "Contabilidad",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Jesica G.",
+        "puesto": "Coordinador Servicio a Clientes",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Rosario G.",
+        "puesto": "Auxiliar de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Gabriela A.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
+      },
+      {
+        "nombre_visible": "Francisco M.",
+        "puesto": "Gerente De Procesos y Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       },
       {
         "nombre_visible": "Juan G.",
         "puesto": "Gerente Ventas",
         "departamento": "Ventas",
-        "dias_habiles": 19,
+        "dias_habiles_persona": 18,
         "dias_fichados": 17,
-        "dias_no_fichados": 2
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       },
       {
-        "nombre_visible": "Alejandra R.",
-        "puesto": "Generalista de RH",
-        "departamento": "Recursos Humanos",
-        "dias_habiles": 19,
-        "dias_fichados": 18,
-        "dias_no_fichados": 1
+        "nombre_visible": "Liliana M.",
+        "puesto": "Coordinador de Mesa de Control",
+        "departamento": "Control Interno",
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       },
       {
-        "nombre_visible": "Gerardo S.",
-        "puesto": "Contralor",
-        "departamento": "Contraloría",
-        "dias_habiles": 19,
-        "dias_fichados": 18,
-        "dias_no_fichados": 1
-      },
-      {
-        "nombre_visible": "Juan M.",
-        "puesto": "Jefe Inventarios y Atención al cliente",
+        "nombre_visible": "Ilse C.",
+        "puesto": "Gerente de Operaciones",
         "departamento": "Procesos y Operaciones",
-        "dias_habiles": 19,
-        "dias_fichados": 18,
-        "dias_no_fichados": 1
-      },
-      {
-        "nombre_visible": "Monica G.",
-        "puesto": "Analista de Cobranza",
-        "departamento": "Facturación y Cobranza",
-        "dias_habiles": 19,
-        "dias_fichados": 18,
-        "dias_no_fichados": 1
-      },
-      {
-        "nombre_visible": "Rosaura F.",
-        "puesto": "Analista de Cobranza",
-        "departamento": "Facturación y Cobranza",
-        "dias_habiles": 19,
-        "dias_fichados": 18,
-        "dias_no_fichados": 1
+        "dias_habiles_persona": 18,
+        "dias_fichados": 17,
+        "dias_sin_fichar": 1,
+        "faltas": 0,
+        "permisos": 0,
+        "incapacidades": 0,
+        "cumplimiento_pct": 94.4
       }
     ]
   }
