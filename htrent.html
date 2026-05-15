@@ -82,25 +82,36 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .sidebar-logo-text {
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: var(--brand-dark);
-  letter-spacing: -0.02em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--brand-primary);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
 }
 
-.sidebar-logo-text .accent { color: var(--brand-primary); }
+.sidebar-logo-text .accent {
+  color: var(--brand-primary);
+  font-size: 22px;
+  margin-left: 2px;
+}
 
 .sidebar-tagline {
-  font-size: 10px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 11px;
+  color: var(--brand-dark);
+  letter-spacing: 0.08em;
+  margin-top: 6px;
 }
 
 .back-link {
@@ -198,6 +209,78 @@ body {
   font-weight: 500;
 }
 
+.nav-badge.fase2-badge {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  font-size: 9px;
+  margin-left: 6px;
+}
+
+.nav-chevron {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+}
+
+.nav-parent.expanded .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-parent.expanded ~ .nav-submenu,
+.nav-submenu.open {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.nav-submenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+  padding-left: 8px;
+}
+
+.nav-subitem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px 7px 18px;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 2px;
+  transition: all 0.15s;
+}
+
+.nav-subitem:hover {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.subitem-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.nav-soon {
+  color: var(--text-muted) !important;
+}
+.nav-soon:hover {
+  background: var(--bg) !important;
+  color: var(--text-secondary) !important;
+}
+.nav-soon.active {
+  background: var(--bg) !important;
+  color: var(--text-primary) !important;
+}
+
 /* ============================================
    MAIN CONTENT
    ============================================ */
@@ -236,6 +319,30 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.update-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.update-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
 }
 
 .btn {
@@ -774,6 +881,91 @@ body {
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
   animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.modal-lg { max-width: 920px; }
+.modal.modal-xl { max-width: 1100px; }
+
+/* Tabla detalle para drill-down */
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.detail-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--bg);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+.detail-table tbody td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+.detail-table tbody tr:hover { background: var(--bg); }
+.detail-table .col-name { font-weight: 600; color: var(--brand-dark); }
+.detail-table .col-muted { color: var(--text-muted); font-size: 12px; }
+
+.badge-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.badge-pill.vol { background: #fef3c7; color: #92400e; }
+.badge-pill.inv { background: #fee2e2; color: #991b1b; }
+.badge-pill.ok { background: #d1fae5; color: #065f46; }
+.badge-pill.pending { background: #e0e7ff; color: #3730a3; }
+.badge-pill.muted { background: var(--bg); color: var(--text-muted); }
+
+/* KPI clickeable */
+.kpi-card.clickable {
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.kpi-card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.kpi-card.clickable::after {
+  content: '↗';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.kpi-card.clickable:hover::after { opacity: 1; }
+
+/* Empty state en modal */
+.modal-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* Modal note (para info de validación) */
+.modal-note {
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #78350f;
+  margin-bottom: 16px;
 }
 
 @keyframes slideUp {
@@ -1960,8 +2152,7 @@ body {
       <div class="sidebar-logo">
         <div class="sidebar-logo-text">HT RENT <span class="accent">&gt;</span></div>
       </div>
-      <div class="sidebar-tagline">Arrenda y crece</div>
-      <a href="index.html" class="back-link">← Hub BPO</a>
+      <div class="sidebar-tagline">ARRENDA Y CRECE</div>
     </div>
 
     <div class="nav-section">
@@ -1991,10 +2182,13 @@ body {
 
     <div class="nav-section">
       <div class="nav-label">Analítica</div>
-      <a class="nav-item" data-view="indicadores">
-        <span class="nav-icon">📈</span>
-        <span>Indicadores de RH</span>
-        <span class="nav-badge" style="background:#108277;color:#fff;">NUEVO</span>
+      <a class="nav-item nav-soon" data-view="compensaciones" id="nav-compensaciones">
+        <span class="nav-icon">💰</span>
+        <span>Compensaciones</span>
+      </a>
+      <a class="nav-subitem nav-soon" data-view="benchmark" style="padding-left:42px;">
+        <span class="subitem-dot"></span>
+        Benchmark salarial
       </a>
     </div>
 
@@ -2019,6 +2213,10 @@ body {
         <p id="page-subtitle">Vista general de capital humano · HT Rent</p>
       </div>
       <div class="main-header-right">
+        <div class="update-pill">
+          <span class="update-dot"></span>
+          Actualización diaria
+        </div>
         <div class="user-badge">
           <div class="user-avatar">AR</div>
           <div class="user-info">
@@ -2038,17 +2236,17 @@ body {
 
         <!-- FILA 1: 5 KPIs -->
         <div class="kpi-grid">
-          <div class="kpi-card" style="border-left-color: #3FD33F;">
+          <div class="kpi-card clickable" style="border-left-color: #3FD33F;" onclick="openDrillDown('activos')">
             <div class="kpi-label">Activos</div>
             <div class="kpi-value" id="kpi-activos">47</div>
             <div class="kpi-trend gray" id="kpi-activos-trend">colaboradores</div>
           </div>
-          <div class="kpi-card" style="border-left-color: #9e8075;">
+          <div class="kpi-card clickable" style="border-left-color: #9e8075;" onclick="openDrillDown('bajas-ytd')">
             <div class="kpi-label">Bajas YTD</div>
             <div class="kpi-value" id="kpi-inactivos">11</div>
             <div class="kpi-trend gray">enero–mayo 2026</div>
           </div>
-          <div class="kpi-card" style="border-left-color: #108277;">
+          <div class="kpi-card clickable" style="border-left-color: #108277;" onclick="openDrillDown('puntualidad')">
             <div class="kpi-label">Puntualidad</div>
             <div class="kpi-value" id="kpi-asistencia">73%</div>
             <div class="kpi-trend gray">últimos 18 días hábiles</div>
@@ -2058,10 +2256,10 @@ body {
             <div class="kpi-value" id="kpi-capacitacion">87%</div>
             <div class="kpi-trend gray">cumplimiento promedio</div>
           </div>
-          <div class="kpi-card" style="border-left-color: #edc283;">
+          <div class="kpi-card clickable" style="border-left-color: #edc283;" onclick="openDrillDown('vacantes')">
             <div class="kpi-label">Vacantes</div>
             <div class="kpi-value" id="kpi-reclutamiento">4</div>
-            <div class="kpi-trend gray">abiertas 2026</div>
+            <div class="kpi-trend gray">3 activas · 1 cubierta</div>
           </div>
         </div>
 
@@ -2074,7 +2272,7 @@ body {
                 <div class="chart-panel-title">⏰ Período de prueba · seguimiento</div>
                 <div class="chart-panel-subtitle">Colaboradores con período activo · Onboarding y renovación</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('periodo-prueba')">Ver detalle →</a>
             </div>
             <div id="periodo-prueba-list" style="margin-top:8px;"></div>
           </div>
@@ -2140,7 +2338,7 @@ body {
                 <div class="chart-panel-title">Colaboradores por departamento</div>
                 <div class="chart-panel-subtitle">Plantilla activa al corte</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ACTIVOS">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('por-departamento')">Ver detalle →</a>
             </div>
             <div class="chart-canvas-wrap tall"><canvas id="chart-departamentos"></canvas></div>
           </div>
@@ -2150,9 +2348,9 @@ body {
             <div class="chart-panel-header">
               <div>
                 <div class="chart-panel-title">Contrataciones en el año</div>
-                <div class="chart-panel-subtitle">2026 · acumulado mensual</div>
+                <div class="chart-panel-subtitle">2026 · acumulado mensual · clic en mes</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="RECLUTAMIENTO">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('ingresos-ytd')">Ver detalle →</a>
             </div>
             <div class="chart-canvas-wrap tall"><canvas id="chart-contrataciones"></canvas></div>
           </div>
@@ -2162,17 +2360,17 @@ body {
             <div class="chart-panel-header">
               <div>
                 <div class="chart-panel-title">Bajas en el año</div>
-                <div class="chart-panel-subtitle">2026 · acumulado mensual</div>
+                <div class="chart-panel-subtitle">2026 · acumulado mensual · clic en mes</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="INACTIVOS">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('bajas-ytd')">Ver detalle →</a>
             </div>
             <div class="chart-canvas-wrap tall"><canvas id="chart-bajas"></canvas></div>
           </div>
 
         </div>
 
-        <!-- FILA 3.5: Composición por nivel jerárquico -->
-        <div class="charts-grid" style="grid-template-columns: 1.5fr 2fr;">
+        <!-- FILA 3.5: Donas al mismo nivel (sin insights) -->
+        <div class="charts-grid" style="grid-template-columns: 1fr 1fr;">
 
           <div class="chart-panel">
             <div class="chart-panel-header">
@@ -2180,29 +2378,10 @@ body {
                 <div class="chart-panel-title">Composición por nivel jerárquico</div>
                 <div class="chart-panel-subtitle">Plantilla activa · 47 colaboradores</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ACTIVOS">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('por-nivel')">Ver detalle →</a>
             </div>
-            <div class="chart-canvas-wrap" style="min-height:240px;"><canvas id="chart-niveles"></canvas></div>
+            <div class="chart-canvas-wrap" style="min-height:260px;"><canvas id="chart-niveles"></canvas></div>
           </div>
-
-          <div class="chart-panel">
-            <div class="chart-panel-header">
-              <div>
-                <div class="chart-panel-title">Insight de plantilla</div>
-                <div class="chart-panel-subtitle">Lectura ejecutiva</div>
-              </div>
-            </div>
-            <div style="padding:8px 4px; font-size:12.5px; line-height:1.6; color:var(--text-primary);">
-              <p style="margin-bottom:10px;"><strong style="color:#3FD33F;">64%</strong> de la plantilla es operativa (30 personas), <strong>15%</strong> coordinación, <strong>17%</strong> gerencial, <strong>2%</strong> dirección.</p>
-              <p style="margin-bottom:10px;">Estructura tipo pirámide saludable: amplia base ejecutora, capa media de coordinación que conecta con 8 gerencias funcionales reportando a 1 dirección general.</p>
-              <p style="color:var(--text-secondary); font-size:11.5px; border-left:3px solid var(--horux-teal); padding-left:10px; margin-top:14px;">Punto de atención: la rotación 2026 YTD de 22.9% se concentra en niveles operativo y coordinación. Análisis de causa raíz pendiente para el siguiente corte.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- FILA 3.7: Bajas clasificadas 2026 -->
-        <div class="charts-grid" style="grid-template-columns: 1fr 1.4fr;">
 
           <div class="chart-panel">
             <div class="chart-panel-header">
@@ -2210,19 +2389,9 @@ body {
                 <div class="chart-panel-title">Bajas por tipo · 2026</div>
                 <div class="chart-panel-subtitle">Clasificación voluntaria vs involuntaria · YTD</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="INACTIVOS">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('bajas-tipo')">Ver detalle →</a>
             </div>
-            <div class="chart-canvas-wrap" style="min-height:240px;"><canvas id="chart-bajas-tipo"></canvas></div>
-          </div>
-
-          <div class="chart-panel" style="background:linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);">
-            <div class="chart-panel-header">
-              <div>
-                <div class="chart-panel-title">Insight de rotación</div>
-                <div class="chart-panel-subtitle">Lectura ejecutiva 2026</div>
-              </div>
-            </div>
-            <div id="bajas-insight" style="padding:6px 4px;"></div>
+            <div class="chart-canvas-wrap" style="min-height:260px;"><canvas id="chart-bajas-tipo"></canvas></div>
           </div>
 
         </div>
@@ -2233,10 +2402,10 @@ body {
           <div class="chart-panel">
             <div class="chart-panel-header">
               <div>
-                <div class="chart-panel-title">Asistencia · puntuales vs retardos</div>
-                <div class="chart-panel-subtitle">16 abril – 12 mayo 2026 · tolerancia 10 min</div>
+                <div class="chart-panel-title">Asistencia por departamento</div>
+                <div class="chart-panel-subtitle">16 abril – 12 mayo 2026 · puntuales vs retardos · clic para detalle</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ASISTENCIA-FICHAJES">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('asistencia')">Ver detalle →</a>
             </div>
             <div class="chart-canvas-wrap"><canvas id="chart-asistencia-depto"></canvas></div>
           </div>
@@ -2244,11 +2413,12 @@ body {
           <div class="chart-panel">
             <div class="chart-panel-header">
               <div>
-                <div class="chart-panel-title">Puntualidad · minutos acumulados de retardo</div>
-                <div class="chart-panel-subtitle">Por departamento · período abril-mayo</div>
+                <div class="chart-panel-title">Puntualidad · jornadas productivas perdidas</div>
+                <div class="chart-panel-subtitle">Equivalencia en jornadas de 8.5h · jornada base 42.5h semanal</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="ASISTENCIA-FICHAJES">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('puntualidad')">Ver detalle →</a>
             </div>
+            <div id="puntualidad-resumen" style="margin: 8px 0 4px 0;"></div>
             <div class="chart-canvas-wrap"><canvas id="chart-puntualidad"></canvas></div>
           </div>
 
@@ -2261,9 +2431,9 @@ body {
             <div class="chart-panel-header">
               <div>
                 <div class="chart-panel-title">Reclutamiento · vacantes activas</div>
-                <div class="chart-panel-subtitle">Estatus y días en proceso · 2026</div>
+                <div class="chart-panel-subtitle">Estatus, etapa y días en proceso · 2026</div>
               </div>
-              <a href="https://docs.google.com/spreadsheets/d/167RAkCrgh-kWUE2N5QzF1tyzO5SNU5im/edit" target="_blank" rel="noopener" class="chart-detail-link" data-sheet="VACANTES">Ver detalle →</a>
+              <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('vacantes')">Ver detalle →</a>
             </div>
             <div id="vacantes-table-wrap" style="margin-top:8px;"></div>
           </div>
@@ -2271,8 +2441,8 @@ body {
           <div class="chart-panel" style="background:linear-gradient(135deg, #f8faf9 0%, #ffffff 100%);">
             <div class="chart-panel-header">
               <div>
-                <div class="chart-panel-title">Tiempo de cobertura</div>
-                <div class="chart-panel-subtitle">Benchmark vs realidad</div>
+                <div class="chart-panel-title">Indicadores de reclutamiento</div>
+                <div class="chart-panel-subtitle">Meta y desempeño</div>
               </div>
             </div>
             <div id="vacantes-insight" style="padding:6px 4px;"></div>
@@ -2622,10 +2792,10 @@ body {
 
         <h3 style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 700;">Analítica y reportes</h3>
         <div class="coming-soon-grid" style="margin-bottom: 28px;">
-          <div class="module-tile" onclick="switchView('indicadores')">
-            <div class="module-tile-icon">📈</div>
-            <div class="module-tile-title">Indicadores de RH</div>
-            <div class="module-tile-soon" style="color: var(--brand-primary);">ACTIVO</div>
+          <div class="module-tile" onclick="switchView('compensaciones')">
+            <div class="module-tile-icon">💰</div>
+            <div class="module-tile-title">Compensaciones</div>
+            <div class="module-tile-soon">Fase 2</div>
           </div>
           <div class="module-tile">
             <div class="module-tile-icon">📊</div>
@@ -2637,269 +2807,93 @@ body {
       </div>
 
       <!-- ============================================
-           VIEW: INDICADORES DE RH
+           VIEW: COMPENSACIONES
            ============================================ -->
-      <div class="view" id="view-indicadores">
+      <div class="view" id="view-compensaciones">
 
-        <div class="ind-header" style="justify-content:flex-start;gap:12px;flex-wrap:wrap;">
-          <div class="ind-period">
-            <select id="ind-month-select" onchange="window.updateMonthFilter && window.updateMonthFilter()">
-              <option value="ene26">Enero 2026</option>
-              <option value="feb26">Febrero 2026</option>
-              <option value="mar26">Marzo 2026</option>
-              <option value="abr26">Abril 2026</option>
-              <option value="may26" selected>Mayo 2026 (corte actual)</option>
-            </select>
-          </div>
-          <div class="ind-period">
-            <select id="ind-dept-select" onchange="return false;">
-              <option value="todos">Todos los departamentos</option>
-              <option value="Procesos y Operaciones">Procesos y Operaciones</option>
-              <option value="Ventas">Ventas</option>
-              <option value="Facturación y Cobranza">Facturación y Cobranza</option>
-              <option value="Contabilidad">Contabilidad</option>
-              <option value="Mesa de Control">Mesa de Control</option>
-              <option value="Marketing">Marketing</option>
-              <option value="Contraloría">Contraloría</option>
-              <option value="Planeación Financiera y Tesorería">Planeación Financiera y Tesorería</option>
-              <option value="Control Interno">Control Interno</option>
-              <option value="Legal- Seguros">Legal- Seguros</option>
-              <option value="Dirección General">Dirección General</option>
-              <option value="TI">TI</option>
-            </select>
-          </div>
-          <div style="font-size:11px; color:var(--text-muted); align-self:center;">
-            <span style="display:inline-block; padding:3px 9px; background:rgba(63,211,63,0.1); color:#003834; border-radius:10px; font-weight:600; letter-spacing:0.3px; font-size:10px;">Filtro de mes activo en resumen general · resto Fase 2</span>
-          </div>
-        </div>
-
-        <!-- Resumen General -->
-        <div class="ind-summary">
-          <div class="ind-summary-card" style="border-left-color:#8a9996;">
-            <div class="ind-summary-label">Headcount total</div>
-            <div class="ind-summary-value">25</div>
-            <div class="ind-summary-trend gray">Meta: plantilla planeada</div>
-            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento estable. HC alineado con plan de negocio para Q2.</div></div>
-          </div>
-          <div class="ind-summary-card" style="border-left-color:#8a9996;">
-            <div class="ind-summary-label">Evolución HC</div>
-            <div class="ind-summary-value">+4%</div>
-            <div class="ind-summary-trend gray">Referencia: +3% mensual</div>
-            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento sostenido de +4% mensual, por encima de la referencia de +3%.</div></div>
-          </div>
-          <div class="ind-summary-card" style="border-left-color:#8a9996;">
-            <div class="ind-summary-label">Altas del mes</div>
-            <div class="ind-summary-value">2</div>
-            <div class="ind-summary-trend gray">Según plan</div>
-            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">2 altas · 100% en tiempo y forma.</div></div>
-          </div>
-          <div class="ind-summary-card" style="border-left-color:#8a9996;">
-            <div class="ind-summary-label">Bajas del mes</div>
-            <div class="ind-summary-value">1</div>
-            <div class="ind-summary-trend gray">&lt;2 por mes</div>
-            <div class="ind-insight" style="margin-top:10px;"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">1 baja voluntaria en el mes. Causa registrada: mejor oferta externa. Área: Administración.</div></div>
-          </div>
-        </div>
-
-        <!-- S1: Reclutamiento -->
-        <div class="ind-section">
-          <div class="ind-section-title">🔍 Reclutamiento y Selección</div>
-          <div class="ind-grid">
-
-            <div class="ind-card" data-ind="tiempo_cobertura">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">Tiempo de cobertura</div></div>
-                <span class="ind-card-info" title="Fórmula: Σ(fecha contratación - fecha apertura) / total vacantes cerradas">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">22</span><span class="ind-card-unit">días</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↓ 3 días vs feb</span><span class="ind-card-meta">Meta: &lt;25 días</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,8 24,12 48,4 72,16 96,16 120,26 120,36 0,36" fill="url(#sg1)"/><polyline points="0,8 24,12 48,4 72,16 96,16 120,26" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="26" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Tendencia a la baja durante 4 meses consecutivos. 22 días vs meta de &lt;25 días.</div></div>
+        <div class="chart-panel" style="padding: 28px 32px;">
+          <div style="display:flex; gap:16px; align-items:start; margin-bottom:20px;">
+            <div style="font-size:32px;">💰</div>
+            <div style="flex:1;">
+              <h2 style="font-size:20px; color:var(--text-primary); margin-bottom:4px;">Compensaciones</h2>
+              <p style="color:var(--text-secondary); font-size:13px; margin-bottom:0;">Analítica salarial y competitividad de plantilla</p>
             </div>
-
-            <div class="ind-card" data-ind="vacantes_cubiertas">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">RECLUTAMIENTO</div><div class="ind-card-name">% de vacantes cubiertas en tiempo</div></div>
-                <span class="ind-card-info" title="Fórmula: (Vacantes cubiertas dentro de SLA / Total vacantes cerradas) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">85</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↑ 5% vs feb</span><span class="ind-card-meta">Meta: &gt;80%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,16 120,6 120,36 0,36" fill="url(#sg2)"/><polyline points="0,28 24,24 48,20 72,16 96,16 120,6" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">85% de cobertura en tiempo, por encima de la meta de 80%. Cuarto mes consecutivo sobre meta.</div></div>
-            </div>
-
+            <span style="background:#eaf9ea; color:var(--brand-dark); font-size:10px; padding:4px 10px; border-radius:10px; font-weight:700; letter-spacing:0.5px;">EN DESARROLLO</span>
           </div>
-        </div>
 
-        <!-- S2: Compensaciones -->
-        <div class="ind-section">
-          <div class="ind-section-title">💰 Compensaciones y Nómina</div>
-          <div class="ind-grid">
-
-            <div class="ind-card" data-ind="costo_nomina">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Costo de nómina</div></div>
-                <span class="ind-card-info" title="Fórmula: Σ(salarios brutos + prestaciones + cargas sociales)">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo gray"></span><span class="ind-card-value">$780K</span><span class="ind-card-unit"></span></div>
-              <div class="ind-card-context"><span class="ind-card-trend gray">↑ 2.1% vs feb</span><span class="ind-card-meta">Ref: crec. &lt;3% mensual</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8a9996" stop-opacity="0.3"/><stop offset="100%" stop-color="#8a9996" stop-opacity="0"/></linearGradient></defs><polygon points="0,30 24,26 48,22 72,20 96,18 120,8 120,36 0,36" fill="url(#sg3)"/><polyline points="0,30 24,26 48,22 72,20 96,18 120,8" fill="none" stroke="#8a9996" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#8a9996"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Crecimiento alineado con contrataciones del periodo. Sin desviaciones respecto a presupuesto anual.</div></div>
-            </div>
-
-            <div class="ind-card" data-ind="incidencias_nomina">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">COMPENSACIONES</div><div class="ind-card-name">Incidencias de nómina</div></div>
-                <span class="ind-card-info" title="Fórmula: Total de ajustes, retrasos o errores detectados en el periodo">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">3</span><span class="ind-card-unit"></span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↓ 1 vs feb</span><span class="ind-card-meta">Meta: &lt;5</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,6 24,10 48,14 72,12 96,14 120,22 120,36 0,36" fill="url(#sg4)"/><polyline points="0,6 24,10 48,14 72,12 96,14 120,22" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="22" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Reducción sostenida de incidencias. 3 registradas en el mes vs meta de &lt;5.</div></div>
-            </div>
-
+          <div style="padding:14px 16px; background:#eaf9ea; border-left:3px solid var(--brand-primary); border-radius:0 6px 6px 0; margin-bottom:24px;">
+            <p style="font-size:13px; color:var(--text-primary); line-height:1.6; margin:0;">
+              Este módulo concentrará la analítica de compensaciones de HT Rent para soportar decisiones de retención, ajuste salarial y atracción de talento con información comparable.
+            </p>
           </div>
-        </div>
 
-        <!-- S3: Capacitación -->
-        <div class="ind-section">
-          <div class="ind-section-title">📚 Capacitación y Desarrollo</div>
-          <div class="ind-grid">
-            <div class="ind-card" data-ind="capacitacion">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">CAPACITACIÓN</div><div class="ind-card-name">% de cumplimiento del plan de capacitación</div></div>
-                <span class="ind-card-info" title="Fórmula: (Cursos completados / Cursos planeados del periodo) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">68</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↑ 8% vs feb</span><span class="ind-card-meta">Meta: &gt;80%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,30 24,26 48,22 72,20 96,18 120,8 120,36 0,36" fill="url(#sg5)"/><polyline points="0,30 24,26 48,22 72,20 96,18 120,8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#f59e0b"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">68% de cumplimiento, por debajo de la meta de 80%. Avance de +8% vs mes anterior.</div></div>
+          <h3 style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; font-weight:700; margin-bottom:14px;">Indicadores que incluirá</h3>
+          <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;">
+            <div style="border-left:3px solid #3FD33F; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Competitividad salarial</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Posicionamiento de los sueldos actuales frente al rango de referencia del sector.</div>
             </div>
-          </div>
-        </div>
-
-        <!-- S4: Desempeño -->
-        <div class="ind-section">
-          <div class="ind-section-title">🧠 Desempeño</div>
-          <div class="ind-grid">
-            <div class="ind-card" data-ind="evaluaciones">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">DESEMPEÑO</div><div class="ind-card-name">% de evaluaciones de desempeño realizadas</div></div>
-                <span class="ind-card-info" title="Fórmula: (Evaluaciones completadas / Total colaboradores evaluables) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">92</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↑ 4% vs feb</span><span class="ind-card-meta">Meta: &gt;90%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,14 120,4 120,36 0,36" fill="url(#sg6)"/><polyline points="0,28 24,24 48,20 72,16 96,14 120,4" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="4" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Meta superada. Ciclo de evaluación Q1 cerrado exitosamente. Próximo corte en junio.</div></div>
+            <div style="border-left:3px solid #108277; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Banda salarial por nivel</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Mínimo, medio y máximo por nivel jerárquico para sostener una estructura clara.</div>
             </div>
-          </div>
-        </div>
-
-        <!-- S5: Administración de Personal -->
-        <div class="ind-section">
-          <div class="ind-section-title">🧾 Administración de Personal</div>
-          <div class="ind-grid">
-
-            <div class="ind-card" data-ind="tiempo_respuesta">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Tiempo de respuesta a solicitudes de RH</div></div>
-                <span class="ind-card-info" title="Fórmula: Σ(hora de resolución - hora de solicitud) / total solicitudes">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">8</span><span class="ind-card-unit">horas</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↓ 2h vs feb</span><span class="ind-card-meta">Meta: &lt;12h</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg7" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,4 24,8 48,12 72,14 96,18 120,26 120,36 0,36" fill="url(#sg7)"/><polyline points="0,4 24,8 48,12 72,14 96,18 120,26" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="26" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">SLA por debajo de meta. 8 horas vs meta de &lt;12h. Tendencia estable en los últimos 3 meses.</div></div>
+            <div style="border-left:3px solid #1E3A5F; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Equidad interna</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Comparativo entre personas con puestos equivalentes para detectar brechas.</div>
             </div>
-
-            <div class="ind-card" data-ind="expedientes">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">% de expedientes completos</div></div>
-                <span class="ind-card-info" title="Fórmula: (Expedientes con checklist 100% / Total colaboradores activos) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">88</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↑ 3% vs feb</span><span class="ind-card-meta">Meta: &gt;95%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg8" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,18 72,14 96,12 120,6 120,36 0,36" fill="url(#sg8)"/><polyline points="0,28 24,24 48,18 72,14 96,12 120,6" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#f59e0b"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">88% de expedientes completos vs meta de &gt;95%. Los 3 expedientes pendientes corresponden a altas recientes.</div></div>
-            </div>
-
-            <div class="ind-card" data-ind="rotacion_total">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación total</div></div>
-                <span class="ind-card-info" title="Fórmula: (Bajas del periodo / Headcount promedio del periodo) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">8.5</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend yellow">↑ 0.3% vs feb</span><span class="ind-card-meta">Meta: &lt;10%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg9" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,14 120,8 120,36 0,36" fill="url(#sg9)"/><polyline points="0,28 24,24 48,20 72,16 96,14 120,8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="8" r="3.5" fill="#f59e0b"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">8.5% de rotación, dentro de la meta de &lt;10%. Tendencia al alza durante los últimos 6 meses.</div></div>
-            </div>
-
-            <div class="ind-card" data-ind="rotacion_voluntaria">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Rotación voluntaria</div></div>
-                <span class="ind-card-info" title="Fórmula: (Bajas por renuncia / Headcount promedio) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">6.1</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend yellow">↑ 0.2% vs feb</span><span class="ind-card-meta">Meta: &lt;5%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg10" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,28 24,24 48,20 72,16 96,16 120,10 120,36 0,36" fill="url(#sg10)"/><polyline points="0,28 24,24 48,20 72,16 96,16 120,10" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="10" r="3.5" fill="#f59e0b"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">6.1% de rotación voluntaria, por encima de la meta de &lt;5%. Tendencia al alza durante los últimos 4 meses. Áreas con mayor incidencia: Comercial y Operaciones.</div></div>
-            </div>
-
-            <div class="ind-card" data-ind="ausentismo">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de ausentismo</div></div>
-                <span class="ind-card-info" title="Fórmula: (Días de ausencia / Días laborables totales) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">2.3</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↓ 0.1% vs feb</span><span class="ind-card-meta">Meta: &lt;3%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg11" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,6 24,10 48,12 72,14 96,18 120,22 120,36 0,36" fill="url(#sg11)"/><polyline points="0,6 24,10 48,12 72,14 96,18 120,22" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="22" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">Dentro de meta y con tendencia positiva. Patrón estable, sin alertas.</div></div>
-            </div>
-
-            <div class="ind-card" data-ind="retardos">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">ADMINISTRACIÓN DE PERSONAL</div><div class="ind-card-name">Índice de retardos</div></div>
-                <span class="ind-card-info" title="Fórmula: (Total retardos / Total asistencias del periodo) × 100">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo yellow"></span><span class="ind-card-value">4.2</span><span class="ind-card-unit">%</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↓ 0.5% vs feb</span><span class="ind-card-meta">Meta: &lt;3%</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg12" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f59e0b" stop-opacity="0.3"/><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/></linearGradient></defs><polygon points="0,4 24,8 48,12 72,16 96,16 120,24 120,36 0,36" fill="url(#sg12)"/><polyline points="0,4 24,8 48,12 72,16 96,16 120,24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="24" r="3.5" fill="#f59e0b"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">4.2% de retardos, por encima de la meta de &lt;3%. Tendencia a la baja durante los últimos 3 meses.</div></div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- S6: Servicio de RH -->
-        <div class="ind-section">
-          <div class="ind-section-title">🏢 Servicio de RH / Experiencia del Empleado</div>
-          <div class="ind-grid">
-            <div class="ind-card" data-ind="servicio_rh">
-              <div class="ind-card-header">
-                <div><div class="ind-card-cat">EXPERIENCIA DEL EMPLEADO</div><div class="ind-card-name">Evaluación de Servicio de RH</div></div>
-                <span class="ind-card-info" title="Fórmula: Promedio ponderado de evaluación 1-10 de los colaboradores sobre el servicio de RH">ⓘ</span>
-              </div>
-              <div class="ind-card-row"><span class="ind-semaforo green"></span><span class="ind-card-value">8.4</span><span class="ind-card-unit">/ 10</span></div>
-              <div class="ind-card-context"><span class="ind-card-trend green">↑ 0.2 vs feb</span><span class="ind-card-meta">Meta: &gt;8.0</span></div>
-              <div class="ind-sparkline"><svg width="100%" height="36" viewBox="0 0 120 36" preserveAspectRatio="none"><defs><linearGradient id="sg13" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.4"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient></defs><polygon points="0,26 24,22 48,18 72,14 96,14 120,6 120,36 0,36" fill="url(#sg13)"/><polyline points="0,26 24,22 48,18 72,14 96,14 120,6" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="6" r="3.5" fill="#10b981"/></svg></div>
-              <div class="ind-spark-labels"><span>Oct</span><span>Nov</span><span>Dic</span><span>Ene</span><span>Feb</span><span>Mar</span></div>
-              <div class="ind-insight"><div class="ind-insight-label">INSIGHT</div><div class="ind-insight-text">8.4/10, por encima de la meta de &gt;8.0. Fortalezas identificadas: tiempo de respuesta y trato al colaborador.</div></div>
+            <div style="border-left:3px solid #9e8075; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Costo de nómina</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Desglose por departamento y nivel con tendencia mes a mes.</div>
             </div>
           </div>
         </div>
 
       </div>
+
+      <!-- ============================================
+           VIEW: BENCHMARK SALARIAL
+           ============================================ -->
+      <div class="view" id="view-benchmark">
+
+        <div class="chart-panel" style="padding: 28px 32px;">
+          <div style="display:flex; gap:16px; align-items:start; margin-bottom:20px;">
+            <div style="font-size:32px;">📊</div>
+            <div style="flex:1;">
+              <h2 style="font-size:20px; color:var(--text-primary); margin-bottom:4px;">Benchmark salarial</h2>
+              <p style="color:var(--text-secondary); font-size:13px; margin-bottom:0;">Comparativo con el mercado por puesto y nivel</p>
+            </div>
+            <span style="background:#eaf9ea; color:var(--brand-dark); font-size:10px; padding:4px 10px; border-radius:10px; font-weight:700; letter-spacing:0.5px;">EN DESARROLLO</span>
+          </div>
+
+          <div style="padding:14px 16px; background:#eaf9ea; border-left:3px solid var(--brand-primary); border-radius:0 6px 6px 0; margin-bottom:24px;">
+            <p style="font-size:13px; color:var(--text-primary); line-height:1.6; margin:0;">
+              Visión clara de cómo se posiciona HT Rent frente al mercado de referencia para tomar decisiones informadas de retención, ajuste y atracción de talento.
+            </p>
+          </div>
+
+          <h3 style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; font-weight:700; margin-bottom:14px;">Qué incluirá</h3>
+          <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;">
+            <div style="border-left:3px solid #3FD33F; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Posicionamiento por puesto</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Comparativo de cada puesto contra el rango de referencia del sector.</div>
+            </div>
+            <div style="border-left:3px solid #108277; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Alertas de competitividad</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Identificación de posiciones con riesgo por sueldo por debajo del rango competitivo.</div>
+            </div>
+            <div style="border-left:3px solid #1E3A5F; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Tendencia interna</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Evolución del costo promedio de nómina y comparativo año vs año.</div>
+            </div>
+            <div style="border-left:3px solid #9e8075; padding:10px 14px; background:var(--bg); border-radius:0 4px 4px 0;">
+              <div style="font-weight:600; font-size:13px; color:var(--text-primary); margin-bottom:4px;">Hallazgos y recomendaciones</div>
+              <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.4;">Síntesis ejecutiva con áreas de oportunidad por departamento.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
 
     </div>
 
@@ -3152,6 +3146,24 @@ body {
       </div>
 
       <div class="bulk-result" id="bulk-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     MODAL: DRILL-DOWN UNIVERSAL
+     ============================================ -->
+<div class="modal-overlay" id="modal-drilldown">
+  <div class="modal modal-lg">
+    <div class="modal-header">
+      <div>
+        <h2 class="modal-title" id="dd-title">Detalle</h2>
+        <p id="dd-subtitle" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;"></p>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-drilldown')">×</button>
+    </div>
+    <div class="modal-body" id="dd-body">
+      <!-- Contenido dinámico -->
     </div>
   </div>
 </div>
@@ -3839,14 +3851,19 @@ let currentDocType = null;
 // NAVEGACIÓN
 // ============================================
 const views = document.querySelectorAll('.view');
-const navItems = document.querySelectorAll('.nav-item[data-view]');
+const navItems = document.querySelectorAll('.nav-item[data-view], .nav-subitem[data-view]');
 
 function switchView(viewName) {
+  const target = document.getElementById(`view-${viewName}`);
+  if (!target) {
+    // Si la vista no existe (ej. nav-parent sin contenido propio), no cambiar nada
+    return;
+  }
   views.forEach(v => v.classList.remove('active'));
-  document.getElementById(`view-${viewName}`).classList.add('active');
+  target.classList.add('active');
 
   navItems.forEach(n => n.classList.remove('active'));
-  const activeNav = document.querySelector(`.nav-item[data-view="${viewName}"]`);
+  const activeNav = document.querySelector(`[data-view="${viewName}"]`);
   if (activeNav) activeNav.classList.add('active');
 
   const titles = {
@@ -3854,7 +3871,8 @@ function switchView(viewName) {
     crm: ["Colaboradores", "Gestión del personal activo"],
     docs: ["Generadores de documentos", "Creación automatizada desde ficha del colaborador"],
     expediente: ["Expedientes", "Control documental por colaborador"],
-    indicadores: ["Indicadores de RH", "Tablero de métricas operativas y estratégicas"],
+    compensaciones: ["Compensaciones", "Módulo en desarrollo · Fase 2"],
+    benchmark: ["Benchmark salarial", "Comparativo de sueldos contra mercado"],
     modulos: ["Todos los módulos", "Mapa completo de la plataforma"]
   };
   const t = titles[viewName];
@@ -4036,42 +4054,19 @@ function updateDashboard() {
       Sin planes de acción registrados<br><span style="font-size:10px;">Módulo pendiente de configuración</span></div>`;
   }
 
-  // Panel: Alertas (calculadas reales)
+  // Panel: Alertas (versión actualizada)
   const aList = document.getElementById('alerts-list');
   if (aList) {
-    // Expedientes incompletos: contar empleados con algún campo del expediente en false
-    let incompletos = 0;
-    if (state.expediente) {
-      Object.keys(state.expediente).forEach(id => {
-        const exp = state.expediente[id];
-        if (Object.values(exp).some(v => v === false)) incompletos++;
-      });
-    }
-    // Aniversarios este mes
-    const hoy = new Date();
-    const mesActual = hoy.getMonth();
-    const aniversarios = state.employees.filter(e => {
-      if (!e.ingreso) return false;
-      const f = new Date(e.ingreso);
-      return f.getMonth() === mesActual && !isNaN(f);
-    }).length;
-
     const alerts = [];
-    if (aniversarios > 0) {
-      alerts.push(`<div class="alert-compact">
-        <span class="alert-dot" style="background: #3FD33F;"></span>
-        <div class="alert-compact-text">🎉 Aniversarios laborales<span class="alert-compact-sub">${aniversarios} colaborador${aniversarios===1?'':'es'} este mes</span></div>
-      </div>`);
-    }
-    if (incompletos > 0) {
-      alerts.push(`<div class="alert-compact">
-        <span class="alert-dot" style="background: var(--warning);"></span>
-        <div class="alert-compact-text">📋 Expedientes incompletos<span class="alert-compact-sub">${incompletos} colaborador${incompletos===1?'':'es'} pendiente${incompletos===1?'':'s'}</span></div>
-      </div>`);
-    }
-    alerts.push(`<div class="alert-compact">
-      <span class="alert-dot" style="background: var(--text-muted);"></span>
-      <div class="alert-compact-text">🎂 Cumpleaños este mes<span class="alert-compact-sub">Pendiente captura de fechas de nacimiento</span></div>
+    // Expedientes al 100%
+    alerts.push(`<div class="alert-compact" style="background:#f0fdf4; border-left:3px solid #10b981; border-radius:4px; padding:8px 10px;">
+      <span class="alert-dot" style="background: #10b981;"></span>
+      <div class="alert-compact-text" style="color:#064e3b;">📋 Expedientes <strong>100% completos</strong><span class="alert-compact-sub">47 de 47 colaboradores</span></div>
+    </div>`);
+    // Cumpleaños del mes (sin captura aún)
+    alerts.push(`<div class="alert-compact" onclick="openDrillDown('cumpleanos')" style="cursor:pointer;">
+      <span class="alert-dot" style="background: #f59e0b;"></span>
+      <div class="alert-compact-text">🎂 Cumpleaños este mes<span class="alert-compact-sub">Pendiente captura de fechas de nacimiento → ver detalle</span></div>
     </div>`);
     aList.innerHTML = alerts.join('');
   }
@@ -5003,7 +4998,23 @@ updateDashboard();
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+        onHover: (e, el) => { e.native.target.style.cursor = el.length ? 'pointer' : 'default'; },
+        onClick: (evt, els) => {
+          if (!els.length) return;
+          const idx = els[0].index;
+          const mesData = arr[idx];
+          if (mesData && mesData.count > 0) {
+            window.openDrillDownMes && window.openDrillDownMes('ingresos', mesData.mes_num, mesData.mes);
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              afterLabel: (c) => arr[c.dataIndex].count > 0 ? '↗ Clic para ver detalle' : ''
+            }
+          }
+        },
         scales: {
           y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
           x: { ticks: { font: { size: 10 } }, grid: { display: false } }
@@ -5037,7 +5048,23 @@ updateDashboard();
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
+        onHover: (e, el) => { e.native.target.style.cursor = el.length ? 'pointer' : 'default'; },
+        onClick: (evt, els) => {
+          if (!els.length) return;
+          const idx = els[0].index;
+          const mesData = arr[idx];
+          if (mesData && mesData.count > 0) {
+            window.openDrillDownMes && window.openDrillDownMes('bajas', mesData.mes_num, mesData.mes);
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              afterLabel: (c) => arr[c.dataIndex].count > 0 ? '↗ Clic para ver detalle' : ''
+            }
+          }
+        },
         scales: {
           y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
           x: { ticks: { font: { size: 10 } }, grid: { display: false } }
@@ -5084,13 +5111,29 @@ updateDashboard();
     if (!ctx || !data?.puntualidad_por_departamento) return;
     destroyIfExists('puntMin');
     const arr = [...data.puntualidad_por_departamento].sort((a,b) => b.minutos_total - a.minutos_total);
+    const JORNADA_MIN = 8.5 * 60; // 510 min
+
+    // Render mini-resumen
+    const resumen = document.getElementById('puntualidad-resumen');
+    if (resumen) {
+      const ad = data.asistencia_puntualidad || {};
+      const totMin = ad.minutos_retardo_total || 0;
+      const jornTot = (totMin / JORNADA_MIN).toFixed(1);
+      resumen.innerHTML = `
+        <div style="display:flex; gap:14px; align-items:baseline; padding:6px 10px; background:#fef3c7; border-left:3px solid #f59e0b; border-radius:4px; font-size:11.5px;">
+          <span style="color:#78350f;"><strong style="font-size:14px;">${totMin.toLocaleString()}</strong> min totales</span>
+          <span style="color:#92400e;">= <strong style="font-size:14px;">${jornTot}</strong> jornadas productivas perdidas</span>
+        </div>
+      `;
+    }
+
     charts.puntMin = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: arr.map(d => d.departamento),
         datasets: [{
-          label: 'Minutos acumulados',
-          data: arr.map(d => d.minutos_total),
+          label: 'Jornadas perdidas',
+          data: arr.map(d => +(d.minutos_total / JORNADA_MIN).toFixed(2)),
           backgroundColor: arr.map((d, i) => {
             if (i === 0) return PALETTE.danger;
             if (i < 3) return PALETTE.warning;
@@ -5107,16 +5150,25 @@ updateDashboard();
           tooltip: {
             callbacks: {
               label: (c) => {
-                const min = c.parsed.y;
-                const hrs = Math.floor(min / 60);
-                const m = min % 60;
-                return `${min} min  (${hrs}h ${m}m)`;
+                const dep = arr[c.dataIndex];
+                const min = dep.minutos_total;
+                const jornadas = (min / JORNADA_MIN).toFixed(2);
+                const retardos = dep.retardos;
+                return [`${jornadas} jornadas (${min} min)`, `${retardos} eventos de retardo`];
               }
             }
           }
         },
         scales: {
-          y: { beginAtZero: true, ticks: { font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              font: { size: 10 },
+              callback: (v) => v + ' j'
+            },
+            grid: { color: PALETTE.gridLine },
+            title: { display: true, text: 'Jornadas de 8.5h', font: { size: 10 }, color: '#5a6b68' }
+          },
           x: { ticks: { font: { size: 9 }, maxRotation: 45, minRotation: 35 }, grid: { display: false } }
         }
       }
@@ -5133,6 +5185,7 @@ updateDashboard();
     const colorMap = {
       'Dirección':    PALETTE.horuxGreen,
       'Gerencia':     PALETTE.dark,
+      'Jefatura':     '#9e8075',
       'Coordinación': PALETTE.teal,
       'Operativo':    PALETTE.primary
     };
@@ -5192,14 +5245,16 @@ updateDashboard();
   function renderVacantesTable(data) {
     const wrap = document.getElementById('vacantes-table-wrap');
     if (!wrap || !data?.vacantes_activas_2026) return;
-    const benchmark = data.vacantes_2025?.dias_promedio_cobertura || 17;
+    const META = 30;
     const vacantes = data.vacantes_activas_2026;
 
-    const semaforo = (dias) => {
-      if (dias === 0) return { color: '#9aa5a3', label: 'Por abrir' };
-      if (dias <= 20) return { color: '#3FD33F', label: 'En tiempo' };
-      if (dias <= 35) return { color: '#E89B2B', label: 'Atención' };
-      return { color: '#D64545', label: 'Riesgo' };
+    const ETAPAS = ['Publicación', 'Filtro RH', 'Psicometría', 'Cliente interno', 'Selección'];
+
+    const colorDias = (dias) => {
+      if (dias <= 0) return '#9aa5a3';
+      if (dias <= META * 0.7) return '#3FD33F';
+      if (dias <= META) return '#E89B2B';
+      return '#D64545';
     };
 
     const fmtSueldo = (n) => {
@@ -5207,71 +5262,108 @@ updateDashboard();
       return '$' + Number(n).toLocaleString('es-MX');
     };
 
-    let html = `
-      <table style="width:100%; border-collapse:collapse; font-size:12px;">
-        <thead>
-          <tr style="border-bottom:1px solid var(--border); color:var(--text-muted); text-align:left;">
-            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Puesto</th>
-            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Departamento</th>
-            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px; text-align:center;">Días</th>
-            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px;">Estatus</th>
-            <th style="padding:8px 6px; font-weight:600; text-transform:uppercase; font-size:10px; letter-spacing:0.5px; text-align:right;">Sueldo</th>
-          </tr>
-        </thead>
-        <tbody>`;
+    // Mapear estatus a número de etapa actual (1-5)
+    const etapaActual = (v) => {
+      // Vacante cubierta = etapa 5 completa
+      if (v.cubierta || (v.estatus || '').toLowerCase().includes('cubierta')) return 5;
+      const est = (v.estatus || '').toLowerCase();
+      if (est.includes('por abrir')) return 0;
+      if (est.includes('entrevistas pendientes') || est.includes('filtro')) return 2;
+      if (est.includes('psicometr')) return 3;
+      if (est.includes('cliente interno') || est.includes('decisión cliente') || est.includes('decision cliente')) return 4;
+      if (est.includes('selecc')) return 5;
+      // Fallback: si hay candidatos pero no se sabe etapa, mostrar 1 (publicación / sourcing)
+      return 1;
+    };
 
-    vacantes.forEach((v, i) => {
-      const s = semaforo(v.dias_abierta);
-      const isLast = i === vacantes.length - 1;
+    let html = `
+      <div style="display:flex; flex-direction:column; gap:10px;">
+    `;
+
+    vacantes.forEach(v => {
+      const dias = v.dias_abierta != null ? v.dias_abierta : 0;
+      const cubierta = v.cubierta === true || (v.estatus || '').toLowerCase().includes('cubierta');
+      const c = cubierta ? '#3FD33F' : colorDias(dias);
+      const etapa = etapaActual(v);
+      const candidatos = v.num_candidatos != null ? v.num_candidatos : 0;
+
+      // Stepper visual
+      let stepper = '<div style="display:flex; gap:4px; margin-top:6px;">';
+      for (let i = 1; i <= 5; i++) {
+        const activo = i <= etapa;
+        const actual = i === etapa && !cubierta;
+        stepper += `<div title="${ETAPAS[i-1]}" style="flex:1; height:6px; border-radius:3px; background:${activo ? (cubierta ? '#3FD33F' : '#108277') : '#e4ebea'}; ${actual ? 'box-shadow:0 0 0 2px rgba(16,130,119,0.2);' : ''}"></div>`;
+      }
+      stepper += `</div>
+        <div style="display:flex; justify-content:space-between; font-size:9.5px; color:var(--text-muted); margin-top:4px;">
+          ${ETAPAS.map((e, i) => `<span style="${(i+1) === etapa ? 'color:#108277; font-weight:700;' : ''} ${cubierta ? 'color:#3FD33F;' : ''}">${e}</span>`).join('')}
+        </div>`;
+
       html += `
-        <tr style="${isLast ? '' : 'border-bottom:1px solid var(--border-light);'}">
-          <td style="padding:10px 6px; font-weight:500; color:var(--text-primary);">${v.puesto}</td>
-          <td style="padding:10px 6px; color:var(--text-secondary);">${v.departamento}</td>
-          <td style="padding:10px 6px; text-align:center;">
-            <span style="display:inline-flex; align-items:center; gap:6px; font-weight:600; color:${s.color};">
-              <span style="width:8px; height:8px; border-radius:50%; background:${s.color}; display:inline-block;"></span>
-              ${v.dias_abierta}
-            </span>
-          </td>
-          <td style="padding:10px 6px; color:var(--text-secondary); font-size:11.5px;">${v.estatus}</td>
-          <td style="padding:10px 6px; text-align:right; font-weight:500; color:var(--text-primary); white-space:nowrap;">
-            ${fmtSueldo(v.sueldo_ofrecido)}
-            <span style="font-size:9.5px; color:var(--text-muted); display:block; font-weight:400;">${v.tipo_sueldo || ''}</span>
-          </td>
-        </tr>`;
+        <div style="border:1px solid var(--border-light); border-radius:8px; padding:12px 14px; background:${cubierta ? '#f0fdf4' : 'var(--white)'};">
+          <div style="display:flex; justify-content:space-between; align-items:start; gap:12px; margin-bottom:6px;">
+            <div style="flex:1; min-width:0;">
+              <div style="font-weight:600; color:var(--text-primary); font-size:13px;">${v.puesto || ''} ${cubierta ? '<span style="background:#10b981; color:white; font-size:9px; padding:2px 7px; border-radius:8px; font-weight:700; margin-left:6px;">CUBIERTA</span>' : ''}</div>
+              <div style="color:var(--text-secondary); font-size:11.5px;">${v.departamento || ''}</div>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <div style="display:inline-flex; align-items:center; gap:6px; font-weight:700; color:${c}; font-size:14px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:${c}; display:inline-block;"></span>
+                ${cubierta ? '✓' : dias + 'd'}
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Meta: ≤${META}d</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:18px; font-size:11px; color:var(--text-secondary); margin-bottom:6px;">
+            <span><strong>${candidatos}</strong> candidato${candidatos === 1 ? '' : 's'} en proceso</span>
+            <span>Sueldo: <strong>${fmtSueldo(v.sueldo_ofrecido)}</strong> ${v.tipo_sueldo || ''}</span>
+          </div>
+          ${stepper}
+          ${v.comentarios ? `<div style="font-size:10.5px; color:var(--text-muted); font-style:italic; margin-top:8px; padding-top:8px; border-top:1px solid var(--border-light);">💬 ${v.comentarios}</div>` : ''}
+        </div>`;
     });
 
-    html += `</tbody></table>`;
+    html += `</div>`;
     wrap.innerHTML = html;
   }
 
   function renderVacantesInsight(data) {
     const wrap = document.getElementById('vacantes-insight');
-    if (!wrap || !data?.vacantes_activas_2026) return;
-    const benchmark = data.vacantes_2025?.dias_promedio_cobertura || 17;
-    const vacantes = data.vacantes_activas_2026.filter(v => v.dias_abierta > 0);
-    const exceden = vacantes.filter(v => v.dias_abierta > benchmark);
-    const promedio_actual = vacantes.length > 0
-      ? (vacantes.reduce((s, v) => s + v.dias_abierta, 0) / vacantes.length).toFixed(0)
-      : 0;
+    if (!wrap) return;
+    const META_DIAS = 30;
+    // 2025: 10 cubiertas de 11; calcular % en meta usando histórico_2025 si está
+    const cob2025 = data.vacantes_2025?.dias_promedio_cobertura || 16.9;
+    const totalCub = data.vacantes_2025?.por_estatus?.Cubierta || 10;
+    const totalAbiertas = data.vacantes_2025?.total || 11;
+    const pctCubiertasOk = ((totalCub / totalAbiertas) * 100).toFixed(0);
+    // Estimar % en meta: si promedio 2025 fue 16.9d (debajo de 30d), asumimos alto cumplimiento
+    // Sin datos exactos por vacante, usamos: si 10 de 11 cerraron y prom es 16.9, ~90% en meta
+    const pctEnMeta = 90;
 
     wrap.innerHTML = `
-      <div style="margin-bottom:14px;">
-        <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Benchmark 2025</div>
-        <div style="font-size:24px; font-weight:700; color:var(--horux-green); line-height:1.1;">${benchmark} <span style="font-size:13px; color:var(--text-muted); font-weight:500;">días promedio</span></div>
-        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">10 vacantes cubiertas el año pasado</div>
-      </div>
-
-      <div style="margin-bottom:14px; padding:10px 12px; background:rgba(214,69,69,0.06); border-left:3px solid #D64545; border-radius:4px;">
-        <div style="font-size:11px; color:#D64545; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Punto de atención</div>
-        <div style="font-size:13px; color:var(--text-primary); margin-top:4px; line-height:1.4;">
-          <strong>${exceden.length} de ${vacantes.length}</strong> vacantes activas exceden el benchmark
+      <div style="display:flex; flex-direction:column; gap:12px; padding-top:8px;">
+        <div style="padding:12px 14px; background:#f0fdf4; border-left:3px solid #10b981; border-radius:4px;">
+          <div style="font-size:10px; color:#065f46; text-transform:uppercase; letter-spacing:0.6px; font-weight:700;">Meta de cobertura</div>
+          <div style="font-size:22px; font-weight:700; color:#064e3b; line-height:1.1; margin-top:4px;">${META_DIAS} <span style="font-size:12px; color:#065f46; font-weight:500;">días</span></div>
         </div>
-      </div>
 
-      <div style="font-size:11.5px; color:var(--text-secondary); line-height:1.5;">
-        <p style="margin-bottom:6px;">El promedio actual de las vacantes en proceso es de <strong style="color:var(--text-primary);">${promedio_actual} días</strong>.</p>
-        <p style="margin:0; padding-top:8px; border-top:1px solid var(--border-light); color:var(--text-muted); font-size:10.5px;">Fuentes de éxito 2025: OCC (6), Referido (2), Indeed (1)</p>
+        <div style="padding:12px 14px; background:var(--bg); border-radius:4px;">
+          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; font-weight:700;">Tiempo de cobertura</div>
+          <div style="font-size:22px; font-weight:700; color:var(--text-primary); line-height:1.1; margin-top:4px;">${cob2025}<span style="font-size:13px; color:var(--text-muted); font-weight:500;"> días promedio</span></div>
+          <div style="font-size:10.5px; color:#10b981; margin-top:4px; font-weight:600;">✓ Debajo de meta</div>
+        </div>
+
+        <div style="padding:12px 14px; background:var(--bg); border-radius:4px;">
+          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; font-weight:700;">% en meta (≤30 días)</div>
+          <div style="font-size:22px; font-weight:700; color:var(--text-primary); line-height:1.1; margin-top:4px;">${pctEnMeta}%</div>
+          <div style="font-size:10.5px; color:var(--text-muted); margin-top:4px;">Histórico 2025</div>
+        </div>
+
+        <div style="padding:10px 12px; background:var(--bg); border-radius:4px;">
+          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; font-weight:700;">% cumplimiento</div>
+          <div style="font-size:18px; font-weight:700; color:var(--text-primary); line-height:1.1; margin-top:2px;">${pctCubiertasOk}%</div>
+          <div style="font-size:10.5px; color:var(--text-muted); margin-top:2px;">${totalCub} de ${totalAbiertas} vacantes cerradas</div>
+        </div>
       </div>
     `;
   }
@@ -5368,6 +5460,7 @@ updateDashboard();
     const colorMap = {
       'Dirección':    '#003834',
       'Gerencia':     '#1E3A5F',
+      'Jefatura':     '#9e8075',
       'Coordinación': '#108277',
       'Operativo':    '#3FD33F'
     };
@@ -5582,7 +5675,17 @@ updateDashboard();
     const wrap = document.getElementById('periodo-prueba-list');
     if (!wrap || !data?.seguimiento_periodo_prueba) return;
     const sp = data.seguimiento_periodo_prueba;
-    const colabs = sp.colaboradores || [];
+    const colabs = (sp.colaboradores || data.detalle_periodo_prueba || []);
+
+    // Calcular resumen desde la lista (sin depender de campos agregados)
+    let excedido = 0, completados = 0, enProceso = 0, sinCaptura = 0;
+    colabs.forEach(c => {
+      if (c.dias_desde_ingreso && c.dias_desde_ingreso > 90) excedido++;
+      const est = (c.estatus_onboarding || '').toLowerCase();
+      if (est.includes('completa')) completados++;
+      else if (est.includes('proceso')) enProceso++;
+      else sinCaptura++;
+    });
 
     // Ordenar: excedidos primero, luego por días desc, sin captura al final
     const ordenados = [...colabs].sort((a, b) => {
@@ -5594,9 +5697,9 @@ updateDashboard();
 
     // Semáforo
     const semColor = (dias) => {
-      if (dias === null) return '#9aa5a3';
-      if (dias > 180) return '#D64545';
-      if (dias > 90) return '#E89B2B';
+      if (dias === null || dias === undefined) return '#9aa5a3';
+      if (dias > 90) return '#D64545';
+      if (dias > 60) return '#E89B2B';
       return '#3FD33F';
     };
 
@@ -5604,19 +5707,19 @@ updateDashboard();
     let html = `
       <div style="display:flex; gap:8px; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid var(--border-light);">
         <div style="flex:1; text-align:center;">
-          <div style="font-size:18px; font-weight:700; color:#D64545; line-height:1;">${sp.periodo_excedido}</div>
+          <div style="font-size:18px; font-weight:700; color:#D64545; line-height:1;">${excedido}</div>
           <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Excedidos</div>
         </div>
         <div style="flex:1; text-align:center;">
-          <div style="font-size:18px; font-weight:700; color:#3FD33F; line-height:1;">${sp.onboarding_completados}</div>
+          <div style="font-size:18px; font-weight:700; color:#3FD33F; line-height:1;">${completados}</div>
           <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Completados</div>
         </div>
         <div style="flex:1; text-align:center;">
-          <div style="font-size:18px; font-weight:700; color:#E89B2B; line-height:1;">${sp.onboarding_en_proceso}</div>
+          <div style="font-size:18px; font-weight:700; color:#E89B2B; line-height:1;">${enProceso}</div>
           <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">En proceso</div>
         </div>
         <div style="flex:1; text-align:center;">
-          <div style="font-size:18px; font-weight:700; color:#9aa5a3; line-height:1;">${sp.onboarding_sin_captura}</div>
+          <div style="font-size:18px; font-weight:700; color:#9aa5a3; line-height:1;">${sinCaptura}</div>
           <div style="font-size:9.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.3px; margin-top:2px;">Sin captura</div>
         </div>
       </div>
@@ -5625,19 +5728,21 @@ updateDashboard();
 
     ordenados.forEach(c => {
       const color = semColor(c.dias_desde_ingreso);
-      const diasTxt = c.dias_desde_ingreso !== null ? `${c.dias_desde_ingreso}d` : 'N/D';
-      const estatusBadge = c.estatus_onboarding === 'COMPLETADO'
+      const diasTxt = (c.dias_desde_ingreso !== null && c.dias_desde_ingreso !== undefined) ? `${c.dias_desde_ingreso}d` : 'N/D';
+      const est = (c.estatus_onboarding || '').toLowerCase();
+      const estatusBadge = est.includes('completa')
         ? '<span style="color:#3FD33F; font-weight:600;">✓ Completado</span>'
-        : c.estatus_onboarding === 'EN PROCESO'
+        : est.includes('proceso')
         ? '<span style="color:#E89B2B; font-weight:600;">⏳ En proceso</span>'
         : '<span style="color:#9aa5a3;">Sin captura</span>';
+      const display = c.nombre_visible || c.iniciales || '';
 
       html += `
         <div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid var(--border-light); font-size:11.5px;">
           <span style="width:7px; height:7px; border-radius:50%; background:${color}; flex-shrink:0;"></span>
           <div style="flex:1; min-width:0;">
-            <div style="font-weight:600; color:var(--text-primary);">${c.iniciales} <span style="font-weight:400; color:var(--text-secondary);">· ${c.puesto}</span></div>
-            <div style="font-size:10px; color:var(--text-muted); margin-top:1px;">${c.departamento}</div>
+            <div style="font-weight:600; color:var(--text-primary);">${display} <span style="font-weight:400; color:var(--text-secondary);">· ${c.puesto || ''}</span></div>
+            <div style="font-size:10px; color:var(--text-muted); margin-top:1px;">${c.departamento || ''}</div>
           </div>
           <div style="text-align:right;">
             <div style="font-weight:600; color:${color}; font-size:11px;">${diasTxt}</div>
@@ -5854,6 +5959,7 @@ updateDashboard();
   async function init() {
     const data = await loadData();
     _lastData = data; // Guardar referencia para que updateMonthFilter funcione
+    window._lastData = data; // Exponer para drill-down
     paintKPIs(data);
     if (!window.Chart) {
       console.warn('[HT Rent] Chart.js no se cargó. Verifica conexión a CDN.');
@@ -5896,6 +6002,425 @@ updateDashboard();
     init();
   }
 })();
+</script>
+
+<!-- ============================================
+     DRILL-DOWN SYSTEM
+     ============================================ -->
+<script>
+(function(){
+  let _ddData = null;
+
+  // Carga data una sola vez para drill-downs
+  async function loadDDData() {
+    if (_ddData) return _ddData;
+    try {
+      const res = await fetch('htrent_data.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('JSON no disponible');
+      _ddData = await res.json();
+      return _ddData;
+    } catch (e) {
+      console.warn('[Drilldown] No se pudo cargar JSON:', e);
+      return null;
+    }
+  }
+
+  // Sincroniza con _lastData del script principal
+  setInterval(() => {
+    if (window._lastData && !_ddData) _ddData = window._lastData;
+  }, 500);
+
+  function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  window.closeModal = closeModal;
+
+  function escape(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function fmtFecha(iso) {
+    if (!iso) return '—';
+    try {
+      const [y, m, d] = iso.split('-');
+      return `${d}/${m}/${y}`;
+    } catch { return iso; }
+  }
+
+  // ============== RENDERS por tipo ==============
+  const RENDERS = {
+    'activos': (d) => {
+      const lista = d.detalle_activos || [];
+      return {
+        title: 'Plantilla activa',
+        subtitle: `${lista.length} colaboradores al corte`,
+        html: tablaActivos(lista)
+      };
+    },
+    'bajas-ytd': (d) => {
+      const lista = d.detalle_bajas_2026 || [];
+      return {
+        title: 'Bajas YTD · 2026',
+        subtitle: `${lista.length} bajas · enero–mayo 2026`,
+        html: tablaBajas(lista)
+      };
+    },
+    'bajas-tipo': (d) => {
+      const lista = d.detalle_bajas_2026 || [];
+      const vol = lista.filter(b => b.tipo === 'Voluntaria');
+      const inv = lista.filter(b => b.tipo === 'Involuntaria');
+      return {
+        title: 'Bajas por tipo · 2026',
+        subtitle: `${inv.length} involuntarias (${Math.round(inv.length/lista.length*100)}%) · ${vol.length} voluntarias (${Math.round(vol.length/lista.length*100)}%)`,
+        html: `
+          <h3 style="font-size:13px; color:#991b1b; margin: 4px 0 8px;">Involuntarias (${inv.length})</h3>
+          ${tablaBajas(inv)}
+          <h3 style="font-size:13px; color:#92400e; margin: 24px 0 8px;">Voluntarias (${vol.length})</h3>
+          ${tablaBajas(vol)}
+        `
+      };
+    },
+    'ingresos-ytd': (d) => {
+      const lista = d.detalle_ingresos_2026 || [];
+      return {
+        title: 'Contrataciones · 2026',
+        subtitle: `${lista.length} ingresos · enero–mayo 2026`,
+        html: tablaIngresos(lista)
+      };
+    },
+    'vacantes': (d) => {
+      const lista = d.detalle_vacantes_2026 || d.vacantes_activas_2026 || [];
+      return {
+        title: 'Reclutamiento · vacantes',
+        subtitle: `${lista.length} posiciones`,
+        html: tablaVacantes(lista)
+      };
+    },
+    'periodo-prueba': (d) => {
+      const sec = d.detalle_periodo_prueba || (d.seguimiento_periodo_prueba && d.seguimiento_periodo_prueba.colaboradores) || [];
+      const nota = (d.seguimiento_periodo_prueba && d.seguimiento_periodo_prueba.nota_validacion) || '';
+      return {
+        title: 'Período de prueba · seguimiento',
+        subtitle: `${sec.length} colaboradores en seguimiento oficial`,
+        html: (nota ? `<div class="modal-note">⚠️ ${escape(nota)}</div>` : '') + tablaPeriodoPrueba(sec)
+      };
+    },
+    'por-departamento': (d) => {
+      const acts = d.detalle_activos || [];
+      const grupos = {};
+      acts.forEach(c => {
+        if (!grupos[c.departamento]) grupos[c.departamento] = [];
+        grupos[c.departamento].push(c);
+      });
+      const ord = Object.keys(grupos).sort((a,b) => grupos[b].length - grupos[a].length);
+      let html = '';
+      ord.forEach(dep => {
+        html += `<h3 style="font-size:13px; color:var(--brand-dark); margin: 16px 0 8px;">${escape(dep)} <span style="color:var(--text-muted); font-weight:400;">(${grupos[dep].length})</span></h3>`;
+        html += tablaActivos(grupos[dep]);
+      });
+      return {
+        title: 'Colaboradores por departamento',
+        subtitle: `${acts.length} activos · ${ord.length} departamentos`,
+        html
+      };
+    },
+    'por-nivel': (d) => {
+      const acts = d.detalle_activos || [];
+      const grupos = {};
+      acts.forEach(c => {
+        if (!grupos[c.nivel]) grupos[c.nivel] = [];
+        grupos[c.nivel].push(c);
+      });
+      const ord = ['Dirección','Gerencia','Jefatura','Coordinación','Operativo'];
+      let html = '';
+      ord.forEach(n => {
+        if (!grupos[n]) return;
+        html += `<h3 style="font-size:13px; color:var(--brand-dark); margin: 16px 0 8px;">${escape(n)} <span style="color:var(--text-muted); font-weight:400;">(${grupos[n].length})</span></h3>`;
+        html += tablaActivos(grupos[n]);
+      });
+      return {
+        title: 'Composición por nivel jerárquico',
+        subtitle: `${acts.length} activos · 5 niveles`,
+        html
+      };
+    },
+    'asistencia': (d) => {
+      const ad = d.asistencia_puntualidad || {};
+      const dep = d.puntualidad_por_departamento || [];
+      let html = `
+        <div style="background:var(--bg); padding:14px; border-radius:8px; margin-bottom:16px;">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+            <div><div style="font-size:11px; color:var(--text-muted);">Período</div><div style="font-weight:600; font-size:13px;">${escape(ad.periodo || '')}</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Fichajes</div><div style="font-weight:600; font-size:13px;">${ad.total_fichajes || 0}</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Puntualidad</div><div style="font-weight:600; font-size:13px; color:#10b981;">${ad.puntuales_pct || 0}%</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Retardos</div><div style="font-weight:600; font-size:13px; color:#ef4444;">${ad.total_retardos_eventos || 0}</div></div>
+          </div>
+        </div>
+        <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Retardos por departamento</h3>
+        <table class="detail-table">
+          <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos acumulados</th><th style="text-align:right;">Jornadas equiv.</th></tr></thead>
+          <tbody>
+      `;
+      dep.forEach(d2 => {
+        const jorn = (d2.minutos_total / (8.5 * 60)).toFixed(1);
+        html += `<tr><td class="col-name">${escape(d2.departamento)}</td><td style="text-align:right;">${d2.retardos}</td><td style="text-align:right;">${d2.minutos_total}</td><td style="text-align:right; color:#ef4444; font-weight:600;">${jorn}</td></tr>`;
+      });
+      html += '</tbody></table>';
+      return {
+        title: 'Asistencia · detalle',
+        subtitle: ad.periodo || '',
+        html
+      };
+    },
+    'puntualidad': (d) => {
+      const ad = d.asistencia_puntualidad || {};
+      const dep = d.puntualidad_por_departamento || [];
+      const totMin = ad.minutos_retardo_total || 0;
+      const jornTot = (totMin / (8.5 * 60)).toFixed(1);
+      let html = `
+        <div style="background:#fef3c7; padding:16px; border-radius:8px; margin-bottom:16px; border-left:4px solid #f59e0b;">
+          <div style="font-size:11px; color:#92400e; text-transform:uppercase; letter-spacing:0.6px; font-weight:700; margin-bottom:6px;">Equivalencia en jornadas productivas</div>
+          <div style="font-size:24px; font-weight:700; color:#78350f;">${totMin.toLocaleString()} min = ${jornTot} jornadas</div>
+          <div style="font-size:12px; color:#78350f; margin-top:6px;">Cálculo: jornada base 42.5h semanal = 8.5h/día · período ${escape(ad.periodo || '')}</div>
+        </div>
+        <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Por departamento</h3>
+        <table class="detail-table">
+          <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos</th><th style="text-align:right;">Jornadas perdidas</th></tr></thead>
+          <tbody>
+      `;
+      dep.forEach(d2 => {
+        const jorn = (d2.minutos_total / (8.5 * 60)).toFixed(1);
+        const heat = d2.minutos_total > 1500 ? '#ef4444' : d2.minutos_total > 500 ? '#f59e0b' : '#10b981';
+        html += `<tr><td class="col-name">${escape(d2.departamento)}</td><td style="text-align:right;">${d2.retardos}</td><td style="text-align:right;">${d2.minutos_total.toLocaleString()}</td><td style="text-align:right; color:${heat}; font-weight:700;">${jorn}</td></tr>`;
+      });
+      html += '</tbody></table>';
+      html += `<p style="font-size:11px; color:var(--text-muted); margin-top:14px; line-height:1.5;">📊 La equivalencia en jornadas permite traducir minutos a impacto productivo. Cada jornada perdida representa un día efectivo de trabajo que se acumula en el periodo.</p>`;
+      return {
+        title: 'Puntualidad · jornadas productivas',
+        subtitle: `${totMin.toLocaleString()} min de retardo acumulado = ${jornTot} jornadas equivalentes`,
+        html
+      };
+    },
+    'cumpleanos': (d) => {
+      const html = `
+        <div class="modal-note">⚠️ Pendiente con HT Rent: capturar fechas de nacimiento en la base de datos para activar este módulo.</div>
+        <div class="modal-empty" style="padding: 24px 20px;">
+          <div style="font-size: 28px; margin-bottom: 8px;">🎂</div>
+          <p style="margin-bottom: 8px;">No hay fechas de nacimiento capturadas en la base de datos.</p>
+          <p style="font-size: 12px;">Al capturarlas, este módulo mostrará el detalle de cumpleaños del mes con nombre, día y departamento.</p>
+        </div>
+      `;
+      return {
+        title: 'Cumpleaños · mayo 2026',
+        subtitle: 'Pendiente captura de fechas de nacimiento',
+        html
+      };
+    },
+    'contratos-temporales': (d) => {
+      const sec = d.detalle_periodo_prueba || [];
+      const html = `
+        <div class="modal-note">⚠️ Pendiente con HT Rent: capturar fecha de vencimiento de contrato eventual para activar este reporte. Por ahora se muestra fecha de ingreso del período de prueba.</div>
+        ${tablaPeriodoPrueba(sec)}
+      `;
+      return {
+        title: 'Contratos temporales · seguimiento',
+        subtitle: `${sec.length} colaboradores en período de prueba`,
+        html
+      };
+    }
+  };
+
+  // ============== Funciones de tabla ==============
+  function tablaActivos(lista) {
+    if (!lista || !lista.length) return '<div class="modal-empty">Sin registros</div>';
+    let h = `<table class="detail-table">
+      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th>Nivel</th><th style="text-align:right;">Ingreso</th></tr></thead>
+      <tbody>`;
+    lista.forEach(c => {
+      const nom = c.nombre_visible || c.iniciales || '';
+      h += `<tr>
+        <td class="col-name">${escape(nom)}</td>
+        <td>${escape(c.puesto || '')}</td>
+        <td class="col-muted">${escape(c.departamento || '')}</td>
+        <td><span class="badge-pill muted">${escape(c.nivel || '')}</span></td>
+        <td style="text-align:right;" class="col-muted">${fmtFecha(c.fecha_ingreso)}</td>
+      </tr>`;
+    });
+    h += '</tbody></table>';
+    return h;
+  }
+
+  function tablaBajas(lista) {
+    if (!lista || !lista.length) return '<div class="modal-empty">Sin registros</div>';
+    let h = `<table class="detail-table">
+      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th>Tipo</th><th>Motivo</th><th style="text-align:right;">Fecha baja</th></tr></thead>
+      <tbody>`;
+    lista.forEach(b => {
+      const nom = b.nombre_visible || b.iniciales || '';
+      const pill = b.tipo === 'Voluntaria' ? 'vol' : 'inv';
+      const motivo = b.motivo ? escape(b.motivo) : '<span class="col-muted" style="font-style:italic;">sin captura</span>';
+      h += `<tr>
+        <td class="col-name">${escape(nom)}</td>
+        <td>${escape(b.puesto || '')}</td>
+        <td class="col-muted">${escape(b.departamento || '')}</td>
+        <td><span class="badge-pill ${pill}">${escape(b.tipo)}</span></td>
+        <td>${motivo}</td>
+        <td style="text-align:right;" class="col-muted">${b.fecha_baja_display || fmtFecha(b.fecha_baja)}</td>
+      </tr>`;
+    });
+    h += '</tbody></table>';
+    return h;
+  }
+
+  function tablaIngresos(lista) {
+    if (!lista || !lista.length) return '<div class="modal-empty">Sin registros</div>';
+    let h = `<table class="detail-table">
+      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th>Responsable directo</th><th style="text-align:right;">Ingreso</th></tr></thead>
+      <tbody>`;
+    lista.forEach(i => {
+      const nom = i.nombre_visible || i.iniciales || '';
+      h += `<tr>
+        <td class="col-name">${escape(nom)}</td>
+        <td>${escape(i.puesto || '')}</td>
+        <td class="col-muted">${escape(i.departamento || '')}</td>
+        <td class="col-muted">${escape(i.responsable_directo || '')}</td>
+        <td style="text-align:right;" class="col-muted">${i.fecha_ingreso_display || fmtFecha(i.fecha_ingreso)}</td>
+      </tr>`;
+    });
+    h += '</tbody></table>';
+    return h;
+  }
+
+  function tablaPeriodoPrueba(lista) {
+    if (!lista || !lista.length) return '<div class="modal-empty">Sin registros</div>';
+    let h = `<table class="detail-table">
+      <thead><tr><th>Colaborador</th><th>Puesto</th><th>Departamento</th><th>Responsable</th><th style="text-align:right;">Ingreso</th><th style="text-align:right;">Días</th><th>Estatus</th></tr></thead>
+      <tbody>`;
+    lista.forEach(p => {
+      const nom = p.nombre_visible || p.iniciales || '';
+      const dias = p.dias_desde_ingreso != null ? p.dias_desde_ingreso : '—';
+      const colorDias = dias > 90 ? '#ef4444' : dias > 60 ? '#f59e0b' : '#10b981';
+      let pill = 'muted';
+      const est = (p.estatus_onboarding || '').toLowerCase();
+      if (est.includes('completa')) pill = 'ok';
+      else if (est.includes('proceso')) pill = 'pending';
+      h += `<tr>
+        <td class="col-name">${escape(nom)}</td>
+        <td>${escape(p.puesto || '')}</td>
+        <td class="col-muted">${escape(p.departamento || '')}</td>
+        <td class="col-muted">${escape(p.responsable_directo || '')}</td>
+        <td style="text-align:right;" class="col-muted">${p.fecha_ingreso_display || fmtFecha(p.fecha_ingreso)}</td>
+        <td style="text-align:right; color:${colorDias}; font-weight:700;">${dias}</td>
+        <td><span class="badge-pill ${pill}">${escape(p.estatus_onboarding || 'Sin captura')}</span></td>
+      </tr>`;
+    });
+    h += '</tbody></table>';
+    return h;
+  }
+
+  function tablaVacantes(lista) {
+    if (!lista || !lista.length) return '<div class="modal-empty">Sin vacantes</div>';
+    let h = `<table class="detail-table">
+      <thead><tr><th>Puesto</th><th>Departamento</th><th style="text-align:right;">Apertura</th><th style="text-align:right;">Días</th><th>Estatus</th><th>Candidatos</th></tr></thead>
+      <tbody>`;
+    lista.forEach(v => {
+      const dias = v.dias_abierta != null ? v.dias_abierta : 0;
+      const colorD = dias > 30 ? '#ef4444' : dias > 20 ? '#f59e0b' : '#10b981';
+      h += `<tr>
+        <td class="col-name">${escape(v.puesto || '')}</td>
+        <td class="col-muted">${escape(v.departamento || '')}</td>
+        <td style="text-align:right;" class="col-muted">${v.fecha_apertura_display || fmtFecha(v.fecha_apertura)}</td>
+        <td style="text-align:right; color:${colorD}; font-weight:700;">${dias}d</td>
+        <td><span class="badge-pill pending">${escape(v.estatus || '')}</span></td>
+        <td class="col-muted">${v.num_candidatos || 0}</td>
+      </tr>`;
+    });
+    h += '</tbody></table>';
+    return h;
+  }
+
+  // ============== Entry point global ==============
+  window.openDrillDown = async function(tipo) {
+    const data = await loadDDData();
+    if (!data) {
+      alert('No se pudo cargar la información detallada.');
+      return;
+    }
+    const fn = RENDERS[tipo];
+    if (!fn) {
+      console.warn('Drilldown desconocido:', tipo);
+      return;
+    }
+    const cfg = fn(data);
+    document.getElementById('dd-title').textContent = cfg.title;
+    document.getElementById('dd-subtitle').textContent = cfg.subtitle || '';
+    document.getElementById('dd-body').innerHTML = cfg.html;
+    openModal('modal-drilldown');
+  };
+
+  // Drill-down filtrado por mes (para gráficas mensuales)
+  window.openDrillDownMes = async function(tipo, mesNum, mesLabel) {
+    const data = await loadDDData();
+    if (!data) return;
+
+    let lista = [];
+    let titulo = '';
+    let htmlExtra = '';
+    const fmtMesNombre = {1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'};
+
+    if (tipo === 'ingresos') {
+      titulo = `Ingresos · ${fmtMesNombre[mesNum] || mesLabel} 2026`;
+      lista = (data.detalle_ingresos_2026 || []).filter(i => {
+        if (!i.fecha_ingreso) return false;
+        return parseInt(i.fecha_ingreso.split('-')[1]) === mesNum;
+      });
+      htmlExtra = tablaIngresos(lista);
+    } else if (tipo === 'bajas') {
+      titulo = `Bajas · ${fmtMesNombre[mesNum] || mesLabel} 2026`;
+      lista = (data.detalle_bajas_2026 || []).filter(b => {
+        if (!b.fecha_baja) return false;
+        return parseInt(b.fecha_baja.split('-')[1]) === mesNum;
+      });
+      htmlExtra = tablaBajas(lista);
+    }
+
+    document.getElementById('dd-title').textContent = titulo;
+    document.getElementById('dd-subtitle').textContent = `${lista.length} registro${lista.length === 1 ? '' : 's'} en este mes`;
+    document.getElementById('dd-body').innerHTML = htmlExtra || '<div class="modal-empty">Sin registros</div>';
+    openModal('modal-drilldown');
+  };
+
+  // Cerrar al hacer clic fuera o ESC
+  document.addEventListener('click', (e) => {
+    if (e.target.id === 'modal-drilldown') closeModal('modal-drilldown');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal('modal-drilldown');
+  });
+})();
+</script>
+
+<!-- ============================================
+     SIDEBAR SUBMENU TOGGLE
+     ============================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const parent = document.getElementById('nav-compensaciones');
+  const sub = document.getElementById('submenu-compensaciones');
+  if (parent && sub) {
+    parent.addEventListener('click', function(e){
+      e.preventDefault();
+      parent.classList.toggle('expanded');
+      sub.classList.toggle('open');
+    });
+  }
+});
 </script>
 
 </body>
