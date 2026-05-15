@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD: 2026-05-15-v5-CUMPLIMIENTO-ASISTENCIA -->
+<!-- BUILD: 2026-05-15-v3-TABLA-EJECUTIVA -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -2252,15 +2252,15 @@ body {
             <div class="kpi-value" id="kpi-asistencia">73%</div>
             <div class="kpi-trend gray">últimos 18 días hábiles</div>
           </div>
-          <div class="kpi-card" style="border-left-color: #d3d1c7; opacity: 0.55;">
-            <div class="kpi-label" style="color:var(--text-muted);">Capacitación</div>
-            <div class="kpi-value" id="kpi-capacitacion" style="color:var(--text-muted);">—</div>
-            <div class="kpi-trend gray">Inactivo</div>
+          <div class="kpi-card" style="border-left-color: #564dba;">
+            <div class="kpi-label">Capacitación</div>
+            <div class="kpi-value" id="kpi-capacitacion">87%</div>
+            <div class="kpi-trend gray">cumplimiento promedio</div>
           </div>
           <div class="kpi-card clickable" style="border-left-color: #edc283;" onclick="openDrillDown('vacantes')">
             <div class="kpi-label">Vacantes</div>
             <div class="kpi-value" id="kpi-reclutamiento">4</div>
-            <div class="kpi-trend gray">2 activas · 1 cubierta · 1 por abrir</div>
+            <div class="kpi-trend gray">3 activas · 1 cubierta</div>
           </div>
         </div>
 
@@ -2403,12 +2403,12 @@ body {
           <div class="chart-panel">
             <div class="chart-panel-header">
               <div>
-                <div class="chart-panel-title">Cumplimiento de asistencia</div>
-                <div class="chart-panel-subtitle">16 abril – 12 mayo 2026 · 47 colaboradores · 18 días hábiles</div>
+                <div class="chart-panel-title">Asistencia por departamento</div>
+                <div class="chart-panel-subtitle">16 abril – 12 mayo 2026 · puntuales vs retardos · clic para detalle</div>
               </div>
               <a class="chart-detail-link" href="javascript:void(0)" onclick="openDrillDown('asistencia')">Ver detalle →</a>
             </div>
-            <div id="cumplimiento-asistencia-panel" style="padding: 8px 0;"></div>
+            <div class="chart-canvas-wrap"><canvas id="chart-asistencia-depto"></canvas></div>
           </div>
 
           <div class="chart-panel">
@@ -4915,10 +4915,9 @@ updateDashboard();
     if (data.asistencia_puntualidad) {
       setText('kpi-asistencia', Math.round(data.asistencia_puntualidad.puntuales_pct) + '%');
     }
-    // Capacitación inactiva — no se pinta el valor del JSON
-    // if (data.capacitacion_resumen) {
-    //   setText('kpi-capacitacion', Math.round(data.capacitacion_resumen.cumplimiento_promedio_pct) + '%');
-    // }
+    if (data.capacitacion_resumen) {
+      setText('kpi-capacitacion', Math.round(data.capacitacion_resumen.cumplimiento_promedio_pct) + '%');
+    }
     // Tarjeta KPI tag
     setText('kpi-tag-activos', k.colaboradores_activos);
     setText('kpi-tag-ingresos', k.ingresos_2026);
@@ -5076,43 +5075,36 @@ updateDashboard();
   }
 
   function renderAsistenciaDepto(data) {
-    const wrap = document.getElementById('cumplimiento-asistencia-panel');
-    if (!wrap) return;
-    const ca = data.cumplimiento_asistencia || {};
-    const hist = data.historico_incidencias || {};
-    const pct = ca.cumplimiento_pct != null ? ca.cumplimiento_pct : 100;
-    const periodo = ca.periodo || '';
-    const diasPosibles = ca.dias_posibles_total || 0;
-    const faltas = ca.faltas_periodo || 0;
-    const permisos = ca.permisos_periodo || 0;
-
-    wrap.innerHTML = `
-      <div style="display:grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap:10px; margin-bottom:12px;">
-        <div style="background:#f0fdf4; border-left:3px solid #10b981; padding:14px 16px; border-radius:0 6px 6px 0;">
-          <div style="font-size:10px; color:#065f46; text-transform:uppercase; letter-spacing:0.6px; font-weight:700;">% Cumplimiento</div>
-          <div style="font-size:30px; font-weight:700; color:#064e3b; line-height:1; margin-top:6px;">${pct}%</div>
-          <div style="font-size:10.5px; color:#065f46; margin-top:3px;">${diasPosibles} jornadas posibles</div>
-        </div>
-        <div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
-          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Faltas</div>
-          <div style="font-size:20px; font-weight:700; color:#A32D2D; line-height:1; margin-top:4px;">${faltas}</div>
-          <div style="font-size:10px; color:var(--text-muted); margin-top:3px;">en el período</div>
-        </div>
-        <div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
-          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Permisos</div>
-          <div style="font-size:20px; font-weight:700; color:#BA7517; line-height:1; margin-top:4px;">${permisos}</div>
-          <div style="font-size:10px; color:var(--text-muted); margin-top:3px;">justificados</div>
-        </div>
-        <div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
-          <div style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Histórico</div>
-          <div style="font-size:20px; font-weight:700; color:var(--text-primary); line-height:1; margin-top:4px;">${hist.total_registros || 0}</div>
-          <div style="font-size:10px; color:var(--text-muted); margin-top:3px;">incidencias 25-26</div>
-        </div>
-      </div>
-      <div style="padding:10px 12px; background:#f8faf9; border-radius:6px; font-size:11px; color:var(--text-secondary); line-height:1.5;">
-        ${ca.nota || ''} Clic en <strong>Ver detalle</strong> para análisis histórico por departamento y persona.
-      </div>
-    `;
+    const ctx = document.getElementById('chart-asistencia-depto');
+    if (!ctx || !data?.puntualidad_por_departamento) return;
+    destroyIfExists('asisDepto');
+    // Estimamos puntuales por departamento usando proporción inversa al volumen de retardos
+    // Esto requiere datos reales por depto; por ahora mostramos retardos vs minutos como referencia
+    const arr = [...data.puntualidad_por_departamento].sort((a,b) => b.retardos - a.retardos);
+    charts.asisDepto = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: arr.map(d => d.departamento),
+        datasets: [{
+          label: 'Eventos de retardo',
+          data: arr.map(d => d.retardos),
+          backgroundColor: PALETTE.warning,
+          borderRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: (c) => c.parsed.y + ' eventos en el período' } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { font: { size: 10 } }, grid: { color: PALETTE.gridLine } },
+          x: { ticks: { font: { size: 9 }, maxRotation: 45, minRotation: 35 }, grid: { display: false } }
+        }
+      }
+    });
   }
 
   function renderPuntualidadMin(data) {
@@ -6146,79 +6138,30 @@ updateDashboard();
       };
     },
     'asistencia': (d) => {
-      const ca = d.cumplimiento_asistencia || {};
-      const hist = d.historico_incidencias || {};
-      const personas = d.detalle_asistencia_personas || [];
-
-      // Agrupar personas por departamento
-      const porDepto = {};
-      personas.forEach(p => {
-        if (!porDepto[p.departamento]) porDepto[p.departamento] = [];
-        porDepto[p.departamento].push(p);
-      });
-
+      const ad = d.asistencia_puntualidad || {};
+      const dep = d.puntualidad_por_departamento || [];
       let html = `
-        <div style="background:#f0fdf4; padding:16px 18px; border-radius:8px; margin-bottom:18px; border-left:4px solid #10b981;">
-          <div style="display:flex; align-items:center; gap:14px;">
-            <div style="font-size:36px; font-weight:700; color:#064e3b; line-height:1;">${ca.cumplimiento_pct || 100}%</div>
-            <div>
-              <div style="font-size:13px; color:#064e3b; font-weight:600;">Cumplimiento de asistencia en el período</div>
-              <div style="font-size:11.5px; color:#065f46; margin-top:2px;">${escape(ca.periodo || '')} · ${ca.dias_posibles_total || 0} jornadas posibles · ${ca.faltas_periodo || 0} faltas · ${ca.permisos_periodo || 0} permisos</div>
-            </div>
+        <div style="background:var(--bg); padding:14px; border-radius:8px; margin-bottom:16px;">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+            <div><div style="font-size:11px; color:var(--text-muted);">Período</div><div style="font-weight:600; font-size:13px;">${escape(ad.periodo || '')}</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Fichajes</div><div style="font-weight:600; font-size:13px;">${ad.total_fichajes || 0}</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Puntualidad</div><div style="font-weight:600; font-size:13px; color:#10b981;">${ad.puntuales_pct || 0}%</div></div>
+            <div><div style="font-size:11px; color:var(--text-muted);">Retardos</div><div style="font-weight:600; font-size:13px; color:#ef4444;">${ad.total_retardos_eventos || 0}</div></div>
           </div>
-          <div style="font-size:11px; color:#065f46; margin-top:10px; padding-top:10px; border-top:1px solid #a7f3d0;">${escape(ca.nota || '')}</div>
         </div>
+        <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Retardos por departamento</h3>
+        <table class="detail-table">
+          <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos acumulados</th><th style="text-align:right;">Jornadas equiv.</th></tr></thead>
+          <tbody>
       `;
-
-      // Tabla por departamento del período actual (todos al 100%)
-      html += `<h3 style="font-size:13px; color:var(--brand-dark); margin: 18px 0 10px;">Detalle por departamento · período actual</h3>`;
-      html += `<table class="detail-table">
-        <thead><tr><th>Departamento</th><th style="text-align:center;">Colaboradores</th><th style="text-align:center;">Jornadas posibles</th><th style="text-align:center;">Incidencias</th><th style="text-align:right;">Cumplimiento</th></tr></thead>
-        <tbody>`;
-      Object.keys(porDepto).sort().forEach(dep => {
-        const lista = porDepto[dep];
-        html += `<tr style="cursor:pointer;" onclick="window.openDrillDownAsistenciaDepto && window.openDrillDownAsistenciaDepto('${dep.replace(/'/g,'\\\'')}')">
-          <td class="col-name">${escape(dep)}</td>
-          <td style="text-align:center;">${lista.length}</td>
-          <td style="text-align:center;">${lista.length * 18}</td>
-          <td style="text-align:center; color:var(--text-muted);">0</td>
-          <td style="text-align:right; color:#10b981; font-weight:700;">100%</td>
-        </tr>`;
+      dep.forEach(d2 => {
+        const jorn = (d2.minutos_total / (8.5 * 60)).toFixed(1);
+        html += `<tr><td class="col-name">${escape(d2.departamento)}</td><td style="text-align:right;">${d2.retardos}</td><td style="text-align:right;">${d2.minutos_total}</td><td style="text-align:right; color:#ef4444; font-weight:600;">${jorn}</td></tr>`;
       });
-      html += `</tbody></table>`;
-
-      // Histórico de incidencias
-      if (hist && hist.total_registros) {
-        html += `<h3 style="font-size:13px; color:var(--brand-dark); margin: 22px 0 8px;">Histórico de incidencias (referencia)</h3>`;
-        html += `<p style="font-size:11.5px; color:var(--text-secondary); margin-bottom:10px;">${escape(hist.periodo || '')} · ${hist.total_registros} registros</p>`;
-        html += `<div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">`;
-
-        // Por tipo
-        html += `<div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
-          <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; margin-bottom:8px;">Por tipo</div>`;
-        Object.entries(hist.por_tipo || {}).forEach(([tipo, cant]) => {
-          html += `<div style="display:flex; justify-content:space-between; padding:3px 0; font-size:12px; color:var(--text-primary);">
-            <span>${escape(tipo)}</span><strong>${cant}</strong>
-          </div>`;
-        });
-        html += `</div>`;
-
-        // Por departamento
-        html += `<div style="background:var(--bg); padding:12px 14px; border-radius:6px;">
-          <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; margin-bottom:8px;">Por departamento</div>`;
-        const deptosOrd = Object.entries(hist.por_departamento || {}).sort((a,b) => b[1] - a[1]);
-        deptosOrd.forEach(([dep, cant]) => {
-          html += `<div style="display:flex; justify-content:space-between; padding:3px 0; font-size:12px; color:var(--text-primary);">
-            <span>${escape(dep)}</span><strong>${cant}</strong>
-          </div>`;
-        });
-        html += `</div>`;
-        html += `</div>`;
-      }
-
+      html += '</tbody></table>';
       return {
-        title: 'Cumplimiento de asistencia · detalle',
-        subtitle: ca.periodo || '',
+        title: 'Asistencia · detalle',
+        subtitle: ad.periodo || '',
         html
       };
     },
@@ -6233,7 +6176,7 @@ updateDashboard();
           <div style="font-size:24px; font-weight:700; color:#78350f;">${totMin.toLocaleString()} min = ${jornTot} jornadas</div>
           <div style="font-size:12px; color:#78350f; margin-top:6px;">Equivalencia ejecutiva: minutos de retardo traducidos a jornadas de 8.5h (42.5h semanales ÷ 5 días) · período ${escape(ad.periodo || '')}</div>
         </div>
-        <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Por departamento · clic para ver personas</h3>
+        <h3 style="font-size:13px; color:var(--brand-dark); margin:0 0 10px;">Por departamento</h3>
         <table class="detail-table">
           <thead><tr><th>Departamento</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos</th><th style="text-align:right;">Jornadas equiv.</th></tr></thead>
           <tbody>
@@ -6241,12 +6184,7 @@ updateDashboard();
       dep.forEach(d2 => {
         const jorn = (d2.minutos_total / (8.5 * 60)).toFixed(1);
         const heat = d2.minutos_total > 1500 ? '#ef4444' : d2.minutos_total > 500 ? '#f59e0b' : '#10b981';
-        html += `<tr style="cursor:pointer;" onclick="window.openDrillDownPuntualidadDepto && window.openDrillDownPuntualidadDepto('${escape(d2.departamento).replace(/'/g,'\\\'')}')">
-          <td class="col-name">${escape(d2.departamento)} <span style="color:var(--text-muted); font-weight:400; font-size:10px;">↗</span></td>
-          <td style="text-align:right;">${d2.retardos}</td>
-          <td style="text-align:right;">${d2.minutos_total.toLocaleString()}</td>
-          <td style="text-align:right; color:${heat}; font-weight:700;">${jorn}</td>
-        </tr>`;
+        html += `<tr><td class="col-name">${escape(d2.departamento)}</td><td style="text-align:right;">${d2.retardos}</td><td style="text-align:right;">${d2.minutos_total.toLocaleString()}</td><td style="text-align:right; color:${heat}; font-weight:700;">${jorn}</td></tr>`;
       });
       html += '</tbody></table>';
       html += `<p style="font-size:11px; color:var(--text-muted); margin-top:14px; line-height:1.5;">Esta métrica traduce minutos de retardo a una unidad ejecutiva más comprensible. Mide cumplimiento del horario de entrada, no productividad neta del periodo.</p>`;
@@ -6514,81 +6452,6 @@ updateDashboard();
     document.getElementById('dd-title').textContent = titulo;
     document.getElementById('dd-subtitle').textContent = `${lista.length} registro${lista.length === 1 ? '' : 's'} en este mes`;
     document.getElementById('dd-body').innerHTML = htmlExtra || '<div class="modal-empty">Sin registros</div>';
-    openModal('modal-drilldown');
-  };
-
-  // Drill-down: personas con más retardos de un departamento
-  window.openDrillDownPuntualidadDepto = async function(departamento) {
-    const data = await loadDDData();
-    if (!data) return;
-    const personas = (data.detalle_puntualidad_personas || []).filter(p => p.departamento === departamento);
-    personas.sort((a, b) => b.min_retardo_total - a.min_retardo_total);
-
-    let html = `<div style="margin-bottom:14px;">
-      <a onclick="window.openDrillDown('puntualidad')" style="font-size:11.5px; color:var(--text-info); cursor:pointer;">← Volver a vista general</a>
-    </div>`;
-
-    if (!personas.length) {
-      html += '<div class="modal-empty">Sin registros para este departamento</div>';
-    } else {
-      html += `<table class="detail-table">
-        <thead><tr><th>Colaborador</th><th>Puesto</th><th style="text-align:right;">Fichajes</th><th style="text-align:right;">Retardos</th><th style="text-align:right;">Minutos</th><th style="text-align:right;">Jornadas</th><th style="text-align:right;">Puntualidad</th></tr></thead>
-        <tbody>`;
-      personas.forEach(p => {
-        const heat = p.min_retardo_total > 500 ? '#ef4444' : p.min_retardo_total > 200 ? '#f59e0b' : '#10b981';
-        const pctColor = p.puntualidad_pct >= 90 ? '#10b981' : p.puntualidad_pct >= 70 ? '#f59e0b' : '#ef4444';
-        html += `<tr>
-          <td class="col-name">${escape(p.nombre_visible)}</td>
-          <td class="col-muted">${escape(p.puesto)}</td>
-          <td style="text-align:right;">${p.total_fichajes}</td>
-          <td style="text-align:right;">${p.retardos}</td>
-          <td style="text-align:right;">${p.min_retardo_total.toLocaleString()}</td>
-          <td style="text-align:right; color:${heat}; font-weight:700;">${p.jornadas_equiv}</td>
-          <td style="text-align:right; color:${pctColor}; font-weight:700;">${p.puntualidad_pct}%</td>
-        </tr>`;
-      });
-      html += '</tbody></table>';
-    }
-
-    document.getElementById('dd-title').textContent = `Puntualidad · ${departamento}`;
-    document.getElementById('dd-subtitle').textContent = `${personas.length} colaborador${personas.length === 1 ? '' : 'es'} · clic en colaborador para más detalle`;
-    document.getElementById('dd-body').innerHTML = html;
-    openModal('modal-drilldown');
-  };
-
-  // Drill-down: personas de un departamento (asistencia)
-  window.openDrillDownAsistenciaDepto = async function(departamento) {
-    const data = await loadDDData();
-    if (!data) return;
-    const personas = (data.detalle_asistencia_personas || []).filter(p => p.departamento === departamento);
-
-    let html = `<div style="margin-bottom:14px;">
-      <a onclick="window.openDrillDown('asistencia')" style="font-size:11.5px; color:var(--text-info); cursor:pointer;">← Volver a vista general</a>
-    </div>`;
-
-    if (!personas.length) {
-      html += '<div class="modal-empty">Sin registros para este departamento</div>';
-    } else {
-      html += `<table class="detail-table">
-        <thead><tr><th>Colaborador</th><th>Puesto</th><th style="text-align:center;">Días posibles</th><th style="text-align:center;">Faltas</th><th style="text-align:center;">Permisos</th><th style="text-align:right;">Cumplimiento</th></tr></thead>
-        <tbody>`;
-      personas.forEach(p => {
-        const pctColor = p.cumplimiento_pct >= 95 ? '#10b981' : p.cumplimiento_pct >= 85 ? '#f59e0b' : '#ef4444';
-        html += `<tr>
-          <td class="col-name">${escape(p.nombre_visible)}</td>
-          <td class="col-muted">${escape(p.puesto)}</td>
-          <td style="text-align:center;">${p.dias_posibles}</td>
-          <td style="text-align:center; ${p.faltas > 0 ? 'color:#ef4444; font-weight:600;' : 'color:var(--text-muted);'}">${p.faltas}</td>
-          <td style="text-align:center; ${p.permisos > 0 ? 'color:#f59e0b; font-weight:600;' : 'color:var(--text-muted);'}">${p.permisos}</td>
-          <td style="text-align:right; color:${pctColor}; font-weight:700;">${p.cumplimiento_pct}%</td>
-        </tr>`;
-      });
-      html += '</tbody></table>';
-    }
-
-    document.getElementById('dd-title').textContent = `Asistencia · ${departamento}`;
-    document.getElementById('dd-subtitle').textContent = `${personas.length} colaborador${personas.length === 1 ? '' : 'es'} en el período`;
-    document.getElementById('dd-body').innerHTML = html;
     openModal('modal-drilldown');
   };
 
