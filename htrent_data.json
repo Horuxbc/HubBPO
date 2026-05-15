@@ -3035,5 +3035,253 @@
       "Facturación y Cobranza": 4,
       "Ventas": 2
     }
+  },
+  "asistencia_periodo": {
+    "periodo": "16 abril – 12 mayo 2026",
+    "dias_habiles": 19,
+    "plantilla_evaluada": 46,
+    "nota_exclusion": "Excluye Dirección General. Métrica basada en fichajes del checador.",
+    "faltistas_descendente": [
+      {
+        "nombre_visible": "Miguel F.",
+        "puesto": "Coordinador de Marketing",
+        "departamento": "Marketing",
+        "dias_habiles": 19,
+        "dias_fichados": 5,
+        "dias_no_fichados": 14
+      },
+      {
+        "nombre_visible": "Omar E.",
+        "puesto": "Gerente TI",
+        "departamento": "TI",
+        "dias_habiles": 19,
+        "dias_fichados": 7,
+        "dias_no_fichados": 12
+      },
+      {
+        "nombre_visible": "Francisco R.",
+        "puesto": "Analista de Control Documental",
+        "departamento": "Planeación Financiera y Tesorería",
+        "dias_habiles": 19,
+        "dias_fichados": 11,
+        "dias_no_fichados": 8
+      },
+      {
+        "nombre_visible": "Erika F.",
+        "puesto": "Ejecutivo de Marketing",
+        "departamento": "Marketing",
+        "dias_habiles": 19,
+        "dias_fichados": 11,
+        "dias_no_fichados": 8
+      },
+      {
+        "nombre_visible": "José M.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 14,
+        "dias_no_fichados": 5
+      },
+      {
+        "nombre_visible": "Laura G.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles": 19,
+        "dias_fichados": 14,
+        "dias_no_fichados": 5
+      },
+      {
+        "nombre_visible": "Cesar V.",
+        "puesto": "Gerente de Ventas",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 15,
+        "dias_no_fichados": 4
+      },
+      {
+        "nombre_visible": "Rafael R.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 15,
+        "dias_no_fichados": 4
+      },
+      {
+        "nombre_visible": "Norma M.",
+        "puesto": "Auxiliar Administrativo",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 16,
+        "dias_no_fichados": 3
+      },
+      {
+        "nombre_visible": "Milton M.",
+        "puesto": "Contador",
+        "departamento": "Contabilidad",
+        "dias_habiles": 19,
+        "dias_fichados": 16,
+        "dias_no_fichados": 3
+      },
+      {
+        "nombre_visible": "José M.",
+        "puesto": "Auxiliar de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 16,
+        "dias_no_fichados": 3
+      },
+      {
+        "nombre_visible": "Brenda L.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles": 19,
+        "dias_fichados": 16,
+        "dias_no_fichados": 3
+      },
+      {
+        "nombre_visible": "Cesar N.",
+        "puesto": "Coordinador de Placas y Permisos",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 16,
+        "dias_no_fichados": 3
+      },
+      {
+        "nombre_visible": "Aracely O.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Rosario G.",
+        "puesto": "Auxiliar de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Liliana M.",
+        "puesto": "Coordinador de Mesa de Control",
+        "departamento": "Control Interno",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Ilse C.",
+        "puesto": "Gerente de Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Jesica G.",
+        "puesto": "Coordinador Servicio a Clientes",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Francisco M.",
+        "puesto": "Gerente De Procesos y Operaciones",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Eulalio G.",
+        "puesto": "Analista de Créditos Jr",
+        "departamento": "Mesa de Control",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Brayan L.",
+        "puesto": "Ejecutivo Servicio a Clientes",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Gabriela A.",
+        "puesto": "Ejecutivo de Venta",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Rigoberto R.",
+        "puesto": "Gerente Contabilidad",
+        "departamento": "Contabilidad",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Ricardo H.",
+        "puesto": "Contador Jr",
+        "departamento": "Contabilidad",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Juan G.",
+        "puesto": "Gerente Ventas",
+        "departamento": "Ventas",
+        "dias_habiles": 19,
+        "dias_fichados": 17,
+        "dias_no_fichados": 2
+      },
+      {
+        "nombre_visible": "Alejandra R.",
+        "puesto": "Generalista de RH",
+        "departamento": "Recursos Humanos",
+        "dias_habiles": 19,
+        "dias_fichados": 18,
+        "dias_no_fichados": 1
+      },
+      {
+        "nombre_visible": "Gerardo S.",
+        "puesto": "Contralor",
+        "departamento": "Contraloría",
+        "dias_habiles": 19,
+        "dias_fichados": 18,
+        "dias_no_fichados": 1
+      },
+      {
+        "nombre_visible": "Juan M.",
+        "puesto": "Jefe Inventarios y Atención al cliente",
+        "departamento": "Procesos y Operaciones",
+        "dias_habiles": 19,
+        "dias_fichados": 18,
+        "dias_no_fichados": 1
+      },
+      {
+        "nombre_visible": "Monica G.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles": 19,
+        "dias_fichados": 18,
+        "dias_no_fichados": 1
+      },
+      {
+        "nombre_visible": "Rosaura F.",
+        "puesto": "Analista de Cobranza",
+        "departamento": "Facturación y Cobranza",
+        "dias_habiles": 19,
+        "dias_fichados": 18,
+        "dias_no_fichados": 1
+      }
+    ]
   }
 }
