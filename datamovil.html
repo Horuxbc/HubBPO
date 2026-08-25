@@ -61,6 +61,8 @@ h1{font-family:'Barlow Condensed';font-size:30px;font-weight:700;letter-spacing:
 .kpi-v{font-family:'Barlow Condensed';font-size:38px;font-weight:700;line-height:.95;color:var(--navy);}
 .kpi.is-pend .kpi-v,.kpi.is-int .kpi-v{color:var(--muted);font-weight:600;}
 .kpi-s{font-size:10.5px;color:var(--muted);margin-top:5px;min-height:14px;}
+.kpi-r{font-size:9px;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:var(--brand);margin-top:4px;}
+.kpi.is-pend .kpi-r,.kpi.is-int .kpi-r{color:var(--ink-2);}
 .state{display:inline-block;margin-top:8px;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:2px 7px;border-radius:4px;}
 .state.real{background:#E3F4EC;color:var(--ok);}
 .state.pend{background:#FBEFD9;color:#B07514;}
@@ -188,36 +190,42 @@ th.r,td.r{text-align:right;}
         <div class="kpi-l">Rotación YTD</div>
         <div class="kpi-v" id="k-rotacion">—</div>
         <div class="kpi-s">Requiere histórico de bajas</div>
+        <div class="kpi-r">Resp: Gerente de RH</div>
         <span class="state pend">Pendiente RH</span>
       </div>
       <div class="kpi is-int">
         <div class="kpi-l">Ausentismo</div>
         <div class="kpi-v" id="k-ausentismo">—</div>
         <div class="kpi-s">Faltas / días laborables</div>
+        <div class="kpi-r">Resp: Gerente de RH · fuente HRBP</div>
         <span class="state int">Integración Sesame</span>
       </div>
       <div class="kpi click" onclick="go('reclutamiento')">
         <div class="kpi-l">Reclutamiento</div>
         <div class="kpi-v" id="k-vacantes">0</div>
         <div class="kpi-s" id="k-vacantes-s">vacantes activas al corte</div>
+        <div class="kpi-r">Resp: Generalista BPO (transitorio)</div>
         <span class="state real">Dato real</span>
       </div>
       <div class="kpi click" onclick="go('plantilla')">
         <div class="kpi-l">Activos</div>
         <div class="kpi-v" id="k-activos">—</div>
         <div class="kpi-s" id="k-activos-s">colaboradores</div>
+        <div class="kpi-r">Resp: HRBP · Admón. de personal</div>
         <span class="state real">Dato real</span>
       </div>
       <div class="kpi click" onclick="go('vacaciones')">
         <div class="kpi-l">Vacaciones</div>
         <div class="kpi-v" id="k-vac">—</div>
         <div class="kpi-s">días por LFT · plantilla actual</div>
+        <div class="kpi-r">Resp: HRBP · sistema de vacaciones</div>
         <span class="state real">Dato real</span>
       </div>
       <div class="kpi click" onclick="go('prueba')">
         <div class="kpi-l">Período de prueba</div>
         <div class="kpi-v" id="k-prueba">—</div>
         <div class="kpi-s">ingresos en los últimos 90 días</div>
+        <div class="kpi-r">Resp: Generalista BPO</div>
         <span class="state real">Dato real</span>
       </div>
     </div>
@@ -225,37 +233,37 @@ th.r,td.r{text-align:right;}
     <div class="entregables">
       <div class="p-head" style="margin-bottom:2px;">
         <div class="p-title">Tablero de entregables · equipo RH</div>
-        <div class="p-sub">Qué información entrega RH y qué indicador enciende</div>
+        <div class="p-sub">Un dueño por proceso (descriptivos v2 · 29 jul) · qué entrega cada quien y qué indicador enciende</div>
       </div>
       <div class="ent-grid">
         <div class="ent">
           <div class="ent-what">Histórico de bajas 2025–2026</div>
-          <div class="ent-who">Con fecha, motivo y tipo (voluntaria / involuntaria)</div>
+          <div class="ent-who">HRBP (Saúl Gándara) · Fecha, motivo y tipo (voluntaria / involuntaria)</div>
           <div class="ent-fires">Enciende: <b>Rotación YTD · Bajas por mes · Bajas por tipo</b></div>
         </div>
         <div class="ent">
           <div class="ent-what">Registro de incidencias del mes</div>
-          <div class="ent-who">Faltas, permisos e incapacidades (o acceso a Sesame)</div>
+          <div class="ent-who">HRBP (Saúl Gándara) · Faltas, permisos e incapacidades — control de checador</div>
           <div class="ent-fires">Enciende: <b>Ausentismo · Incidencias por área</b></div>
         </div>
         <div class="ent">
           <div class="ent-what">Vacantes y proceso de selección</div>
-          <div class="ent-who">Puesto, fecha de apertura, candidatos, estatus</div>
+          <div class="ent-who">Generalista BPO (Lizzet Noriega) · Puesto, apertura, candidatos y estatus</div>
           <div class="ent-fires">Enciende: <b>Reclutamiento · Días de cobertura vs meta 30</b></div>
         </div>
         <div class="ent">
           <div class="ent-what">Vacaciones tomadas por colaborador</div>
-          <div class="ent-who">Días disfrutados en el ejercicio</div>
+          <div class="ent-who">HRBP (Saúl Gándara) · Días disfrutados del ejercicio en curso</div>
           <div class="ent-fires">Enciende: <b>Saldo pendiente · Riesgo de pasivo vacacional</b></div>
         </div>
         <div class="ent">
           <div class="ent-what">Evaluaciones de período de prueba</div>
-          <div class="ent-who">Onboarding y decisión de renovación por ingreso</div>
+          <div class="ent-who">Generalista BPO (Lizzet Noriega) · Onboarding y renovación por ingreso</div>
           <div class="ent-fires">Enciende: <b>Retención de nuevo ingreso</b></div>
         </div>
         <div class="ent done">
           <div class="ent-what">Reporte de personal mensual</div>
-          <div class="ent-who">Entregado · corte 18/08/2026</div>
+          <div class="ent-who">HRBP (Saúl Gándara) · Entregado · corte 18/08/2026</div>
           <div class="ent-fires">Encendió: <b>Activos · Estructura · Vacaciones LFT · Período de prueba</b></div>
         </div>
       </div>
@@ -447,7 +455,7 @@ th.r,td.r{text-align:right;}
   "fuente": "Reporte de personal Datamovil 18/08/2026 (plantilla activa)",
   "periodo_fichajes": null,
   "estado": "Fase 1 — Plantilla real cargada · Bajas, asistencia, capacitación y vacantes pendientes de captura",
-  "version": "2026-08-25 v3 · tareas"
+  "version": "2026-08-25 v4 · dueños por indicador"
  },
  "kpis_principales": {
   "colaboradores_activos": 131,
@@ -5530,7 +5538,7 @@ th.r,td.r{text-align:right;}
   {
    "id": "seed1",
    "titulo": "Entregar histórico de bajas 2025–2026 (fecha, motivo, tipo voluntaria/involuntaria)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Alta",
    "done": false
@@ -5538,7 +5546,7 @@ th.r,td.r{text-align:right;}
   {
    "id": "seed2",
    "titulo": "Entregar registro de incidencias del mes (faltas, permisos, incapacidades)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Alta",
    "done": false
@@ -5546,7 +5554,7 @@ th.r,td.r{text-align:right;}
   {
    "id": "seed3",
    "titulo": "Reportar vacantes en proceso (puesto, apertura, candidatos, estatus)",
-   "asignado": "Por asignar",
+   "asignado": "Lizzet Noriega",
    "vence": null,
    "prioridad": "Media",
    "done": false
@@ -5554,7 +5562,7 @@ th.r,td.r{text-align:right;}
   {
    "id": "seed4",
    "titulo": "Entregar vacaciones tomadas por colaborador (ejercicio en curso)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Media",
    "done": false
@@ -5562,7 +5570,7 @@ th.r,td.r{text-align:right;}
   {
    "id": "seed5",
    "titulo": "Capturar evaluaciones de período de prueba (13 ingresos activos)",
-   "asignado": "Por asignar",
+   "asignado": "Lizzet Noriega",
    "vence": null,
    "prioridad": "Media",
    "done": false

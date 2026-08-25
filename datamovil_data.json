@@ -5,7 +5,7 @@
   "fuente": "Reporte de personal Datamovil 18/08/2026 (plantilla activa)",
   "periodo_fichajes": null,
   "estado": "Fase 1 — Plantilla real cargada · Bajas, asistencia, capacitación y vacantes pendientes de captura",
-  "version": "2026-08-25 v3 · tareas"
+  "version": "2026-08-25 v4 · dueños por indicador"
  },
  "kpis_principales": {
   "colaboradores_activos": 131,
@@ -5088,7 +5088,7 @@
   {
    "id": "seed1",
    "titulo": "Entregar histórico de bajas 2025–2026 (fecha, motivo, tipo voluntaria/involuntaria)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Alta",
    "done": false
@@ -5096,7 +5096,7 @@
   {
    "id": "seed2",
    "titulo": "Entregar registro de incidencias del mes (faltas, permisos, incapacidades)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Alta",
    "done": false
@@ -5104,7 +5104,7 @@
   {
    "id": "seed3",
    "titulo": "Reportar vacantes en proceso (puesto, apertura, candidatos, estatus)",
-   "asignado": "Por asignar",
+   "asignado": "Lizzet Noriega",
    "vence": null,
    "prioridad": "Media",
    "done": false
@@ -5112,7 +5112,7 @@
   {
    "id": "seed4",
    "titulo": "Entregar vacaciones tomadas por colaborador (ejercicio en curso)",
-   "asignado": "Por asignar",
+   "asignado": "Saúl Gándara",
    "vence": null,
    "prioridad": "Media",
    "done": false
@@ -5120,7 +5120,7 @@
   {
    "id": "seed5",
    "titulo": "Capturar evaluaciones de período de prueba (13 ingresos activos)",
-   "asignado": "Por asignar",
+   "asignado": "Lizzet Noriega",
    "vence": null,
    "prioridad": "Media",
    "done": false
