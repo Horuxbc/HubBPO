@@ -1,0 +1,5129 @@
+{
+ "meta": {
+  "cliente": "Datamovil",
+  "fecha_corte": "2026-08-18",
+  "fuente": "Reporte de personal Datamovil 18/08/2026 (plantilla activa)",
+  "periodo_fichajes": null,
+  "estado": "Fase 1 — Plantilla real cargada · Bajas, asistencia, capacitación y vacantes pendientes de captura",
+  "version": "2026-08-25 v3 · tareas"
+ },
+ "kpis_principales": {
+  "colaboradores_activos": 131,
+  "ingresos_2026": 17,
+  "bajas_2026": null,
+  "bajas_2025": null,
+  "rotacion_2025": null,
+  "inicio_2026": 114,
+  "vacantes_activas_corte": 0,
+  "puntualidad_pct": null
+ },
+ "colaboradores_por_departamento": [
+  {
+   "departamento": "Operaciones",
+   "count": 35
+  },
+  {
+   "departamento": "Administración",
+   "count": 31
+  },
+  {
+   "departamento": "Corporativo",
+   "count": 21
+  },
+  {
+   "departamento": "Comercial",
+   "count": 18
+  },
+  {
+   "departamento": "CEDIS",
+   "count": 12
+  },
+  {
+   "departamento": "Sistemas",
+   "count": 7
+  },
+  {
+   "departamento": "Crédito y Riesgos",
+   "count": 7
+  }
+ ],
+ "colaboradores_por_sede": [
+  {
+   "sede": "Oficinas Revolucion",
+   "count": 59
+  },
+  {
+   "sede": "CEDIS",
+   "count": 21
+  },
+  {
+   "sede": "Taller",
+   "count": 12
+  },
+  {
+   "sede": "Oficinas Guadalquivir",
+   "count": 7
+  },
+  {
+   "sede": "Madero",
+   "count": 6
+  },
+  {
+   "sede": "Venustiano Carranza",
+   "count": 5
+  },
+  {
+   "sede": "Los Angeles",
+   "count": 5
+  },
+  {
+   "sede": "Oficinas Taxis",
+   "count": 4
+  },
+  {
+   "sede": "Guadalupe",
+   "count": 4
+  },
+  {
+   "sede": "Gonzalitos",
+   "count": 3
+  },
+  {
+   "sede": "Sendero",
+   "count": 1
+  },
+  {
+   "sede": "Apodaca",
+   "count": 1
+  },
+  {
+   "sede": "Socio Comercial",
+   "count": 1
+  },
+  {
+   "sede": "Sin asignar",
+   "count": 1
+  },
+  {
+   "sede": "Lincoln",
+   "count": 1
+  }
+ ],
+ "colaboradores_por_nivel": [
+  {
+   "nivel": "Operativo",
+   "count": 105
+  },
+  {
+   "nivel": "Coordinación",
+   "count": 2
+  },
+  {
+   "nivel": "Jefatura",
+   "count": 18
+  },
+  {
+   "nivel": "Gerencia",
+   "count": 5
+  },
+  {
+   "nivel": "Dirección",
+   "count": 1
+  }
+ ],
+ "contrataciones_por_mes_2026": [
+  {
+   "mes": "Ene",
+   "mes_num": 1,
+   "count": 0
+  },
+  {
+   "mes": "Feb",
+   "mes_num": 2,
+   "count": 1
+  },
+  {
+   "mes": "Mar",
+   "mes_num": 3,
+   "count": 2
+  },
+  {
+   "mes": "Abr",
+   "mes_num": 4,
+   "count": 0
+  },
+  {
+   "mes": "May",
+   "mes_num": 5,
+   "count": 2
+  },
+  {
+   "mes": "Jun",
+   "mes_num": 6,
+   "count": 2
+  },
+  {
+   "mes": "Jul",
+   "mes_num": 7,
+   "count": 8
+  },
+  {
+   "mes": "Ago",
+   "mes_num": 8,
+   "count": 2
+  },
+  {
+   "mes": "Sep",
+   "mes_num": 9,
+   "count": 0
+  },
+  {
+   "mes": "Oct",
+   "mes_num": 10,
+   "count": 0
+  },
+  {
+   "mes": "Nov",
+   "mes_num": 11,
+   "count": 0
+  },
+  {
+   "mes": "Dic",
+   "mes_num": 12,
+   "count": 0
+  }
+ ],
+ "bajas_por_mes_2026": [
+  {
+   "mes": "Ene",
+   "mes_num": 1,
+   "count": 0
+  },
+  {
+   "mes": "Feb",
+   "mes_num": 2,
+   "count": 0
+  },
+  {
+   "mes": "Mar",
+   "mes_num": 3,
+   "count": 0
+  },
+  {
+   "mes": "Abr",
+   "mes_num": 4,
+   "count": 0
+  },
+  {
+   "mes": "May",
+   "mes_num": 5,
+   "count": 0
+  },
+  {
+   "mes": "Jun",
+   "mes_num": 6,
+   "count": 0
+  },
+  {
+   "mes": "Jul",
+   "mes_num": 7,
+   "count": 0
+  },
+  {
+   "mes": "Ago",
+   "mes_num": 8,
+   "count": 0
+  },
+  {
+   "mes": "Sep",
+   "mes_num": 9,
+   "count": 0
+  },
+  {
+   "mes": "Oct",
+   "mes_num": 10,
+   "count": 0
+  },
+  {
+   "mes": "Nov",
+   "mes_num": 11,
+   "count": 0
+  },
+  {
+   "mes": "Dic",
+   "mes_num": 12,
+   "count": 0
+  }
+ ],
+ "bajas_por_mes_2025": [
+  {
+   "mes": "Ene",
+   "mes_num": 1,
+   "count": 0
+  },
+  {
+   "mes": "Feb",
+   "mes_num": 2,
+   "count": 0
+  },
+  {
+   "mes": "Mar",
+   "mes_num": 3,
+   "count": 0
+  },
+  {
+   "mes": "Abr",
+   "mes_num": 4,
+   "count": 0
+  },
+  {
+   "mes": "May",
+   "mes_num": 5,
+   "count": 0
+  },
+  {
+   "mes": "Jun",
+   "mes_num": 6,
+   "count": 0
+  },
+  {
+   "mes": "Jul",
+   "mes_num": 7,
+   "count": 0
+  },
+  {
+   "mes": "Ago",
+   "mes_num": 8,
+   "count": 0
+  },
+  {
+   "mes": "Sep",
+   "mes_num": 9,
+   "count": 0
+  },
+  {
+   "mes": "Oct",
+   "mes_num": 10,
+   "count": 0
+  },
+  {
+   "mes": "Nov",
+   "mes_num": 11,
+   "count": 0
+  },
+  {
+   "mes": "Dic",
+   "mes_num": 12,
+   "count": 0
+  }
+ ],
+ "incidencias_totales": {
+  "home_office_solicitudes": 0,
+  "permisos_total": 0,
+  "vacaciones_solicitudes": 0,
+  "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
+ },
+ "vacantes_2025": {
+  "total": 0,
+  "por_estatus": {},
+  "dias_promedio_cobertura": null,
+  "contratados": 0
+ },
+ "fuentes_reclutamiento_2025": [],
+ "vacantes_activas_2026": [],
+ "capacitacion_catalogo": [],
+ "capacitacion_horas_por_departamento": [],
+ "capacitacion_resumen": {
+  "total_horas_persona_completadas": 0,
+  "personas_unicas_capacitadas": 0,
+  "cursos_en_catalogo": 0,
+  "cumplimiento_promedio_pct": null
+ },
+ "seguimiento_periodo_prueba": {
+  "total": 13,
+  "fuente": "Calculado desde fecha de ingreso (90 días) — Reporte 18/08/2026",
+  "nota_validacion": "Validar tipo de contrato y estatus de onboarding con RH Datamovil.",
+  "colaboradores": [
+   {
+    "nombre_visible": "Jesus Abner A.",
+    "iniciales": "J.A.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-05-20",
+    "fecha_ingreso_display": "20/05/2026",
+    "dias_desde_ingreso": 90,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-08-18",
+    "fecha_vencimiento_display": "18/08/2026",
+    "dias_restantes_prueba": 0
+   },
+   {
+    "nombre_visible": "Jehu Alexis P.",
+    "iniciales": "J.P.",
+    "puesto": "Mecanico B",
+    "departamento": "Operaciones",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-06-09",
+    "fecha_ingreso_display": "09/06/2026",
+    "dias_desde_ingreso": 70,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-09-07",
+    "fecha_vencimiento_display": "07/09/2026",
+    "dias_restantes_prueba": 20
+   },
+   {
+    "nombre_visible": "Karla V.",
+    "iniciales": "K.V.",
+    "puesto": "Ejecutivo De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-06-16",
+    "fecha_ingreso_display": "16/06/2026",
+    "dias_desde_ingreso": 63,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-09-14",
+    "fecha_vencimiento_display": "14/09/2026",
+    "dias_restantes_prueba": 27
+   },
+   {
+    "nombre_visible": "Ludivina Natali V.",
+    "iniciales": "L.V.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-01",
+    "fecha_ingreso_display": "01/07/2026",
+    "dias_desde_ingreso": 48,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-09-29",
+    "fecha_vencimiento_display": "29/09/2026",
+    "dias_restantes_prueba": 42
+   },
+   {
+    "nombre_visible": "Indra Gabin G.",
+    "iniciales": "I.G.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-07",
+    "fecha_ingreso_display": "07/07/2026",
+    "dias_desde_ingreso": 42,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-05",
+    "fecha_vencimiento_display": "05/10/2026",
+    "dias_restantes_prueba": 48
+   },
+   {
+    "nombre_visible": "Christian Dayan H.",
+    "iniciales": "C.H.",
+    "puesto": "Emisor De Polizas",
+    "departamento": "Administración",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-14",
+    "fecha_ingreso_display": "14/07/2026",
+    "dias_desde_ingreso": 35,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-12",
+    "fecha_vencimiento_display": "12/10/2026",
+    "dias_restantes_prueba": 55
+   },
+   {
+    "nombre_visible": "Ana Yamileth G.",
+    "iniciales": "A.G.",
+    "puesto": "Capturista",
+    "departamento": "Operaciones",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-16",
+    "fecha_ingreso_display": "16/07/2026",
+    "dias_desde_ingreso": 33,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-14",
+    "fecha_vencimiento_display": "14/10/2026",
+    "dias_restantes_prueba": 57
+   },
+   {
+    "nombre_visible": "Jose Israel C.",
+    "iniciales": "J.C.",
+    "puesto": "Ejecutivo De Contratos",
+    "departamento": "Administración",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-20",
+    "fecha_ingreso_display": "20/07/2026",
+    "dias_desde_ingreso": 29,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-18",
+    "fecha_vencimiento_display": "18/10/2026",
+    "dias_restantes_prueba": 61
+   },
+   {
+    "nombre_visible": "Ezequiel G.",
+    "iniciales": "E.G.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-27",
+    "fecha_ingreso_display": "27/07/2026",
+    "dias_desde_ingreso": 22,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-25",
+    "fecha_vencimiento_display": "25/10/2026",
+    "dias_restantes_prueba": 68
+   },
+   {
+    "nombre_visible": "Eli Benjamin S.",
+    "iniciales": "E.S.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-27",
+    "fecha_ingreso_display": "27/07/2026",
+    "dias_desde_ingreso": 22,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-25",
+    "fecha_vencimiento_display": "25/10/2026",
+    "dias_restantes_prueba": 68
+   },
+   {
+    "nombre_visible": "Myriam Selene R.",
+    "iniciales": "M.R.",
+    "puesto": "Supervisor De Crm",
+    "departamento": "Comercial",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-07-28",
+    "fecha_ingreso_display": "28/07/2026",
+    "dias_desde_ingreso": 21,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-10-26",
+    "fecha_vencimiento_display": "26/10/2026",
+    "dias_restantes_prueba": 69
+   },
+   {
+    "nombre_visible": "Jonathan M.",
+    "iniciales": "J.M.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-08-05",
+    "fecha_ingreso_display": "05/08/2026",
+    "dias_desde_ingreso": 13,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-11-03",
+    "fecha_vencimiento_display": "03/11/2026",
+    "dias_restantes_prueba": 77
+   },
+   {
+    "nombre_visible": "Julio Cesar M.",
+    "iniciales": "J.M.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "responsable_directo": "",
+    "fecha_ingreso": "2026-08-14",
+    "fecha_ingreso_display": "14/08/2026",
+    "dias_desde_ingreso": 4,
+    "estatus_onboarding": "Sin captura",
+    "ev_onboarding_jefe": null,
+    "ev_onboarding_colaborador": null,
+    "renovacion": null,
+    "tipo_contrato": null,
+    "fecha_vencimiento_prueba": "2026-11-12",
+    "fecha_vencimiento_display": "12/11/2026",
+    "dias_restantes_prueba": 86
+   }
+  ]
+ },
+ "bajas_clasificadas": {
+  "2026": {
+   "total": 0,
+   "voluntarias": 0,
+   "involuntarias": 0,
+   "sin_clasificar": 0,
+   "pct_voluntarias": 0,
+   "pct_involuntarias": 0,
+   "motivos": {},
+   "detalle": [],
+   "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
+  },
+  "2025": {
+   "total": 0,
+   "voluntarias": 0,
+   "involuntarias": 0,
+   "sin_clasificar": 0,
+   "pct_voluntarias": 0,
+   "pct_involuntarias": 0,
+   "motivos": {},
+   "detalle": [],
+   "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
+  }
+ },
+ "colaboradores_iniciales": [
+  {
+   "iniciales": "H.M.",
+   "puesto": "Jefe De Operaciones Taxis",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2015-02-01",
+   "antiguedad_meses": 138
+  },
+  {
+   "iniciales": "C.R.",
+   "puesto": "Jefe De Operaciones Y Procesos",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2021-01-18",
+   "antiguedad_meses": 67
+  },
+  {
+   "iniciales": "M.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2017-08-01",
+   "antiguedad_meses": 108
+  },
+  {
+   "iniciales": "L.C.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-03-27",
+   "antiguedad_meses": 16
+  },
+  {
+   "iniciales": "M.C.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2012-06-01",
+   "antiguedad_meses": 170
+  },
+  {
+   "iniciales": "A.C.",
+   "puesto": "Contador",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2020-09-22",
+   "antiguedad_meses": 70
+  },
+  {
+   "iniciales": "A.D.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "fecha_ingreso": "2016-10-17",
+   "antiguedad_meses": 118
+  },
+  {
+   "iniciales": "S.G.",
+   "puesto": "Analista De Recursos Humanos Hrbp",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2017-09-18",
+   "antiguedad_meses": 107
+  },
+  {
+   "iniciales": "B.G.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "fecha_ingreso": "2020-07-15",
+   "antiguedad_meses": 73
+  },
+  {
+   "iniciales": "V.L.",
+   "puesto": "Aux. De Seguros",
+   "departamento": "Administración",
+   "fecha_ingreso": "2019-07-29",
+   "antiguedad_meses": 84
+  },
+  {
+   "iniciales": "V.M.",
+   "puesto": "Jefe De Ventas",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2018-05-01",
+   "antiguedad_meses": 99
+  },
+  {
+   "iniciales": "J.M.",
+   "puesto": "Jefe De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2010-07-19",
+   "antiguedad_meses": 192
+  },
+  {
+   "iniciales": "G.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2020-01-16",
+   "antiguedad_meses": 79
+  },
+  {
+   "iniciales": "M.O.",
+   "puesto": "Cuentas Por Pagar",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2017-03-21",
+   "antiguedad_meses": 112
+  },
+  {
+   "iniciales": "M.R.",
+   "puesto": "Supervisor De Crm",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2026-07-28",
+   "antiguedad_meses": 0
+  },
+  {
+   "iniciales": "F.C.",
+   "puesto": "Jefe De Almacen",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2006-12-16",
+   "antiguedad_meses": 236
+  },
+  {
+   "iniciales": "M.D.",
+   "puesto": "Jefe De Recolecciones Y Valuaciones",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2013-07-01",
+   "antiguedad_meses": 157
+  },
+  {
+   "iniciales": "M.H.",
+   "puesto": "Fotografia",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2015-10-05",
+   "antiguedad_meses": 130
+  },
+  {
+   "iniciales": "J.H.",
+   "puesto": "Tecnico Valuador",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2016-03-07",
+   "antiguedad_meses": 125
+  },
+  {
+   "iniciales": "A.H.",
+   "puesto": "Jefe De Taller",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2018-07-11",
+   "antiguedad_meses": 97
+  },
+  {
+   "iniciales": "L.M.",
+   "puesto": "Aux. De Almacen",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2011-01-01",
+   "antiguedad_meses": 187
+  },
+  {
+   "iniciales": "J.S.",
+   "puesto": "Jefe De Compras",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2009-05-18",
+   "antiguedad_meses": 207
+  },
+  {
+   "iniciales": "C.C.",
+   "puesto": "Jefe De Infraestructura",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2021-08-20",
+   "antiguedad_meses": 59
+  },
+  {
+   "iniciales": "J.L.",
+   "puesto": "Gerente De Recursos Humanos",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2021-09-16",
+   "antiguedad_meses": 59
+  },
+  {
+   "iniciales": "M.N.",
+   "puesto": "Contador Sr",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2021-10-05",
+   "antiguedad_meses": 58
+  },
+  {
+   "iniciales": "J.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2021-11-16",
+   "antiguedad_meses": 57
+  },
+  {
+   "iniciales": "C.T.",
+   "puesto": "Gerente Administrativo",
+   "departamento": "Administración",
+   "fecha_ingreso": "2006-09-01",
+   "antiguedad_meses": 239
+  },
+  {
+   "iniciales": "J.G.",
+   "puesto": "Jefe De Seguros Y Garantías",
+   "departamento": "Administración",
+   "fecha_ingreso": "2007-04-15",
+   "antiguedad_meses": 232
+  },
+  {
+   "iniciales": "R.M.",
+   "puesto": "Gerente De Tecnologias De La Informacion",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2022-06-20",
+   "antiguedad_meses": 49
+  },
+  {
+   "iniciales": "G.T.",
+   "puesto": "Jefe De Contabilidad",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2015-01-26",
+   "antiguedad_meses": 138
+  },
+  {
+   "iniciales": "A.G.",
+   "puesto": "Contador General",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2005-05-16",
+   "antiguedad_meses": 255
+  },
+  {
+   "iniciales": "L.Z.",
+   "puesto": "Jefe De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2022-06-20",
+   "antiguedad_meses": 49
+  },
+  {
+   "iniciales": "D.R.",
+   "puesto": "Ejecutivo De Atencion A Clientes Sr",
+   "departamento": "Administración",
+   "fecha_ingreso": "2022-06-27",
+   "antiguedad_meses": 49
+  },
+  {
+   "iniciales": "F.D.",
+   "puesto": "Jefe De Legal",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2022-07-01",
+   "antiguedad_meses": 49
+  },
+  {
+   "iniciales": "M.R.",
+   "puesto": "Jefe De Desarrollo",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2022-08-08",
+   "antiguedad_meses": 48
+  },
+  {
+   "iniciales": "M.G.",
+   "puesto": "Jefe De Gestion De Riesgos",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2022-08-22",
+   "antiguedad_meses": 47
+  },
+  {
+   "iniciales": "A.E.",
+   "puesto": "Coordinador De Valuaciones",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2022-09-19",
+   "antiguedad_meses": 46
+  },
+  {
+   "iniciales": "C.T.",
+   "puesto": "Gerente Comercial Y Operaciones",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2008-05-01",
+   "antiguedad_meses": 219
+  },
+  {
+   "iniciales": "J.A.",
+   "puesto": "Mecanico A",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2020-08-14",
+   "antiguedad_meses": 72
+  },
+  {
+   "iniciales": "A.A.",
+   "puesto": "Mecanico A",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2022-11-14",
+   "antiguedad_meses": 45
+  },
+  {
+   "iniciales": "A.M.",
+   "puesto": "Limpieza",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2022-07-25",
+   "antiguedad_meses": 48
+  },
+  {
+   "iniciales": "R.S.",
+   "puesto": "Detallador-responsale De Area",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2015-03-09",
+   "antiguedad_meses": 137
+  },
+  {
+   "iniciales": "B.G.",
+   "puesto": "Valuador De Autos Externos",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2019-05-30",
+   "antiguedad_meses": 86
+  },
+  {
+   "iniciales": "S.R.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2018-06-04",
+   "antiguedad_meses": 98
+  },
+  {
+   "iniciales": "J.V.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2019-05-27",
+   "antiguedad_meses": 86
+  },
+  {
+   "iniciales": "S.A.",
+   "puesto": "Jefe De Mantenimiento",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2019-02-14",
+   "antiguedad_meses": 90
+  },
+  {
+   "iniciales": "A.C.",
+   "puesto": "Chofer",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2020-10-02",
+   "antiguedad_meses": 70
+  },
+  {
+   "iniciales": "A.H.",
+   "puesto": "Pulidor",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "1998-07-31",
+   "antiguedad_meses": 336
+  },
+  {
+   "iniciales": "C.C.",
+   "puesto": "Chofer",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2022-09-21",
+   "antiguedad_meses": 46
+  },
+  {
+   "iniciales": "R.L.",
+   "puesto": "Director General",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2011-10-01",
+   "antiguedad_meses": 178
+  },
+  {
+   "iniciales": "J.H.",
+   "puesto": "Gerente De Finanzas Y Contraloria",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2022-10-17",
+   "antiguedad_meses": 46
+  },
+  {
+   "iniciales": "I.T.",
+   "puesto": "Desarrollador",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2023-01-16",
+   "antiguedad_meses": 43
+  },
+  {
+   "iniciales": "O.R.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2023-01-16",
+   "antiguedad_meses": 43
+  },
+  {
+   "iniciales": "H.G.",
+   "puesto": "Gestor",
+   "departamento": "Administración",
+   "fecha_ingreso": "2022-08-10",
+   "antiguedad_meses": 48
+  },
+  {
+   "iniciales": "M.D.",
+   "puesto": "Mecanico De Inspeccion Final",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2023-03-27",
+   "antiguedad_meses": 40
+  },
+  {
+   "iniciales": "L.G.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2023-04-17",
+   "antiguedad_meses": 40
+  },
+  {
+   "iniciales": "S.T.",
+   "puesto": "Ejecutivo De Atencion A Clientes Sr",
+   "departamento": "Administración",
+   "fecha_ingreso": "2023-04-22",
+   "antiguedad_meses": 39
+  },
+  {
+   "iniciales": "S.P.",
+   "puesto": "Responsable De Archivo Y Digitalizacion",
+   "departamento": "Administración",
+   "fecha_ingreso": "2023-05-07",
+   "antiguedad_meses": 39
+  },
+  {
+   "iniciales": "E.V.",
+   "puesto": "Instalador De Dispositivo Datamovil",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2023-05-10",
+   "antiguedad_meses": 39
+  },
+  {
+   "iniciales": "E.D.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2023-05-24",
+   "antiguedad_meses": 38
+  },
+  {
+   "iniciales": "I.N.",
+   "puesto": "Aux. Administrativo",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2024-01-15",
+   "antiguedad_meses": 31
+  },
+  {
+   "iniciales": "P.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2023-08-07",
+   "antiguedad_meses": 36
+  },
+  {
+   "iniciales": "E.M.",
+   "puesto": "Aux. Contable",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2023-09-27",
+   "antiguedad_meses": 34
+  },
+  {
+   "iniciales": "R.L.",
+   "puesto": "Desarrollador",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2023-10-04",
+   "antiguedad_meses": 34
+  },
+  {
+   "iniciales": "M.C.",
+   "puesto": "Analista De Planeación Financiera",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2023-11-01",
+   "antiguedad_meses": 33
+  },
+  {
+   "iniciales": "D.M.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "fecha_ingreso": "2023-11-06",
+   "antiguedad_meses": 33
+  },
+  {
+   "iniciales": "O.P.",
+   "puesto": "Atencion A Clientes Y Asistente De Operaciones",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-02-01",
+   "antiguedad_meses": 30
+  },
+  {
+   "iniciales": "F.M.",
+   "puesto": "Contador",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2024-01-15",
+   "antiguedad_meses": 31
+  },
+  {
+   "iniciales": "S.S.",
+   "puesto": "Gestor",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2024-01-10",
+   "antiguedad_meses": 31
+  },
+  {
+   "iniciales": "K.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2023-11-13",
+   "antiguedad_meses": 33
+  },
+  {
+   "iniciales": "P.A.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2024-03-04",
+   "antiguedad_meses": 29
+  },
+  {
+   "iniciales": "L.M.",
+   "puesto": "Aux. Administrativo",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2024-03-11",
+   "antiguedad_meses": 29
+  },
+  {
+   "iniciales": "E.A.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-03-11",
+   "antiguedad_meses": 29
+  },
+  {
+   "iniciales": "A.G.",
+   "puesto": "Asistente De Archivo",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-03-25",
+   "antiguedad_meses": 28
+  },
+  {
+   "iniciales": "H.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-04-18",
+   "antiguedad_meses": 28
+  },
+  {
+   "iniciales": "J.R.",
+   "puesto": "Asistente De Dirección",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2024-04-01",
+   "antiguedad_meses": 28
+  },
+  {
+   "iniciales": "A.V.",
+   "puesto": "Analista De Legal",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2024-04-22",
+   "antiguedad_meses": 27
+  },
+  {
+   "iniciales": "F.H.",
+   "puesto": "Desarrollador Sr",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2024-05-06",
+   "antiguedad_meses": 27
+  },
+  {
+   "iniciales": "O.A.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-05-06",
+   "antiguedad_meses": 27
+  },
+  {
+   "iniciales": "L.R.",
+   "puesto": "Analista De Credito Y Riesgos",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2024-05-27",
+   "antiguedad_meses": 26
+  },
+  {
+   "iniciales": "M.P.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-07-24",
+   "antiguedad_meses": 24
+  },
+  {
+   "iniciales": "H.V.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-08-12",
+   "antiguedad_meses": 24
+  },
+  {
+   "iniciales": "R.M.",
+   "puesto": "Tecnico Valuador",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-08-19",
+   "antiguedad_meses": 23
+  },
+  {
+   "iniciales": "E.L.",
+   "puesto": "Guardia Intendente",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-08-21",
+   "antiguedad_meses": 23
+  },
+  {
+   "iniciales": "A.P.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-08-26",
+   "antiguedad_meses": 23
+  },
+  {
+   "iniciales": "J.M.",
+   "puesto": "Jefe De Marketing",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2024-09-17",
+   "antiguedad_meses": 23
+  },
+  {
+   "iniciales": "J.H.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-10-02",
+   "antiguedad_meses": 22
+  },
+  {
+   "iniciales": "D.G.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2024-10-21",
+   "antiguedad_meses": 21
+  },
+  {
+   "iniciales": "J.R.",
+   "puesto": "Aux. Contable Ii",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2024-10-23",
+   "antiguedad_meses": 21
+  },
+  {
+   "iniciales": "L.P.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2024-10-28",
+   "antiguedad_meses": 21
+  },
+  {
+   "iniciales": "J.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2024-11-04",
+   "antiguedad_meses": 21
+  },
+  {
+   "iniciales": "H.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2024-11-05",
+   "antiguedad_meses": 21
+  },
+  {
+   "iniciales": "E.P.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2024-12-11",
+   "antiguedad_meses": 20
+  },
+  {
+   "iniciales": "M.I.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-01-06",
+   "antiguedad_meses": 19
+  },
+  {
+   "iniciales": "F.L.",
+   "puesto": "Gestor De Operaciones Taxis",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2025-01-13",
+   "antiguedad_meses": 19
+  },
+  {
+   "iniciales": "K.S.",
+   "puesto": "Auxiliar De Entregas",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2025-01-21",
+   "antiguedad_meses": 18
+  },
+  {
+   "iniciales": "M.T.",
+   "puesto": "Limpieza-cedis",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2024-12-30",
+   "antiguedad_meses": 19
+  },
+  {
+   "iniciales": "J.R.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2025-02-24",
+   "antiguedad_meses": 17
+  },
+  {
+   "iniciales": "A.T.",
+   "puesto": "Jefe De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2025-02-28",
+   "antiguedad_meses": 17
+  },
+  {
+   "iniciales": "M.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2025-03-03",
+   "antiguedad_meses": 17
+  },
+  {
+   "iniciales": "H.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2025-03-20",
+   "antiguedad_meses": 16
+  },
+  {
+   "iniciales": "J.T.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-04-07",
+   "antiguedad_meses": 16
+  },
+  {
+   "iniciales": "J.D.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-04-14",
+   "antiguedad_meses": 16
+  },
+  {
+   "iniciales": "A.R.",
+   "puesto": "Gestor",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2025-04-28",
+   "antiguedad_meses": 15
+  },
+  {
+   "iniciales": "F.M.",
+   "puesto": "Analista De Legal",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2025-05-05",
+   "antiguedad_meses": 15
+  },
+  {
+   "iniciales": "I.S.",
+   "puesto": "Ejecutivo De Mesa De Control Y Monitoreo",
+   "departamento": "Administración",
+   "fecha_ingreso": "2025-06-13",
+   "antiguedad_meses": 14
+  },
+  {
+   "iniciales": "S.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-06-23",
+   "antiguedad_meses": 13
+  },
+  {
+   "iniciales": "L.M.",
+   "puesto": "Aux. De Pago De Contratos",
+   "departamento": "CEDIS",
+   "fecha_ingreso": "2025-06-30",
+   "antiguedad_meses": 13
+  },
+  {
+   "iniciales": "E.V.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2025-06-30",
+   "antiguedad_meses": 13
+  },
+  {
+   "iniciales": "F.V.",
+   "puesto": "Chofer-almacen",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2025-08-04",
+   "antiguedad_meses": 12
+  },
+  {
+   "iniciales": "R.V.",
+   "puesto": "Ingeniero De Infraestructura",
+   "departamento": "Sistemas",
+   "fecha_ingreso": "2025-08-25",
+   "antiguedad_meses": 11
+  },
+  {
+   "iniciales": "G.M.",
+   "puesto": "Analista De Marketing",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2025-09-17",
+   "antiguedad_meses": 11
+  },
+  {
+   "iniciales": "E.E.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2025-09-22",
+   "antiguedad_meses": 10
+  },
+  {
+   "iniciales": "A.L.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2025-10-01",
+   "antiguedad_meses": 10
+  },
+  {
+   "iniciales": "K.O.",
+   "puesto": "Aux. Contable",
+   "departamento": "Corporativo",
+   "fecha_ingreso": "2025-10-10",
+   "antiguedad_meses": 10
+  },
+  {
+   "iniciales": "E.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2026-02-04",
+   "antiguedad_meses": 6
+  },
+  {
+   "iniciales": "L.H.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-03-09",
+   "antiguedad_meses": 5
+  },
+  {
+   "iniciales": "D.A.",
+   "puesto": "Chofer Motociclista",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-03-25",
+   "antiguedad_meses": 4
+  },
+  {
+   "iniciales": "F.V.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-05-04",
+   "antiguedad_meses": 3
+  },
+  {
+   "iniciales": "J.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2026-05-20",
+   "antiguedad_meses": 2
+  },
+  {
+   "iniciales": "E.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-07-27",
+   "antiguedad_meses": 0
+  },
+  {
+   "iniciales": "J.P.",
+   "puesto": "Mecanico B",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-06-09",
+   "antiguedad_meses": 2
+  },
+  {
+   "iniciales": "K.V.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "fecha_ingreso": "2026-06-16",
+   "antiguedad_meses": 2
+  },
+  {
+   "iniciales": "I.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-07-07",
+   "antiguedad_meses": 1
+  },
+  {
+   "iniciales": "L.V.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2026-07-01",
+   "antiguedad_meses": 1
+  },
+  {
+   "iniciales": "C.H.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "fecha_ingreso": "2026-07-14",
+   "antiguedad_meses": 1
+  },
+  {
+   "iniciales": "A.G.",
+   "puesto": "Capturista",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-07-16",
+   "antiguedad_meses": 1
+  },
+  {
+   "iniciales": "J.C.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "fecha_ingreso": "2026-07-20",
+   "antiguedad_meses": 0
+  },
+  {
+   "iniciales": "E.S.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "fecha_ingreso": "2026-07-27",
+   "antiguedad_meses": 0
+  },
+  {
+   "iniciales": "J.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "fecha_ingreso": "2026-08-05",
+   "antiguedad_meses": 0
+  },
+  {
+   "iniciales": "J.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "fecha_ingreso": "2026-08-14",
+   "antiguedad_meses": 0
+  }
+ ],
+ "historico_mensual_2026": {},
+ "detalle_ingresos_2026": [
+  {
+   "nombre_visible": "Elda Merari G.",
+   "iniciales": "E.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-02-04",
+   "fecha_ingreso_display": "04/02/2026",
+   "dias_antiguedad": 195,
+   "nivel": "Operativo",
+   "mes_ingreso": "february"
+  },
+  {
+   "nombre_visible": "Lamberto H.",
+   "iniciales": "L.H.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-03-09",
+   "fecha_ingreso_display": "09/03/2026",
+   "dias_antiguedad": 162,
+   "nivel": "Operativo",
+   "mes_ingreso": "march"
+  },
+  {
+   "nombre_visible": "Daniel A.",
+   "iniciales": "D.A.",
+   "puesto": "Chofer Motociclista",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-03-25",
+   "fecha_ingreso_display": "25/03/2026",
+   "dias_antiguedad": 146,
+   "nivel": "Operativo",
+   "mes_ingreso": "march"
+  },
+  {
+   "nombre_visible": "Fidencio Antonio V.",
+   "iniciales": "F.V.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-05-04",
+   "fecha_ingreso_display": "04/05/2026",
+   "dias_antiguedad": 106,
+   "nivel": "Operativo",
+   "mes_ingreso": "may"
+  },
+  {
+   "nombre_visible": "Jesus Abner A.",
+   "iniciales": "J.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-05-20",
+   "fecha_ingreso_display": "20/05/2026",
+   "dias_antiguedad": 90,
+   "nivel": "Operativo",
+   "mes_ingreso": "may"
+  },
+  {
+   "nombre_visible": "Jehu Alexis P.",
+   "iniciales": "J.P.",
+   "puesto": "Mecanico B",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-09",
+   "fecha_ingreso_display": "09/06/2026",
+   "dias_antiguedad": 70,
+   "nivel": "Operativo",
+   "mes_ingreso": "june"
+  },
+  {
+   "nombre_visible": "Karla V.",
+   "iniciales": "K.V.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-16",
+   "fecha_ingreso_display": "16/06/2026",
+   "dias_antiguedad": 63,
+   "nivel": "Operativo",
+   "mes_ingreso": "june"
+  },
+  {
+   "nombre_visible": "Ludivina Natali V.",
+   "iniciales": "L.V.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-01",
+   "fecha_ingreso_display": "01/07/2026",
+   "dias_antiguedad": 48,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Indra Gabin G.",
+   "iniciales": "I.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-07",
+   "fecha_ingreso_display": "07/07/2026",
+   "dias_antiguedad": 42,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Christian Dayan H.",
+   "iniciales": "C.H.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-14",
+   "fecha_ingreso_display": "14/07/2026",
+   "dias_antiguedad": 35,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Ana Yamileth G.",
+   "iniciales": "A.G.",
+   "puesto": "Capturista",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-16",
+   "fecha_ingreso_display": "16/07/2026",
+   "dias_antiguedad": 33,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Jose Israel C.",
+   "iniciales": "J.C.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-20",
+   "fecha_ingreso_display": "20/07/2026",
+   "dias_antiguedad": 29,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Ezequiel G.",
+   "iniciales": "E.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "fecha_ingreso_display": "27/07/2026",
+   "dias_antiguedad": 22,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Eli Benjamin S.",
+   "iniciales": "E.S.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "fecha_ingreso_display": "27/07/2026",
+   "dias_antiguedad": 22,
+   "nivel": "Operativo",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Myriam Selene R.",
+   "iniciales": "M.R.",
+   "puesto": "Supervisor De Crm",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-28",
+   "fecha_ingreso_display": "28/07/2026",
+   "dias_antiguedad": 21,
+   "nivel": "Coordinación",
+   "mes_ingreso": "july"
+  },
+  {
+   "nombre_visible": "Jonathan M.",
+   "iniciales": "J.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-05",
+   "fecha_ingreso_display": "05/08/2026",
+   "dias_antiguedad": 13,
+   "nivel": "Operativo",
+   "mes_ingreso": "august"
+  },
+  {
+   "nombre_visible": "Julio Cesar M.",
+   "iniciales": "J.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-14",
+   "fecha_ingreso_display": "14/08/2026",
+   "dias_antiguedad": 4,
+   "nivel": "Operativo",
+   "mes_ingreso": "august"
+  }
+ ],
+ "detalle_bajas_2026": [],
+ "detalle_activos": [
+  {
+   "nombre_visible": "Adrian Alejandro T.",
+   "iniciales": "A.T.",
+   "puesto": "Jefe De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-02-28",
+   "antiguedad_meses": 17,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Alberto P.",
+   "iniciales": "A.P.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-08-26",
+   "antiguedad_meses": 23,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Ana Carmiña G.",
+   "iniciales": "A.G.",
+   "puesto": "Asistente De Archivo",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-03-25",
+   "antiguedad_meses": 28,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Angel Ivan D.",
+   "iniciales": "A.D.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2016-10-17",
+   "antiguedad_meses": 118,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Blanca Yazmin G.",
+   "iniciales": "B.G.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2020-07-15",
+   "antiguedad_meses": 73,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Carlos Alberto T.",
+   "iniciales": "C.T.",
+   "puesto": "Gerente Administrativo",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2006-09-01",
+   "antiguedad_meses": 239,
+   "nivel": "Gerencia",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Christian Dayan H.",
+   "iniciales": "C.H.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-14",
+   "antiguedad_meses": 1,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Daniel Aldahir R.",
+   "iniciales": "D.R.",
+   "puesto": "Ejecutivo De Atencion A Clientes Sr",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-06-27",
+   "antiguedad_meses": 49,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Dulce Maria Anahi M.",
+   "iniciales": "D.M.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-11-06",
+   "antiguedad_meses": 33,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Edgar Alejandro A.",
+   "iniciales": "E.A.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-03-11",
+   "antiguedad_meses": 29,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Elda Merari G.",
+   "iniciales": "E.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-02-04",
+   "antiguedad_meses": 6,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Eli Benjamin S.",
+   "iniciales": "E.S.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "antiguedad_meses": 0,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Elizabeth D.",
+   "iniciales": "E.D.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-05-24",
+   "antiguedad_meses": 38,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Hector Omar V.",
+   "iniciales": "H.V.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-08-12",
+   "antiguedad_meses": 24,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Heriberto A.",
+   "iniciales": "H.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-03-20",
+   "antiguedad_meses": 16,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Heriberto G.",
+   "iniciales": "H.G.",
+   "puesto": "Gestor",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-08-10",
+   "antiguedad_meses": 48,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Isela Guadalupe S.",
+   "iniciales": "I.S.",
+   "puesto": "Ejecutivo De Mesa De Control Y Monitoreo",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-06-13",
+   "antiguedad_meses": 14,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jaime M.",
+   "iniciales": "J.M.",
+   "puesto": "Jefe De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2010-07-19",
+   "antiguedad_meses": 192,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jesus Abner A.",
+   "iniciales": "J.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-05-20",
+   "antiguedad_meses": 2,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jorge Alberto R.",
+   "iniciales": "J.R.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-02-24",
+   "antiguedad_meses": 17,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jose Antonio G.",
+   "iniciales": "J.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2021-11-16",
+   "antiguedad_meses": 57,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jose Israel C.",
+   "iniciales": "J.C.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-20",
+   "antiguedad_meses": 0,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Juan Jose G.",
+   "iniciales": "J.G.",
+   "puesto": "Jefe De Seguros Y Garantías",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2007-04-15",
+   "antiguedad_meses": 232,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Julian Javier G.",
+   "iniciales": "J.G.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-11-04",
+   "antiguedad_meses": 21,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Manuel A.",
+   "iniciales": "M.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2017-08-01",
+   "antiguedad_meses": 108,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Maria Magdalena P.",
+   "iniciales": "M.P.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-07-24",
+   "antiguedad_meses": 24,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Moises Antonio A.",
+   "iniciales": "M.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-03-03",
+   "antiguedad_meses": 17,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Oliver Antonio A.",
+   "iniciales": "O.A.",
+   "puesto": "Ejecutivo De Atencion A Clientes",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-05-06",
+   "antiguedad_meses": 27,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Salvador P.",
+   "iniciales": "S.P.",
+   "puesto": "Responsable De Archivo Y Digitalizacion",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-05-07",
+   "antiguedad_meses": 39,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Sarid Jaely T.",
+   "iniciales": "S.T.",
+   "puesto": "Ejecutivo De Atencion A Clientes Sr",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-04-22",
+   "antiguedad_meses": 39,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Victor Jesus L.",
+   "iniciales": "V.L.",
+   "puesto": "Aux. De Seguros",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2019-07-29",
+   "antiguedad_meses": 84,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Alejandra Svetlana R.",
+   "iniciales": "A.R.",
+   "puesto": "Gestor",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-04-28",
+   "antiguedad_meses": 15,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Ana Laura E.",
+   "iniciales": "A.E.",
+   "puesto": "Coordinador De Valuaciones",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-09-19",
+   "antiguedad_meses": 46,
+   "nivel": "Coordinación",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Bryan Eliud G.",
+   "iniciales": "B.G.",
+   "puesto": "Valuador De Autos Externos",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2019-05-30",
+   "antiguedad_meses": 86,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Cynthia Dayanne R.",
+   "iniciales": "C.R.",
+   "puesto": "Jefe De Operaciones Y Procesos",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2021-01-18",
+   "antiguedad_meses": 67,
+   "nivel": "Jefatura",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Edgar Eduardo V.",
+   "iniciales": "E.V.",
+   "puesto": "Instalador De Dispositivo Datamovil",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-05-10",
+   "antiguedad_meses": 39,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Irasema Lizbeth N.",
+   "iniciales": "I.N.",
+   "puesto": "Aux. Administrativo",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-01-15",
+   "antiguedad_meses": 31,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jose Mauricio S.",
+   "iniciales": "J.S.",
+   "puesto": "Jefe De Compras",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2009-05-18",
+   "antiguedad_meses": 207,
+   "nivel": "Jefatura",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Karla Yamileth S.",
+   "iniciales": "K.S.",
+   "puesto": "Auxiliar De Entregas",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-01-21",
+   "antiguedad_meses": 18,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Laura M.",
+   "iniciales": "L.M.",
+   "puesto": "Aux. Administrativo",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-03-11",
+   "antiguedad_meses": 29,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Luz Maria M.",
+   "iniciales": "L.M.",
+   "puesto": "Aux. De Pago De Contratos",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-06-30",
+   "antiguedad_meses": 13,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Maria De Jesus T.",
+   "iniciales": "M.T.",
+   "puesto": "Limpieza-cedis",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-12-30",
+   "antiguedad_meses": 19,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Simon Eduardo S.",
+   "iniciales": "S.S.",
+   "puesto": "Gestor",
+   "departamento": "CEDIS",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-01-10",
+   "antiguedad_meses": 31,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Carlos Iraddy T.",
+   "iniciales": "C.T.",
+   "puesto": "Gerente Comercial Y Operaciones",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2008-05-01",
+   "antiguedad_meses": 219,
+   "nivel": "Gerencia",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Eliel E.",
+   "iniciales": "E.E.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-09-22",
+   "antiguedad_meses": 10,
+   "nivel": "Operativo",
+   "centro_trabajo": "Sin asignar"
+  },
+  {
+   "nombre_visible": "Gerardo Rafael M.",
+   "iniciales": "G.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2020-01-16",
+   "antiguedad_meses": 79,
+   "nivel": "Operativo",
+   "centro_trabajo": "Gonzalitos"
+  },
+  {
+   "nombre_visible": "Hernan Javier G.",
+   "iniciales": "H.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-11-05",
+   "antiguedad_meses": 21,
+   "nivel": "Operativo",
+   "centro_trabajo": "Sendero"
+  },
+  {
+   "nombre_visible": "Johana Iris T.",
+   "iniciales": "J.T.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-04-07",
+   "antiguedad_meses": 16,
+   "nivel": "Operativo",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Jonathan M.",
+   "iniciales": "J.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-05",
+   "antiguedad_meses": 0,
+   "nivel": "Operativo",
+   "centro_trabajo": "Lincoln"
+  },
+  {
+   "nombre_visible": "Juan Carlos D.",
+   "iniciales": "J.D.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-04-14",
+   "antiguedad_meses": 16,
+   "nivel": "Operativo",
+   "centro_trabajo": "Socio Comercial"
+  },
+  {
+   "nombre_visible": "Karla Abigail G.",
+   "iniciales": "K.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-11-13",
+   "antiguedad_meses": 33,
+   "nivel": "Operativo",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Laura Yamira C.",
+   "iniciales": "L.C.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-03-27",
+   "antiguedad_meses": 16,
+   "nivel": "Operativo",
+   "centro_trabajo": "Venustiano Carranza"
+  },
+  {
+   "nombre_visible": "Leslie Alejandra P.",
+   "iniciales": "L.P.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-10-28",
+   "antiguedad_meses": 21,
+   "nivel": "Operativo",
+   "centro_trabajo": "Guadalupe"
+  },
+  {
+   "nombre_visible": "Ludivina Natali V.",
+   "iniciales": "L.V.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-01",
+   "antiguedad_meses": 1,
+   "nivel": "Operativo",
+   "centro_trabajo": "Venustiano Carranza"
+  },
+  {
+   "nombre_visible": "Maria Isabel I.",
+   "iniciales": "M.I.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-01-06",
+   "antiguedad_meses": 19,
+   "nivel": "Operativo",
+   "centro_trabajo": "Apodaca"
+  },
+  {
+   "nombre_visible": "Maria Ninfa C.",
+   "iniciales": "M.C.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2012-06-01",
+   "antiguedad_meses": 170,
+   "nivel": "Operativo",
+   "centro_trabajo": "Los Angeles"
+  },
+  {
+   "nombre_visible": "Myriam Selene R.",
+   "iniciales": "M.R.",
+   "puesto": "Supervisor De Crm",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-28",
+   "antiguedad_meses": 0,
+   "nivel": "Coordinación",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Oscar Daniel R.",
+   "iniciales": "O.R.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-01-16",
+   "antiguedad_meses": 43,
+   "nivel": "Operativo",
+   "centro_trabajo": "Los Angeles"
+  },
+  {
+   "nombre_visible": "Patricia Guadalupe G.",
+   "iniciales": "P.G.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-08-07",
+   "antiguedad_meses": 36,
+   "nivel": "Operativo",
+   "centro_trabajo": "Venustiano Carranza"
+  },
+  {
+   "nombre_visible": "Samuel Emiliano M.",
+   "iniciales": "S.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-06-23",
+   "antiguedad_meses": 13,
+   "nivel": "Operativo",
+   "centro_trabajo": "Guadalupe"
+  },
+  {
+   "nombre_visible": "Valeria Alexandra M.",
+   "iniciales": "V.M.",
+   "puesto": "Jefe De Ventas",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2018-05-01",
+   "antiguedad_meses": 99,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Adriana M.",
+   "iniciales": "A.M.",
+   "puesto": "Limpieza",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-07-25",
+   "antiguedad_meses": 48,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Adriana Nohemi C.",
+   "iniciales": "A.C.",
+   "puesto": "Contador",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2020-09-22",
+   "antiguedad_meses": 70,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Alejandra Abigail V.",
+   "iniciales": "A.V.",
+   "puesto": "Analista De Legal",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-04-22",
+   "antiguedad_meses": 27,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Alma Patricia G.",
+   "iniciales": "A.G.",
+   "puesto": "Contador General",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2005-05-16",
+   "antiguedad_meses": 255,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Eydolina M.",
+   "iniciales": "E.M.",
+   "puesto": "Aux. Contable",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-09-27",
+   "antiguedad_meses": 34,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Fernando Alberto D.",
+   "iniciales": "F.D.",
+   "puesto": "Jefe De Legal",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-07-01",
+   "antiguedad_meses": 49,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Flor De Maria M.",
+   "iniciales": "F.M.",
+   "puesto": "Analista De Legal",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-05-05",
+   "antiguedad_meses": 15,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Francisco Gregorio M.",
+   "iniciales": "F.M.",
+   "puesto": "Contador",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-01-15",
+   "antiguedad_meses": 31,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Grecia Jazmin M.",
+   "iniciales": "G.M.",
+   "puesto": "Analista De Marketing",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-09-17",
+   "antiguedad_meses": 11,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Guadalupe T.",
+   "iniciales": "G.T.",
+   "puesto": "Jefe De Contabilidad",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2015-01-26",
+   "antiguedad_meses": 138,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Jhanet Isabel R.",
+   "iniciales": "J.R.",
+   "puesto": "Aux. Contable Ii",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-10-23",
+   "antiguedad_meses": 21,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Jorge Alejandro H.",
+   "iniciales": "J.H.",
+   "puesto": "Gerente De Finanzas Y Contraloria",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-10-17",
+   "antiguedad_meses": 46,
+   "nivel": "Gerencia",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Jose Javier L.",
+   "iniciales": "J.L.",
+   "puesto": "Gerente De Recursos Humanos",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2021-09-16",
+   "antiguedad_meses": 59,
+   "nivel": "Gerencia",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Juan Antonio M.",
+   "iniciales": "J.M.",
+   "puesto": "Jefe De Marketing",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-09-17",
+   "antiguedad_meses": 23,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Juana Idania R.",
+   "iniciales": "J.R.",
+   "puesto": "Asistente De Dirección",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-04-01",
+   "antiguedad_meses": 28,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Karen O.",
+   "iniciales": "K.O.",
+   "puesto": "Aux. Contable",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-10-10",
+   "antiguedad_meses": 10,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Mariana Fabiola N.",
+   "iniciales": "M.N.",
+   "puesto": "Contador Sr",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2021-10-05",
+   "antiguedad_meses": 58,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Mario Alberto O.",
+   "iniciales": "M.O.",
+   "puesto": "Cuentas Por Pagar",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2017-03-21",
+   "antiguedad_meses": 112,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Mauricio C.",
+   "iniciales": "M.C.",
+   "puesto": "Analista De Planeación Financiera",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-11-01",
+   "antiguedad_meses": 33,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Rafael Humberto L.",
+   "iniciales": "R.L.",
+   "puesto": "Director General",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2011-10-01",
+   "antiguedad_meses": 178,
+   "nivel": "Dirección",
+   "centro_trabajo": "Oficinas Guadalquivir"
+  },
+  {
+   "nombre_visible": "Saul Emmanuel G.",
+   "iniciales": "S.G.",
+   "puesto": "Analista De Recursos Humanos Hrbp",
+   "departamento": "Corporativo",
+   "responsable_directo": "",
+   "fecha_ingreso": "2017-09-18",
+   "antiguedad_meses": 107,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Dulce Mara G.",
+   "iniciales": "D.G.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-10-21",
+   "antiguedad_meses": 21,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Karla V.",
+   "iniciales": "K.V.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-16",
+   "antiguedad_meses": 2,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Lidia Berenice Z.",
+   "iniciales": "L.Z.",
+   "puesto": "Jefe De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-06-20",
+   "antiguedad_meses": 49,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Luis Missael R.",
+   "iniciales": "L.R.",
+   "puesto": "Analista De Credito Y Riesgos",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-05-27",
+   "antiguedad_meses": 26,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Luisa Nayely G.",
+   "iniciales": "L.G.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-04-17",
+   "antiguedad_meses": 40,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Maria Cristina G.",
+   "iniciales": "M.G.",
+   "puesto": "Jefe De Gestion De Riesgos",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-08-22",
+   "antiguedad_meses": 47,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Pablo Daniel A.",
+   "iniciales": "P.A.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-03-04",
+   "antiguedad_meses": 29,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Alan L.",
+   "iniciales": "A.L.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-10-01",
+   "antiguedad_meses": 10,
+   "nivel": "Operativo",
+   "centro_trabajo": "Los Angeles"
+  },
+  {
+   "nombre_visible": "Alejandro H.",
+   "iniciales": "A.H.",
+   "puesto": "Pulidor",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "1998-07-31",
+   "antiguedad_meses": 336,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Alfredo C.",
+   "iniciales": "A.C.",
+   "puesto": "Chofer",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2020-10-02",
+   "antiguedad_meses": 70,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Ana Yamileth G.",
+   "iniciales": "A.G.",
+   "puesto": "Capturista",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-16",
+   "antiguedad_meses": 1,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Taxis"
+  },
+  {
+   "nombre_visible": "Angel Daniel A.",
+   "iniciales": "A.A.",
+   "puesto": "Mecanico A",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-11-14",
+   "antiguedad_meses": 45,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Armando H.",
+   "iniciales": "A.H.",
+   "puesto": "Jefe De Taller",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2018-07-11",
+   "antiguedad_meses": 97,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Carlos Daniel C.",
+   "iniciales": "C.C.",
+   "puesto": "Chofer",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-09-21",
+   "antiguedad_meses": 46,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Daniel A.",
+   "iniciales": "D.A.",
+   "puesto": "Chofer Motociclista",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-03-25",
+   "antiguedad_meses": 4,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Eduardo Alejandro P.",
+   "iniciales": "E.P.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-12-11",
+   "antiguedad_meses": 20,
+   "nivel": "Operativo",
+   "centro_trabajo": "Guadalupe"
+  },
+  {
+   "nombre_visible": "Eduardo Enrique V.",
+   "iniciales": "E.V.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-06-30",
+   "antiguedad_meses": 13,
+   "nivel": "Operativo",
+   "centro_trabajo": "Gonzalitos"
+  },
+  {
+   "nombre_visible": "Enrique L.",
+   "iniciales": "E.L.",
+   "puesto": "Guardia Intendente",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-08-21",
+   "antiguedad_meses": 23,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Ezequiel G.",
+   "iniciales": "E.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "antiguedad_meses": 0,
+   "nivel": "Operativo",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Fidencio Antonio V.",
+   "iniciales": "F.V.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-05-04",
+   "antiguedad_meses": 3,
+   "nivel": "Operativo",
+   "centro_trabajo": "Guadalupe"
+  },
+  {
+   "nombre_visible": "Francisco Ivan L.",
+   "iniciales": "F.L.",
+   "puesto": "Gestor De Operaciones Taxis",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-01-13",
+   "antiguedad_meses": 19,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Taxis"
+  },
+  {
+   "nombre_visible": "Francisco Raymundo C.",
+   "iniciales": "F.C.",
+   "puesto": "Jefe De Almacen",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2006-12-16",
+   "antiguedad_meses": 236,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Francisco V.",
+   "iniciales": "F.V.",
+   "puesto": "Chofer-almacen",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-08-04",
+   "antiguedad_meses": 12,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Hernan M.",
+   "iniciales": "H.M.",
+   "puesto": "Jefe De Operaciones Taxis",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2015-02-01",
+   "antiguedad_meses": 138,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Taxis"
+  },
+  {
+   "nombre_visible": "Hugo Alberto M.",
+   "iniciales": "H.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-04-18",
+   "antiguedad_meses": 28,
+   "nivel": "Operativo",
+   "centro_trabajo": "Madero"
+  },
+  {
+   "nombre_visible": "Indra Gabin G.",
+   "iniciales": "I.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-07",
+   "antiguedad_meses": 1,
+   "nivel": "Operativo",
+   "centro_trabajo": "Venustiano Carranza"
+  },
+  {
+   "nombre_visible": "Jehu Alexis P.",
+   "iniciales": "J.P.",
+   "puesto": "Mecanico B",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-09",
+   "antiguedad_meses": 2,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Jonathan H.",
+   "iniciales": "J.H.",
+   "puesto": "Tecnico Valuador",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2016-03-07",
+   "antiguedad_meses": 125,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Jorge Alejandro A.",
+   "iniciales": "J.A.",
+   "puesto": "Mecanico A",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2020-08-14",
+   "antiguedad_meses": 72,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Jose Ricardo V.",
+   "iniciales": "J.V.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2019-05-27",
+   "antiguedad_meses": 86,
+   "nivel": "Operativo",
+   "centro_trabajo": "Venustiano Carranza"
+  },
+  {
+   "nombre_visible": "Juan Ramon H.",
+   "iniciales": "J.H.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-10-02",
+   "antiguedad_meses": 22,
+   "nivel": "Operativo",
+   "centro_trabajo": "Los Angeles"
+  },
+  {
+   "nombre_visible": "Julio Cesar M.",
+   "iniciales": "J.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-14",
+   "antiguedad_meses": 0,
+   "nivel": "Operativo",
+   "centro_trabajo": "Los Angeles"
+  },
+  {
+   "nombre_visible": "Lamberto H.",
+   "iniciales": "L.H.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-03-09",
+   "antiguedad_meses": 5,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Luis Angel M.",
+   "iniciales": "L.M.",
+   "puesto": "Aux. De Almacen",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2011-01-01",
+   "antiguedad_meses": 187,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Marco Antonio H.",
+   "iniciales": "M.H.",
+   "puesto": "Fotografia",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2015-10-05",
+   "antiguedad_meses": 130,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Mario Fernando D.",
+   "iniciales": "M.D.",
+   "puesto": "Jefe De Recolecciones Y Valuaciones",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2013-07-01",
+   "antiguedad_meses": 157,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Mauricio Angel D.",
+   "iniciales": "M.D.",
+   "puesto": "Mecanico De Inspeccion Final",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-03-27",
+   "antiguedad_meses": 40,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Oscar Abraham P.",
+   "iniciales": "O.P.",
+   "puesto": "Atencion A Clientes Y Asistente De Operaciones",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-02-01",
+   "antiguedad_meses": 30,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Taxis"
+  },
+  {
+   "nombre_visible": "Rigoberto M.",
+   "iniciales": "R.M.",
+   "puesto": "Tecnico Valuador",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-08-19",
+   "antiguedad_meses": 23,
+   "nivel": "Operativo",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Roberto Guadalupe S.",
+   "iniciales": "R.S.",
+   "puesto": "Detallador-responsale De Area",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2015-03-09",
+   "antiguedad_meses": 137,
+   "nivel": "Operativo",
+   "centro_trabajo": "CEDIS"
+  },
+  {
+   "nombre_visible": "Santos R.",
+   "iniciales": "S.R.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2018-06-04",
+   "antiguedad_meses": 98,
+   "nivel": "Operativo",
+   "centro_trabajo": "Gonzalitos"
+  },
+  {
+   "nombre_visible": "Sergio Alejandro A.",
+   "iniciales": "S.A.",
+   "puesto": "Jefe De Mantenimiento",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2019-02-14",
+   "antiguedad_meses": 90,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Taller"
+  },
+  {
+   "nombre_visible": "Carlos Eduardo C.",
+   "iniciales": "C.C.",
+   "puesto": "Jefe De Infraestructura",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2021-08-20",
+   "antiguedad_meses": 59,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Faustino De Jesus H.",
+   "iniciales": "F.H.",
+   "puesto": "Desarrollador Sr",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2024-05-06",
+   "antiguedad_meses": 27,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Irmin Amin T.",
+   "iniciales": "I.T.",
+   "puesto": "Desarrollador",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-01-16",
+   "antiguedad_meses": 43,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Mariana R.",
+   "iniciales": "M.R.",
+   "puesto": "Jefe De Desarrollo",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-08-08",
+   "antiguedad_meses": 48,
+   "nivel": "Jefatura",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Ricardo Josue M.",
+   "iniciales": "R.M.",
+   "puesto": "Gerente De Tecnologias De La Informacion",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2022-06-20",
+   "antiguedad_meses": 49,
+   "nivel": "Gerencia",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Rodolfo Javier L.",
+   "iniciales": "R.L.",
+   "puesto": "Desarrollador",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2023-10-04",
+   "antiguedad_meses": 34,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  },
+  {
+   "nombre_visible": "Ruben Dario V.",
+   "iniciales": "R.V.",
+   "puesto": "Ingeniero De Infraestructura",
+   "departamento": "Sistemas",
+   "responsable_directo": "",
+   "fecha_ingreso": "2025-08-25",
+   "antiguedad_meses": 11,
+   "nivel": "Operativo",
+   "centro_trabajo": "Oficinas Revolucion"
+  }
+ ],
+ "detalle_periodo_prueba": [
+  {
+   "nombre_visible": "Jesus Abner A.",
+   "iniciales": "J.A.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-05-20",
+   "fecha_ingreso_display": "20/05/2026",
+   "dias_desde_ingreso": 90,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-08-18",
+   "fecha_vencimiento_display": "18/08/2026",
+   "dias_restantes_prueba": 0
+  },
+  {
+   "nombre_visible": "Jehu Alexis P.",
+   "iniciales": "J.P.",
+   "puesto": "Mecanico B",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-09",
+   "fecha_ingreso_display": "09/06/2026",
+   "dias_desde_ingreso": 70,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-09-07",
+   "fecha_vencimiento_display": "07/09/2026",
+   "dias_restantes_prueba": 20
+  },
+  {
+   "nombre_visible": "Karla V.",
+   "iniciales": "K.V.",
+   "puesto": "Ejecutivo De Investigaciones",
+   "departamento": "Crédito y Riesgos",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-06-16",
+   "fecha_ingreso_display": "16/06/2026",
+   "dias_desde_ingreso": 63,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-09-14",
+   "fecha_vencimiento_display": "14/09/2026",
+   "dias_restantes_prueba": 27
+  },
+  {
+   "nombre_visible": "Ludivina Natali V.",
+   "iniciales": "L.V.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-01",
+   "fecha_ingreso_display": "01/07/2026",
+   "dias_desde_ingreso": 48,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-09-29",
+   "fecha_vencimiento_display": "29/09/2026",
+   "dias_restantes_prueba": 42
+  },
+  {
+   "nombre_visible": "Indra Gabin G.",
+   "iniciales": "I.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-07",
+   "fecha_ingreso_display": "07/07/2026",
+   "dias_desde_ingreso": 42,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-05",
+   "fecha_vencimiento_display": "05/10/2026",
+   "dias_restantes_prueba": 48
+  },
+  {
+   "nombre_visible": "Christian Dayan H.",
+   "iniciales": "C.H.",
+   "puesto": "Emisor De Polizas",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-14",
+   "fecha_ingreso_display": "14/07/2026",
+   "dias_desde_ingreso": 35,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-12",
+   "fecha_vencimiento_display": "12/10/2026",
+   "dias_restantes_prueba": 55
+  },
+  {
+   "nombre_visible": "Ana Yamileth G.",
+   "iniciales": "A.G.",
+   "puesto": "Capturista",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-16",
+   "fecha_ingreso_display": "16/07/2026",
+   "dias_desde_ingreso": 33,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-14",
+   "fecha_vencimiento_display": "14/10/2026",
+   "dias_restantes_prueba": 57
+  },
+  {
+   "nombre_visible": "Jose Israel C.",
+   "iniciales": "J.C.",
+   "puesto": "Ejecutivo De Contratos",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-20",
+   "fecha_ingreso_display": "20/07/2026",
+   "dias_desde_ingreso": 29,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-18",
+   "fecha_vencimiento_display": "18/10/2026",
+   "dias_restantes_prueba": 61
+  },
+  {
+   "nombre_visible": "Ezequiel G.",
+   "iniciales": "E.G.",
+   "puesto": "Auxiliar De Patio",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "fecha_ingreso_display": "27/07/2026",
+   "dias_desde_ingreso": 22,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-25",
+   "fecha_vencimiento_display": "25/10/2026",
+   "dias_restantes_prueba": 68
+  },
+  {
+   "nombre_visible": "Eli Benjamin S.",
+   "iniciales": "E.S.",
+   "puesto": "Ejecutivo De Cobranza",
+   "departamento": "Administración",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-27",
+   "fecha_ingreso_display": "27/07/2026",
+   "dias_desde_ingreso": 22,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-25",
+   "fecha_vencimiento_display": "25/10/2026",
+   "dias_restantes_prueba": 68
+  },
+  {
+   "nombre_visible": "Myriam Selene R.",
+   "iniciales": "M.R.",
+   "puesto": "Supervisor De Crm",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-07-28",
+   "fecha_ingreso_display": "28/07/2026",
+   "dias_desde_ingreso": 21,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-10-26",
+   "fecha_vencimiento_display": "26/10/2026",
+   "dias_restantes_prueba": 69
+  },
+  {
+   "nombre_visible": "Jonathan M.",
+   "iniciales": "J.M.",
+   "puesto": "Ejecutivo De Ventas Sr",
+   "departamento": "Comercial",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-05",
+   "fecha_ingreso_display": "05/08/2026",
+   "dias_desde_ingreso": 13,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-11-03",
+   "fecha_vencimiento_display": "03/11/2026",
+   "dias_restantes_prueba": 77
+  },
+  {
+   "nombre_visible": "Julio Cesar M.",
+   "iniciales": "J.M.",
+   "puesto": "Lavacoches",
+   "departamento": "Operaciones",
+   "responsable_directo": "",
+   "fecha_ingreso": "2026-08-14",
+   "fecha_ingreso_display": "14/08/2026",
+   "dias_desde_ingreso": 4,
+   "estatus_onboarding": "Sin captura",
+   "ev_onboarding_jefe": null,
+   "ev_onboarding_colaborador": null,
+   "renovacion": null,
+   "tipo_contrato": null,
+   "fecha_vencimiento_prueba": "2026-11-12",
+   "fecha_vencimiento_display": "12/11/2026",
+   "dias_restantes_prueba": 86
+  }
+ ],
+ "detalle_vacantes_2026": [],
+ "historico_incidencias": {
+  "periodo": null,
+  "total_registros": 0,
+  "por_tipo": {},
+  "por_departamento": {},
+  "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
+ },
+ "vacaciones_lft": {
+  "nota": "Días correspondientes calculados por LFT Art. 76 (reforma 2023) según antigüedad. Días tomados: pendiente de captura Datamovil.",
+  "total_dias_provisionados": 2122,
+  "detalle": [
+   {
+    "nombre_visible": "Alejandro H.",
+    "puesto": "Pulidor",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "1998-07-31",
+    "anos_servicio": 28,
+    "dias_correspondientes": 30,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "31/07"
+   },
+   {
+    "nombre_visible": "Alma Patricia G.",
+    "puesto": "Contador General",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2005-05-16",
+    "anos_servicio": 21,
+    "dias_correspondientes": 28,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/05"
+   },
+   {
+    "nombre_visible": "Carlos Alberto T.",
+    "puesto": "Gerente Administrativo",
+    "departamento": "Administración",
+    "fecha_ingreso": "2006-09-01",
+    "anos_servicio": 19,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/09"
+   },
+   {
+    "nombre_visible": "Francisco Raymundo C.",
+    "puesto": "Jefe De Almacen",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2006-12-16",
+    "anos_servicio": 19,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/12"
+   },
+   {
+    "nombre_visible": "Juan Jose G.",
+    "puesto": "Jefe De Seguros Y Garantías",
+    "departamento": "Administración",
+    "fecha_ingreso": "2007-04-15",
+    "anos_servicio": 19,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "15/04"
+   },
+   {
+    "nombre_visible": "Carlos Iraddy T.",
+    "puesto": "Gerente Comercial Y Operaciones",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2008-05-01",
+    "anos_servicio": 18,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/05"
+   },
+   {
+    "nombre_visible": "Jose Mauricio S.",
+    "puesto": "Jefe De Compras",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2009-05-18",
+    "anos_servicio": 17,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "18/05"
+   },
+   {
+    "nombre_visible": "Jaime M.",
+    "puesto": "Jefe De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2010-07-19",
+    "anos_servicio": 16,
+    "dias_correspondientes": 26,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "19/07"
+   },
+   {
+    "nombre_visible": "Luis Angel M.",
+    "puesto": "Aux. De Almacen",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2011-01-01",
+    "anos_servicio": 15,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/01"
+   },
+   {
+    "nombre_visible": "Rafael Humberto L.",
+    "puesto": "Director General",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2011-10-01",
+    "anos_servicio": 14,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/10"
+   },
+   {
+    "nombre_visible": "Maria Ninfa C.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2012-06-01",
+    "anos_servicio": 14,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/06"
+   },
+   {
+    "nombre_visible": "Mario Fernando D.",
+    "puesto": "Jefe De Recolecciones Y Valuaciones",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2013-07-01",
+    "anos_servicio": 13,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/07"
+   },
+   {
+    "nombre_visible": "Guadalupe T.",
+    "puesto": "Jefe De Contabilidad",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2015-01-26",
+    "anos_servicio": 11,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "26/01"
+   },
+   {
+    "nombre_visible": "Hernan M.",
+    "puesto": "Jefe De Operaciones Taxis",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2015-02-01",
+    "anos_servicio": 11,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/02"
+   },
+   {
+    "nombre_visible": "Roberto Guadalupe S.",
+    "puesto": "Detallador-responsale De Area",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2015-03-09",
+    "anos_servicio": 11,
+    "dias_correspondientes": 24,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "09/03"
+   },
+   {
+    "nombre_visible": "Marco Antonio H.",
+    "puesto": "Fotografia",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2015-10-05",
+    "anos_servicio": 10,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "05/10"
+   },
+   {
+    "nombre_visible": "Jonathan H.",
+    "puesto": "Tecnico Valuador",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2016-03-07",
+    "anos_servicio": 10,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "07/03"
+   },
+   {
+    "nombre_visible": "Angel Ivan D.",
+    "puesto": "Emisor De Polizas",
+    "departamento": "Administración",
+    "fecha_ingreso": "2016-10-17",
+    "anos_servicio": 9,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "17/10"
+   },
+   {
+    "nombre_visible": "Mario Alberto O.",
+    "puesto": "Cuentas Por Pagar",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2017-03-21",
+    "anos_servicio": 9,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "21/03"
+   },
+   {
+    "nombre_visible": "Manuel A.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2017-08-01",
+    "anos_servicio": 9,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/08"
+   },
+   {
+    "nombre_visible": "Saul Emmanuel G.",
+    "puesto": "Analista De Recursos Humanos Hrbp",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2017-09-18",
+    "anos_servicio": 8,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "18/09"
+   },
+   {
+    "nombre_visible": "Valeria Alexandra M.",
+    "puesto": "Jefe De Ventas",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2018-05-01",
+    "anos_servicio": 8,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/05"
+   },
+   {
+    "nombre_visible": "Santos R.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2018-06-04",
+    "anos_servicio": 8,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/06"
+   },
+   {
+    "nombre_visible": "Armando H.",
+    "puesto": "Jefe De Taller",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2018-07-11",
+    "anos_servicio": 8,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "11/07"
+   },
+   {
+    "nombre_visible": "Sergio Alejandro A.",
+    "puesto": "Jefe De Mantenimiento",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2019-02-14",
+    "anos_servicio": 7,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/02"
+   },
+   {
+    "nombre_visible": "Jose Ricardo V.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2019-05-27",
+    "anos_servicio": 7,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/05"
+   },
+   {
+    "nombre_visible": "Bryan Eliud G.",
+    "puesto": "Valuador De Autos Externos",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2019-05-30",
+    "anos_servicio": 7,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "30/05"
+   },
+   {
+    "nombre_visible": "Victor Jesus L.",
+    "puesto": "Aux. De Seguros",
+    "departamento": "Administración",
+    "fecha_ingreso": "2019-07-29",
+    "anos_servicio": 7,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "29/07"
+   },
+   {
+    "nombre_visible": "Gerardo Rafael M.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2020-01-16",
+    "anos_servicio": 6,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/01"
+   },
+   {
+    "nombre_visible": "Blanca Yazmin G.",
+    "puesto": "Ejecutivo De Contratos",
+    "departamento": "Administración",
+    "fecha_ingreso": "2020-07-15",
+    "anos_servicio": 6,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "15/07"
+   },
+   {
+    "nombre_visible": "Jorge Alejandro A.",
+    "puesto": "Mecanico A",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2020-08-14",
+    "anos_servicio": 6,
+    "dias_correspondientes": 22,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/08"
+   },
+   {
+    "nombre_visible": "Adriana Nohemi C.",
+    "puesto": "Contador",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2020-09-22",
+    "anos_servicio": 5,
+    "dias_correspondientes": 20,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "22/09"
+   },
+   {
+    "nombre_visible": "Alfredo C.",
+    "puesto": "Chofer",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2020-10-02",
+    "anos_servicio": 5,
+    "dias_correspondientes": 20,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "02/10"
+   },
+   {
+    "nombre_visible": "Cynthia Dayanne R.",
+    "puesto": "Jefe De Operaciones Y Procesos",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2021-01-18",
+    "anos_servicio": 5,
+    "dias_correspondientes": 20,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "18/01"
+   },
+   {
+    "nombre_visible": "Carlos Eduardo C.",
+    "puesto": "Jefe De Infraestructura",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2021-08-20",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/08"
+   },
+   {
+    "nombre_visible": "Jose Javier L.",
+    "puesto": "Gerente De Recursos Humanos",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2021-09-16",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/09"
+   },
+   {
+    "nombre_visible": "Mariana Fabiola N.",
+    "puesto": "Contador Sr",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2021-10-05",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "05/10"
+   },
+   {
+    "nombre_visible": "Jose Antonio G.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2021-11-16",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/11"
+   },
+   {
+    "nombre_visible": "Ricardo Josue M.",
+    "puesto": "Gerente De Tecnologias De La Informacion",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2022-06-20",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/06"
+   },
+   {
+    "nombre_visible": "Lidia Berenice Z.",
+    "puesto": "Jefe De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2022-06-20",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/06"
+   },
+   {
+    "nombre_visible": "Daniel Aldahir R.",
+    "puesto": "Ejecutivo De Atencion A Clientes Sr",
+    "departamento": "Administración",
+    "fecha_ingreso": "2022-06-27",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/06"
+   },
+   {
+    "nombre_visible": "Fernando Alberto D.",
+    "puesto": "Jefe De Legal",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2022-07-01",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/07"
+   },
+   {
+    "nombre_visible": "Adriana M.",
+    "puesto": "Limpieza",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2022-07-25",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "25/07"
+   },
+   {
+    "nombre_visible": "Mariana R.",
+    "puesto": "Jefe De Desarrollo",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2022-08-08",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "08/08"
+   },
+   {
+    "nombre_visible": "Heriberto G.",
+    "puesto": "Gestor",
+    "departamento": "Administración",
+    "fecha_ingreso": "2022-08-10",
+    "anos_servicio": 4,
+    "dias_correspondientes": 18,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "10/08"
+   },
+   {
+    "nombre_visible": "Maria Cristina G.",
+    "puesto": "Jefe De Gestion De Riesgos",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2022-08-22",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "22/08"
+   },
+   {
+    "nombre_visible": "Ana Laura E.",
+    "puesto": "Coordinador De Valuaciones",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2022-09-19",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "19/09"
+   },
+   {
+    "nombre_visible": "Carlos Daniel C.",
+    "puesto": "Chofer",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2022-09-21",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "21/09"
+   },
+   {
+    "nombre_visible": "Jorge Alejandro H.",
+    "puesto": "Gerente De Finanzas Y Contraloria",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2022-10-17",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "17/10"
+   },
+   {
+    "nombre_visible": "Angel Daniel A.",
+    "puesto": "Mecanico A",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2022-11-14",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/11"
+   },
+   {
+    "nombre_visible": "Irmin Amin T.",
+    "puesto": "Desarrollador",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2023-01-16",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/01"
+   },
+   {
+    "nombre_visible": "Oscar Daniel R.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2023-01-16",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/01"
+   },
+   {
+    "nombre_visible": "Mauricio Angel D.",
+    "puesto": "Mecanico De Inspeccion Final",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2023-03-27",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/03"
+   },
+   {
+    "nombre_visible": "Luisa Nayely G.",
+    "puesto": "Ejecutivo De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2023-04-17",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "17/04"
+   },
+   {
+    "nombre_visible": "Sarid Jaely T.",
+    "puesto": "Ejecutivo De Atencion A Clientes Sr",
+    "departamento": "Administración",
+    "fecha_ingreso": "2023-04-22",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "22/04"
+   },
+   {
+    "nombre_visible": "Salvador P.",
+    "puesto": "Responsable De Archivo Y Digitalizacion",
+    "departamento": "Administración",
+    "fecha_ingreso": "2023-05-07",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "07/05"
+   },
+   {
+    "nombre_visible": "Edgar Eduardo V.",
+    "puesto": "Instalador De Dispositivo Datamovil",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2023-05-10",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "10/05"
+   },
+   {
+    "nombre_visible": "Elizabeth D.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2023-05-24",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "24/05"
+   },
+   {
+    "nombre_visible": "Patricia Guadalupe G.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2023-08-07",
+    "anos_servicio": 3,
+    "dias_correspondientes": 16,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "07/08"
+   },
+   {
+    "nombre_visible": "Eydolina M.",
+    "puesto": "Aux. Contable",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2023-09-27",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/09"
+   },
+   {
+    "nombre_visible": "Rodolfo Javier L.",
+    "puesto": "Desarrollador",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2023-10-04",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/10"
+   },
+   {
+    "nombre_visible": "Mauricio C.",
+    "puesto": "Analista De Planeación Financiera",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2023-11-01",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/11"
+   },
+   {
+    "nombre_visible": "Dulce Maria Anahi M.",
+    "puesto": "Ejecutivo De Atencion A Clientes",
+    "departamento": "Administración",
+    "fecha_ingreso": "2023-11-06",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "06/11"
+   },
+   {
+    "nombre_visible": "Karla Abigail G.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2023-11-13",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "13/11"
+   },
+   {
+    "nombre_visible": "Simon Eduardo S.",
+    "puesto": "Gestor",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2024-01-10",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "10/01"
+   },
+   {
+    "nombre_visible": "Irasema Lizbeth N.",
+    "puesto": "Aux. Administrativo",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2024-01-15",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "15/01"
+   },
+   {
+    "nombre_visible": "Francisco Gregorio M.",
+    "puesto": "Contador",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2024-01-15",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "15/01"
+   },
+   {
+    "nombre_visible": "Oscar Abraham P.",
+    "puesto": "Atencion A Clientes Y Asistente De Operaciones",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-02-01",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/02"
+   },
+   {
+    "nombre_visible": "Pablo Daniel A.",
+    "puesto": "Ejecutivo De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2024-03-04",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/03"
+   },
+   {
+    "nombre_visible": "Laura M.",
+    "puesto": "Aux. Administrativo",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2024-03-11",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "11/03"
+   },
+   {
+    "nombre_visible": "Edgar Alejandro A.",
+    "puesto": "Ejecutivo De Atencion A Clientes",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-03-11",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "11/03"
+   },
+   {
+    "nombre_visible": "Ana Carmiña G.",
+    "puesto": "Asistente De Archivo",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-03-25",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "25/03"
+   },
+   {
+    "nombre_visible": "Juana Idania R.",
+    "puesto": "Asistente De Dirección",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2024-04-01",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/04"
+   },
+   {
+    "nombre_visible": "Hugo Alberto M.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-04-18",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "18/04"
+   },
+   {
+    "nombre_visible": "Alejandra Abigail V.",
+    "puesto": "Analista De Legal",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2024-04-22",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "22/04"
+   },
+   {
+    "nombre_visible": "Faustino De Jesus H.",
+    "puesto": "Desarrollador Sr",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2024-05-06",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "06/05"
+   },
+   {
+    "nombre_visible": "Oliver Antonio A.",
+    "puesto": "Ejecutivo De Atencion A Clientes",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-05-06",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "06/05"
+   },
+   {
+    "nombre_visible": "Luis Missael R.",
+    "puesto": "Analista De Credito Y Riesgos",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2024-05-27",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/05"
+   },
+   {
+    "nombre_visible": "Maria Magdalena P.",
+    "puesto": "Ejecutivo De Atencion A Clientes",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-07-24",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "24/07"
+   },
+   {
+    "nombre_visible": "Hector Omar V.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-08-12",
+    "anos_servicio": 2,
+    "dias_correspondientes": 14,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "12/08"
+   },
+   {
+    "nombre_visible": "Rigoberto M.",
+    "puesto": "Tecnico Valuador",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-08-19",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "19/08"
+   },
+   {
+    "nombre_visible": "Enrique L.",
+    "puesto": "Guardia Intendente",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-08-21",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "21/08"
+   },
+   {
+    "nombre_visible": "Alberto P.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-08-26",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "26/08"
+   },
+   {
+    "nombre_visible": "Juan Antonio M.",
+    "puesto": "Jefe De Marketing",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2024-09-17",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "17/09"
+   },
+   {
+    "nombre_visible": "Juan Ramon H.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-10-02",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "02/10"
+   },
+   {
+    "nombre_visible": "Dulce Mara G.",
+    "puesto": "Ejecutivo De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2024-10-21",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "21/10"
+   },
+   {
+    "nombre_visible": "Jhanet Isabel R.",
+    "puesto": "Aux. Contable Ii",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2024-10-23",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "23/10"
+   },
+   {
+    "nombre_visible": "Leslie Alejandra P.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2024-10-28",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "28/10"
+   },
+   {
+    "nombre_visible": "Julian Javier G.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2024-11-04",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/11"
+   },
+   {
+    "nombre_visible": "Hernan Javier G.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2024-11-05",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "05/11"
+   },
+   {
+    "nombre_visible": "Eduardo Alejandro P.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2024-12-11",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "11/12"
+   },
+   {
+    "nombre_visible": "Maria De Jesus T.",
+    "puesto": "Limpieza-cedis",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2024-12-30",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "30/12"
+   },
+   {
+    "nombre_visible": "Maria Isabel I.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-01-06",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "06/01"
+   },
+   {
+    "nombre_visible": "Francisco Ivan L.",
+    "puesto": "Gestor De Operaciones Taxis",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2025-01-13",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "13/01"
+   },
+   {
+    "nombre_visible": "Karla Yamileth S.",
+    "puesto": "Auxiliar De Entregas",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2025-01-21",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "21/01"
+   },
+   {
+    "nombre_visible": "Jorge Alberto R.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2025-02-24",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "24/02"
+   },
+   {
+    "nombre_visible": "Adrian Alejandro T.",
+    "puesto": "Jefe De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2025-02-28",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "28/02"
+   },
+   {
+    "nombre_visible": "Moises Antonio A.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2025-03-03",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "03/03"
+   },
+   {
+    "nombre_visible": "Heriberto A.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2025-03-20",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/03"
+   },
+   {
+    "nombre_visible": "Laura Yamira C.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-03-27",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/03"
+   },
+   {
+    "nombre_visible": "Johana Iris T.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-04-07",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "07/04"
+   },
+   {
+    "nombre_visible": "Juan Carlos D.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-04-14",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/04"
+   },
+   {
+    "nombre_visible": "Alejandra Svetlana R.",
+    "puesto": "Gestor",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2025-04-28",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "28/04"
+   },
+   {
+    "nombre_visible": "Flor De Maria M.",
+    "puesto": "Analista De Legal",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2025-05-05",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "05/05"
+   },
+   {
+    "nombre_visible": "Isela Guadalupe S.",
+    "puesto": "Ejecutivo De Mesa De Control Y Monitoreo",
+    "departamento": "Administración",
+    "fecha_ingreso": "2025-06-13",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "13/06"
+   },
+   {
+    "nombre_visible": "Samuel Emiliano M.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-06-23",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "23/06"
+   },
+   {
+    "nombre_visible": "Luz Maria M.",
+    "puesto": "Aux. De Pago De Contratos",
+    "departamento": "CEDIS",
+    "fecha_ingreso": "2025-06-30",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "30/06"
+   },
+   {
+    "nombre_visible": "Eduardo Enrique V.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2025-06-30",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "30/06"
+   },
+   {
+    "nombre_visible": "Francisco V.",
+    "puesto": "Chofer-almacen",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2025-08-04",
+    "anos_servicio": 1,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/08"
+   },
+   {
+    "nombre_visible": "Ruben Dario V.",
+    "puesto": "Ingeniero De Infraestructura",
+    "departamento": "Sistemas",
+    "fecha_ingreso": "2025-08-25",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "25/08"
+   },
+   {
+    "nombre_visible": "Grecia Jazmin M.",
+    "puesto": "Analista De Marketing",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2025-09-17",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "17/09"
+   },
+   {
+    "nombre_visible": "Eliel E.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2025-09-22",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "22/09"
+   },
+   {
+    "nombre_visible": "Alan L.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2025-10-01",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/10"
+   },
+   {
+    "nombre_visible": "Karen O.",
+    "puesto": "Aux. Contable",
+    "departamento": "Corporativo",
+    "fecha_ingreso": "2025-10-10",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "10/10"
+   },
+   {
+    "nombre_visible": "Elda Merari G.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2026-02-04",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/02"
+   },
+   {
+    "nombre_visible": "Lamberto H.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-03-09",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "09/03"
+   },
+   {
+    "nombre_visible": "Daniel A.",
+    "puesto": "Chofer Motociclista",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-03-25",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "25/03"
+   },
+   {
+    "nombre_visible": "Fidencio Antonio V.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-05-04",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "04/05"
+   },
+   {
+    "nombre_visible": "Jesus Abner A.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2026-05-20",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/05"
+   },
+   {
+    "nombre_visible": "Jehu Alexis P.",
+    "puesto": "Mecanico B",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-06-09",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "09/06"
+   },
+   {
+    "nombre_visible": "Karla V.",
+    "puesto": "Ejecutivo De Investigaciones",
+    "departamento": "Crédito y Riesgos",
+    "fecha_ingreso": "2026-06-16",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/06"
+   },
+   {
+    "nombre_visible": "Ludivina Natali V.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2026-07-01",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "01/07"
+   },
+   {
+    "nombre_visible": "Indra Gabin G.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-07-07",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "07/07"
+   },
+   {
+    "nombre_visible": "Christian Dayan H.",
+    "puesto": "Emisor De Polizas",
+    "departamento": "Administración",
+    "fecha_ingreso": "2026-07-14",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/07"
+   },
+   {
+    "nombre_visible": "Ana Yamileth G.",
+    "puesto": "Capturista",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-07-16",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "16/07"
+   },
+   {
+    "nombre_visible": "Jose Israel C.",
+    "puesto": "Ejecutivo De Contratos",
+    "departamento": "Administración",
+    "fecha_ingreso": "2026-07-20",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "20/07"
+   },
+   {
+    "nombre_visible": "Eli Benjamin S.",
+    "puesto": "Ejecutivo De Cobranza",
+    "departamento": "Administración",
+    "fecha_ingreso": "2026-07-27",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/07"
+   },
+   {
+    "nombre_visible": "Ezequiel G.",
+    "puesto": "Auxiliar De Patio",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-07-27",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "27/07"
+   },
+   {
+    "nombre_visible": "Myriam Selene R.",
+    "puesto": "Supervisor De Crm",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2026-07-28",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "28/07"
+   },
+   {
+    "nombre_visible": "Jonathan M.",
+    "puesto": "Ejecutivo De Ventas Sr",
+    "departamento": "Comercial",
+    "fecha_ingreso": "2026-08-05",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "05/08"
+   },
+   {
+    "nombre_visible": "Julio Cesar M.",
+    "puesto": "Lavacoches",
+    "departamento": "Operaciones",
+    "fecha_ingreso": "2026-08-14",
+    "anos_servicio": 0,
+    "dias_correspondientes": 12,
+    "dias_tomados": null,
+    "dias_pendientes": null,
+    "aniversario": "14/08"
+   }
+  ]
+ },
+ "cumpleanos_mes": {
+  "mes": "Agosto",
+  "lista": [
+   {
+    "nombre_visible": "Daniel Aldahir R.",
+    "departamento": "Administración",
+    "dia": 1,
+    "fecha_display": "01 de agosto"
+   },
+   {
+    "nombre_visible": "Salvador P.",
+    "departamento": "Administración",
+    "dia": 2,
+    "fecha_display": "02 de agosto"
+   },
+   {
+    "nombre_visible": "Simon Eduardo S.",
+    "departamento": "CEDIS",
+    "dia": 3,
+    "fecha_display": "03 de agosto"
+   },
+   {
+    "nombre_visible": "Lamberto H.",
+    "departamento": "Operaciones",
+    "dia": 3,
+    "fecha_display": "03 de agosto"
+   },
+   {
+    "nombre_visible": "Jaime M.",
+    "departamento": "Administración",
+    "dia": 4,
+    "fecha_display": "04 de agosto"
+   },
+   {
+    "nombre_visible": "Edgar Alejandro A.",
+    "departamento": "Administración",
+    "dia": 10,
+    "fecha_display": "10 de agosto"
+   },
+   {
+    "nombre_visible": "Hernan M.",
+    "departamento": "Operaciones",
+    "dia": 12,
+    "fecha_display": "12 de agosto"
+   },
+   {
+    "nombre_visible": "Adrian Alejandro T.",
+    "departamento": "Administración",
+    "dia": 16,
+    "fecha_display": "16 de agosto"
+   },
+   {
+    "nombre_visible": "Carlos Iraddy T.",
+    "departamento": "Comercial",
+    "dia": 20,
+    "fecha_display": "20 de agosto"
+   },
+   {
+    "nombre_visible": "Mauricio Angel D.",
+    "departamento": "Operaciones",
+    "dia": 21,
+    "fecha_display": "21 de agosto"
+   },
+   {
+    "nombre_visible": "Eduardo Enrique V.",
+    "departamento": "Operaciones",
+    "dia": 24,
+    "fecha_display": "24 de agosto"
+   },
+   {
+    "nombre_visible": "Eli Benjamin S.",
+    "departamento": "Administración",
+    "dia": 26,
+    "fecha_display": "26 de agosto"
+   },
+   {
+    "nombre_visible": "Rigoberto M.",
+    "departamento": "Operaciones",
+    "dia": 27,
+    "fecha_display": "27 de agosto"
+   },
+   {
+    "nombre_visible": "Juan Ramon H.",
+    "departamento": "Operaciones",
+    "dia": 31,
+    "fecha_display": "31 de agosto"
+   },
+   {
+    "nombre_visible": "Alan L.",
+    "departamento": "Operaciones",
+    "dia": 31,
+    "fecha_display": "31 de agosto"
+   }
+  ]
+ },
+ "aniversarios_mes": {
+  "mes": "Agosto",
+  "lista": [
+   {
+    "nombre_visible": "Manuel A.",
+    "departamento": "Administración",
+    "dia": 1,
+    "anos": 9,
+    "fecha_display": "01 de agosto"
+   },
+   {
+    "nombre_visible": "Francisco V.",
+    "departamento": "Operaciones",
+    "dia": 4,
+    "anos": 1,
+    "fecha_display": "04 de agosto"
+   },
+   {
+    "nombre_visible": "Patricia Guadalupe G.",
+    "departamento": "Comercial",
+    "dia": 7,
+    "anos": 3,
+    "fecha_display": "07 de agosto"
+   },
+   {
+    "nombre_visible": "Mariana R.",
+    "departamento": "Sistemas",
+    "dia": 8,
+    "anos": 4,
+    "fecha_display": "08 de agosto"
+   },
+   {
+    "nombre_visible": "Heriberto G.",
+    "departamento": "Administración",
+    "dia": 10,
+    "anos": 4,
+    "fecha_display": "10 de agosto"
+   },
+   {
+    "nombre_visible": "Hector Omar V.",
+    "departamento": "Administración",
+    "dia": 12,
+    "anos": 2,
+    "fecha_display": "12 de agosto"
+   },
+   {
+    "nombre_visible": "Jorge Alejandro A.",
+    "departamento": "Operaciones",
+    "dia": 14,
+    "anos": 6,
+    "fecha_display": "14 de agosto"
+   },
+   {
+    "nombre_visible": "Rigoberto M.",
+    "departamento": "Operaciones",
+    "dia": 19,
+    "anos": 2,
+    "fecha_display": "19 de agosto"
+   },
+   {
+    "nombre_visible": "Carlos Eduardo C.",
+    "departamento": "Sistemas",
+    "dia": 20,
+    "anos": 5,
+    "fecha_display": "20 de agosto"
+   },
+   {
+    "nombre_visible": "Enrique L.",
+    "departamento": "Operaciones",
+    "dia": 21,
+    "anos": 2,
+    "fecha_display": "21 de agosto"
+   },
+   {
+    "nombre_visible": "Maria Cristina G.",
+    "departamento": "Crédito y Riesgos",
+    "dia": 22,
+    "anos": 4,
+    "fecha_display": "22 de agosto"
+   },
+   {
+    "nombre_visible": "Ruben Dario V.",
+    "departamento": "Sistemas",
+    "dia": 25,
+    "anos": 1,
+    "fecha_display": "25 de agosto"
+   },
+   {
+    "nombre_visible": "Alberto P.",
+    "departamento": "Administración",
+    "dia": 26,
+    "anos": 2,
+    "fecha_display": "26 de agosto"
+   }
+  ]
+ },
+ "antiguedad_distribucion": [
+  {
+   "rango": "< 1 año",
+   "count": 22
+  },
+  {
+   "rango": "1–3 años",
+   "count": 50
+  },
+  {
+   "rango": "3–5 años",
+   "count": 25
+  },
+  {
+   "rango": "5–10 años",
+   "count": 17
+  },
+  {
+   "rango": "10–15 años",
+   "count": 8
+  },
+  {
+   "rango": "15+ años",
+   "count": 9
+  }
+ ],
+ "antiguedad_promedio_anos": 4.1,
+ "edad_promedio": 37.6,
+ "tareas": [
+  {
+   "id": "seed1",
+   "titulo": "Entregar histórico de bajas 2025–2026 (fecha, motivo, tipo voluntaria/involuntaria)",
+   "asignado": "Por asignar",
+   "vence": null,
+   "prioridad": "Alta",
+   "done": false
+  },
+  {
+   "id": "seed2",
+   "titulo": "Entregar registro de incidencias del mes (faltas, permisos, incapacidades)",
+   "asignado": "Por asignar",
+   "vence": null,
+   "prioridad": "Alta",
+   "done": false
+  },
+  {
+   "id": "seed3",
+   "titulo": "Reportar vacantes en proceso (puesto, apertura, candidatos, estatus)",
+   "asignado": "Por asignar",
+   "vence": null,
+   "prioridad": "Media",
+   "done": false
+  },
+  {
+   "id": "seed4",
+   "titulo": "Entregar vacaciones tomadas por colaborador (ejercicio en curso)",
+   "asignado": "Por asignar",
+   "vence": null,
+   "prioridad": "Media",
+   "done": false
+  },
+  {
+   "id": "seed5",
+   "titulo": "Capturar evaluaciones de período de prueba (13 ingresos activos)",
+   "asignado": "Por asignar",
+   "vence": null,
+   "prioridad": "Media",
+   "done": false
+  }
+ ]
+}
