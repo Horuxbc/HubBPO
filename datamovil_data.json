@@ -5,7 +5,8 @@
   "fuente": "Reporte de personal Datamovil 18/08/2026 (plantilla activa)",
   "periodo_fichajes": null,
   "estado": "Fase 1 — Plantilla real cargada · Bajas, asistencia, capacitación y vacantes pendientes de captura",
-  "version": "2026-08-25 v4 · dueños por indicador"
+  "version": "2026-08-25 v4 · dueños por indicador + vacaciones ene-mar",
+  "fecha_actualizacion": "2026-09-18"
  },
  "kpis_principales": {
   "colaboradores_activos": 131,
@@ -320,7 +321,7 @@
  "incidencias_totales": {
   "home_office_solicitudes": 0,
   "permisos_total": 0,
-  "vacaciones_solicitudes": 0,
+  "vacaciones_solicitudes": 117,
   "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
  },
  "vacantes_2025": {
@@ -3412,14 +3413,24 @@
  ],
  "detalle_vacantes_2026": [],
  "historico_incidencias": {
-  "periodo": null,
-  "total_registros": 0,
-  "por_tipo": {},
-  "por_departamento": {},
-  "nota": "Pendiente de captura Datamovil / integración Sesame — Fase 1 solo plantilla activa."
+  "periodo": "Enero - Marzo 2026",
+  "total_registros": 236,
+  "por_tipo": {
+   "Vacaciones": 236
+  },
+  "por_departamento": {
+   "Operaciones": 75,
+   "Administración": 59,
+   "Corporativo": 33,
+   "Crédito y Riesgos": 27,
+   "Comercial": 20,
+   "Sistemas": 13,
+   "Cedis": 9
+  },
+  "nota": "Histórico Sesame ene-mar 2026. Meses siguientes se capturan en la Base de Datos de Capital Humano."
  },
  "vacaciones_lft": {
-  "nota": "Días correspondientes calculados por LFT Art. 76 (reforma 2023) según antigüedad. Días tomados: pendiente de captura Datamovil.",
+  "nota": "Días tomados: histórico Sesame ene-mar 2026 (236 días, 58 personas). Abr-sep 2026 pendiente de captura en la Base de Datos.",
   "total_dias_provisionados": 2122,
   "detalle": [
    {
@@ -3429,8 +3440,8 @@
     "fecha_ingreso": "1998-07-31",
     "anos_servicio": 28,
     "dias_correspondientes": 30,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 7,
+    "dias_pendientes": 23,
     "aniversario": "31/07"
    },
    {
@@ -3440,8 +3451,8 @@
     "fecha_ingreso": "2005-05-16",
     "anos_servicio": 21,
     "dias_correspondientes": 28,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 28,
     "aniversario": "16/05"
    },
    {
@@ -3451,8 +3462,8 @@
     "fecha_ingreso": "2006-09-01",
     "anos_servicio": 19,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 26,
     "aniversario": "01/09"
    },
    {
@@ -3462,8 +3473,8 @@
     "fecha_ingreso": "2006-12-16",
     "anos_servicio": 19,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 26,
     "aniversario": "16/12"
    },
    {
@@ -3473,8 +3484,8 @@
     "fecha_ingreso": "2007-04-15",
     "anos_servicio": 19,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 11,
+    "dias_pendientes": 15,
     "aniversario": "15/04"
    },
    {
@@ -3484,8 +3495,8 @@
     "fecha_ingreso": "2008-05-01",
     "anos_servicio": 18,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 26,
     "aniversario": "01/05"
    },
    {
@@ -3495,8 +3506,8 @@
     "fecha_ingreso": "2009-05-18",
     "anos_servicio": 17,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 26,
     "aniversario": "18/05"
    },
    {
@@ -3506,8 +3517,8 @@
     "fecha_ingreso": "2010-07-19",
     "anos_servicio": 16,
     "dias_correspondientes": 26,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 24,
     "aniversario": "19/07"
    },
    {
@@ -3517,8 +3528,8 @@
     "fecha_ingreso": "2011-01-01",
     "anos_servicio": 15,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 21,
     "aniversario": "01/01"
    },
    {
@@ -3528,8 +3539,8 @@
     "fecha_ingreso": "2011-10-01",
     "anos_servicio": 14,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 24,
     "aniversario": "01/10"
    },
    {
@@ -3539,8 +3550,8 @@
     "fecha_ingreso": "2012-06-01",
     "anos_servicio": 14,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 21,
     "aniversario": "01/06"
    },
    {
@@ -3550,8 +3561,8 @@
     "fecha_ingreso": "2013-07-01",
     "anos_servicio": 13,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 23,
     "aniversario": "01/07"
    },
    {
@@ -3561,8 +3572,8 @@
     "fecha_ingreso": "2015-01-26",
     "anos_servicio": 11,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 24,
     "aniversario": "26/01"
    },
    {
@@ -3572,8 +3583,8 @@
     "fecha_ingreso": "2015-02-01",
     "anos_servicio": 11,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 24,
     "aniversario": "01/02"
    },
    {
@@ -3583,8 +3594,8 @@
     "fecha_ingreso": "2015-03-09",
     "anos_servicio": 11,
     "dias_correspondientes": 24,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 8,
+    "dias_pendientes": 16,
     "aniversario": "09/03"
    },
    {
@@ -3594,8 +3605,8 @@
     "fecha_ingreso": "2015-10-05",
     "anos_servicio": 10,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 8,
+    "dias_pendientes": 14,
     "aniversario": "05/10"
    },
    {
@@ -3605,8 +3616,8 @@
     "fecha_ingreso": "2016-03-07",
     "anos_servicio": 10,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 16,
     "aniversario": "07/03"
    },
    {
@@ -3616,8 +3627,8 @@
     "fecha_ingreso": "2016-10-17",
     "anos_servicio": 9,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 7,
+    "dias_pendientes": 15,
     "aniversario": "17/10"
    },
    {
@@ -3627,8 +3638,8 @@
     "fecha_ingreso": "2017-03-21",
     "anos_servicio": 9,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 22,
     "aniversario": "21/03"
    },
    {
@@ -3638,8 +3649,8 @@
     "fecha_ingreso": "2017-08-01",
     "anos_servicio": 9,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 4,
+    "dias_pendientes": 18,
     "aniversario": "01/08"
    },
    {
@@ -3649,8 +3660,8 @@
     "fecha_ingreso": "2017-09-18",
     "anos_servicio": 8,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 19,
     "aniversario": "18/09"
    },
    {
@@ -3660,8 +3671,8 @@
     "fecha_ingreso": "2018-05-01",
     "anos_servicio": 8,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 22,
     "aniversario": "01/05"
    },
    {
@@ -3671,8 +3682,8 @@
     "fecha_ingreso": "2018-06-04",
     "anos_servicio": 8,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 8,
+    "dias_pendientes": 14,
     "aniversario": "04/06"
    },
    {
@@ -3682,8 +3693,8 @@
     "fecha_ingreso": "2018-07-11",
     "anos_servicio": 8,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 8,
+    "dias_pendientes": 14,
     "aniversario": "11/07"
    },
    {
@@ -3693,8 +3704,8 @@
     "fecha_ingreso": "2019-02-14",
     "anos_servicio": 7,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 7,
+    "dias_pendientes": 15,
     "aniversario": "14/02"
    },
    {
@@ -3704,8 +3715,8 @@
     "fecha_ingreso": "2019-05-27",
     "anos_servicio": 7,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 22,
     "aniversario": "27/05"
    },
    {
@@ -3715,8 +3726,8 @@
     "fecha_ingreso": "2019-05-30",
     "anos_servicio": 7,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 22,
     "aniversario": "30/05"
    },
    {
@@ -3726,8 +3737,8 @@
     "fecha_ingreso": "2019-07-29",
     "anos_servicio": 7,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 21,
     "aniversario": "29/07"
    },
    {
@@ -3737,8 +3748,8 @@
     "fecha_ingreso": "2020-01-16",
     "anos_servicio": 6,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 5,
+    "dias_pendientes": 17,
     "aniversario": "16/01"
    },
    {
@@ -3748,8 +3759,8 @@
     "fecha_ingreso": "2020-07-15",
     "anos_servicio": 6,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 5,
+    "dias_pendientes": 17,
     "aniversario": "15/07"
    },
    {
@@ -3759,8 +3770,8 @@
     "fecha_ingreso": "2020-08-14",
     "anos_servicio": 6,
     "dias_correspondientes": 22,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 20,
     "aniversario": "14/08"
    },
    {
@@ -3770,8 +3781,8 @@
     "fecha_ingreso": "2020-09-22",
     "anos_servicio": 5,
     "dias_correspondientes": 20,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 19,
     "aniversario": "22/09"
    },
    {
@@ -3781,8 +3792,8 @@
     "fecha_ingreso": "2020-10-02",
     "anos_servicio": 5,
     "dias_correspondientes": 20,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 14,
     "aniversario": "02/10"
    },
    {
@@ -3792,8 +3803,8 @@
     "fecha_ingreso": "2021-01-18",
     "anos_servicio": 5,
     "dias_correspondientes": 20,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 20,
     "aniversario": "18/01"
    },
    {
@@ -3803,8 +3814,8 @@
     "fecha_ingreso": "2021-08-20",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 16,
     "aniversario": "20/08"
    },
    {
@@ -3814,8 +3825,8 @@
     "fecha_ingreso": "2021-09-16",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 9,
+    "dias_pendientes": 9,
     "aniversario": "16/09"
    },
    {
@@ -3825,8 +3836,8 @@
     "fecha_ingreso": "2021-10-05",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 18,
     "aniversario": "05/10"
    },
    {
@@ -3836,8 +3847,8 @@
     "fecha_ingreso": "2021-11-16",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 16,
     "aniversario": "16/11"
    },
    {
@@ -3847,8 +3858,8 @@
     "fecha_ingreso": "2022-06-20",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 8,
+    "dias_pendientes": 10,
     "aniversario": "20/06"
    },
    {
@@ -3858,8 +3869,8 @@
     "fecha_ingreso": "2022-06-20",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 16,
     "aniversario": "20/06"
    },
    {
@@ -3869,8 +3880,8 @@
     "fecha_ingreso": "2022-06-27",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 18,
     "aniversario": "27/06"
    },
    {
@@ -3880,8 +3891,8 @@
     "fecha_ingreso": "2022-07-01",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 18,
     "aniversario": "01/07"
    },
    {
@@ -3891,8 +3902,8 @@
     "fecha_ingreso": "2022-07-25",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 18,
     "aniversario": "25/07"
    },
    {
@@ -3902,8 +3913,8 @@
     "fecha_ingreso": "2022-08-08",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 17,
     "aniversario": "08/08"
    },
    {
@@ -3913,8 +3924,8 @@
     "fecha_ingreso": "2022-08-10",
     "anos_servicio": 4,
     "dias_correspondientes": 18,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 17,
     "aniversario": "10/08"
    },
    {
@@ -3924,8 +3935,8 @@
     "fecha_ingreso": "2022-08-22",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 10,
     "aniversario": "22/08"
    },
    {
@@ -3935,8 +3946,8 @@
     "fecha_ingreso": "2022-09-19",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "19/09"
    },
    {
@@ -3946,8 +3957,8 @@
     "fecha_ingreso": "2022-09-21",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "21/09"
    },
    {
@@ -3957,8 +3968,8 @@
     "fecha_ingreso": "2022-10-17",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "17/10"
    },
    {
@@ -3968,8 +3979,8 @@
     "fecha_ingreso": "2022-11-14",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 5,
+    "dias_pendientes": 11,
     "aniversario": "14/11"
    },
    {
@@ -3979,8 +3990,8 @@
     "fecha_ingreso": "2023-01-16",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "16/01"
    },
    {
@@ -3990,8 +4001,8 @@
     "fecha_ingreso": "2023-01-16",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 4,
+    "dias_pendientes": 12,
     "aniversario": "16/01"
    },
    {
@@ -4001,8 +4012,8 @@
     "fecha_ingreso": "2023-03-27",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "27/03"
    },
    {
@@ -4012,8 +4023,8 @@
     "fecha_ingreso": "2023-04-17",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 15,
     "aniversario": "17/04"
    },
    {
@@ -4023,8 +4034,8 @@
     "fecha_ingreso": "2023-04-22",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 13,
     "aniversario": "22/04"
    },
    {
@@ -4034,8 +4045,8 @@
     "fecha_ingreso": "2023-05-07",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 15,
     "aniversario": "07/05"
    },
    {
@@ -4045,8 +4056,8 @@
     "fecha_ingreso": "2023-05-10",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 5,
+    "dias_pendientes": 11,
     "aniversario": "10/05"
    },
    {
@@ -4056,8 +4067,8 @@
     "fecha_ingreso": "2023-05-24",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "24/05"
    },
    {
@@ -4067,8 +4078,8 @@
     "fecha_ingreso": "2023-08-07",
     "anos_servicio": 3,
     "dias_correspondientes": 16,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 16,
     "aniversario": "07/08"
    },
    {
@@ -4078,8 +4089,8 @@
     "fecha_ingreso": "2023-09-27",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 13,
     "aniversario": "27/09"
    },
    {
@@ -4089,8 +4100,8 @@
     "fecha_ingreso": "2023-10-04",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 12,
     "aniversario": "04/10"
    },
    {
@@ -4100,8 +4111,8 @@
     "fecha_ingreso": "2023-11-01",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "01/11"
    },
    {
@@ -4111,8 +4122,8 @@
     "fecha_ingreso": "2023-11-06",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "06/11"
    },
    {
@@ -4122,8 +4133,8 @@
     "fecha_ingreso": "2023-11-13",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 11,
     "aniversario": "13/11"
    },
    {
@@ -4133,8 +4144,8 @@
     "fecha_ingreso": "2024-01-10",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 13,
     "aniversario": "10/01"
    },
    {
@@ -4144,8 +4155,8 @@
     "fecha_ingreso": "2024-01-15",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 13,
     "aniversario": "15/01"
    },
    {
@@ -4155,8 +4166,8 @@
     "fecha_ingreso": "2024-01-15",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 12,
+    "dias_pendientes": 2,
     "aniversario": "15/01"
    },
    {
@@ -4166,8 +4177,8 @@
     "fecha_ingreso": "2024-02-01",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 12,
     "aniversario": "01/02"
    },
    {
@@ -4177,8 +4188,8 @@
     "fecha_ingreso": "2024-03-04",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 9,
+    "dias_pendientes": 5,
     "aniversario": "04/03"
    },
    {
@@ -4188,8 +4199,8 @@
     "fecha_ingreso": "2024-03-11",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "11/03"
    },
    {
@@ -4199,8 +4210,8 @@
     "fecha_ingreso": "2024-03-11",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 4,
+    "dias_pendientes": 10,
     "aniversario": "11/03"
    },
    {
@@ -4210,8 +4221,8 @@
     "fecha_ingreso": "2024-03-25",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 13,
     "aniversario": "25/03"
    },
    {
@@ -4221,8 +4232,8 @@
     "fecha_ingreso": "2024-04-01",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 7,
+    "dias_pendientes": 7,
     "aniversario": "01/04"
    },
    {
@@ -4232,8 +4243,8 @@
     "fecha_ingreso": "2024-04-18",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "18/04"
    },
    {
@@ -4243,8 +4254,8 @@
     "fecha_ingreso": "2024-04-22",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "22/04"
    },
    {
@@ -4254,8 +4265,8 @@
     "fecha_ingreso": "2024-05-06",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "06/05"
    },
    {
@@ -4265,8 +4276,8 @@
     "fecha_ingreso": "2024-05-06",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 13,
     "aniversario": "06/05"
    },
    {
@@ -4276,8 +4287,8 @@
     "fecha_ingreso": "2024-05-27",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 8,
     "aniversario": "27/05"
    },
    {
@@ -4287,8 +4298,8 @@
     "fecha_ingreso": "2024-07-24",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 12,
     "aniversario": "24/07"
    },
    {
@@ -4298,8 +4309,8 @@
     "fecha_ingreso": "2024-08-12",
     "anos_servicio": 2,
     "dias_correspondientes": 14,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 14,
     "aniversario": "12/08"
    },
    {
@@ -4309,8 +4320,8 @@
     "fecha_ingreso": "2024-08-19",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 9,
     "aniversario": "19/08"
    },
    {
@@ -4320,8 +4331,8 @@
     "fecha_ingreso": "2024-08-21",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 1,
+    "dias_pendientes": 11,
     "aniversario": "21/08"
    },
    {
@@ -4331,8 +4342,8 @@
     "fecha_ingreso": "2024-08-26",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 6,
     "aniversario": "26/08"
    },
    {
@@ -4342,8 +4353,8 @@
     "fecha_ingreso": "2024-09-17",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "17/09"
    },
    {
@@ -4353,8 +4364,8 @@
     "fecha_ingreso": "2024-10-02",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "02/10"
    },
    {
@@ -4364,8 +4375,8 @@
     "fecha_ingreso": "2024-10-21",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 9,
     "aniversario": "21/10"
    },
    {
@@ -4375,8 +4386,8 @@
     "fecha_ingreso": "2024-10-23",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "23/10"
    },
    {
@@ -4386,8 +4397,8 @@
     "fecha_ingreso": "2024-10-28",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 3,
+    "dias_pendientes": 9,
     "aniversario": "28/10"
    },
    {
@@ -4397,8 +4408,8 @@
     "fecha_ingreso": "2024-11-04",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 6,
+    "dias_pendientes": 6,
     "aniversario": "04/11"
    },
    {
@@ -4408,8 +4419,8 @@
     "fecha_ingreso": "2024-11-05",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "05/11"
    },
    {
@@ -4419,8 +4430,8 @@
     "fecha_ingreso": "2024-12-11",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "11/12"
    },
    {
@@ -4430,8 +4441,8 @@
     "fecha_ingreso": "2024-12-30",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 10,
     "aniversario": "30/12"
    },
    {
@@ -4441,8 +4452,8 @@
     "fecha_ingreso": "2025-01-06",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 10,
     "aniversario": "06/01"
    },
    {
@@ -4452,8 +4463,8 @@
     "fecha_ingreso": "2025-01-13",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "13/01"
    },
    {
@@ -4463,8 +4474,8 @@
     "fecha_ingreso": "2025-01-21",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "21/01"
    },
    {
@@ -4474,8 +4485,8 @@
     "fecha_ingreso": "2025-02-24",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 2,
+    "dias_pendientes": 10,
     "aniversario": "24/02"
    },
    {
@@ -4485,8 +4496,8 @@
     "fecha_ingreso": "2025-02-28",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "28/02"
    },
    {
@@ -4496,8 +4507,8 @@
     "fecha_ingreso": "2025-03-03",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "03/03"
    },
    {
@@ -4507,8 +4518,8 @@
     "fecha_ingreso": "2025-03-20",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "20/03"
    },
    {
@@ -4518,8 +4529,8 @@
     "fecha_ingreso": "2025-03-27",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "27/03"
    },
    {
@@ -4529,8 +4540,8 @@
     "fecha_ingreso": "2025-04-07",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "07/04"
    },
    {
@@ -4540,8 +4551,8 @@
     "fecha_ingreso": "2025-04-14",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "14/04"
    },
    {
@@ -4551,8 +4562,8 @@
     "fecha_ingreso": "2025-04-28",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "28/04"
    },
    {
@@ -4562,8 +4573,8 @@
     "fecha_ingreso": "2025-05-05",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "05/05"
    },
    {
@@ -4573,8 +4584,8 @@
     "fecha_ingreso": "2025-06-13",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "13/06"
    },
    {
@@ -4584,8 +4595,8 @@
     "fecha_ingreso": "2025-06-23",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "23/06"
    },
    {
@@ -4595,8 +4606,8 @@
     "fecha_ingreso": "2025-06-30",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "30/06"
    },
    {
@@ -4606,8 +4617,8 @@
     "fecha_ingreso": "2025-06-30",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "30/06"
    },
    {
@@ -4617,8 +4628,8 @@
     "fecha_ingreso": "2025-08-04",
     "anos_servicio": 1,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "04/08"
    },
    {
@@ -4628,8 +4639,8 @@
     "fecha_ingreso": "2025-08-25",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "25/08"
    },
    {
@@ -4639,8 +4650,8 @@
     "fecha_ingreso": "2025-09-17",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "17/09"
    },
    {
@@ -4650,8 +4661,8 @@
     "fecha_ingreso": "2025-09-22",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "22/09"
    },
    {
@@ -4661,8 +4672,8 @@
     "fecha_ingreso": "2025-10-01",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "01/10"
    },
    {
@@ -4672,8 +4683,8 @@
     "fecha_ingreso": "2025-10-10",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "10/10"
    },
    {
@@ -4683,8 +4694,8 @@
     "fecha_ingreso": "2026-02-04",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "04/02"
    },
    {
@@ -4694,8 +4705,8 @@
     "fecha_ingreso": "2026-03-09",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "09/03"
    },
    {
@@ -4705,8 +4716,8 @@
     "fecha_ingreso": "2026-03-25",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "25/03"
    },
    {
@@ -4716,8 +4727,8 @@
     "fecha_ingreso": "2026-05-04",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "04/05"
    },
    {
@@ -4727,8 +4738,8 @@
     "fecha_ingreso": "2026-05-20",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "20/05"
    },
    {
@@ -4738,8 +4749,8 @@
     "fecha_ingreso": "2026-06-09",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "09/06"
    },
    {
@@ -4749,8 +4760,8 @@
     "fecha_ingreso": "2026-06-16",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "16/06"
    },
    {
@@ -4760,8 +4771,8 @@
     "fecha_ingreso": "2026-07-01",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "01/07"
    },
    {
@@ -4771,8 +4782,8 @@
     "fecha_ingreso": "2026-07-07",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "07/07"
    },
    {
@@ -4782,8 +4793,8 @@
     "fecha_ingreso": "2026-07-14",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "14/07"
    },
    {
@@ -4793,8 +4804,8 @@
     "fecha_ingreso": "2026-07-16",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "16/07"
    },
    {
@@ -4804,8 +4815,8 @@
     "fecha_ingreso": "2026-07-20",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "20/07"
    },
    {
@@ -4815,8 +4826,8 @@
     "fecha_ingreso": "2026-07-27",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "27/07"
    },
    {
@@ -4826,8 +4837,8 @@
     "fecha_ingreso": "2026-07-27",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "27/07"
    },
    {
@@ -4837,8 +4848,8 @@
     "fecha_ingreso": "2026-07-28",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "28/07"
    },
    {
@@ -4848,8 +4859,8 @@
     "fecha_ingreso": "2026-08-05",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "05/08"
    },
    {
@@ -4859,11 +4870,12 @@
     "fecha_ingreso": "2026-08-14",
     "anos_servicio": 0,
     "dias_correspondientes": 12,
-    "dias_tomados": null,
-    "dias_pendientes": null,
+    "dias_tomados": 0,
+    "dias_pendientes": 12,
     "aniversario": "14/08"
    }
-  ]
+  ],
+  "total_dias_tomados": 236
  },
  "cumpleanos_mes": {
   "mes": "Agosto",
